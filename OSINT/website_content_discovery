@@ -5,7 +5,9 @@ Manual
 ------
 1) add "/robots.txt" at end of URL to discover pages the website owners do not want web-crawlers to catalog 
 
-2) if the website has not used a custom favicon at the beginning of their url you can use the favicon to determine what framework was used to create website - this may reveal vulnerabilities
-For a list of favicons and what frameworks they represent, see here: https://wiki.owasp.org/index.php/OWASP_favicon_database
+2) if the website has not used a custom favicon you can use the favicon that is present to determine what framework was used to create website - this may reveal vulnerabilities
+You can check the webpage source code to see if there is a link to a favicon icon url
+You can download the hash of the favicon by using the following command in your terminal: curl <url of favicon as discovered in webpage source code> | md5sum
+For a list of favicon hashes and what frameworks they represent, see here: https://wiki.owasp.org/index.php/OWASP_favicon_database
 
 
