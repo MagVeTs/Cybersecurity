@@ -1,0 +1,11 @@
+-------------------------------------
+credit: TryHackMe
+
+Manual
+------
+1) add "/robots.txt" at end of URL to discover pages the website owners do not want web-crawlers to catalog 
+
+2) if the website has not used a custom favicon at the beginning of their url you can use the favicon to determine what framework was used to create website - this may reveal vulnerabilities
+For a list of favicons and what frameworks they represent, see here: https://wiki.owasp.org/index.php/OWASP_favicon_database
+
+
