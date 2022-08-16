@@ -1,23 +1,20 @@
--------------------------------------
-credit: TryHackMe
-
-Manual
-------
-1) add "/robots.txt" at end of URL to discover pages the website owners do not want web-crawlers to catalog 
+website_content_and_techStack_discovery
+-----------------------------------------
+1) add "/robots.txt" at end of URL to discover pages the website owners do not want web-crawlers to catalog--TryHackMe
 
 2) if the website has not used a custom favicon you can use the favicon that is present to determine what framework was used to create website - this may reveal vulnerabilities
 You can check the webpage source code to see if there is a link to a favicon icon url
 You can download the hash of the favicon by using the following command in your terminal: curl <url of favicon as discovered in webpage source code> | md5sum
 For a list of favicon hashes and what frameworks they represent, see here: https://wiki.owasp.org/index.php/OWASP_favicon_database
 You can also find information about the framework at the bottom of the webpage source code.
-It is worthwhile to go to the framework's website and look at the documentation to help find vulnerabilities.
+It is worthwhile to go to the framework's website and look at the documentation to help find vulnerabilities.--TryHackMe
 
 3) "the sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine. These can sometimes contain areas of the website that are a bit more difficult to navigate to or even list some old webpages that the current site no longer uses but are still working behind the scenes."--TryHackMe
 
-4) in the CLI run "curl http://<ip address> -v[erbose]" to retrieve http headers that may contain info such as "the webserver software and possibly the programming/scripting language in use". Then you can search for vulnerabilities in the hardware/software being used.
+4) in the CLI run "curl http://<ip address> -v[erbose]" to retrieve http headers that may contain info such as "the webserver software and possibly the programming/scripting language in use". Then you can search for vulnerabilities in the hardware/software being used.--TryHackMe
 
 5) https://www.wappalyzer.com/
-"Identify technologies on websites ... Find out the technology stack of any website. Create lists of websites that use certain technologies, with company and contact details..."--Wappalyzer
+"Identify technologies on websites ... Find out the technology stack of any website. Create lists of websites that use certain technologies, with company and contact details..."--Wappalyzer [hat tip: TryHackMe]
 
 6) Wayback Machine on Archive.org
 https://archive.org/web/
@@ -25,3 +22,9 @@ https://archive.org/web/
 
 7)https://github.com/
 "Git is a version control system that tracks changes to files in a project ... GitHub is a hosted version of Git on the internet. Repositories can either be set to public or private and have various access controls. You can use GitHub's search feature to look for company names or website names to try and locate repositories belonging to your target. Once discovered, you may have access to source code, passwords or other content that you hadn't yet found."--TryHackMe
+
+8) "S3 Buckets are a storage service provided by Amazon AWS, allowing people to save files and even static website content in the cloud accessible over HTTP and HTTPS. The owner of the files can set access permissions to either make files public, private and even writable. Sometimes these access permissions are incorrectly set and inadvertently allow access to files that shouldn't be available to the public. The format of the S3 buckets is http(s)://{name}.s3.amazonaws.com where {name} is decided by the owner, such as tryhackme-assets.s3.amazonaws.com. S3 buckets can be discovered in many ways, such as finding the URLs in the website's page source, GitHub repositories, or even automating the process. One common automation method is by using the company name followed by common terms such as {name}-assets, {name}-www, {name}-public, {name}-private, etc."--TryHackMe
+
+9) https://github.com/danielmiessler/SecLists
+"SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more."--SecLists
+Download the lists and use them to automate website content discovery using such tools as CLI tools as ffuf, dirb and gobuster.--TryHackMe
