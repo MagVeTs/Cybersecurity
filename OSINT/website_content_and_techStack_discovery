@@ -38,3 +38,12 @@ https://ui.ctsearch.entrust.com/ui/ctsearchui
 11) Subdomain Enumeration:
 the following Google Dork [using "site:" ; "*" (wildcard) ; and "-" (exclude)] will bring back all a particular domain's subdomains (except the www subdomain)
 "-site:www.<domain-name>.com site:*.<domain-name>.com" -- TryHackMe
+
+12) Subdomain Enumeration:
+"Bruteforce DNS (Domain Name System) enumeration is the method of trying tens, hundreds, thousands or even millions of different possible subdomains from a pre-defined list of commonly used subdomains. Because this method requires many requests, we automate it with tools to make the process quicker. In this instance, we are using a tool called dnsrecon"--TryHackMe
+dnsrecon is available from the CLI in Kali Linux
+
+13) Subdomain Enumeration:
+https://github.com/aboul3la/Sublist3r
+"Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster and ReverseDNS.
+subbrute was integrated with Sublist3r to increase the possibility of finding more subdomains using bruteforce with an improved wordlist. The credit goes to TheRook who is the author of subbrute."--TryHackMe
