@@ -46,4 +46,10 @@ dnsrecon is available from the CLI in Kali Linux
 13) Subdomain Enumeration:
 https://github.com/aboul3la/Sublist3r
 "Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster and ReverseDNS.
-subbrute was integrated with Sublist3r to increase the possibility of finding more subdomains using bruteforce with an improved wordlist. The credit goes to TheRook who is the author of subbrute."--TryHackMe
+subbrute was integrated with Sublist3r to increase the possibility of finding more subdomains using bruteforce with an improved wordlist. The credit goes to TheRook who is the author of subbrute."--github
+[credit: TryHackMe]
+
+14) Subdomain Enumeration:
+Sometimes hidden subdomains are only mapped on private DNS servers in "/etc/hosts" or "C:\Windows\System32\Drivers\etc\hosts"
+If DNS service is not available for certain subdomains - they can be recovered by running a bruteforce of possible hostnames (here meaning "subdomains") directly on the webserver that provides the website. The webserver itself will need to know the hostnames of the subdomains because it may be hosting many domains and subdomains for many websites (this is known as "virtual hosts"). Using ffuf and a wordlist we can request many possiblily subdomain hostnames from a server until we find one that exists.
+[hat tip: TryHackMe]
