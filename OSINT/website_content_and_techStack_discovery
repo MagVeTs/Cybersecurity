@@ -16,3 +16,6 @@ It is worthwhile to go to the framework's website and look at the documentation 
 
 4) in the CLI run "curl http://<ip address> -v[erbose]" to retrieve http headers that may contain info such as "the webserver software and possibly the programming/scripting language in use". Then you can search for vulnerabilities in the hardware/software being used.
 
+5) https://www.wappalyzer.com/
+"Identify technologies on websites
+Find out the technology stack of any website. Create lists of websites that use certain technologies, with company and contact details..."
