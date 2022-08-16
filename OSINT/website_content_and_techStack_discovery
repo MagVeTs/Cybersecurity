@@ -12,13 +12,16 @@ For a list of favicon hashes and what frameworks they represent, see here: https
 You can also find information about the framework at the bottom of the webpage source code.
 It is worthwhile to go to the framework's website and look at the documentation to help find vulnerabilities.
 
-3) "the sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine. These can sometimes contain areas of the website that are a bit more difficult to navigate to or even list some old webpages that the current site no longer uses but are still working behind the scenes."
+3) "the sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine. These can sometimes contain areas of the website that are a bit more difficult to navigate to or even list some old webpages that the current site no longer uses but are still working behind the scenes."--TryHackMe
 
 4) in the CLI run "curl http://<ip address> -v[erbose]" to retrieve http headers that may contain info such as "the webserver software and possibly the programming/scripting language in use". Then you can search for vulnerabilities in the hardware/software being used.
 
 5) https://www.wappalyzer.com/
-"Identify technologies on websites ... Find out the technology stack of any website. Create lists of websites that use certain technologies, with company and contact details..."--wappalyzer
+"Identify technologies on websites ... Find out the technology stack of any website. Create lists of websites that use certain technologies, with company and contact details..."--Wappalyzer
 
 6) Wayback Machine on Archive.org
 https://archive.org/web/
 "a historical archive of websites that dates back to the late 90s. You can search a domain name, and it will show you all the times the service scraped the web page and saved the contents. This service can help uncover old pages that may still be active on the current website."--TryHackMe
+
+7)https://github.com/
+"Git is a version control system that tracks changes to files in a project ... GitHub is a hosted version of Git on the internet. Repositories can either be set to public or private and have various access controls. You can use GitHub's search feature to look for company names or website names to try and locate repositories belonging to your target. Once discovered, you may have access to source code, passwords or other content that you hadn't yet found."--TryHackMe
