@@ -35,3 +35,6 @@ The sites below "offer a searchable database of certificates that shows current 
 https://crt.sh/
 https://ui.ctsearch.entrust.com/ui/ctsearchui
 
+11) Subdomain Enumeration:
+the following Google Dork [using "site:" ; "*" (wildcard) ; and "-" (exclude)] will bring back all a particular domain's subdomains (except the www subdomain)
+"-site:www.<domain-name>.com site:*.<domain-name>.com" -- TryHackMe
