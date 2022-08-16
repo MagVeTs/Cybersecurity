@@ -28,3 +28,10 @@ https://archive.org/web/
 9) https://github.com/danielmiessler/SecLists
 "SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more."--SecLists
 Download the lists and use them to automate website content discovery using such tools as CLI tools as ffuf, dirb and gobuster.--TryHackMe
+
+10) Subdomain Enumeration:
+"Certificate Transparency (CT) logs ... publicly accessible logs of every SSL/TLS certificate created for a domain name ... use this service to our advantage to discover subdomains belonging to a domain"--TryHackMe
+The sites below "offer a searchable database of certificates that shows current and historical results"--TryHackMe
+https://crt.sh/
+https://ui.ctsearch.entrust.com/ui/ctsearchui
+
