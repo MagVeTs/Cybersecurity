@@ -10,4 +10,7 @@ You can check the webpage source code to see if there is a link to a favicon ico
 You can download the hash of the favicon by using the following command in your terminal: curl <url of favicon as discovered in webpage source code> | md5sum
 For a list of favicon hashes and what frameworks they represent, see here: https://wiki.owasp.org/index.php/OWASP_favicon_database
 
+3) "the sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine. These can sometimes contain areas of the website that are a bit more difficult to navigate to or even list some old webpages that the current site no longer uses but are still working behind the scenes."
+
+4) in the CLI run "curl http://<ip address> -v[erbose]" to retrieve http headers that may contain info such as "the webserver software and possibly the programming/scripting language in use". Then you can search for vulnerabilities in the hardware/software being used.
 
