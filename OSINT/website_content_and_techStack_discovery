@@ -65,6 +65,9 @@ Important!: if you do not want Google to tell the website's webserver that you a
 - use a Base64 decoder to discover them - then change them to discover other objects and encode them again before submitting
 - use Crackstation to determine the original object reference - then change and rehash
 - even if the object reference IDs are random, you can create two accounts and then try switching the ORs in your browser - if that works to see the other account - you know you found an IDOR vulnerability
-[hat tip: TryHackMe]
+-Parameter Mining (aka Parameter Discovery)
+"Sometimes endpoints could have an unreferenced parameter that may have been of some use during development and got pushed to production. For example, you may notice a call to /user/details displaying your user information (authenticated through your session). But through an attack known as parameter mining, you discover a parameter called user_id that you can use to display other users' information, for example, /user/details?user_id=123."--TryHackMe
+see here for parameter mining/discovery tools: https://blog.yeswehack.com/yeswerhackers/parameter-discovery-quick-guide-to-start/
+
 
 
