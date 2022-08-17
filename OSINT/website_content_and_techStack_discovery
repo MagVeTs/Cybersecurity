@@ -61,9 +61,10 @@ Important!: if you do not want Google to tell the website's webserver that you a
 
 16) IDOR (Insecure Direct Object Reference)
 [see here for more info: https://www.acunetix.com/blog/web-security-zone/what-are-insecure-direct-object-references/]
-- the object references may be encoded in Base64 or hashed (often MD5)
+- the ORs (object references) may be encoded in Base64 or hashed (often MD5)
 - use a Base64 decoder to discover them - then change them to discover other objects and encode them again before submitting
 - use Crackstation to determine the original object reference - then change and rehash
+- even if the object reference IDs are random, you can create two accounts and then try switching the ORs in your browser - if that works to see the other account - you know you found an IDOR vulnerability
 [hat tip: TryHackMe]
 
 
