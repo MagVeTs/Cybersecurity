@@ -61,3 +61,5 @@ Important!: if you do not want Google to tell the website's webserver that you a
 
 16) To understand the user-agent info that is associated with a browser use a user-agent decoder [hat tip: Jonathan Erez]
 e.g. https://developers.whatismybrowser.com/useragents/parse/
+
+
