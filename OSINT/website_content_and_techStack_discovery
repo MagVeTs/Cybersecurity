@@ -55,4 +55,5 @@ If DNS service is not available for certain subdomains - they can be recovered b
 ffuf github: https://github.com/ffuf/ffuf
 [hat tip: TryHackMe]
 
-15) https://crackstation.net/ 
+15) To examine cached versions of the website (which both prevents the webserver from seeing that you are visiting it and may show content that was subsequently changed) you can search in Google and then click black downward facing arrow to choose "cached" option. If the cached option is not provided when clicking black downwar facing arrow, try searching cache:<url/uri> or site:<url/uri> and you may be able to find cached version.
+[hat tip: ThriveDX]
