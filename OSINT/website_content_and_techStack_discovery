@@ -58,3 +58,6 @@ ffuf github: https://github.com/ffuf/ffuf
 15) To examine cached versions of the website (which may show content that was subsequently changed [and, if done correctly will prevent the webserver from seeing that you are visiting it]) you can search in Google and then click black downward-facing arrow to choose "cached" option. If the cached option is not provided when clicking the  black downward-facing arrow, try searching cache:<url/uri> or site:<url/uri> and you may be able to find cached version.
 Important!: if you do not want Google to tell the website's webserver that you are asking for a cache you should not left-click on the cache link. Instead right-click on it and copy the url. Then paste the url in your browser and add the string: "&strip=1" [without the quotation marks] at the end of the url. This will enable you to access a text only cache - and the webserver will not be alerted. 
 [hat tip: ThriveDX]
+
+16) To understand the user-agent info that is associated with a browser use a user-agent parser [hat tip: Jonathan Erez]
+e.g. https://developers.whatismybrowser.com/useragents/parse/
