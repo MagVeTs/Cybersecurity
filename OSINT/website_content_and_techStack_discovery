@@ -59,6 +59,11 @@ ffuf github: https://github.com/ffuf/ffuf
 Important!: if you do not want Google to tell the website's webserver that you are asking for a cache you should not left-click on the cache link. Instead right-click on it and copy the url. Then paste the url in your browser and add the string: "&strip=1" [without the quotation marks] at the end of the url. This will enable you to access a text only cache - and the webserver will not be alerted. 
 [hat tip: ThriveDX]
 
-16) 
+16) IDOR (Insecure Direct Object Reference)
+[see here for more info: https://www.acunetix.com/blog/web-security-zone/what-are-insecure-direct-object-references/]
+- the object references may be encoded in Base64 or hashed (often MD5)
+- use a Base64 decoder to discover them - then change them to discover other objects and encode them again before submitting
+- use Crackstation to determine the original object reference - then change and rehash
+[hat tip: TryHackMe]
 
 
