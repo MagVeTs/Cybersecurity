@@ -35,3 +35,7 @@ URL Decoder (e.g. it changes % to characters)
 https://url-decode.com/
 Note: there is also a tab on the website to go to many other useful tools
 [hat tip: Jonathan Erez]
+
+---------------------------------
+To understand the user-agent info that is associated with a browser use a user-agent decoder [hat tip: Jonathan Erez]
+e.g. https://developers.whatismybrowser.com/useragents/parse/
