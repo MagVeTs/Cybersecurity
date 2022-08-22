@@ -43,3 +43,10 @@ e.g. https://developers.whatismybrowser.com/useragents/parse/
 URL and IP reputation and location look-up
 https://www.brightcloud.com/tools/url-ip-lookup.php
 [hat tip: ThriveDX]
+
+---------------------------------
+https://requestbin.com/
+A modern request bin to inspect any event
+Collect HTTP or webhook requests or subscribe to events from popular apps.
+Inspect each event in a human-friendly way or via REST or SSE APIs.
+[Note: can be used to test for SSRF vulnerabilities when no output is reflected back towards user (Blind SSRF) - will act as external HTTP logging tool -- hat tip: ThriveDX]
