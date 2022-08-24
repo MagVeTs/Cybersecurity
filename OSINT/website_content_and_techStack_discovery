@@ -69,5 +69,9 @@ Important!: if you do not want Google to tell the website's webserver that you a
 "Sometimes endpoints could have an unreferenced parameter that may have been of some use during development and got pushed to production. For example, you may notice a call to /user/details displaying your user information (authenticated through your session). But through an attack known as parameter mining, you discover a parameter called user_id that you can use to display other users' information, for example, /user/details?user_id=123."--TryHackMe
 see here for parameter mining/discovery tools: https://blog.yeswehack.com/yeswerhackers/parameter-discovery-quick-guide-to-start/
 
-
-
+--------------------------------------------------------
+Discover the technologies used to build a certain website and discover websites built with a certain technology:
+https://builtwith.com/
+https://sitereport.netcraft.com/
+https://www.wappalyzer.com/
+[hat tip: Moshe Levy - https://www.linkedin.com/in/moshelevy01/]
