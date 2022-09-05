@@ -78,3 +78,17 @@ https://www.nist.gov/document/supplementnicespecialtyareasandworkroleksasandtask
 
 -------------------------------------
 https://haveibeenpwned.com/
+-------------------------------------
+Public DNS Servers:
+
+Cloudflare:
+1.1.1.1
+1.0.0.1
+
+Google:
+8.8.8.8
+8.8.4.4
+
+Quad9:
+9.9.9.9
+149.112.112.112
