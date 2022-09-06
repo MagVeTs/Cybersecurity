@@ -98,3 +98,212 @@ https://duckduckgo.com/?q=public+dns
 
 [hat tip: TryHackMe]
 -------------------------------------
+Cybersecurity Sites
+
+https://nakedsecurity.sophos.com/
+
+https://www.cybersecurityintelligence.com/
+
+https://threatpost.com/
+
+https://www.darkreading.com/
+
+https://www.cybrary.it/
+
+https://www.cve.org/
+
+https://attack.mitre.org/
+https://mitre.github.io/attack-navigator/enterprise/
+
+
+Cyber Range - Black Hills Information Security
+https://metactf.com/dashboard 
+
+https://gchq.github.io/CyberChef/
+
+https://hashtoolkit.com/
+
+
+https://www.virustotal.com/gui/home/upload
+
+
+https://github.com/Yara-Rules/
+
+https://www.exploit-db.com/
+
+https://whatismyipaddress.com/
+
+https://www.hacker101.com/
+
+
+https://ncp.nist.gov/repository
+
+https://public.cyber.mil/stigs/
+
+https://plextrac.com/
+
+
+https://www.dcode.fr/en
+
+https://crackstation.net/ - Free Password Hash Cracker
+
+https://www.diffchecker.com/ - Diffchecker will compare text to find the difference between two text files.
+
+https://www.online-utility.org/text/analyzer.jsp
+Free software utility which allows you to find the most frequent phrases and frequencies of words. Non-English language texts are supported. It also counts number of words, characters, sentences and syllables. Also calculates lexical density.
+
+-----------------------------------------------
+https://portswigger.net/web-security
+WebSecurity Academy
+Free, online web security training from the creators of Burp Suite
+
+-----------------------------------------------
+https://www.w3schools.com/
+
+—---------------------------------------------
+CompTIA recommended PCAP analysis training sites:
+Publicly available PCAP files
+https://www.netresec.com/index.ashx?page=PcapFiles
+
+Malware-Traffic-Analysis
+https://www.malware-traffic-analysis.net/training-exercises.html
+
+
+—-----------------------------------------------
+CompTIA CySA+ recommended:
+
+https://www.google.com/advanced_search
+https://filesignatures.net/index.php?page=search
+All the file signatures (aka magic numbers) - the Hex numbers at the beginning of the machine code that tell the computer what kind of file it is and what kind of OS it can run on. This database maps the file signatures to the file extensions they represent. It alo gives the ASCII equivalent (e.g. 4D 5A = MZ [in ASCII] = .ocx]
+
+docs.microsoft.com/en-us/sysinternals/downloads/strings
+Microsoft freeware utility for identifying coding strings in an executable - helps with identifying malware strings hiding in an executable
+
+Identify vulnerable web servers and applications:
+https://www.exploit-db.com/google-hacking-database
+
+Shodan Search Engine - searches for Internet of Everything devices (IoT, ICS, etc.)
+https://www.shodan.io/
+
+Social media analytics
+Pipl.com / peekyou.com / echosec.net
+
+
+Go to resources on this site for free resources:
+https://www.netcraft.com/
+
+https://www.httrack.com/ 
+HTTrack is a free (GPL, libre/free software) and easy-to-use offline browser utility.
+It allows you to download a World Wide Web site from the Internet to a local directory, building recursively all directories, getting HTML, images, and other files from the server to your computer. HTTrack arranges the original site's relative link-structure. Simply open a page of the "mirrored" website in your browser, and you can browse the site from link to link, as if you were viewing it online. HTTrack can also update an existing mirrored site, and resume interrupted downloads. HTTrack is fully configurable, and has an integrated help system.
+From CompTIA CySA+ course (https://learn.comptia.org/app/certmaster-learn-and-comptia-labs-for-cysa-exam-cs0-002#read/section/dns-and-website-harvesting-techniques): “A website ripper (or copier) is a tool that caches the code behind a website. A tool such as httrack (httrack.com) recurses through each directory of the local site and can follow links to third-party sites to a specified depth. Analyzing the ripped site might reveal vulnerabilities in the code or the web application used to deliver the content. There might be old or forgotten orphaned pages with useful information. Website ripping is also a means of harvesting email addresses.”
+
+-------------------------------------------------------
+Learn RegEx (Regular Expressions):
+https://regexr.com/
+
+https://rexegg.com/
+
+https://www.regular-expressions.info/
+--------------------------------------------------------
+GHDB - Google Hacking Database
+https://www.exploit-db.com/google-hacking-database
+
+----------------------------------------------------------
+https://centralops.net/co/
+
+—----------------------------------------------------------------------------------
+Learn Different Networking Options in VirtualBox
+https://www.linuxshelltips.com/virtualbox-networking/
+
+
+https://www.nakivo.com/blog/virtualbox-network-setting-guide/
+
+How do I choose which networking mode to use in VirtualBox
+https://www.youtube.com/watch?v=QO_Tv02ND-k
+ 
+—-----------------------------------------------------------------------------------
+How to Access the Dark Web Safely in 2022
+https://www.youtube.com/watch?v=EgXeXmNecto
+
+https://torproject.org
+
+https://tails.boum.org
+
+https://ahmia.fi
+
+19 Best Onion Sites on the Dark Web (2022) | ExpressVPN Blog
+
+https://privacypros.io/tor/best-onion-sites/
+
+
+https://www.guerrillamail.com/
+
+https://duckduckgo.com/
+https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+------------------------------------------------------------------------------------------
+
+OSINT
+https://www.google.com/advanced_search
+
+
+
+
+https://russian.typeit.org/  
+---------------------------------------------------------------------------------------------
+ThriveDX
+https://learn.thrivedx.io/
+
+ThriveDX recommends the following Windows/Linux quizzes to check knowledge:
+Microsoft Windows Basics - ProProfs Quiz
+
+Linux Essentials Certification Exam Practice Test! - ProProfs Quiz
+
+https://www.examcompass.com/comptia-a-plus-certification-exam-220-1002-microsoft-command-line-tools-quiz
+
+https://www.examcompass.com/comptia-a-plus-certification-exam-220-1002-windows-msconfig-quiz
+
+https://www.examcompass.com/comptia-a-plus-certification-exam-220-1002-basic-linux-commands-quiz
+
+
+----------------------------------------------------------
+
+Recommended by Jonathan Erez:
+
+https://overthewire.org/wargames/
+
+Set up Cloudflare as your DNS:
+https://developers.cloudflare.com/1.1.1.1/setup/windows/
+
+Pentesting tool:
+https://flipperzero.one/
+
+Linux Journey - teaches one Linux
+
+
+—--------------------------------------------------------------
+Cisco
+https://www.netacad.com/courses/packet-tracer
+https://skillsforall.com/resources/lab-downloads
+—--------------------------------------------------------------------
+https://www.ssh.com/academy/ssh/putty/windows
+
+---------------------------------------------------------------------
+
+Try Hack Me
+https://tryhackme.com/
+
+------------------------------
+Cybersecurity News:
+
+https://www.bleepingcomputer.com/
+
+https://thehackernews.com/
+—-----------------------------
+CVE Sites on Pentest+
+
+https://www.cisa.gov/uscert/
+
+-------------------------------
+SSL Server Test
+https://www.ssllabs.com/ssltest/
+Recommended by Jason Dion - you put in any SSL web server (a web server that uses SSL or TLS to protect the transmitted http) and it will tell you its cipher suite
