@@ -307,3 +307,6 @@ https://www.cisa.gov/uscert/
 SSL Server Test
 https://www.ssllabs.com/ssltest/
 Recommended by Jason Dion - you put in any SSL web server (a web server that uses SSL or TLS to protect the transmitted http) and it will tell you its cipher suite
+--------------------------------------
+https://www.sans.org/emea/
+Many free resources
