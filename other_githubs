@@ -7,6 +7,11 @@ his is collections of APT and cybercriminals campaign. Please fire issue to me i
 https://github.com/swisskyrepo/PayloadsAllTheThings
 A list of useful payloads and bypass for Web Application Security and Pentest/CTF
 
+https://github.com/danielmiessler/SecLists
+"SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more. The goal is to enable a security tester to pull this repository onto a new testing box and have access to every type of list that may be needed.
+This project is maintained by Daniel Miessler, Jason Haddix, and g0tmi1k."
+[hat tip: TryHackMe]
+
 https://github.com/themixedcoder/IT-Resources
 Links and Resources to look at to teach you more about Programming , Hardware ,Hacking , and Networking
 created by Moshe Levy - https://www.linkedin.com/in/moshelevy01/
