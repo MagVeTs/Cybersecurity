@@ -31,3 +31,7 @@ escape IMG tag - onload=
 In order to prevent the website from running all the HTML code (found in the source code) that follows our XSS script injection, insert the "comment tag" at the end of the XSS injection:
 <--
 [hat tip: Jonathan Erez]
+-----------------------------------------------------
+Tips:
+1) Make sure to for XSS injection in each input box - sometimes one wasn't sanitized even though the others were
+2) Make sure to try XSS injection in URL; sometimes the input was only sanitized in the input form boxes and not in the URL; especially for inputs that are drop down menus and you can only manipulate things in the URL
