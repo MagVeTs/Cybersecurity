@@ -27,3 +27,7 @@ escape IMG tag - onload=
 /NAME_OF_FOLDER/NAME_OF_FILE.jpg" onload="alert('XSS');
 
 [hat tip: TryHackMe - https://tryhackme.com/room/xssgi]
+------------------------------------------------------
+In order to comment out all the follwoing code, insert the "comment tag" at the end of the XSS injection:
+<--
+[hat tip: Jonathan Erez]
