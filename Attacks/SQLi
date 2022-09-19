@@ -28,6 +28,11 @@ Blind SQLi Attack
 - alternatively the attacker can send queries and see from the time it takes for the server to respond response whether a particular value was true or false - even without the server showing any difference in the text of its response
 time based Blind SQLi attacks can be identified by the following terms found in the URI: waitfor, delay, sleep, benchmark
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQLMAP
+
+cheatsheet:
+https://github.com/sqlmapproject/sqlmap/wiki/Usage
+[hat tip: ThriveDX]
 
 
  
