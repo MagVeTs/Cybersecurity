@@ -1,5 +1,14 @@
 Analyzing email headers for spoofing:
 
+
+Capturing the email headers:
+
+How to Get Email Headers
+"Every single Internet e-mail message is made up of two parts the header and the message body of the email. Every single email you send or receive on the Internet contains an Internet Header, a full and valid e-mail header provides a detailed log of the network path taken by the message between the mail sender and the mail receiver(s) (email servers).
+Your email client program will usually hide the full header or display only lines, such as From, To, Date, and Subject, see below for more information on pulling headers for your email client" -- https://mxtoolbox.com
+Where to find the full email headers:
+https://mxtoolbox.com/Public/Content/EmailHeaders/
+
 Email Header Analyzer
 https://mxtoolbox.com/EmailHeaders.aspx
 "This tool will make email headers human readable by parsing them according to RFC 822.  Email headers are present on every email you receive via the Internet and can provide valuable diagnostic information like hop delays, anti-spam results and more."
