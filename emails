@@ -1,0 +1,14 @@
+Analyzing email headers for spoofing:
+
+Email Header Analyzer
+https://mxtoolbox.com/EmailHeaders.aspx
+"This tool will make email headers human readable by parsing them according to RFC 822.  Email headers are present on every email you receive via the Internet and can provide valuable diagnostic information like hop delays, anti-spam results and more."
+[hat tip: Reddit post by Strong_Effective_508]
+
+---
+or
+---
+
+Message Header Analyzer
+https://mha.azurewebsites.net/
+[hat tip: Reddit post by CaptCoolie]
