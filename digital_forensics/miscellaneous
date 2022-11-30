@@ -6,3 +6,22 @@ $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 File Signatures (Hex) List
 https://www.garykessler.net/library/file_sigs.html
 [hat tip: TryHackMe]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Normal Core Windows Processes appearing in TaskManager:
+
+"A Task Manager provides some of the Core Windows Processes running in the background. Below is a summary of running processes that are considered normal behaviour.
+
+Note: ">" symbol represents a parent-child relationship. System (Parent) > smss.exe (Child)
+
+System
+System > smss.exe
+csrss.exe
+wininit.exe
+wininit.exe > services.exe
+wininit.exe > services.exe > svchost.exe
+lsass.exe
+winlogon.exe
+explorer.exe
+
+In addition, the processes with no depiction of a parent-child relationship should not have a Parent Process under normal circumstances, except for the System process, which should only have System Idle Process (0) as its parent process." -- TryHackMe [https://tryhackme.com/room/introtoendpointsecurity - Task 2]
