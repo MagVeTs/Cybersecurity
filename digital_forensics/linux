@@ -66,5 +66,9 @@ Bash History
 ["Any commands other than the ones run using sudo are stored in the bash history. Every user's bash history is stored separately in that user's home folder. Therefore, when examining bash history, we need to get the bash_history file from each user's home directory. It is important to examine the bash history from the root user as well, to make note of all the commands run using the root user as well" --TryHackMe]
 cat ~/.bash_history [current user]
 
+Files Accessed Using vim
+["The Vim text editor stores logs for opened files in Vim in the file named .viminfo in the home directory. This file contains command line history, search string history, etc. for the opened files" -- TryHackMe]
+cat ~/.viminfo [current user]
+
 [hat tip: TryHackMe (https://tryhackme.com/room/linuxforensics)]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
