@@ -60,7 +60,7 @@ cat /var/log/auth.log
 [use | tail (or: head/more/less for readability)]
 
 Sudo Execution History
-cat /var/log/auth.log* | grep -i COMMAND |tail [current user?]
+cat /var/log/auth.log* | grep -i COMMAND |tail [the * is a wildcard to call log1, log2, etc.]
 
 Bash History
 ["Any commands other than the ones run using sudo are stored in the bash history. Every user's bash history is stored separately in that user's home folder. Therefore, when examining bash history, we need to get the bash_history file from each user's home directory. It is important to examine the bash history from the root user as well, to make note of all the commands run using the root user as well" --TryHackMe]
