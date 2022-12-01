@@ -26,10 +26,16 @@ cat /etc/hosts
 DNS Servers Used For DNS Resolution
 cat /etc/resolv.conf
 
+Cron Jobs ["Cron jobs are commands that run periodically after a set amount of time" --TryHackMe]
+cat /etc/crontab
+
+Service Startup ["Like Windows, services can be set up in Linux that will start and run in the background after every system boot -- TryHackMe]
+ls /etc/init.d/
+
 User Accounts
 cat /etc/passwd 
 [to make output easier to read: cat /etc/passwd | column -t -s :]
-gives: "username, password information, user id (uid), group id (gid), description, home directory information, and the default shell that executes when the user logs in"
+[gives: "username, password information, user id (uid), group id (gid), description, home directory information, and the default shell that executes when the user logs in" --TryHackMe]
 
 Group Information
 cat /etc/group
