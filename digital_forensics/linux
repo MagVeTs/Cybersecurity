@@ -55,7 +55,7 @@ sudo last -f /var/log/btmp [failed logins]
 
 Authentication Logs
 cat /var/log/auth.log
-[use | tail (or: head/more/less for readability]
+[use | tail (or: head/more/less for readability)]
 
 Sudo Execution History
 cat /var/log/auth.log* | grep -i COMMAND |tail
