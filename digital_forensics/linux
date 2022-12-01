@@ -74,7 +74,8 @@ Syslog
 cat /var/log/syslog* | <head/tail/less/more>
 ["We can see an asterisk(*) after the syslog. This is to include rotated logs as well. With the passage of time, the Linux machine rotates older logs into files such as syslog.1, syslog.2 etc, so that the syslog file doesn't become too big. In order to search through all of the syslogs, we use the asterisk(*) wildcard" --TryHackMe]
 
-
+Third-party Logs
+ls /var/log
 
 [hat tip: TryHackMe (https://tryhackme.com/room/linuxforensics)]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
