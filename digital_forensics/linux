@@ -32,6 +32,11 @@ cat /etc/crontab
 Service Startup ["Like Windows, services can be set up in Linux that will start and run in the background after every system boot -- TryHackMe]
 ls /etc/init.d/
 
+.Bashrc ["When a bash shell is spawned, it runs the commands stored in the .bashrc file. This file can be considered as a startup list of actions to be performed. Hence it can prove to be a good place to look for persistence" --TryHackMe]
+cat ~/.bashrc
+cat /etc/bash.bashrc [system wide settings]
+cat /etc/profile
+
 User Accounts
 cat /etc/passwd 
 [to make output easier to read: cat /etc/passwd | column -t -s :]
