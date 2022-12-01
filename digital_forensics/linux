@@ -1,0 +1,25 @@
+-----------------------------------------------------------------------------------
+OS release information
+cat /etc/os-release
+
+User accounts
+cat /etc/passwd 
+[to make output easier to read: cat /etc/passwd | column -t -s :]
+gives: "username, password information, user id (uid), group id (gid), description, home directory information, and the default shell that executes when the user logs in"
+
+Group Information
+cat /etc/group
+
+Sudoers List [users authorized to use sudo to elevate privileges]
+cat /etc/sudoers
+
+Login Information
+[must use "last" command since info is stored in binary]
+sudo last -f /var/log/wtmp [logins]
+sudo last -f /var/log/btmp [failed logins]
+
+Authentication Logs
+cat /var/log/auth.log
+[use | tail (or: head/more/less for readability]
+
+[hat tip: TryHackMe (https://tryhackme.com/room/linuxforensics)
