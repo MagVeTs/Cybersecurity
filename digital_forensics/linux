@@ -2,7 +2,31 @@
 OS release information
 cat /etc/os-release
 
-User accounts
+Hostname
+cat /etc/hostname 
+
+Timezone
+cat /etc/timezone
+
+Network Configuration
+cat /etc/network/interfaces
+
+IP and MAC Addresses [on a live system]
+ip address show
+
+Active Network Connection [on a live system]
+netstat -natp
+
+Running Processes [on a live system]
+ps aux
+
+DNS Information
+cat /etc/hosts
+
+DNS Servers Used For DNS Resolution
+cat /etc/resolv.conf
+
+User Accounts
 cat /etc/passwd 
 [to make output easier to read: cat /etc/passwd | column -t -s :]
 gives: "username, password information, user id (uid), group id (gid), description, home directory information, and the default shell that executes when the user logs in"
