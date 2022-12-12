@@ -41,4 +41,9 @@ URL Extractor For Web Pages and Text
 https://www.convertcsv.com/url-extractor.htm
 Paste email message header into this site and it will extract URLs from the text. CyberChef (https://gchq.github.io/CyberChef/) has a "Extract URLs" option that does this too.
 [hat tip: TryHackMe]
+-------------------------------------
+PhishTool
+https://www.phishtool.com/
+"PhishTool gives human analysts the power to reverse engineer phishing emails, to better defend against them. PhishTool is to phishing emails as a disassembler is to malware or a forensic toolkit is to file systems...PhishTool combines threat intelligence, OSINT, email metadata and battle tested auto-analysis pathways into one powerful phishing response platform..."
+[hat tip: TryHackMe]
 
