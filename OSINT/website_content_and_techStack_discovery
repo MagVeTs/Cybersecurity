@@ -89,9 +89,21 @@ Redirects: Shows information on any identified HTTP and client-side redirects on
 Links: Shows all the identified links outgoing from the site's homepage.
 Behaviour: Provides details of the variables and cookies found on the site. These may be useful in identifying the frameworks used in developing the site.
 Indicators: Lists all IPs, domains and hashes associated with the site. These indicators do not imply malicious activity related to the site." --https://tryhackme.com/room/threatinteltools ; Task 3
+
+
+IPinfo.io
+https://ipinfo.io/
+"The Trusted Source for IP Address Data"
+[hat tip: TryHackMe]
 --------------------------------------------------------
 Wannabrowser
 "Simulate any Browser"
 "With Wannabrowser you can mimic any User-Agent and look at the HTML-Sourcecode. Be a Bot, Browser, Tool on Smartphone, Desktop or Tablet."
 https://www.wannabrowser.net/
+[hat tip: TryHackMe]
+--------------------------------------------------------
+URL2PNG
+https://www.url2png.com/
+"Screenshots as a Service
+Capture snapshots of any website, right in your app, quickly and reliably."
 [hat tip: TryHackMe]
