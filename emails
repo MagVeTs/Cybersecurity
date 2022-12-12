@@ -39,6 +39,6 @@ https://mailheader.org
 --------------------------------------
 URL Extractor For Web Pages and Text
 https://www.convertcsv.com/url-extractor.htm
-Paste email message header into this site and it will extract URLs from the text.
+Paste email message header into this site and it will extract URLs from the text. CyberChef (https://gchq.github.io/CyberChef/) has a "Extract URLs" option that does this too.
 [hat tip: TryHackMe]
 
