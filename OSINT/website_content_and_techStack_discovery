@@ -92,5 +92,6 @@ Indicators: Lists all IPs, domains and hashes associated with the site. These in
 --------------------------------------------------------
 Wannabrowser
 "Simulate any Browser"
+"With Wannabrowser you can mimic any User-Agent and look at the HTML-Sourcecode. Be a Bot, Browser, Tool on Smartphone, Desktop or Tablet."
 https://www.wannabrowser.net/
 [hat tip: TryHackMe]
