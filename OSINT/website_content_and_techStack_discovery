@@ -107,3 +107,10 @@ https://www.url2png.com/
 "Screenshots as a Service
 Capture snapshots of any website, right in your app, quickly and reliably."
 [hat tip: TryHackMe]
+
+--------------------------------------------------------
+DMARC Domain Health Checker:
+"Use our DMARC Domain Checker to find out if an email domain is protected against phishing, spoofing or fraud. Our domain checker offers you quick insights by inspecting DMARC, SPF and DKIM records and shows you if there are any actions you need to take."
+https://dmarcian.com/domain-checker/
+[Note: this tool can be used to check if emails from this domain are vulnerable to spoofing]
+[hat tip: TryHackMe]
