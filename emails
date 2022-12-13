@@ -77,3 +77,8 @@ S/MIME (Secure/Multipurpose Internet Mail Extensions)
 "S/MIME (Secure/Multipurpose internet Mail Extensions) is a widely accepted protocol for sending digitally signed and encrypted messages." -- https://docs.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
 S/MIME for message signing and encryption in Exchange Online - https://learn.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
 [hat tip: TryHackMe]
+--------------------------------------------------
+SMTP (Simple Mail Transfer Protocol) Network Traffic information (helpful for examining PCAP files in Wireshark)
+https://www.wireshark.org/docs/dfref/s/smtp.html
+https://www.mailersend.com/blog/smtp-codes
+[hat tip: TryHackMe]
