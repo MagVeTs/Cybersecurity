@@ -72,3 +72,8 @@ DMARC Domain Health Checker:
 "Use our DMARC Domain Checker to find out if an email domain is protected against phishing, spoofing or fraud. Our domain checker offers you quick insights by inspecting DMARC, SPF and DKIM records and shows you if there are any actions you need to take."
 https://dmarcian.com/domain-checker/
 [hat tip: TryHackMe]
+
+S/MIME (Secure/Multipurpose Internet Mail Extensions)
+"S/MIME (Secure/Multipurpose internet Mail Extensions) is a widely accepted protocol for sending digitally signed and encrypted messages." -- https://docs.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
+S/MIME for message signing and encryption in Exchange Online - https://learn.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
+[hat tip: TryHackMe]
