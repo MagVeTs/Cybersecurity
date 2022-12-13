@@ -36,6 +36,8 @@ https://mha.azurewebsites.net/
 Mail Header Analysis
 https://mailheader.org
 [hat tip: TryHackMe]
+
+[Note: TryHackMe points out that it is worthwhile to use more than one of these tools because different tools may reveal different types of information; I saw this in practice.]
 --------------------------------------
 URL Extractor For Web Pages and Text
 https://www.convertcsv.com/url-extractor.htm
