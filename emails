@@ -58,4 +58,6 @@ DomainKeys Identified Mail (DKIM)
 "DKIM stands for DomainKeys Identified Mail and is used for the authentication of an email that’s being sent. Like SPF, DKIM is an open standard for email authentication that is used for DMARC alignment. A DKIM record exists in the DNS, but it is a bit more complicated than SPF. DKIM’s advantage is that it can survive forwarding, which makes it superior to SPF and a foundation for securing your email." -- https://dmarcian.com/what-is-dkim/
 DKIM Selectors
 https://dmarcian.com/dkim-selectors/
+DKIM DNS record overview
+https://help.returnpath.com/hc/en-us/articles/222481088-DKIM-DNS-record-overview
 [hat tip: TryHackMe]
