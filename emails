@@ -82,3 +82,7 @@ SMTP (Simple Mail Transfer Protocol) Network Traffic information (helpful for ex
 https://www.wireshark.org/docs/dfref/s/smtp.html
 https://www.mailersend.com/blog/smtp-codes
 [hat tip: TryHackMe]
+
+IMF (Internet Message Format) Network Traffic information (helpful for examining PCAP files in Wireshark)
+https://www.wireshark.org/docs/dfref/i/imf.html
+[hat tip: TryHackMe]
