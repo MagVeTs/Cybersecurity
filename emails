@@ -46,4 +46,10 @@ PhishTool
 https://www.phishtool.com/
 "PhishTool gives human analysts the power to reverse engineer phishing emails, to better defend against them. PhishTool is to phishing emails as a disassembler is to malware or a forensic toolkit is to file systems...PhishTool combines threat intelligence, OSINT, email metadata and battle tested auto-analysis pathways into one powerful phishing response platform..."
 [hat tip: TryHackMe]
+-------------------------------------
+Sender Policy Framework (SPF)
 
+Understanding SPF Syntax 
+https://dmarcian.com/spf-syntax-table/
+https://dmarcian.com/what-is-the-difference-between-spf-all-and-all/
+[hat tip: TryHackMe - ]
