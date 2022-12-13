@@ -48,9 +48,12 @@ https://www.phishtool.com/
 [hat tip: TryHackMe]
 -------------------------------------
 Sender Policy Framework (SPF)
-What is SPF -
-https://dmarcian.com/what-is-spf/
+""Sender Policy Framework (SPF) is used to authenticate the sender of an email. With an SPF record in place, Internet Service Providers can verify that a mail server is authorized to send email for a specific domain. An SPF record is a DNS TXT record containing a list of the IP addresses that are allowed to send email on behalf of your domain." -- https://dmarcian.com/what-is-spf/
 Understanding SPF Syntax -
 https://dmarcian.com/spf-syntax-table/
 https://dmarcian.com/what-is-the-difference-between-spf-all-and-all/
+[hat tip: TryHackMe]
+
+DomainKeys Identified Mail (DKIM)
+"DKIM stands for DomainKeys Identified Mail and is used for the authentication of an email that’s being sent. Like SPF, DKIM is an open standard for email authentication that is used for DMARC alignment. A DKIM record exists in the DNS, but it is a bit more complicated than SPF. DKIM’s advantage is that it can survive forwarding, which makes it superior to SPF and a foundation for securing your email." -- https://dmarcian.com/what-is-dkim/
 [hat tip: TryHackMe]
