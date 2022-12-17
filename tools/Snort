@@ -1,1 +1,3 @@
 https://www.snort.org/ - free, downloadable, IDS/IPS [hat tip: Jonathan Erez]
+
+To read FULL log information: sudo snort -r {$NAME_OF_SNORT_LOG_FILE} -X
