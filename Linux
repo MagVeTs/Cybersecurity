@@ -1,3 +1,6 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+[hat tip: https://tryhackme.com/room/zeekbro]
+
 Linux CLI
 ---------
 
@@ -85,3 +88,6 @@ grep -v -e 'test1' -e 'test2'                   Display lines that don't match o
 file                                            View file information.
 
 grep -rin Testvalue1 * | column -t | less -S    Search the "Testvalue1" string everywhere, organise column spaces and view the output with less.
+
+[hat tip: https://tryhackme.com/room/zeekbro]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
