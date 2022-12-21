@@ -97,3 +97,9 @@ In the TryHackMe room "Zeek Exercises" [https://tryhackme.com/room/zeekbroexerci
 The CLI can use the "uniq" command to list each unique domain.
 The problem is that each domain appeared many times with various sub-domains of varying lengths and textual content. There could also have been sub-sub-domains delineated by ".". How does one tell the computer to only look at the domain and TLD when determing uniqueness?
 The hint TryHackMe gave for this question used rev as part of the command. Basically, you reverse the text and then use "cut -d '.' -f 1-2" to pull out only the TLD and domain names. You have avoided the variability in the sub-domains and can be sure that you are only extracting the TLD and domain. Then you rev the data back into the proper order and list each unique occurence.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Learning Linux CLI (aka Terminal aka Bash)
+------------------------------------------
+https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+https://www.hackthebox.com/blog/learn-linux
+https://www.freecodecamp.org/news/the-linux-commands-handbook/
