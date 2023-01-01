@@ -2,3 +2,10 @@ MyEventLog
 https://www.myeventlog.com/
 https://www.myeventlog.com/search/browse
 "MyEventlog.com, is a free searchable database containing solutions and comments to event log and syslog messages. Unlike other web sites, MyEventlog.com is completely free for everybody, and does not require a subscription. MyEventlog.com does not feature any banner ads."
+
+LOLBAS
+Living Off The Land Binaries and Scripts (and now also Libraries)
+"The goal of the LOLBAS project is to document every binary, script, and library that can be used for Living Off The Land techniques."
+https://lolbas-project.github.io/#
+https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md
+[hat tip: TryHackMe]
