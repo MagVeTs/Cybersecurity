@@ -2,6 +2,7 @@ File Uploads
 ------------
 https://tryhackme.com/room/uploadvulns
 Tons of important information on uploading files to a webserver. Can be used for various attacks; including RCE (Remote Code Execution) by uploading files containing shells or reverse-shells.
+Here is some of what is in this room:
 
 "So, we have a file upload point on a site. How would we go about exploiting it?
 
