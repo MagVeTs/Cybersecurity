@@ -54,7 +54,7 @@ WantedBy=multi-user.target’ > $eop - sets the state (or runlevel) at which thi
 
 /bin/systemctl link $eop - per the systemctl man page, this makes our unit file available for systemctl commands even though it is outside of the standard search paths
 
-/bin/systemctl enable —now $eop - also per the systemctl man page “…Enable one or more units or unit instances. This will create a set of symlinks, as encoded in the "[Install]" sections of the indicated unit files. After the symlinks have been created, the system manager configuration is reloaded (in a way equivalent to daemon-reload), in order to ensure the changes are taken into account immediately. Note that this does not have the effect of also starting any of the units being enabled. If this is desired, combine this command with the --now switch…”
+/bin/systemctl enable --now $eop - also per the systemctl man page “…Enable one or more units or unit instances. This will create a set of symlinks, as encoded in the "[Install]" sections of the indicated unit files. After the symlinks have been created, the system manager configuration is reloaded (in a way equivalent to daemon-reload), in order to ensure the changes are taken into account immediately. Note that this does not have the effect of also starting any of the units being enabled. If this is desired, combine this command with the --now switch…”
 
 From here we check the output file we created and are greeted with the [data from the targeted file residing in the root directory]."
 From: https://unicornsec.com/home/tryhackme-vulnversity
