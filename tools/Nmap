@@ -52,18 +52,33 @@ Six Port States in Nmap
 
 
 Port Scan Type  |	Example Command
-TCP Connect Scan	nmap -sT 10.10.133.224
-TCP SYN Scan	    sudo nmap -sS 10.10.133.224
-UDP Scan	        sudo nmap -sU 10.10.133.224
+TCP Connect Scan	nmap -sT <MACHINE_IP>
+[available even for unprivileged users; completes 3-way handshake before sending RST packet]
+TCP SYN Scan	    sudo nmap -sS <MACHINE_IP>
+[available only for privileged users (root/sudoers); default Nmap scan; does not complete 3-way handshake; instead, sends RST immediately after receiving ACK reply to its SYN packet; by not completing 3-way handshake this scan may avoid getting logged by target]
+UDP Scan	        sudo nmap -sU <MACHINE_IP>
+[since UDP is connectionless protocol, Nmap knows port is closed if it receives IMCP type 3 (destination unreachable/code 3 (port unreachable) message; no message means port open (or perhaps port is being filtered by a firewall)]
 
 
 Option        |         Purpose
 -p-	                    all ports
 -p1-1023                scan ports 1 to 1023
 -F	                    100 most common ports
+--top-ports 10          will check the ten most common ports.
 -r	                    scan ports in consecutive order
 -T<0-5>	                -T0 being the slowest and T5 the fastest
 --max-rate 50	          rate <= 50 packets/sec
 --min-rate 15	          rate >= 15 packets/sec
 --min-parallelism 100	  at least 100 probes in parallel
+
+Scan Rates and Stealthiness
+---------------------------
+"You can control the scan timing using -T<0-5>. -T0 is the slowest (paranoid), while -T5 is the fastest. According to Nmap manual page, there are six templates:
+paranoid (0)
+sneaky (1)
+polite (2)
+normal (3)
+aggressive (4)
+insane (5)
+To avoid IDS alerts, you might consider -T0 or -T1. For instance, -T0 scans one port at a time and waits 5 minutes between sending each probe, so you can guess how long scanning one target would take to finish. If you don’t specify any timing, Nmap uses normal -T3. Note that -T5 is the most aggressive in terms of speed; however, this can affect the accuracy of the scan results due to the increased likelihood of packet loss. Note that -T4 is often used during CTFs and when learning to scan on practice targets, whereas -T1 is often used during real engagements where stealth is more important."
 
