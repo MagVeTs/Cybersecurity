@@ -18,15 +18,22 @@ nmap -sL TARGETS.
 Nmap Host Discovery Scan Types (i.e. without port scans) With Example Command
 -------------------------------------
 ARP Scan:	sudo nmap -PR -sn MACHINE_IP/24
-(ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan [http://www.royhills.co.uk/wiki/index.php/Main_Page])
+(ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan [http://www.royhills.co.uk/wiki/index.php/Main_Page]); install on Linux: apt install arp-scan)
 ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
 ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
 ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
 TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
-TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30
-UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30
+TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30 [only available for root/sudoers]
+UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30 [if the port is closed this generates an ICMP Type 3, Code 3 (port unreachable response) - then you know the host is up; if no response is received you do not know if the host is down or the host is up but the port is open; therefore, it is important to send the UDP Ping Scan specifically to weird ports that would probably be closed (if you are using it for host discovery purposes)]
 
-Option	Purpose
--n	no DNS lookup
--R	reverse-DNS lookup for all hosts (including those presently offline)
--sn	host discovery only
+Option	- Purpose
+-n	      no reverse-DNS lookup
+-R	      do reverse-DNS lookup for ALL hosts (including those presently offline)
+-sn	      perform host discovery only; do not scan for open ports
+
+masscan is a scanning tool similar to Nmap. However, it is quicker because its packet generating rate is aggressive. Install on Linux: apt install masscan.
+Example syntax:
+masscan MACHINE_IP/24 -p443
+masscan MACHINE_IP/24 -p80,443
+masscan MACHINE_IP/24 -p22-25
+masscan MACHINE_IP/24 ‐‐top-ports 100 
