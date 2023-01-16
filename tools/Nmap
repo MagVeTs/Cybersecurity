@@ -1,3 +1,32 @@
 Nmap Scripting Engine
 https://www.youtube.com/watch?v=M-Uq7YSfZ4I
 [hat tip: Jonathan Erez]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/nmap01 [with some editing and additions]
+
+Nmap target specification options:
+- list: MACHINE_IP scanme.nmap.org example.com will scan 3 IP addresses.
+- range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
+- subnet: MACHINE_IP/30 will scan 4 IP addresses.
+You can also provide a file as input for your list of targets: nmap -iL list_of_hosts.txt.
+
+Check the list of hosts that Nmap will scan (helpful for situations where you are planning to scan a subnet and do not want to calculate the IP addresses in that subnet - Nmap will do the math for you and list all the possible IPs in the subnet you gave):
+nmap -sL TARGETS.
+(this option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names. Names might reveal various information to the pentester. [If you don’t want Nmap to the DNS server, you can add -n.])
+
+Nmap Host Discovery Scan Types (i.e. without port scans) With Example Command
+-------------------------------------
+ARP Scan:	sudo nmap -PR -sn MACHINE_IP/24
+(ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan [http://www.royhills.co.uk/wiki/index.php/Main_Page])
+ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30
+TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30
+UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30
+
+Option	Purpose
+-n	no DNS lookup
+-R	reverse-DNS lookup for all hosts (including those presently offline)
+-sn	host discovery only
