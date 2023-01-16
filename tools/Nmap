@@ -22,7 +22,7 @@ ARP Scan:	sudo nmap -PR -sn MACHINE_IP/24
 ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
 ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
 ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30
+TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
 TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30
 UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30
 
