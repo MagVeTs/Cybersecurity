@@ -154,8 +154,26 @@ normal (3)
 aggressive (4)
 insane (5)
 To avoid IDS alerts, you might consider -T0 or -T1. For instance, -T0 scans one port at a time and waits 5 minutes between sending each probe, so you can guess how long scanning one target would take to finish. If you don’t specify any timing, Nmap uses normal -T3. Note that -T5 is the most aggressive in terms of speed; however, this can affect the accuracy of the scan results due to the increased likelihood of packet loss. Note that -T4 is often used during CTFs and when learning to scan on practice targets, whereas -T1 is often used during real engagements where stealth is more important."
+----------------------------------------------------------------------------------------
 
-OTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's FOUR Nmap ROOMS (https://tryhackme.com/room/nmap01 - https://tryhackme.com/room/nmap04); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
+
+Option	Meaning
+-sV	determine service/version info on open ports
+-sV --version-light	try the most likely probes (2)
+-sV --version-all	try all available probes (9)
+-O	detect OS
+--traceroute	run traceroute to target
+--script=SCRIPTS	Nmap scripts to run
+-sC or --script=default	run default scripts
+-A	equivalent to -sV -O -sC --traceroute
+-oN	save output in normal format
+-oG	save output in grepable format
+-oX	save output in XML format
+-oA	save output in normal, XML and Grepable formats
+
+
+
+NOTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's FOUR Nmap ROOMS (https://tryhackme.com/room/nmap01 - https://tryhackme.com/room/nmap04); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
 =======================================================================================================================================================================
 
 Nmap Scripting Engine
