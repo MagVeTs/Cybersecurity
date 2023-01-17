@@ -34,12 +34,12 @@ Nmap Host Discovery Scan Types (i.e. without port scans) With Example Command
 -------------------------------------
 1) ARP Scan:	sudo nmap -PR -sn TARGET_MACHINE_IP/24
 [ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan (http://www.royhills.co.uk/wiki/index.php/Main_Page]); to install it on Linux, use: apt install arp-scan]
-2) ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-3) ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-4) ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-5) TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
-6) TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30 [only available for root/sudoers]
-7) UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30 [if the port is closed this generates an ICMP Type 3, Code 3 (port unreachable response) - then you know the host is up; if no response is received you do not know if the host is down or the host is up but the port is open; therefore, it is important to send the UDP Ping Scan specifically to weird ports that would probably be closed (if you are using it for host discovery purposes)]
+2) ICMP Echo Scan:	sudo nmap -PE -sn TARGET_MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+3) ICMP Timestamp Scan:	sudo nmap -PP -sn TARGET_MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+4) ICMP Address Mask Scan:	sudo nmap -PM -sn TARGET_MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+5) TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn TARGET_MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
+6) TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn TARGET_MACHINE_IP/30 [only available for root/sudoers]
+7) UDP Ping Scan:	sudo nmap -PU53,161,162 -sn TARGET_MACHINE_IP/30 [if the port is closed this generates an ICMP Type 3, Code 3 (port unreachable response) - then you know the host is up; if no response is received you do not know if the host is down or the host is up but the port is open; therefore, it is important to send the UDP Ping Scan specifically to weird ports that would probably be closed (if you are using it for host discovery purposes)]
 
 Option	- Purpose
 -n	      no reverse-DNS lookup
@@ -69,25 +69,27 @@ Six Port States in Nmap
 
 
 Port Scan Type     |	  Example Command
-1) TCP Connect Scan	    nmap -sT <MACHINE_IP>
+1) TCP Connect Scan	    nmap -sT TARGET_MACHINE_IP
 [available even for unprivileged users; completes 3-way handshake before sending RST packet]
-2) TCP SYN Scan	        sudo nmap -sS <MACHINE_IP>
+2) TCP SYN Scan	        sudo nmap -sS TARGET_MACHINE_IP
 [available only for privileged users (root/sudoers); default Nmap scan; does not complete 3-way handshake; instead, sends RST immediately after receiving ACK reply to its SYN packet; by not completing 3-way handshake this scan may avoid getting logged by target]
-3) UDP Scan	            sudo nmap -sU <MACHINE_IP>
+3) UDP Scan	            sudo nmap -sU TARGET_MACHINE_IP
 [since UDP is connectionless protocol, Nmap knows port is closed if it receives IMCP type 3 (destination unreachable/code 3 (port unreachable) message; no message means port open (or perhaps port is being filtered by a firewall)]
-4) TCP Null Scan	      sudo nmap -sN MACHINE_IP [no flags set; closed port will respond with RST; open/filtered port will trigger no response] 
-5) TCP FIN Scan	        sudo nmap -sF MACHINE_IP [FIN flag set; closed port will respond with RST; open/filtered port will trigger no response] 
-6) TCP Xmas Scan	      sudo nmap -sX MACHINE_IP [FIN, PSH, and URG flags set; closed port will respond with RST; open/filtered port will trigger no response] 
-7) TCP Maimon Scan	    sudo nmap -sM MACHINE_IP [FIN and ACK flags set; closed and open ports will both respond with RST packet; some BSD systems will not repond if the port is open; not usually used with modern systems]
-8) TCP ACK Scan	        sudo nmap -sA MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; however, if there is a firewall you may be able to learn which ports are unfiltered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
-9) TCP Window Scan	    sudo nmap -sW MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; Nmap examines the TCP Window field of the RST responses; based on the TCP Window, Nmap may list certain ports as "closed" - this may indicate that there is a firewall and these specific ports are NOT filtered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
+4) TCP Null Scan	      sudo nmap -sN TARGET_MACHINE_IP [no flags set; closed port will respond with RST; open/filtered port will trigger no response] 
+5) TCP FIN Scan	        sudo nmap -sF TARGET_MACHINE_IP [FIN flag set; closed port will respond with RST; open/filtered port will trigger no response] 
+6) TCP Xmas Scan	      sudo nmap -sX TARGET_MACHINE_IP [FIN, PSH, and URG flags set; closed port will respond with RST; open/filtered port will trigger no response] 
+7) TCP Maimon Scan	    sudo nmap -sM TARGET_MACHINE_IP [FIN and ACK flags set; closed and open ports will both respond with RST packet; some BSD systems will not repond if the port is open; not usually used with modern systems]
+8) TCP ACK Scan	        sudo nmap -sA TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; however, if there is a firewall you may be able to learn which ports are unfiltered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
+9) TCP Window Scan	    sudo nmap -sW TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; Nmap examines the TCP Window field of the RST responses; based on the TCP Window, Nmap may list certain ports as "closed" - this may indicate that there is a firewall and these specific ports are NOT filtered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
 10) Custom TCP Scan	    sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP [only beneficial if you know how to interpret the response you receive]
 
 
-Spoofed Source IP	sudo nmap -S SPOOFED_IP MACHINE_IP
+Spoofed Source IP	sudo nmap -S SPOOFED_IP TARGET_MACHINE_IP
+"In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response. If you try to scan a target from some random network using a spoofed IP address, chances are you won’t have any response routed to you, and the scan results could be unreliable.
+
 Spoofed MAC Address	--spoof-mac SPOOFED_MAC
-Decoy Scan	nmap -D DECOY_IP,ME MACHINE_IP
-Idle (Zombie) Scan	sudo nmap -sI ZOMBIE_IP MACHINE_IP
+Decoy Scan	nmap -D DECOY_IP,ME TARGET_MACHINE_IP
+Idle (Zombie) Scan	sudo nmap -sI ZOMBIE_IP TARGET_MACHINE_IP
 Fragment IP data into 8 bytes	-f
 Fragment IP data into 16 bytes	-ff
 
