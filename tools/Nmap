@@ -3,36 +3,52 @@ https://www.youtube.com/watch?v=M-Uq7YSfZ4I
 [hat tip: Jonathan Erez]
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TCP Header Flags [important for understanding various types of Nmap scans]
+--------------------------------------------------------------------------
+From: https://tryhackme.com/room/nmap02 ; Task 3 --
+"TCP header flags are:
+
+1. URG: Urgent flag indicates that the urgent pointer filed is significant. The urgent pointer indicates that the incoming data is urgent, and that a TCP segment with the URG flag set is processed immediately without consideration of having to wait on previously sent TCP segments.
+2. ACK: Acknowledgement flag indicates that the acknowledgement number is significant. It is used to acknowledge the receipt of a TCP segment.
+3. PSH: Push flag asking TCP to pass the data to the application promptly.
+4. RST: Reset flag is used to reset the connection. Another device, such as a firewall, might send it to tear a TCP connection. This flag is also used when data is sent to a host and there is no service on the receiving end to answer.
+5. SYN: Synchronize flag is used to initiate a TCP 3-way handshake and synchronize sequence numbers with the other host. The sequence number should be set randomly during TCP connection establishment.
+6. FIN: The sender has no more data to send."
+----------------------------------------------------------------------------
+
 Host Discovery [from: https://tryhackme.com/room/nmap01 (with some editing and additions)]
 ------------------------------------------------------------------------------------------
 
 Nmap target specification options:
-- list: MACHINE_IP scanme.nmap.org example.com will scan 3 IP addresses.
+- list: 10.11.12.15 scanme.nmap.org example.com will scan 3 IP addresses.
 - range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
-- subnet: MACHINE_IP/30 will scan 4 IP addresses.
+- subnet: TARGET_MACHINE_IP/30 will scan 4 IP addresses.
 You can also provide a file as input for your list of targets: nmap -iL list_of_hosts.txt.
 
-Check the list of hosts that Nmap will scan (helpful for situations where you are planning to scan a subnet and do not want to calculate the IP addresses in that subnet - Nmap will do the math for you and list all the possible IPs in the subnet you gave):
+TIP:
+In order to check the list of hosts that Nmap will scan (helpful for situations where you are planning to scan a subnet and do not want to calculate the IP addresses in that subnet - Nmap will do the math for you and list all the possible IPs in the subnet you gave), use:
 nmap -sL TARGETS.
 (this option will give you a detailed list of the hosts that Nmap will scan without scanning them; however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names. Names might reveal various information to the pentester. [If you don’t want Nmap to the DNS server, you can add -n.])
 
 Nmap Host Discovery Scan Types (i.e. without port scans) With Example Command
 -------------------------------------
-ARP Scan:	sudo nmap -PR -sn MACHINE_IP/24
-(ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan [http://www.royhills.co.uk/wiki/index.php/Main_Page]); install on Linux: apt install arp-scan)
-ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
-TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
-TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30 [only available for root/sudoers]
-UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30 [if the port is closed this generates an ICMP Type 3, Code 3 (port unreachable response) - then you know the host is up; if no response is received you do not know if the host is down or the host is up but the port is open; therefore, it is important to send the UDP Ping Scan specifically to weird ports that would probably be closed (if you are using it for host discovery purposes)]
+1) ARP Scan:	sudo nmap -PR -sn TARGET_MACHINE_IP/24
+[ARP scans only allowed for root and sudoers; ARP scans only work for machines in your own subnet; there is also a dedicated ARP scan tool called arp-scan (http://www.royhills.co.uk/wiki/index.php/Main_Page]); to install it on Linux, use: apt install arp-scan]
+2) ICMP Echo Scan:	sudo nmap -PE -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+3) ICMP Timestamp Scan:	sudo nmap -PP -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+4) ICMP Address Mask Scan:	sudo nmap -PM -sn MACHINE_IP/24 [may be blocked by firewalls - worth trying all ICMP types in case one isn't blocked]
+5) TCP SYN Ping Scan:	sudo nmap -PS22,80,443 -sn MACHINE_IP/30 [will work even for unprivileged users; however, only root/sudoers can avoid completion of 3-way handshake]
+6) TCP ACK Ping Scan:	sudo nmap -PA22,80,443 -sn MACHINE_IP/30 [only available for root/sudoers]
+7) UDP Ping Scan:	sudo nmap -PU53,161,162 -sn MACHINE_IP/30 [if the port is closed this generates an ICMP Type 3, Code 3 (port unreachable response) - then you know the host is up; if no response is received you do not know if the host is down or the host is up but the port is open; therefore, it is important to send the UDP Ping Scan specifically to weird ports that would probably be closed (if you are using it for host discovery purposes)]
 
 Option	- Purpose
 -n	      no reverse-DNS lookup
 -R	      do reverse-DNS lookup for ALL hosts (including those presently offline)
 -sn	      perform host discovery only; do not scan for open ports
-
-masscan is a scanning tool similar to Nmap. However, it is quicker because its packet generating rate is aggressive. Install on Linux: apt install masscan.
+--------------------------------------------------------------------------------------
+masscan
+---------
+masscan is a scanning tool similar to Nmap. However, it is quicker because its packet generating rate is aggressive. Install on Linux with: apt install masscan.
 Example syntax:
 masscan MACHINE_IP/24 -p443
 masscan MACHINE_IP/24 -p80,443
@@ -52,13 +68,29 @@ Six Port States in Nmap
 6) Closed|Filtered: This means that Nmap cannot decide whether a port is closed or filtered.
 
 
-Port Scan Type  |	Example Command
-TCP Connect Scan	nmap -sT <MACHINE_IP>
+Port Scan Type     |	  Example Command
+1) TCP Connect Scan	    nmap -sT <MACHINE_IP>
 [available even for unprivileged users; completes 3-way handshake before sending RST packet]
-TCP SYN Scan	    sudo nmap -sS <MACHINE_IP>
+2) TCP SYN Scan	        sudo nmap -sS <MACHINE_IP>
 [available only for privileged users (root/sudoers); default Nmap scan; does not complete 3-way handshake; instead, sends RST immediately after receiving ACK reply to its SYN packet; by not completing 3-way handshake this scan may avoid getting logged by target]
-UDP Scan	        sudo nmap -sU <MACHINE_IP>
+3) UDP Scan	            sudo nmap -sU <MACHINE_IP>
 [since UDP is connectionless protocol, Nmap knows port is closed if it receives IMCP type 3 (destination unreachable/code 3 (port unreachable) message; no message means port open (or perhaps port is being filtered by a firewall)]
+4) TCP Null Scan	      sudo nmap -sN MACHINE_IP [no flags set; closed port will respond with RST; open/filtered port will trigger no response] 
+5) TCP FIN Scan	        sudo nmap -sF MACHINE_IP [FIN flag set; closed port will respond with RST; open/filtered port will trigger no response] 
+6) TCP Xmas Scan	      sudo nmap -sX MACHINE_IP [FIN, PSH, and URG flags set; closed port will respond with RST; open/filtered port will trigger no response] 
+7) TCP Maimon Scan	    sudo nmap -sM MACHINE_IP [FIN and ACK flags set; closed and open ports will both respond with RST packet; some BSD systems will not repond if the port is open; not usually used with modern systems]
+8) TCP ACK Scan	        sudo nmap -sA MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; however, if there is a firewall you may be able to learn which ports are unfiltered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
+9) TCP Window Scan	    sudo nmap -sW MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; Nmap examines the TCP Window field of the RST responses; based on the TCP Window, Nmap may list certain ports as "closed" - this may indicate that there is a firewall and these specific ports are NOT filtered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
+10) Custom TCP Scan	    sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP [only beneficial if you know how to interpret the response you receive]
+
+
+Spoofed Source IP	sudo nmap -S SPOOFED_IP MACHINE_IP
+Spoofed MAC Address	--spoof-mac SPOOFED_MAC
+Decoy Scan	nmap -D DECOY_IP,ME MACHINE_IP
+Idle (Zombie) Scan	sudo nmap -sI ZOMBIE_IP MACHINE_IP
+Fragment IP data into 8 bytes	-f
+Fragment IP data into 16 bytes	-ff
+
 
 
 Option        |         Purpose
@@ -71,6 +103,13 @@ Option        |         Purpose
 --max-rate 50	          rate <= 50 packets/sec
 --min-rate 15	          rate >= 15 packets/sec
 --min-parallelism 100	  at least 100 probes in parallel
+--source-port PORT_NUM  specify source port number
+--data-length NUM       append random data to reach given length [may help avoid IDS/firewalls triggered by expected malicious packet lengths]
+--reason	              explains how Nmap made its conclusion
+-v	                    verbose [gives more details about scan]
+-vv	                    very verbose [gives even more details about scan]
+-d	                    debugging [gives more details about scan]
+-dd	                    more details for debugging [gives even more details about scan]
 
 Scan Rates and Stealthiness
 ---------------------------
