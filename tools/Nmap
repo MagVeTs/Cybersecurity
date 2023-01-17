@@ -132,16 +132,17 @@ Option        |         Purpose
 -F	                    100 most common ports
 --top-ports 10          will check the ten most common ports.
 -r	                    scan ports in consecutive order
--T<0-5>	                -T0 being the slowest and T5 the fastest
---max-rate 50	          rate <= 50 packets/sec
---min-rate 15	          rate >= 15 packets/sec
---min-parallelism 100	  at least 100 probes in parallel
+-T<0-5>	                control the scan timing (-T0 being the slowest and -T5 the fastest; see below in the "Scan Rates and Stealthiness" section)
+--max-rate 50	        rate <= 50 packets/sec; control the scan timing
+--min-rate 15	        rate >= 15 packets/sec; control the scan timing
+--min-parallelism 100	at least 100 probes in parallel
 --source-port PORT_NUM  specify source port number
---reason	              explains how Nmap made its conclusion
--v	                    verbose [gives more details about scan]
--vv	                    very verbose [gives even more details about scan]
--d	                    debugging [gives more details about scan]
--dd	                    more details for debugging [gives even more details about scan]
+--reason	            output explains how Nmap made its conclusion
+-v	                    verbose output [gives more details about scan]
+-vv	                    very verbose output [gives even more details about scan]
+-d	                    debugging [output gives more details about scan]
+-dd	                    more details for debugging [output gives even more details about scan]
+--traceroute	        run traceroute to target [note: many routers are configured not to send ICMP Time-to-Live exceeded, this will prevent discovery of their IP addresses]
 ----------------------------------------------------------------------------------------
 
 Scan Rates and Stealthiness
@@ -156,22 +157,50 @@ insane (5)
 To avoid IDS alerts, you might consider -T0 or -T1. For instance, -T0 scans one port at a time and waits 5 minutes between sending each probe, so you can guess how long scanning one target would take to finish. If you don’t specify any timing, Nmap uses normal -T3. Note that -T5 is the most aggressive in terms of speed; however, this can affect the accuracy of the scan results due to the increased likelihood of packet loss. Note that -T4 is often used during CTFs and when learning to scan on practice targets, whereas -T1 is often used during real engagements where stealth is more important."
 ----------------------------------------------------------------------------------------
 
+Service and OS Detection
+------------------------
 
-Option	Meaning
--sV	determine service/version info on open ports
--sV --version-light	try the most likely probes (2)
--sV --version-all	try all available probes (9)
--O	detect OS
---traceroute	run traceroute to target
---script=SCRIPTS	Nmap scripts to run
--sC or --script=default	run default scripts
--A	equivalent to -sV -O -sC --traceroute
--oN	save output in normal format
--oG	save output in grepable format
--oX	save output in XML format
--oA	save output in normal, XML and Grepable formats
+Option            |	               Meaning
+------                             -------
+1) -sV	                           determine service/version info on open ports; -sV forces 3-way handshake; incompatible with stealth scan
+2) -sV --version-intensity NUM     specify the version probe intensity level; NUM = <0-9>
+3) -sV --version-light	           try the most likely probes (= version probe intensity level 2)
+4) -sV --version-all	           try all available probes (= version probe intensity level 9)
+5) -O	                           detect OS; this is an educated guess; requires target to have at least one port open and one port closed for reliable guess; virtualization on target may distort OS fingerprint
+----------------------------------------------------------------------------------------
+Nmap Scripting Engine (NSE)
+---------------------------
+NOTE: a list of pre-written scripts can be found in /usr/share/nmap/scripts; scripts end with .nse extension; to learn what a particular script does, open it in less or another text editor and read its description.
 
+Option           |             Meaning
+------                         -------
+1) --script="SCRIPT_NAME(S)"   tells Nmap which script(s) to run by name; you can use wildcards [e.g. --script "ftp*" will run all scripts whose name starts with ftp]
+2) -sC or --script=default     Nmap will run its default scripts
+3) -A	                       equivalent to -sV -O -sC --traceroute
+4) --script=auth	           Nmap will run authentication related scripts
+5) --script=broadcast	       Nmap will run scripts to discover hosts by sending broadcast messages
+6) --script=brute	           Nmap will run scripts that perform brute-force password auditing against logins
+7) --script=discovery	       Nmap will run scripts that retrieve accessible information, such as database tables and DNS names
+8) --script=dos	               Nmap will run scripts that detect servers vulnerable to Denial of Service (DoS)
+9) --script=exploit	           Nmap will run scripts that attempts to exploit various vulnerable services
+10) --script=external	       Nmap will run scripts that check with third-party services (such as Geoplugin and Virustotal)
+11) --script=fuzzer	           Nmap will run scripts that launch fuzzing attacks
+12) --script=intrusive	       Nmap will run intrusive scripts such as brute-force attacks and exploitation
+13) --script=malware	       Nmap will run scripts that scan for backdoors
+14) --script=safe	           Nmap will run safe scripts that won’t crash the target
+15) --script=version	       Nmap will run scripts that retrieve service versions
+16) --script=vuln	           Nmap will run scripts that check for vulnerabilities or exploit vulnerable services
+---------------------------------------------------------------------------------------
 
+Saving Nmap Output
+------------------
+Option           |             Meaning
+------                         -------
+1) -oN FILENAME                save output in normal format (the format that appears as output on the terminal when Nmap is run); most readable
+2) -oG FILENAME                save output in grepable format
+<3) -oS FILENAME               save output in the normal format but wrtitten in leetspeak>
+4) -oX FILENAME                save output in XML format; most convenient for processing the output in other programs
+5) -oA FILENAME	               save output in normal, XML and Grepable formats
 
 NOTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's FOUR Nmap ROOMS (https://tryhackme.com/room/nmap01 - https://tryhackme.com/room/nmap04); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
 =======================================================================================================================================================================
