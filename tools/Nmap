@@ -81,7 +81,7 @@ Port Scan Type     |	  Example Command
 7) TCP Maimon Scan	    sudo nmap -sM TARGET_MACHINE_IP [FIN and ACK flags set; closed and open ports will both respond with RST packet; some BSD systems will not repond if the port is open; not usually used with modern systems]
 8) TCP ACK Scan	        sudo nmap -sA TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; however, if there is a firewall you may be able to learn which ports are unfiltered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
 9) TCP Window Scan	    sudo nmap -sW TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; Nmap examines the TCP Window field of the RST responses; based on the TCP Window, Nmap may list certain ports as "closed" - this may indicate that there is a firewall and these specific ports are NOT filtered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
-10) Custom TCP Scan	    sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP [only beneficial if you know how to interpret the response you receive]
+10) Custom TCP Scan	    sudo nmap --scanflags URGACKPSHRSTSYNFIN TARGET_MACHINE_IP [only beneficial if you know how to interpret the response you receive]
 
 
 Spoofed Source IP	sudo nmap -S SPOOFED_IP TARGET_MACHINE_IP
