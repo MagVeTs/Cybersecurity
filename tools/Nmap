@@ -23,7 +23,7 @@ Nmap target specification options:
 - list: 10.11.12.15 scanme.nmap.org example.com will scan 3 IP addresses.
 - range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
 - subnet: TARGET_MACHINE_IP/30 will scan 4 IP addresses.
-You can also provide a file as input for your list of targets: nmap -iL list_of_hosts.txt.
+You can also provide a file as input for your list of targets, e.g.: nmap -iL list_of_hosts.txt
 
 TIP:
 In order to check the list of hosts that Nmap will scan (helpful for situations where you are planning to scan a subnet and do not want to calculate the IP addresses in that subnet - Nmap will do the math for you and list all the possible IPs in the subnet you gave), use:
