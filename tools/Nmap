@@ -2,7 +2,9 @@ Nmap Scripting Engine
 https://www.youtube.com/watch?v=M-Uq7YSfZ4I
 [hat tip: Jonathan Erez]
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+=======================================================================================================================================================================
+NOTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's Nmap rooms (https://tryhackme.com); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
+
 TCP Header Flags [important for understanding various types of Nmap scans]
 --------------------------------------------------------------------------
 From: https://tryhackme.com/room/nmap02 ; Task 3 --
@@ -18,7 +20,6 @@ From: https://tryhackme.com/room/nmap02 ; Task 3 --
 
 Host Discovery [from: https://tryhackme.com/room/nmap01 (with some editing and additions)]
 ------------------------------------------------------------------------------------------
-
 Nmap target specification options:
 - list: 10.11.12.15 scanme.nmap.org example.com will scan 3 IP addresses.
 - range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
@@ -84,6 +85,7 @@ Port Scan Type     |	  Example Command
 8) TCP ACK Scan	        sudo nmap -sA TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; however, if there is a firewall you may be able to learn which ports are unfiltered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
 9) TCP Window Scan	    sudo nmap -sW TARGET_MACHINE_IP [ACK flag set; closed and open ports will both respond with RST packet; Nmap examines the TCP Window field of the RST responses; based on the TCP Window, Nmap may list certain ports as "closed" - this may indicate that there is a firewall and these specific ports are NOT filtered; note: this does not clarify whether these ports are open or closed and merely not being filtered by firewall rules]
 10) Custom TCP Scan	    sudo nmap --scanflags URGACKPSHRSTSYNFIN TARGET_MACHINE_IP [only beneficial if you know how to interpret the response you receive]
+-----------------------------------------------------------
 
 Spoofing and Decoys
 --------------------
@@ -102,7 +104,8 @@ You can launch a decoy scan by specifying a specific or random IP address after 
 Spoofing the source IP address can be a great approach to scanning stealthily. However, spoofing will only work in specific network setups. It requires you to be in a position where you can monitor the traffic. Considering these limitations, spoofing your IP address can have little use; however, we can give it an upgrade with the idle scan ... The idle (zombie) scan requires the following three steps to discover whether a port is open:
 1) Trigger the idle host to respond so that you can record the current IP ID on the idle host.
 2) Send a SYN packet to a TCP port on the target. The packet should be spoofed to appear as if it was coming from the idle host (zombie) IP address.
-3) Trigger the idle machine again to respond so that you can compare the new IP ID with the one received earlier.
+3) Trigger the idle machine again to respond.
+4) compare the new IP ID with the one received earlier.
 An example:
 1) The attacker system probes an idle (zombie) machine, e.g. a multi-function printer - the attacker sends a SYN/ACK; the idle machine is not expecting a SYN/ACK since it did not send a SYN packet; the idle machine responds with an RST packet containing its newly incremented IP ID; the attacker takes note of this IP ID.
 2) The attacker will send a SYN packet to the TCP port they want to check on the target machine in the next step. However, this packet will use the idle host (zombie) IP address as the source.
@@ -111,19 +114,19 @@ One of three scenarios can now occur:
     b) The TCP port is open; the target machine responds with a SYN/ACK which it sends to the idle machine; the idle machine is not expecting a SYN/ACK since it did not send a SYN packet; the idle machine WILL respond with an RST packet; the idle machine's IP ID WILL be incremented by 1.
     c) The TCP port is filtered; the target machine does not respond at all; ; the idle machine's IP ID will NOT be incremented.
 3) The attacker system sends a second SYN/ACK to the idle (zombie) machine; the idle machine is not expecting a SYN/ACK since it did not send a SYN packet; the idle machine WILL respond with an RST packet; the idle machine's IP ID WILL be incremented by 1.
-4) The attacker compares the idle (zombie) machine's original IP ID with the new one. If the IP ID was only incremented by 1 the TCP port is either closed or filtered. If the IP ID is incremented by 2 the attacker knows that the TCP
+4) The attacker compares the idle (zombie) machine's original IP ID with the new one. If the IP ID was only incremented by 1 the TCP port is either closed or filtered. If the IP ID is incremented by 2 the attacker knows that the TCP port is open.
 
-
-
-The idle scan, or zombie scan, requires an idle system connected to the network that you can communicate with. Practically, Nmap will make each probe appear as if coming from the idle (zombie) host, then it will check for indicators whether the idle (zombie) host received any response to the spoofed probe. This is accomplished by checking the IP identification (IP ID) value in the IP header. 
+NOTE: The idle (zombie) scan requires an IDLE system connected to the network that you can communicate with ... If the "idle" system is in communication with other systems (e.g. if the "idle" system is a printer and receives a print job) the IP ID will be incremented due to the communication with other systems and nothing can be learned from the IP ID incrementation.
+-------------------------------------------------------
 
 Avoiding IDS and Sophisticated Firewalls
 ----------------------------------------
      Option             |              Purpose
      ------                            --------
-1) 	-f                                 fragment IP data into 8 bytes [may help avoid IDS/firewalls triggered by certain data segment lengths]
-2) 	-ff                                fragment IP data into 16 bytes [may help avoid IDS/firewalls triggered by certain data segment lengths]
-3) data-length NUM                     append random data to reach given length [may help avoid IDS/firewalls triggered by certain data segment lengths]
+1) 	-f                                 fragment IP data into 8 bytes [may help avoid IDS/firewalls triggered by certain data segment lengths; you can change the default value by using the --mtu; however, you should always choose a multiple of 8]
+2) 	-ff                                fragment IP data into 16 bytes [may help avoid IDS/firewalls triggered by certain data segment lengths; you can change the default value by using the --mtu; however, you should always choose a multiple of 8]]
+3)  --data-length NUM                  append random data to reach given length [may help avoid IDS/firewalls triggered by certain data segment lengths]
+--------------------------------------------------------
 
 Other Options
 --------------
@@ -144,6 +147,7 @@ Option        |         Purpose
 -vv	                    very verbose [gives even more details about scan]
 -d	                    debugging [gives more details about scan]
 -dd	                    more details for debugging [gives even more details about scan]
+----------------------------------------------------------------------------------------
 
 Scan Rates and Stealthiness
 ---------------------------
@@ -156,3 +160,5 @@ aggressive (4)
 insane (5)
 To avoid IDS alerts, you might consider -T0 or -T1. For instance, -T0 scans one port at a time and waits 5 minutes between sending each probe, so you can guess how long scanning one target would take to finish. If you don’t specify any timing, Nmap uses normal -T3. Note that -T5 is the most aggressive in terms of speed; however, this can affect the accuracy of the scan results due to the increased likelihood of packet loss. Note that -T4 is often used during CTFs and when learning to scan on practice targets, whereas -T1 is often used during real engagements where stealth is more important."
 
+NOTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's Nmap rooms (https://tryhackme.com); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
+=======================================================================================================================================================================
