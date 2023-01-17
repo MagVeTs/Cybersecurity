@@ -5,6 +5,10 @@ https://www.youtube.com/watch?v=M-Uq7YSfZ4I
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Host Discovery [from: https://tryhackme.com/room/nmap01 (with some editing and additions)]
 ------------------------------------------------------------------------------------------
+
+![image](https://user-images.githubusercontent.com/109907528/212841010-0f2490df-fcd8-4741-92bb-a7f326bde151.png)
+
+
 Nmap target specification options:
 - list: MACHINE_IP scanme.nmap.org example.com will scan 3 IP addresses.
 - range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
