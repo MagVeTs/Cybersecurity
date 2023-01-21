@@ -1,0 +1,11 @@
+---------------------------------------------------------------
+From: https://tryhackme.com/room/protocolsandservers2 ; task 4
+Protocol  Default Port	Secured Protocol	Default Port with TLS
+--------  ------------  ----------------  ---------------------
+HTTP	         80         	HTTPS	             443
+FTP          	 21	          FTPS	             990
+SMTP	         25	          SMTPS	             465
+POP3	         110	        POP3S	             995
+IMAP	         143	        IMAPS	             993
+
+For Telnet (23) use SSH (22) instead.
