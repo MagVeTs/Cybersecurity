@@ -8,5 +8,5 @@ SMTP	         25	          SMTPS	             465
 POP3	         110	        POP3S	             995
 IMAP	         143	        IMAPS	             993
 
-For Telnet (23) use SSH (22) instead.
+For Telnet (23), use SSH (22) instead.
 ---------------------------------------------------------------------------------
