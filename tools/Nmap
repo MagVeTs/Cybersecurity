@@ -73,7 +73,7 @@ Port Scan Type     |	  Example Command
 [available only for privileged users (root/sudoers); default Nmap scan; does not complete 3-way handshake; instead, sends RST immediately after receiving ACK reply to its SYN packet; by not completing 3-way handshake this scan may avoid getting logged by target]
 3) UDP Scan	            sudo nmap -sU TARGET_MACHINE_IP
 [since UDP is connectionless protocol, Nmap knows port is closed if it receives IMCP type 3 (destination unreachable/code 3 (port unreachable) message; no message means port open (or perhaps port is being filtered by a firewall)]
-4) TCP Null Scan	      sudo nmap -sN TARGET_MACHINE_IP [no flags set; closed port will respond with RST; open/filtered port will trigger no response] 
+4) TCP Null Scan	      sudo nmap -sN TARGET_MACHINE_IP [no flags set; closed port will respond with RST; open/filtered port will trigger no response; a stealthy scan] 
 5) TCP FIN Scan	        sudo nmap -sF TARGET_MACHINE_IP [FIN flag set; closed port will respond with RST; open/filtered port will trigger no response] 
 6) TCP Xmas Scan	      sudo nmap -sX TARGET_MACHINE_IP [FIN, PSH, and URG flags set; closed port will respond with RST; open/filtered port will trigger no response] 
 7) TCP Maimon Scan	    sudo nmap -sM TARGET_MACHINE_IP [FIN and ACK flags set; closed and open ports will both respond with RST packet; some BSD systems will not repond if the port is open; not usually used with modern systems]
