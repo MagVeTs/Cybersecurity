@@ -132,3 +132,17 @@ msf6 > search type:auxiliary telnet
 
 Please remember that exploits take advantage of a vulnerability on the target system and may always show unexpected behavior. A low-ranking exploit may work perfectly, and an excellent ranked exploit may not, or worse, crash the target system.
 
+From: https://tryhackme.com/room/metasploitintro [with some editing]
+------------------------------------------------------------------------------------
+Metasploit: Exploitation
+Using Metasploit for scanning, vulnerability assessment and exploitation.
+From: https://tryhackme.com/room/metasploitexploitation
+
+Port Scanning
+
+Metasploit has a number of modules to scan open ports on the target system and network. You can list potential port scanning modules available using the 'search portscan' command.
+
+Port scanning modules will require you to set a few options. After selecting a module type: 'show options'
+example: msf6 auxiliary(scanner/portscan/tcp) > show options
+
+
