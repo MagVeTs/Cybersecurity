@@ -1,6 +1,6 @@
 Metasploit: Introduction
 An introduction to the main components of the Metasploit Framework.
-From: https://tryhackme.com/room/metasploitintro [with some editing]
+From: https://tryhackme.com/room/metasploitintro [with some edits and rephrasing]
 
 "Metasploit is the most widely used exploitation framework. Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation.
 
@@ -136,13 +136,30 @@ From: https://tryhackme.com/room/metasploitintro [with some editing]
 ------------------------------------------------------------------------------------
 Metasploit: Exploitation
 Using Metasploit for scanning, vulnerability assessment and exploitation.
-From: https://tryhackme.com/room/metasploitexploitation
+From: https://tryhackme.com/room/metasploitexploitation [with some edits and rephrasing]
 
 Port Scanning
 
 Metasploit has a number of modules to scan open ports on the target system and network. You can list potential port scanning modules available using the 'search portscan' command.
 
-Port scanning modules will require you to set a few options. After selecting a module type: 'show options'
-example: msf6 auxiliary(scanner/portscan/tcp) > show options
+Port scanning modules will require you to set a few options. After selecting a module type type: 'show options' (example: msf6 auxiliary(scanner/portscan/tcp) > show options)
 
+Options that need to be set, include:
+CONCURRENCY: Number of targets to be scanned simultaneously.
+PORTS: Port range to be scanned. Please note that 1-1000 here will not be the same as using Nmap with the default configuration. Nmap will scan the 1000 most used ports, while Metasploit will scan port numbers from 1 to 10000.
+RHOSTS: Target or target network to be scanned.
+THREADS: Number of threads that will be used simultaneously. More threads will result in faster scans.
 
+Note: You can directly perform Nmap scans from the msfconsole prompt (e.g. msf6 > nmap -sS 10.10.12.229)
+
+Some available port scanning modules are:
+
+UDP service Identification
+The scanner/discovery/udp_sweep module will allow you to quickly identify services running over the UDP (User Datagram Protocol) ... this module will not conduct an extensive scan of all possible UDP services but does provide a quick way to identify services such as DNS or NetBIOS.
+
+SMB Scans
+Metasploit offers several useful auxiliary modules that allow us to scan specific services, for example: SMB. Especially useful in a corporate network would be smb_enumshares and smb_version but please spend some time to identify scanners that the Metasploit version installed on your system offers.
+
+When performing service scans, it would be important not to omit more "exotic" services such as NetBIOS. NetBIOS (Network Basic Input Output System), similar to SMB, allows computers to communicate over the network to share files or send files to printers. The NetBIOS name of the target system can give you an idea about its role and even importance (e.g. CORP-DC, DEVOPS, SALES, etc.). You may also run across some shared files and folders that could be accessed either without a password or protected with a simple password (e.g. admin, administrator, root, toor, etc.).
+
+Remember, Metasploit has many modules that can help you have a better understanding of the target system and possibly help you find vulnerabilities. It is always worth performing a quick search to see if there are any modules that could be helpful based on your target system.
