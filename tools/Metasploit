@@ -231,4 +231,60 @@ FTP: Could allow anonymous login and provide access to interesting files.
 SMB: Could be vulnerable to SMB exploits like MS17-010
 SSH: Could have default or easy to guess credentials
 RDP: Could be vulnerable to Bluekeep or allow desktop access if weak credentials were used. 
+----------------------------------------------------------------------------------------------------------------------
+Vulnerabilities
+From: https://tryhackme.com/room/metasploitexploitation [with some edits and rephrasing]; Task 4
+Metasploit allows you to quickly identify some critical vulnerabilities that could be considered as “low hanging fruit”.  The term “low hanging fruit” usually refers to easily identifiable and exploitable vulnerabilities that could potentially allow you to gain a foothold on a system and, in some cases, gain high-level privileges such as root or administrator.
+
+Finding vulnerabilities using Metasploit will rely heavily on your ability to scan and fingerprint the target. The better you are at these stages, the more options Metasploit may provide you. For example, if you identify a VNC service running on the target, you may use the 'search' function on Metasploit to list useful modules. The results will contain payload and post modules. At this stage, these results are not very useful as we have not discovered a potential exploit to use just yet. However, in the case of VNC, there are several scanner modules that we can use to discover if the particular VNC service running on the system is vulnerable to being exploited.
+You can use the 'info' command for any module to have a better understanding of its use and purpose.
+For example, the auxiliary/scanner/vnc/vnc_login module info has a description that says:
+"This module will test a VNC server on a range of machines and report successful logins." - basically, it will allow you to run a list of usernames and passwords against the system to see if any are correct.
+-------------------------------------------------------------------------------------------------------------------
+Exploitation
+From: https://tryhackme.com/room/metasploitexploitation [with some edits and rephrasing]; Task 5
+
+As the name suggests, Metasploit is an exploitation framework. Exploits are the most populated module category.
+You can search exploits using the 'search' command, obtain more information about the exploit using the 'info' command, and launch the exploit using 'exploit' or 'run'. While the process itself is simple, remember that a successful outcome depends on a thorough understanding of services running on the target system.
+
+Most of the exploits will have a preset default payload. However, you can always use the 'show payloads' command to show a numbered list of other payloads you can use with that specific exploit.
+Once you have decided on the payload, you can use the 'set payload' command to make your choice (e.g. set payload 2).
+
+Note that choosing a working payload could become a trial and error process due to environmental or OS restrictions such as firewall rules, anti-virus, file writing, or the program performing the payload execution isn't available (eg. payload/python/shell_reverse_tcp).
+
+Some payloads will open new parameters that you may need to set, running the 'show options' command once more can show these. For example, a reverse shell payload will at least require you to set the LHOST option.
+
+Working with sessions
+---------------------
+Once a session is opened, you can background it using CTRL+Z or abort it using CTRL+C. Backgrounding a session will be useful when working on more than one target simultaneously or on the same target with a different exploit and/or shell.
+The 'sessions' command will list all active sessions. The sessions command supports a number of options that will help you manage sessions better.
+'sessions -h' will list sessions arguments:
+msf6 > sessions -h
+Usage: sessions [options] or sessions [id]
+
+Active session manipulation and interaction.
+
+OPTIONS:
+
+    -C   Run a Meterpreter Command on the session given with -i, or all
+    -K        Terminate all sessions
+    -S   Row search filter.
+    -c   Run a command on the session given with -i, or all
+    -d        List all inactive sessions
+    -h        Help banner
+    -i   Interact with the supplied session ID
+    -k   Terminate sessions by session ID and/or range
+    -l        List all active sessions
+    -n   Name or rename a session by ID
+    -q        Quiet mode
+    -s   Run a script or module on the session given with -i, or all
+    -t   Set a response timeout (default: 15)
+    -u   Upgrade a shell to a meterpreter session on many platforms
+    -v        List all active sessions in verbose mode
+    -x        Show extended information in the session table
+
+Many options allow specifying session ranges using commas and dashes.
+For example:  sessions -s checkvm -i 1,3-5  or  sessions -k 1-2,5,6
+
+You can interact with any existing session using the sessions -i command followed by the session ID.
 
