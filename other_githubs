@@ -35,7 +35,7 @@ GTFOBins is a curated list of Unix binaries that can be used to bypass local sec
 It is important to note that this is not a list of exploits, and the programs listed here are not vulnerable per se, rather, GTFOBins is a compendium about how to live off the land when you only have certain binaries available.
 [like LOLBAS but for UNIX based systems]
 [hat tip: TryHackMe]
-
+--------------------------------------------------------------------------------------------------
 LOLBAS
 https://lolbas-project.github.io/
 Living Off The Land Binaries and Scripts (and now also Libraries)
@@ -69,3 +69,12 @@ Surveillance (e.g. keylogger, network trace)
 Log evasion/modification
 DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 [like GTFOBins but for Windows OS]
+----------------------------------------------------------------------------------------------------
+https://github.com/A-poc/BlueTeam-Tools
+"This github repository contains a collection of 35+ tools and resources that can be useful for blue teaming activities.
+Some of the tools may be specifically designed for blue teaming, while others are more general-purpose and can be adapted for use in a blue teaming context."
+[hat tip: RM]
+
+https://github.com/A-poc/RedTeam-Tools
+"This github repository contains a collection of 115+ tools and resources that can be useful for red teaming activities.
+Some of the tools may be specifically designed for red teaming, while others are more general-purpose and can be adapted for use in a red teaming context."
