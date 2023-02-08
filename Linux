@@ -152,3 +152,11 @@ User’s full name or the application name.
 07. Login shell. The absolute path to the user’s login shell. This is the shell that is started when the user logs into the system. On most Linux distributions, the default login shell is Bash.
 --Credit: https://linuxize.com/post/etc-passwd-file/
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Explain Shell
+https://explainshell.com/
+"write down a command-line to see the help text that matches each argument"
+[hat tip: https://fosspost.org/linux-command-line-basics-examples/
+"How To Know What a Linux Command Does?
+Since you are a new user, you may see many people passing different Linux commands on the Internet that may do different tasks. But how can you understand what these commands will do on your system if you apply them?
+ExplainShell.com is the answer.
+Let’s say that you encountered a very long command while browsing an online article or a book, and you didn’t know what does it do and how? Just paste it into the website and it will tell you what each part of it does. It’s an amazing online website to explain Linux commands.]
