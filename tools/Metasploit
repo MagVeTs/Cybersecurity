@@ -486,3 +486,52 @@ getsystem: Attempts to elevate your privilege to that of local system
 hashdump: Dumps the contents of the SAM database
 
 Although all these commands may seem available under the help menu, they may not all work. For example, the target system might not have a webcam, or it can be running on a virtual machine without a proper desktop environment.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/meterpreter [with some edits and rephrasing]; task 4
+Post-Exploitation with Meterpreter
+----------------------------------
+Meterpreter provides you with many useful commands that facilitate the post-exploitation phase.
+Below are a few examples you will often use:
+
+Help
+-----
+This command will give you a list of all available commands in Meterpreter. As we have seen earlier, Meterpreter has many versions, and each version may have different options available. Typing 'help' once you have a Meterpreter session will help you quickly browse through available commands.
+
+Meterpreter commands
+--------------------
+The 'getuid' command will display the user with which Meterpreter is currently running. This will give you an idea of your possible privilege level on the target system (e.g. Are you an admin level user like NT AUTHORITY\SYSTEM or a regular user?)
+
+The 'ps' command will list running processes. The PID column will also give you the PID information you will need to migrate Meterpreter to another process.
+
+Migrate
+--------
+Migrating to another process will help Meterpreter interact with it. For example, if you see a word processor running on the target (e.g. word.exe, notepad.exe, etc.), you can migrate to it and start capturing keystrokes sent by the user to this process. Some Meterpreter versions will offer you the 'keyscan_start', 'keyscan_stop', and 'keyscan_dump' command options to make Meterpreter act like a keylogger. Migrating to another process may also help you to have a more stable Meterpreter session.
+To migrate to any process, you need to type the 'migrate' command followed by the PID of the desired target process.
+The example below shows Meterpreter migrating to process ID 716:
+
+meterpreter > migrate 716
+[*] Migrating from 1304 to 716...
+[*] Migration completed successfully.
+
+Hashdump
+---------
+The 'hashdump' command will list the content of the SAM database. The SAM (Security Account Manager) database stores user's passwords on Windows systems. These passwords are stored in the NTLM (New Technology LAN Manager) format.
+Ex.: meterpreter > hashdump
+While it is not mathematically possible to "crack" these hashes, you may still discover the cleartext password using online NTLM databases or a rainbow table attack. These hashes can also be used in Pass-the-Hash attacks to authenticate to other systems that these users can access the same network.
+
+Search
+------
+The 'search' command is useful to locate files with potentially juicy information. In a CTF context, this can be used to quickly find a flag or proof file, while in actual penetration testing engagements, you may need to search for user-generated files or configuration files that may contain password or account information.
+Ex.: meterpreter > search -f flag2.txt
+
+Shell
+-----
+The shell command will launch a regular command-line shell on the target system. Pressing CTRL+Z will help you go back to the Meterpreter shell.
+Ex.: 
+meterpreter > shell
+Process 2124 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>
