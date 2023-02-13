@@ -1,0 +1,5 @@
+WTFBins
+https://wtfbins.wtf/
+"WTFBin(n): a binary that behaves exactly like malware, except, somehow, it's not?
+This project aims to catalogue benign applications that exhibit suspicious behavior. These binaries can emit noise and false positives in threat hunting and automated detections. By cataloguing them here, the hope is to allow defenders to improve their detection rules and threat hunting queries."
+
