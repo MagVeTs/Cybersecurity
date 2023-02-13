@@ -30,3 +30,21 @@ Msfvenom:
 Like multi/handler, msfvenom is technically part of the Metasploit Framework, however, it is shipped as a standalone tool. Msfvenom is used to generate payloads on the fly. Whilst msfvenom can generate payloads other than reverse and bind shells, these are what we will be focusing on in this room. Msfvenom is an incredibly powerful tool, so we will go into its application in much more detail in a dedicated task.
 
 Aside from the tools we've already covered, there are some repositories of shells in many different languages. One of the most prominent of these is Payloads all the Things (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md). The PentestMonkey Reverse Shell Cheatsheet (https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) is also commonly used. In addition to these online resources, Kali Linux also comes pre-installed with a variety of webshells located at /usr/share/webshells. The SecLists repo (https://github.com/danielmiessler/SecLists), though primarily used for wordlists, also contains some very useful code for obtaining shells.
+---------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/introtoshells ; Task 3 [with some edits and rephrasing]
+
+At a high level, we are interested in two kinds of shell when it comes to exploiting a target: Reverse shells, and bind shells.
+
+Reverse shells are when the target is forced to execute code that connects back to your computer. On your own computer you would use one of the tools mentioned in the previous task to set up a listener which would be used to receive the connection. Reverse shells are a good way to bypass firewall rules that may prevent you from connecting to arbitrary ports on the target; however, the drawback is that, when receiving a shell from a machine across the internet, you would need to configure your own network to accept the shell. This, however, will not be a problem on the TryHackMe network due to the method by which we connect into the network.
+Bind shells are when the code executed on the target is used to start a listener attached to a shell directly on the target. This would then be opened up to the internet, meaning you can connect to the port that the code has opened and obtain remote code execution that way. This has the advantage of not requiring any configuration on your own network, but may be prevented by firewalls protecting the target.
+As a general rule, reverse shells are easier to execute and debug...
+
+The final concept which is relevant in this task is that of interactivity. Shells can be either interactive or non-interactive.
+
+Interactive: If you've used Powershell, Bash, Zsh, sh, or any other standard CLI environment then you will be used to
+interactive shells. These allow you to interact with programs after executing them. For example, take the SSH login prompt. When attempting to execute an SSH connection, the shell may ask: "The authenticity of ____________ can't be established...Are you sre you want to continue connecting (yes/no/[fingerprint])?"
+
+Here you can see that it's asking interactively that the user type either yes or no in order to continue the connection. This is an interactive program, which requires an interactive shell in order to run.
+
+Non-Interactive shells don't give you that luxury. In a non-interactive shell you are limited to using programs which do not require user interaction in order to run properly. Unfortunately, the majority of simple reverse and bind shells are non-interactive, which can make further exploitation trickier. 
+If you use a non-interactive command (such as whoami) on a non-interactive shell, it will respond. But if you attempt an interactive command (e.g. using ssh) you will receive no output at all...
