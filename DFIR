@@ -9,3 +9,8 @@ Living Off The Land Binaries and Scripts (and now also Libraries)
 https://lolbas-project.github.io/#
 https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md
 [hat tip: TryHackMe]
+
+Unfurl
+https://dfir.blog/unfurl/
+"Takes a URL and expands ("unfurls") it into a directed graph, extracting every bit of information from the URL and exposing the obscured." -- Operator Handbook [Netmux : 2020], p.245.
+Great tool!
