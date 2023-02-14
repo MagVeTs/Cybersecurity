@@ -48,3 +48,35 @@ Here you can see that it's asking interactively that the user type either yes or
 
 Non-Interactive shells don't give you that luxury. In a non-interactive shell you are limited to using programs which do not require user interaction in order to run properly. Unfortunately, the majority of simple reverse and bind shells are non-interactive, which can make further exploitation trickier. 
 If you use a non-interactive command (such as whoami) on a non-interactive shell, it will respond. But if you attempt an interactive command (e.g. using ssh) you will receive no output at all...
+-------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/introtoshells ; Task 4 [with some edits and rephrasing]
+
+As mentioned previously, Netcat is the most basic tool in a pentester's toolkit when it comes to any kind of networking. With it we can do a wide variety of interesting things, but let's focus for now on shells.
+
+Reverse Shells
+--------------
+In the previous task we saw that reverse shells require shellcode and a listener. There are many ways to execute a shell, so we'll start by looking at listeners.
+
+The syntax for starting a netcat listener using Linux is this:
+
+nc -lvnp <port-number>
+
+-l is used to tell netcat that this will be a listener
+-v is used to request a verbose output
+-n tells netcat not to resolve host names or use DNS. Explaining this is outwith the scope of the room.
+-p indicates that the port specification will follow.
+[Note: Realistically you could use any port you like, as long as there isn't already a service using it. Be aware that if you choose to use a port below 1024, you will need to use sudo when starting your listener. That said, it's often a good idea to use a well-known port number (80, 443 or 53 being good choices) as this is more likely to get past outbound firewall rules on the target.]
+
+A working example of this would be:
+
+sudo nc -lvnp 443
+
+We can then connect back to this with any number of payloads, depending on the environment on the target.
+
+Bind Shells
+------------
+If we are looking to obtain a bind shell on a target then we can assume that there is already a listener waiting for us on a chosen port of the target (because, we already put it there through a payload); all we need to do is connect to it. The syntax for this is relatively straight forward:
+
+nc <target-ip> <chosen-port>
+
+Here we are using netcat to make an outbound connection to the target on our chosen port.
