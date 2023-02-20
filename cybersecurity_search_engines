@@ -1,5 +1,7 @@
 From: https://systemweakness.com/25-cybersecurity-search-engines-68bfcc2418ff ; rearranged
 
+Internet Connected Devices and Networks
+---------------------------------------
 Shodan
 https://www.shodan.io/
 Search for devices connected to the internet
@@ -12,6 +14,16 @@ GreyNoise
 https://www.greynoise.io/
 Search for devices connected to the internet
 
+Netlas
+https://netlas.io/
+Search and monitor internet connected assets
+
+FullHunt
+https://fullhunt.io/
+Search and discovery attack surfaces
+
+IOC Analysis
+------------
 VirusTotal
 https://www.virustotal.com/gui/home/upload
 Analyse suspicious files, domains, IPs, and URLs to detect malware
@@ -20,69 +32,11 @@ URL Scan
 https://urlscan.io/
 Free service to scan and analyse websites 
 
+Vulnerabilities and Exploits
+-----------------------------
 Vulners
 https://vulners.com/
 Search for vulnerabilities in a large database
-
-WayBackMachine
-https://web.archive.org/
-View content from deleted websites or take a deep dive into the history of the web
-
-Netlas
-https://netlas.io/
-Search and monitor internet connected assets
-
-ONYPHE
-https://www.onyphe.io/
-Collects cyber-threat intelligence data
-
-FullHunt
-https://fullhunt.io/
-Search and discovery attack surfaces
-
-GrepApp
-https://grep.app/
-Search across a half million git repos 
-
-CRT sh
-https://crt.sh/
-Search for certs that have been logged by CT
-
-GreyHatWarfare
-https://grayhatwarfare.com/
-Search public S3 buckets
-
-AlienVault
-https://otx.alienvault.com/
-Open Threat Intelligence Community 
-
-BinaryEdge
-https://www.binaryedge.io/
-Scans the internet for threat intelliegence
-
-TinEye
-https://tineye.com/
-Reverse Image Search 
-
-OSINT Framework
-https://osintframework.com/
-OSINT (Open Source Intelligence) Framework website, some links don’t work anymore but it’s still a good website
-
-Hunter.io
-https://hunter.io/
-Search for email addresses belonging to a website
-
-LeakIX
-https://leakix.net/
-Search publicly indexed information
-
-IntelligenceX
-https://intelx.io/
-Search Tor, I2P, Data Leaks, Domains and Emails 
-
-DNSDumpster
-https://dnsdumpster.com/
-DNS Recon & Research, Find & Lookup DNS Records
 
 ExploitDB
 https://www.exploit-db.com/
@@ -92,13 +46,71 @@ CVE
 https://cve.mitre.org/
 The CVE website was created to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities 
 
+Packet Storm Security
+https://packetstormsecurity.com/
+Browse latest vulnerabilities and exploits
+
+Cyber Threat Intelligence (CTI)
+-------------------------------
+ONYPHE
+https://www.onyphe.io/
+Collects cyber-threat intelligence data
+
+AlienVault
+https://otx.alienvault.com/
+Open Threat Intelligence Community 
+
+BinaryEdge
+https://www.binaryedge.io/
+Scans the internet for threat intelliegence
+
 PulseDive
 https://pulsedive.com/
 Search for threat intelligence
 
-Packet Storm Security
-https://packetstormsecurity.com/
-Browse latest vulnerabilities and exploits
+Data Leaks
+----------
+LeakIX
+https://leakix.net/
+Search publicly indexed information
+
+IntelligenceX
+https://intelx.io/
+Search Tor, I2P, Data Leaks, Domains and Emails 
+
+Miscellaneous
+-------------
+OSINT Framework
+https://osintframework.com/
+OSINT (Open Source Intelligence) Framework website, some links don’t work anymore but it’s still a good website
+
+GrepApp
+https://grep.app/
+Search across a half million git repos 
+
+GreyHatWarfare
+https://grayhatwarfare.com/
+Search public S3 buckets
+
+WayBackMachine
+https://web.archive.org/
+View content from deleted websites or take a deep dive into the history of the web
+
+TinEye
+https://tineye.com/
+Reverse Image Search 
+
+Hunter.io
+https://hunter.io/
+Search for email addresses belonging to a website
+
+DNSDumpster
+https://dnsdumpster.com/
+DNS Recon & Research, Find & Lookup DNS Records
+
+CRT sh
+https://crt.sh/
+Search for certs that have been logged by CT
 
 --------------------------------------------------------------------------
 From: https://www.linkedin.com/in/danielmakelley
