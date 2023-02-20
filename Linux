@@ -151,7 +151,7 @@ User’s full name or the application name.
 06. Home directory. The absolute path to the user’s home directory. It contains the user’s files and configurations. By default, the user home directories are named after the name of the user and created under the /home directory.
 07. Login shell. The absolute path to the user’s login shell. This is the shell that is started when the user logs into the system. On most Linux distributions, the default login shell is Bash.
 --Credit: https://linuxize.com/post/etc-passwd-file/
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 Explain Shell
 https://explainshell.com/
 "write down a command-line to see the help text that matches each argument"
@@ -160,3 +160,19 @@ https://explainshell.com/
 Since you are a new user, you may see many people passing different Linux commands on the Internet that may do different tasks. But how can you understand what these commands will do on your system if you apply them?
 ExplainShell.com is the answer.
 Let’s say that you encountered a very long command while browsing an online article or a book, and you didn’t know what does it do and how? Just paste it into the website and it will tell you what each part of it does. It’s an amazing online website to explain Linux commands.]
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://flashpoint.io/blog/osint-tools-library/
+
+Manipulate datasets from Terminal
+OSINT practitioners frequently run across TXT and CSV files. Often, the formatting for CSV files is not compatible with your investigation and you need to remove certain columns, add others, change column titles, etc. If you’re looking to remove all columns except for a select few, use this trick:
+
+$ cut -d, -f<column number> --complement input.csv > output.csv
+
+Example:
+
+$ cut -d, -f4 --complement osint.csv > oshint.csv
+
+This will remove the fourth column of osint.csv and save it to oshint.csv. If you remove [the] --complement [argument], you’ll remove all columns except for column 4.
+
+To learn more about this Linux command, check out: https://linuxconfig.org/how-to-remove-columns-from-csv-based-on-column-number-using-bash-shell
+--------------------------------------------------------------------------------------------------------------------------------------------------------
