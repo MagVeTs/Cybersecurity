@@ -19,9 +19,9 @@ Basically, it tells you how likely an event is to be random vs. deliberate. It c
 
 --------------------------------------------------------------------------
 Modulo Calculator
-https://www.calculatorsoup.com/calculators/math/modulo-calculator.php
+https://www.calculatorsoup.com/calculators/math/modulo-calculator.php [with some editing]
 "Calculator Use
-Calculate a mod b which, for positive numbers, is the remainder of a divided by b in a division problem. The modulo operation finds the remainder, so if you were dividing a by b and there was a remainder of n, you would say a mod b = n.
+Calculate a mod b [aka: a modulo b] which, for positive numbers, is the remainder of a divided by b in a division problem. The modulo operation finds the remainder, so if you were dividing a by b and there was a remainder of n, you would say a mod b = n.
 
 How to Do a Modulo Calculation
 The modulo operation finds the remainder of a divided by b. To do this by hand just divide two numbers and note the remainder. If you needed to find 27 mod 6, divide 27 by 6.
