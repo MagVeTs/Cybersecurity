@@ -176,3 +176,6 @@ This will remove the fourth column of osint.csv and save it to oshint.csv. If yo
 
 To learn more about this Linux command, check out: https://linuxconfig.org/how-to-remove-columns-from-csv-based-on-column-number-using-bash-shell
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
