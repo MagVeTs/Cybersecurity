@@ -176,6 +176,46 @@ This will remove the fourth column of osint.csv and save it to oshint.csv. If yo
 
 To learn more about this Linux command, check out: https://linuxconfig.org/how-to-remove-columns-from-csv-based-on-column-number-using-bash-shell
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://medium.com/@halil_tek/the-most-important-linux-commands-that-nobody-teaches-you-1b6919860c8f (with edits ; note: only some of the commands mntioned in the article are copied here)
+
+rsync
+-----
+Used to copy files and directories to a destination, similar to the cp command. However, it also allows copying to remote locations and can provide a progress bar, as is often used for backups
+
+# Example Usage
+$ rsync -vap --ignore-existing <source_file> <destination_file>#  Key flags:
+v = verbose, r = recursive, p = preserve permissions, g = group, o = owner, a = archive, --progress = progresss bar
 
 
+mkpasswd
+--------
+mkpasswd is a simple but very useful command, it generates a complex random password at the specified length.
 
+$ mkpasswd -l 8
+> iwF1g2Lo
+
+screen
+-------
+Screen is a full-screen window manager; it creates a single window with a shell running and allows multiple screen windows to run inside a single session. It’s most beneficial when you’re running a long task remotely and worried about your SSH session dropping and ruining everything. Screen will continue through disconnection and continue to run your commands even when the window is not visible to you.
+
+# Example Usage
+$ screen # Start a screen session
+$ screen -ls # List running services
+$ screen -r # Attach to session
+
+diff
+-----
+Diff the Output of any two commands
+# Example usage of comparing output of two ls commands$ diff -u <(ls -l /directory/) <(ls -l /directory/) | colordiff
+
+date -d
+--------
+Convert a Unix timestamp to human-readable format
+# Convert Unix timestamp to human readable
+$ date -d 1656685875
+Fri, 01 Jul 2022 14:31:15 +0000
+# Current time as UNIX timestamp
+$ date "+%s"
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Introduction to Named Pipes
+https://www.linuxjournal.com/article/2156
