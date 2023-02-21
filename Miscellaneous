@@ -17,6 +17,20 @@ https://planetcalc.com/2476/
 "This online calculator computes Shannon entropy for a given event probability table and for a given message."
 Basically, it tells you how likely an event is to be random vs. deliberate. It can tell you how likely a given string was arranged randomly vs. deliberately - it does this by calculating symbol frequency.
 
+--------------------------------------------------------------------------
+Modulo Calculator
+https://www.calculatorsoup.com/calculators/math/modulo-calculator.php
+"Calculator Use
+Calculate a mod b which, for positive numbers, is the remainder of a divided by b in a division problem. The modulo operation finds the remainder, so if you were dividing a by b and there was a remainder of n, you would say a mod b = n.
+
+How to Do a Modulo Calculation
+The modulo operation finds the remainder of a divided by b. To do this by hand just divide two numbers and note the remainder. If you needed to find 27 mod 6, divide 27 by 6.
+
+27 mod 6 = ?
+27 ÷ 6 = 4 with a remainder of 3
+27 mod 6 = 3"
+[Note: the modulo operation is often represented as a % b; so using the above example, one would say: 27 % 6 = 3]
+---------------------------------------------------------------------------
 
 How Threat Actors us Fast Flux to change their IP addresses quickly in order to avoid detection focused on known bad IP addresses (looks like a very clear article)
 https://unit42.paloaltonetworks.com/fast-flux-101/
