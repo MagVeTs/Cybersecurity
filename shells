@@ -378,3 +378,43 @@ msfvenom --list payloads
 This can be used to list all available payloads, which can then be piped into grep to search for a specific set of payloads, e.g.:
 msfvenom --list payloads | grep "linux/x86/meterpreter"
 This gives us a full set of Linux meterpreter payloads for 32bit targets.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/introtoshells ; Task 10 [with some edits and rephrasing]
+
+Metasploit multi/handler
+------------------------
+Multi/Handler is a superb tool for catching reverse shells. It's essential if you want to use Meterpreter shells, and is the go-to when using staged payloads.
+
+Fortunately, it's relatively easy to use:
+
+Open Metasploit with:
+
+msfconsole
+
+Type:
+
+use multi/handler
+
+and press enter
+We are now primed to start a multi/handler session. [You can now] take a look at the available options using the options command.
+
+There are three options we need to set: payload, LHOST and LPORT. These are all identical to the options we set when generating  shellcode with Msfvenom -- a payload specific to our target, as well as a listening address and port with which we can receive a shell. Note that the LHOST must be specified here, as metasploit will not listen on all network interfaces like netcat or socat will; it must be told a specific address to listen with ... We set these options with the following commands:
+
+set PAYLOAD <payload>
+set LHOST <listen-address>
+set LPORT <listen-port>
+
+We should now be ready to start the listener!
+
+Let's do this by using the
+exploit -j
+command. This tells Metasploit to launch the module, running as a job in the background.
+
+[Note: to have Metasploit listen] on a port under 1024 ... Metasploit must be run with sudo permissions.
+
+When the staged payload [discussed in Task 9] is run, Metasploit receives the connection, sending the remainder of the payload and giving us a reverse shell.
+
+Notice that, because the multi/handler was originally backgrounded, we needed to use:
+sessions 1
+to foreground it again. This worked as it was the only session running. Had there been other sessions active, we would have needed to use sessions to see all active sessions, then use sessions <number> to select the appropriate session to foreground. This number would also have been displayed in the line where the shell was opened (see "Command Shell session 1 opened").
