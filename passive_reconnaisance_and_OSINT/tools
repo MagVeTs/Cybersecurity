@@ -26,3 +26,18 @@ A constantly updated list of web-based OSINT tools and techniques from across th
 Card Generator
 https://cardgenerator.org/
 "Generate credit card numbers with all required details for online signup and testing purposes."
+
+Ghunt
+https://github.com/mxrch/GHunt
+"GHunt (v2) is an offensive Google framework, designed to evolve efficiently.
+It's currently focused on OSINT, but any use related with Google is possible.
+Features :
+CLI usage and modules
+Python library usage
+Fully async
+JSON export
+Browser extension to ease login"
+
+Epios
+https://epieos.com/
+"Retrieve information linked to an email address, leaving no traces"
