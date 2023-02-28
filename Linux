@@ -3,6 +3,21 @@ To upgrade/update, write in terminal:
 apt update -y && apt upgrade -y && apt dist-upgrade -y
 
 [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)
+
+------------------------------------------------
+
+Linux File System
+-----------------
+* files are case sensitive
+* can contain up to 255 characters
+* can contain any character (including whitespace) except /
+* extensions are not needed/interpreted; they are only for user convenience
+
+Every file is part of a path - the unique location of the file represented by alphanumeric names of parent directories and the file divided by /
+The first / represents root directory and the following slashes delimit nested directories under root and finally the file
+[The ~ represents that a user is in their home directory]
+
+[from: Linux Tutorials | The File System | GeeksforGeeks ; https://www.youtube.com/watch?v=JwgTeXfQdIg&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=5]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux CLI
