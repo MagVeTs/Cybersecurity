@@ -4,6 +4,9 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y
 
 [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)
 
+---------------------------------------------------------
+
+In the command line prompt the presence of ~ represents that a user is now in their home directory.
 ------------------------------------------------
 
 Linux File System
@@ -15,7 +18,6 @@ Linux File System
 
 Every file is part of a path - the unique location of the file represented by alphanumeric names of parent directories and the file divided by /
 The first / represents root directory and the following slashes delimit nested directories under root and finally the file
-[The ~ represents that a user is in their home directory]
 
 [from: Linux Tutorials | The File System | GeeksforGeeks ; https://www.youtube.com/watch?v=JwgTeXfQdIg&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=5]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
