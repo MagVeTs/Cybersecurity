@@ -27,7 +27,7 @@ Only root (/) directory has no parent.
 Only the root user can write to the root directory.
 The root user's home directory is: /root (note: / != /root)
 
-A "home directory" is the main repository for a user's file's (including their configuration file). When a user logs into a system, by default they usually start off in their home directory. In the command line prompt the presence of ~ represents that a user is now in their home directory.
+A "home directory" is the main repository for a user's file's (including their configuration file). When a user logs into a system, by default they usually start off in their home directory. [In the command line prompt the presence of ~ represents that a user is now in their home directory.]
 As stated above: the root user's home directory is: /root.
 Other users' home directories are by default created with the /home directory.
 
