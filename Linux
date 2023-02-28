@@ -4,13 +4,29 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y
 
 [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-[hat tip: https://tryhackme.com/room/zeekbro]
 
 Linux CLI
 ---------
 
 Basics
 ------
+
+------------------------------------------
+Commands must be separated from arguments (e.g. -a) and file names by at least one space or tab; but multiple spaces or tabs is not a problem.
+Multiple arguments can be combined in one dash (-) with no spaces, e.g. -l -a -c = -lac
+You can run more than one command per line if you use a semicolon (;), e.g.:
+> cd;pwd
+
+The 'type' command will tell you where the script for a Linux CLI command (usually written in C language) is found (internal [in the shell itself] or external [in a file path]), for example:
+> type ls
+ls is hashed (/bin/ls)
+> type cd
+cd is a shell builtin
+
+[hat tip: Linux Tutorials | Command Usage | GeeksforGeeks https://www.youtube.com/watch?v=L5_ZzpR9jaU&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=4]
+------------------------------------------
+
+[hat tip: https://tryhackme.com/room/zeekbro]
 
 View the command history:
 ubuntu@ubuntu$ history
