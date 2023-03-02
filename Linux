@@ -53,6 +53,14 @@ ls is hashed (/bin/ls)
 cd is a shell builtin
 
 [hat tip: Linux Tutorials | Command Usage | GeeksforGeeks https://www.youtube.com/watch?v=L5_ZzpR9jaU&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=4]
+
+You may be unable to use the backspace key in the terminal to correct a typo.
+If you try Backspace you may get ^?. In order to fix typos, use the Delete key or CTRL-c.
+If the line has many mistakes it may be easier to kill the whole line by pressing CTRL-U. This will erase the whole line and you can start over.
+If a program is stuck in an infinite loop pressing Ctrl-c will stop the program and return to prompt.
+Some commands that require an argument will also create a problem if one forgets to add the argument. For example, if you type 'cat' with no filename and press enter the terminal will move the cursor to the next line but no output or prompt will appear. Pressing CTRL-c or CTRL-d will bring back the prompt.
+If the Enter key is not working try: CTRL-j or CTRL-m.
+[hat tip: Linux Tutorials | Commands in Linux when things go wrong | GeeksforGeeks ; https://www.youtube.com/watch?v=7zG1RAVcrKM&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=9]
 ------------------------------------------
 
 [hat tip: https://tryhackme.com/room/zeekbro]
