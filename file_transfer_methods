@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transfering files (including executables) between devices by turning one device into a simple web server using python (and executing them); written for Linux (Windows will be a bit different in some things):
+
+1) turn device that has file on it into a web server by going to the directory where file resides and opening terminal
+2) command:
+python -m http.server <PORT, e.g. 9000>
+now this device is a server
+3) On the device that you wish to download the file to (i.e. the client), open terminal in directory you want file to download to
+4) command:
+wget http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
+5) allow execution the file, command:
+chmod a+x <FILE_NAME>
+6)execute the file from the directory it is in, command:
+./<FILE_NAME>
+
+Sources:
+https://www.askpython.com/python-modules/python-httpserver
+https://docs.python.org/3/library/http.server.html
+https://www.howtogeek.com/281663/how-to-use-wget-the-ultimate-command-line-downloading-tool/
+https://www.wikihow.com/Run-a-Program-from-the-Command-Line-on-Linux
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
