@@ -1,3 +1,5 @@
+----------------------------------------------------------------
+
 https://mxtoolbox.com/
 
 Analyzing email headers for spoofing:
@@ -22,7 +24,6 @@ or
 Message Header Analyzer
 https://mha.azurewebsites.net/
 [hat tip: Reddit post by CaptCoolie]
-
 ----------------------------------------
 Messageheader (part of: Google Admin Toolbox)
 "Messageheader analyzes SMTP message headers..."
@@ -79,6 +80,12 @@ S/MIME (Secure/Multipurpose Internet Mail Extensions)
 "S/MIME (Secure/Multipurpose internet Mail Extensions) is a widely accepted protocol for sending digitally signed and encrypted messages." -- https://docs.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
 S/MIME for message signing and encryption in Exchange Online - https://learn.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo
 [hat tip: TryHackMe]
+
+EasyDmarc
+https://easydmarc.com/
+"Smart DMARC Monitoring & Reporting Solution
+Thousands of IT Managers and Sysadmins use EasyDMARC 
+every day to manage, monitor, and secure email infrastructure."
 --------------------------------------------------
 SMTP (Simple Mail Transfer Protocol) Network Traffic information (helpful for examining PCAP files in Wireshark)
 https://www.wireshark.org/docs/dfref/s/smtp.html
