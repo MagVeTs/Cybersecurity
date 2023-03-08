@@ -32,6 +32,15 @@ As stated above: the root user's home directory is: /root.
 Other users' home directories are by default created with the /home directory.
 
 [from: Linux Tutorials | Linux Directory Structure | GeeksforGeeks ; https://www.youtube.com/watch?v=yWiUPWHljWg&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=6]
+
+
+cmp - compares two files byte by byte to see if they are identical 
+command is cmp <FIRST_FILENAME> <SECOND_FILENAME>
+if there is a mismatch, the location of first instance of mismatch is identified by byte number and line number
+if files are identical nothing happens; the terminal returns to the prompt
+[from: Linux Tutorials | cmp, diff and comm commands | GeeksforGeeks ; https://www.youtube.com/watch?v=0k6obEKGTyk&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=19]
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux CLI
