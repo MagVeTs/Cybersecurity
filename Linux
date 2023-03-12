@@ -54,7 +54,12 @@ The output uses the following symbols to instruct what steps to take to make the
 The arrangement of the output on the terminal screen is confusing at first. See the video cited below where parsing the output is explained.
 
 [from: Linux Tutorials | cmp, diff and comm commands | GeeksforGeeks ; https://www.youtube.com/watch?v=0k6obEKGTyk&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=19]
-
+-------------------------------------------------------
+tee - duplicates the output received from a command sending one stream to the terminal and the other into a file (requires pipe |)
+syntax: <COMMAND> | tee <FILENAME>
+example: ls | tee list_of_files_in_directory 
+[from: Linux Tutorials | Pipe and tee | GeeksforGeeks ; https://www.youtube.com/watch?v=19mmVar-s5Y&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=21]
+-------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
