@@ -60,7 +60,10 @@ syntax: <COMMAND> | tee <FILENAME>
 example: ls | tee list_of_files_in_directory 
 [from: Linux Tutorials | Pipe and tee | GeeksforGeeks ; https://www.youtube.com/watch?v=19mmVar-s5Y&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=21]
 -------------------------------------------------------
-
+In order to print lines in the middle of a file you can combine 'head' and 'tail' commands using the pipe (|) command. For example, if you wanted to print lines 5-10 of a 20 line file you would use the following command:
+head -n 10 <FILENAME> | tail -n 6
+The command first instructs the computer to pull the first 10 lines of the file; those ten lines are then piped into the tail command which instructs the computer to pull the last 6 lines of those 10 lines (i.e. lines 5-10) and print those last 6 lines.
+[From: Linux Tutorials | Print line between M and N lines head and tail combined | GeeksforGeeks ; https://www.youtube.com/watch?v=tMXF-YKyP0w&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=23]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux CLI
