@@ -13,6 +13,10 @@ chmod a+x <FILE_NAME>
 6)execute the file from the directory it is in, command:
 ./<FILE_NAME>
 
+Note: if you have access to a web browser on the machine you are transferring the file to, you can enter simply enter:
+http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
+into the browser's url box and hit enter; you will be asked if you want to save the file; simply click ok and the file will be downloaded to the target machine.
+
 Sources:
 https://www.askpython.com/python-modules/python-httpserver
 https://docs.python.org/3/library/http.server.html
