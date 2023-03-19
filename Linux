@@ -64,6 +64,13 @@ In order to print lines in the middle of a file you can combine 'head' and 'tail
 head -n 10 <FILENAME> | tail -n 6
 The command first instructs the computer to pull the first 10 lines of the file; those ten lines are then piped into the tail command which instructs the computer to pull the last 6 lines of those 10 lines (i.e. lines 5-10) and print those last 6 lines.
 [From: Linux Tutorials | Print line between M and N lines head and tail combined | GeeksforGeeks ; https://www.youtube.com/watch?v=tMXF-YKyP0w&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=23]
+--------------------------------------------------------
+For the 'sort' command, the -k [#] option tells the terminal which "column" to sort on (the default delimeter is a blank space; but you can use -d " " to tell it to sort on something else [e.g. -d "|" will tell it to treat each pipe as the divider between columns])
+the -c command tells the terminal to check if the file is sorted and tell you wherever the sort is out of order
+there is other important things in the video - check it out
+[from: Linux Tutorials | sort command GeeksforGeeks ; https://www.youtube.com/watch?v=fEx5rnbDKO4&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=27]
+---------------------------------------------------------
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux CLI
