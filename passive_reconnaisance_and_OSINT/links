@@ -96,3 +96,14 @@ https://shorteners.grayhatwarfare.com/
 Search Shortener Urls
 [see here: https://grayhatwarfare.medium.com/how-to-search-urls-exposed-by-shortener-services-f68e199cd560]
 ----------------------------------------
+FROM: https://flashpoint.io/blog/osint-tools-library/
+
+* Source Code Search Engine
+"Find any alphanumeric snippet, signature or keyword in the web pages HTML, JS and CSS code."
+https://publicwww.com/
+
+* Find deep web data
+90% of the internet isn’t indexed by search engines. This includes many internal links and deep websites. If you’re looking for a file that was shared by a company between two people or organizations, you most likely won’t be able to find it in Google or any other search engine. URLScan (https://urlscan.io/) has many of these links indexed in their historical scans. If you type in a domain for any website into their search engine, you’ll find multiple links from that domain in the search results. It’s a great way to do deep web research without needing access or logins.
+
+Search for Bitcoin addresses
+Blockchain and cryptocurrency investigations have been a rather recent development in the OSINT space and are gaining relevance as more threat actors and scams begin using cryptocurrency as their transaction method of choice. If you’re looking into a crypto wallet that might be related to ransomware, blackmailing, fraud, etc., check out BitcoinAbuse (https://www.bitcoinabuse.com/) It’s a public database of addresses used for nefarious reasons. They also have an API if you’re looking to build an OSINT tool for crypto.
