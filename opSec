@@ -1,0 +1,7 @@
+In order to check if you have successfully changed your IP by using VPN, check:
+https://www.whatismyip.com/
+Also, make sure to check:
+https://www.dnsleaktest.com/
+
+If you have changed your browser's user-agent, check here to confirm that the user-agent you selected is the one your browser is now broadcasting:
+https://dnschecker.org/user-agent-info.php
