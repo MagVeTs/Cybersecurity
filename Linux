@@ -7,6 +7,7 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y
 ---------------------------------------------------------
 
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
+The command 'cd ~' will return you to your home directory from wherever you are in the file system.
 ------------------------------------------------
 
 Linux File System
@@ -70,7 +71,18 @@ the -c command tells the terminal to check if the file is sorted and tell you wh
 there is other important things in the video - check it out
 [from: Linux Tutorials | sort command GeeksforGeeks ; https://www.youtube.com/watch?v=fEx5rnbDKO4&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=27]
 ---------------------------------------------------------
+The 'tr' command will "translate" characters in a file from one set of characters to another. For example "[a-z]" "[A-Z]" will change all lower-case characters to upper-case.
+See here for a tutorial:
+Linux Tutorials | tr command | GeeksforGeeks ; https://www.youtube.com/watch?v=iNWdEWWYo50&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=28
+---------------------------------------------------------
+The 'stat' command allows you to check all the timestamps on a file.
+access time - the last time the file was read
+modification time - the last time the contents of the file were modified
+change time - the last time the file's metadata (e.g. size and type) were changed
+syntax: stat <FILENAME>
+The 'touch' command can create a file. It can also change a file's timestamps (access time [-a] or modification time [-m]). You can choose an arbitrary time using: -d "YYYY-DD-MM HH:MM:SS".
 
+[From: Linux Tutorials | touch command | GeeksforGeeks ; https://www.youtube.com/watch?v=tpUyBbD4LQE&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=29]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux CLI
