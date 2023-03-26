@@ -14,3 +14,7 @@ Unfurl
 https://dfir.blog/unfurl/
 "Takes a URL and expands ("unfurls") it into a directed graph, extracting every bit of information from the URL and exposing the obscured." -- Operator Handbook [Netmux : 2020], p.245.
 Great tool!
+
+The Hitchhiker's Guide to DFIR
+https://start.me/p/q6mw4Q/forensics
+[hat tip: RM; huge repository of links]
