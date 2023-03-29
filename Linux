@@ -114,7 +114,7 @@ Wildcards can be used at the beginning, middle, or end of search string.
 ? = only 1 character
 [ ] - the is called a character class. You can put a list of characters in the brackets and if the searched for string matches anyone of the characters the string will be found. For example, a search for wa[nt] will return wan and wat. This search only matches for one character.
 [^ ] - this syntax will negate a character class (e.g. ab[^cd] will not return abc or abd but will return abe).
-
+[ - ] - this syntax allows a search for a range (e.g. ab[h-k] will return abh, abi, abj, and abk).
 [from: Linux Tutorials | Wildcards and Pattern Matching | GeeksforGeeks ; https://www.youtube.com/watch?v=LH4eF75Z_7U&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=34]
 
 
