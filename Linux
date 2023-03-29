@@ -116,7 +116,8 @@ Wildcards can be used at the beginning, middle, or end of search string.
 [^ ] - this syntax will negate a character class (e.g. ab[^cd] will not return abc or abd but will return abe).
 [ - ] - this syntax allows a search for a range (e.g. ab[h-k] will return abh, abi, abj, and abk).
 [from: Linux Tutorials | Wildcards and Pattern Matching | GeeksforGeeks ; https://www.youtube.com/watch?v=LH4eF75Z_7U&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=34]
-
+Note: you can combine wildcards (e.g. *[c-f]).
+\ - this is an "escape" character it allows you to search for wildcard characters as regular characters and not wildcards (e.g. *\?, will return all files that end with ?)
 
 Linux CLI
 ---------
