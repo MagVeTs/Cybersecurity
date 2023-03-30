@@ -123,3 +123,15 @@ https://www.youtube.com/watch?v=reRzWHUwI80
 Email Header Analysis and Forensic Investigation
 13Cubed
 https://www.youtube.com/watch?v=nK5QpGSBR8c
+----------------------------------------------------
+Syntax on Linux to check SPF record for a domain. It will tell you the IP range permitted to send emails from that domain.
+dig <domain name> TXT +short 
+[from: YS]
+
+https://linuxways.net/ubuntu/how-to-use-the-dig-command-in-linux/
+DKIM Records Lookup
+For querying DomainKeys Identified Mail (DKIM) we need the selector. It provides a digital signature and encryption key that authenticates email messages.
+You need to find out the selector of the domain. If you look at the details of an email sent from google/gmail, you can find out the selector for google. Similarly, you can find other domain selectors. For querying it we have to execute the command as below. In the output, we can view the DKIM signature published in their DNS record.
+$ dig txt 20161025._domainkey.google.com
+[from: YS]
+------------------------------------------------------
