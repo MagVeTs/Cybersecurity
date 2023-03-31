@@ -19,8 +19,8 @@ http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
 into the browser's url box and hit enter; you will be asked if you want to save the file; simply click ok and the file will be downloaded to the target machine.
 
 Sources:
-https://www.askpython.com/python-modules/python-httpserver
 https://docs.python.org/3/library/http.server.html
+https://www.askpython.com/python-modules/python-httpserver
 https://www.howtogeek.com/281663/how-to-use-wget-the-ultimate-command-line-downloading-tool/
 https://www.wikihow.com/Run-a-Program-from-the-Command-Line-on-Linux
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
