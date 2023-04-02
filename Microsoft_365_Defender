@@ -1,0 +1,13 @@
+In order to require "conditional access" (MFA) for a user in response to alerts in 365 Defender:
+1) log-in to portal.azure.com
+2) Go to:
+   Home > Conditional Access Policies
+3) Enforce on user
+4) Make sure to click the Save button at bottom left of screen
+
+
+Playbook for compromised users:
+* kill session
+* reset password
+* enforce conditional access
+* designate user as compromised
