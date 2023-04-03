@@ -115,9 +115,22 @@ Wildcards can be used at the beginning, middle, or end of search string.
 [ ] - the is called a character class. You can put a list of characters in the brackets and if the searched for string matches anyone of the characters the string will be found. For example, a search for wa[nt] will return wan and wat. This search only matches for one character.
 [^ ] - this syntax will negate a character class (e.g. ab[^cd] will not return abc or abd but will return abe).
 [ - ] - this syntax allows a search for a range (e.g. ab[h-k] will return abh, abi, abj, and abk).
-[from: Linux Tutorials | Wildcards and Pattern Matching | GeeksforGeeks ; https://www.youtube.com/watch?v=LH4eF75Z_7U&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=34]
+
 Note: you can combine wildcards (e.g. *[c-f]).
 \ - this is an "escape" character it allows you to search for wildcard characters as regular characters and not wildcards (e.g. *\?, will return all files that end with ?)
+
+[from: Linux Tutorials | Wildcards and Pattern Matching | GeeksforGeeks ; https://www.youtube.com/watch?v=LH4eF75Z_7U&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=34]
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+The YouTube video cited below explains the concepts of the three standard file in Linux [stdin (from the keyboard), stdout (to the screen), and stderr (also to the screen)]. It discusses the redirection of these three files so that:
+* the stdout can be sent to a file (using: > <FILENAME> [which will overlay what is already in the file] or >> [which will append to what is already in the file])
+* the stdin can be drawn from a file (using: < <FILENAME>)
+* the stderror can be separated from the stdout (so it does not clutter the screen) and sent to a file (using: 2><FILENAME>)
+
+stdin = 0 [file descriptor]
+stdout = 1 [file descriptor]
+stderr = 2 [file descriptor]
+
+[from: Linux Tutorials | Redirection - The three standard files in Linux | GeeksforGeeks ; https://www.youtube.com/watch?v=SP0gDpamofY&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=39]
 
 Linux CLI
 ---------
