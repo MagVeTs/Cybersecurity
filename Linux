@@ -136,6 +136,11 @@ stderr = 2 [file descriptor]
 
 [from: Linux Tutorials | Redirection - The three standard files in Linux | GeeksforGeeks ; https://www.youtube.com/watch?v=SP0gDpamofY&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=39]
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+The 'which' command allows you to determine which file the commands you are running in the terminal are drawing their binaries from (e.g. 'which ls' might return /usr/bin/ls).
+[From: Network Chuck ; the Linux File System explained in 1,233 seconds // Linux for Hackers // EP 2 ; https://www.youtube.com/watch?v=A3G-3hp88mo&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=2]
+
+
 Linux CLI
 ---------
 
