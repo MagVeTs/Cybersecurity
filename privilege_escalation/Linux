@@ -216,3 +216,5 @@ WantedBy=multi-user.target’ > $eop - sets the state (or runlevel) at which thi
 From here we check the output file we created and are greeted with the [data from the targeted file residing in the root directory]."
 From: https://unicornsec.com/home/tryhackme-vulnversity
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Linux Privilege Escalation Cheat Sheet:
+https://github.com/rmusser01/Infosec_Reference/blob/master/Draft/Cheat%20sheets%20reference%20pages%20Checklists%20-/Linux/cheat%20sheet%20Basic%20Linux%20Privilege%20Escalation.txt
