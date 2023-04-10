@@ -152,6 +152,17 @@ Hints/Notes:
 * WARNING: Be sure you understand how the exploit code works BEFORE you launch it. Some exploit codes can make changes on the operating system that would make them unsecured in further use or make irreversible changes to the system, creating problems later. Of course, these may not be great concerns within a lab or CTF environment, but these are absolute no-nos during a real penetration testing engagement.
 * Some exploits may require further interaction once they are run. Read all comments and instructions provided with the exploit code.
 * You can transfer the exploit code from your machine to the target system using the SimpleHTTPServer Python module and wget respectively.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[From: https://tryhackme.com/room/linprivesc ; Task 7 - Privilege Escalation: SUID (with editing, etc.)]
+
+Much of Linux privilege controls rely on controlling the users and files interactions. This is done with permissions. By now, you know that files can have read, write, and execute permissions. These are given to users within their privilege levels. This changes with SUID (Set-user Identification) and SGID (Set-group Identification). These allow files to be executed with the permission level of the file owner or the group owner, respectively.
+
+You will notice these files have an “s” bit set showing their special permission level (e.g. -rwsr-xr-x).
+
+
+find / -type f -perm -04000 -ls 2>/dev/null will list files that have SUID or SGID bits set.
+
+A good practice would be to compare executables on this list with GTFOBins (https://gtfobins.github.io). Clicking on the SUID button will filter binaries known to be exploitable when the SUID bit is set (you can also use this link for a pre-filtered list https://gtfobins.github.io/#+suid).
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
