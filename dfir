@@ -18,3 +18,14 @@ Great tool!
 The Hitchhiker's Guide to DFIR
 https://start.me/p/q6mw4Q/forensics
 [hat tip: RM; huge repository of links]
+
+------------------------------------------------------------------------------------
+List of sources providing preparedness checklists for cyber incidents:
+1. Singapore's Cyber Security Agency (CSA) - Incident Response Checklist: https://www.csa.gov.sg/Tips-Resource/Resources/singcert/incident-response-checklist
+2. NIST SP 800-61 Revision 2 - Computer Security Incident Handling Guide (Appendix D: Incident Handling Checklist): https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+3. SANS Institute - Incident Response Plan Template and Checklist: https://www.sans.org/score/incident-response-plan-template
+4. State of California Department of Technology - Cyber Incident Response Checklist: https://cdt.ca.gov/security/cyber-incident-response-checklist/
+5. European Union Agency for Cybersecurity (ENISA) - Good Practice Guide on Incident Management: https://www.enisa.europa.eu/publications/good-practice-guide-on-incident-management
+6. US-CERT - Cyber Resilience Review (CRR) Self-Assessment Package: https://www.us-cert.gov/ccubedvp/assessments
+[from: RM]
+--------------------------------------------------------------------------------------
