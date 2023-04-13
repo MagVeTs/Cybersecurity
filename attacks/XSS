@@ -40,3 +40,8 @@ Tips:
 XSS Payloads
 http://www.xss-payloads.com/
 [hat tip: TryHackMe]
+-----------------------------------------------------
+XSS Automation Tool
+https://github.com/EmperialX/XSS-Automation-Tool
+"XSS automation tool helps hackers identify and exploit cross-site scripting vulnerabilities in web apps. Tests for reflected and persistent XSS. Customize request headers, cookies, proxies, and auth. Find and exploit vulnerabilities with our XSS automation tool."
+[hat tip: Eli on Cyber Together 2 (WhatsApp)]
