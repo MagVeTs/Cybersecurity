@@ -1,7 +1,7 @@
 To see a history of PowerShell commands used on a device, go to:
 $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 (you can also search the device for: "ConsoleHost_history.txt"
-[hattip: TryHackMe, Almond Force <https://www.youtube.com/watch?v=kjDKgdoFufo>, and most importantly: https://0xdf.gitlab.io/2018/11/08/powershell-history-file.html]
+[hat tip: TryHackMe, Almond Force <https://www.youtube.com/watch?v=kjDKgdoFufo>, and most importantly: https://0xdf.gitlab.io/2018/11/08/powershell-history-file.html]
 
 File Signatures (Hex) List
 https://www.garykessler.net/library/file_sigs.html
