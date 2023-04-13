@@ -25,3 +25,12 @@ winlogon.exe
 explorer.exe
 
 In addition, the processes with no depiction of a parent-child relationship should not have a Parent Process under normal circumstances, except for the System process, which should only have System Idle Process (0) as its parent process." -- TryHackMe [https://tryhackme.com/room/introtoendpointsecurity - Task 2]
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Forensic Focus
+https://www.forensicfocus.com/
+"For Digital Forensics & E-Discovery Professionals"
+and especially:
+https://www.forensicfocus.com/resources/
+"Resources
+A curated list of the best digital forensics and incident response (DFIR) resources."
+
