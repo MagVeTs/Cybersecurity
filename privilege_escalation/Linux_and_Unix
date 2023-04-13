@@ -226,10 +226,10 @@ WantedBy=multi-user.target’ > $eop - sets the state (or runlevel) at which thi
 
 From here we check the output file we created and are greeted with the [data from the targeted file residing in the root directory]."
 From: https://unicornsec.com/home/tryhackme-vulnversity
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 Linux Privilege Escalation Cheat Sheet:
 https://github.com/rmusser01/Infosec_Reference/blob/master/Draft/Cheat%20sheets%20reference%20pages%20Checklists%20-/Linux/cheat%20sheet%20Basic%20Linux%20Privilege%20Escalation.txt
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 GTFOBins
 https://gtfobins.github.io/
 "GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
@@ -237,3 +237,24 @@ https://gtfobins.github.io/
 The project collects legitimate functions of Unix binaries that can be abused to ... break out [of] restricted shells, escalate or maintain elevated privileges, transfer files, spawn bind and reverse shells, and facilitate the other post-exploitation tasks.
 
 It is important to note that this is not a list of exploits, and the programs listed here are not vulnerable per se, rather, GTFOBins is a compendium about how to live off the land when you only have certain binaries available."
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Post-access Discovery/Enumeration Commands
+-------------------------------------------
+[From: NetworkChuck - HELP!! (for when you suck at Linux) // Linux for Hackers // EP3 ; https://www.youtube.com/watch?v=Y17KTiJLcyQ&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=6]
+
+* id
+* hostname
+* uname 
+* uname -a
+* uname -r
+* ifconfig
+* ip
+* netstat
+* ss
+* ps
+* whoami
+* who [tells who else is logged into system]
+* env [environment variables]
+* lsblk
+* lsusb [lists any USBs plugged in to system]
+* lsof [lists all open files]
