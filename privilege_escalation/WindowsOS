@@ -2,3 +2,8 @@ LOLBAS
 https://lolbas-project.github.io/
 Living Off The Land Binaries, Scripts and Libraries
 [use for privilege escalation]
+---------------------------------------------------------------------------------------------------------------
+Discovery/Enumeration
+---------------------
+Use the 'systeminfo' command in the CLI in order to learn about the system including whether the device you have penetrated is part of an Active Directory domain (or, perhaps, even the Domain Controller)
+see:  https://tryhackme.com/room/thelayoftheland ; Task 4 - Active Directory (AD) Environment
