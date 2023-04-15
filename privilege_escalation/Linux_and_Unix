@@ -165,6 +165,15 @@ find / -type f -perm -04000 -ls 2>/dev/null will list files that have SUID or SG
 A good practice would be to compare executables on this list with GTFOBins (https://gtfobins.github.io). Clicking on the SUID button will filter binaries known to be exploitable when the SUID bit is set (you can also use this link for a pre-filtered list https://gtfobins.github.io/#+suid).
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[From: https://tryhackme.com/room/linprivesc ; Task 8 - Privilege Escalation: Capabilities (with editing, etc.)]
+Another method system administrators can use to increase the privilege level of a process or binary is “Capabilities”. Capabilities help manage privileges at a more granular level. For example, if the SOC analyst needs to use a tool that needs to initiate socket connections, a regular user would not be able to do that. If the system administrator does not want to give this user higher privileges, they can change the capabilities of the binary. As a result, the binary would get through its task without needing a higher privilege user.
+The capabilities 'man' page provides detailed information on its usage and options.
+
+We can use the 'getcap' tool to list enabled capabilities.
+example syntax: getcap -r / 2>/dev/null
+[Note: When run as an unprivileged user, 'getcap -r /' will generate a huge amount of errors, so it is good practice to redirect the error messages to /dev/null.]
+...GTFObins has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
 "In Linux, SUID (set owner userId upon execution) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
 For example, the binary file to change your password has the SUID bit set on it (/usr/bin/passwd). This is because to change your password, it will need to write to the shadowers file that you do not have access to, root does, so it has root privileges to make the right changes."
