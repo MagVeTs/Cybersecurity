@@ -1,3 +1,11 @@
+Linux Resources:
+
+* https://linuxjourney.com/
+[excellent free respource]
+
+
+
+-------------------------------------------------------
 To upgrade/update, write in terminal:
 
 apt update -y && apt upgrade -y && apt dist-upgrade -y
