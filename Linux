@@ -298,10 +298,10 @@ grep -rin Testvalue1 * | column -t | less -S    Search the "Testvalue1" string e
 
 [hat tip: https://tryhackme.com/room/zeekbro]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-Use case for "rev" command in Linux CLI:
-The rev command reverses the text. So the word "hello" becomes "olleh".
+Use case for 'rev' command in Linux CLI:
+The 'rev' command reverses the text. So the word "hello" becomes "olleh".
 In the TryHackMe room "Zeek Exercises" [https://tryhackme.com/room/zeekbroexercises ; Task 2, Question 3] it was necessary to find all the unique domain names in a file using the CLI.
-The CLI can use the "uniq" command to list each unique domain.
+The CLI can use the 'uniq' command to list each unique domain.
 The problem is that each domain appeared many times with various sub-domains of varying lengths and textual content. There could also have been sub-sub-domains delineated by ".". How does one tell the computer to only look at the domain and TLD when determing uniqueness?
 The hint TryHackMe gave for this question used rev as part of the command. Basically, you reverse the text and then use "cut -d '.' -f 1-2" to pull out only the TLD and domain names. You have avoided the variability in the sub-domains and can be sure that you are only extracting the TLD and domain. Then you rev the data back into the proper order and list each unique occurence.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
