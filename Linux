@@ -164,7 +164,9 @@ Managing Users
 [From: Network Chuck - sudo = POWER!! (managing users in Linux) // Linux for Hackers // EP4 ; https://www.youtube.com/watch?v=jwnvKOjmtEA&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=4]
 
 * whoami
-* adduser <NAME_OF_USER_ACCOUNT_BEING_CREATED>
+* adduser <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--use this one; it does more
+* useradd <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--this one does not do as much
+* cat /etc/passwd - list of users
 
 
 
