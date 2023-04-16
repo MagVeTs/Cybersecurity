@@ -158,7 +158,16 @@ The 'which' command allows you to determine which file the commands you are runn
 
 The 'apropros' command allows you to search for commands by keyword. It searches the commands and their documentation.
 [From: Network Chuck - HELP!! (for when you suck at Linux) // Linux for Hackers // EP3 ; https://www.youtube.com/watch?v=Y17KTiJLcyQ&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=3]
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Managing Users
+--------------
+[From: Network Chuck - sudo = POWER!! (managing users in Linux) // Linux for Hackers // EP4 ; https://www.youtube.com/watch?v=jwnvKOjmtEA&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=4]
+
+* whoami
+* adduser <NAME_OF_USER_ACCOUNT_BEING_CREATED>
+
+
+
 Linux CLI
 ---------
 
