@@ -9,9 +9,6 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
 The command 'cd ~' will return you to your home directory from wherever you are in the file system.
 
-Changing users:
-* su <NAME_OF_USER_BEING_SWITCHED_TO>
-Note: using 'su' without giving a user name will default to switching to the root user. 
 ------------------------------------------------
 
 Linux File System
@@ -168,7 +165,8 @@ Managing Users
 * useradd <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--this one does not do as much; it will create the account but you will have to add password and home directory later (see 'usermod')
 * usermod - allows you to modify an existing user account
 * cat /etc/passwd - list of users
-* su <NAME_OF_USER_BEING_SWITCHED_TO> - Changing users [Note: using 'su' without giving a user name will default to switching to the root user.]
+* su - <NAME_OF_USER_BEING_SWITCHED_TO>
+the 'su -' command is used for changing users [Note: using 'su -' without giving a user name will default to switching to the root user.]
 * sudo - stands for "super user do" change to root user for one command then it switches back
 
 
