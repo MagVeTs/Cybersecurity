@@ -169,6 +169,7 @@ Managing Users
 [From: Network Chuck - sudo = POWER!! (managing users in Linux) // Linux for Hackers // EP4 ; https://www.youtube.com/watch?v=jwnvKOjmtEA&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=4]
 
 * whoami
+* groups - this command will list all the groups the user account you are in is a member of
 * adduser <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--usually you will create new user accounts with this command; it will walk you through the full creation of the new user account and automatically creates a home directory for the account
 * useradd <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--this one does not do as much; it will create the account but you will have to add password and home directory later (see 'usermod')
 * usermod - allows you to modify an existing user account
