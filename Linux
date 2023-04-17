@@ -173,6 +173,7 @@ Managing Users
 * adduser <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--usually you will create new user accounts with this command; it will walk you through the full creation of the new user account and automatically creates a home directory for the account
 * useradd <NAME_OF_USER_ACCOUNT_BEING_CREATED> <--this one does not do as much; it will create the account but you will have to add password and home directory later (see 'usermod')
 * usermod - allows you to modify an existing user account, including adding the user to groups (syntax: sudo usermod -aG <GROUP_NAME> <USER_NAME>)
+[Removing a user from a group, syntax: sudo gpasswd -d <USER_NAME> <GROUP_NAME>]
 * cat /etc/passwd - list of users
 * su - <NAME_OF_USER_BEING_SWITCHED_TO>
 The 'su -' command is used for changing users (su = switch user). [Note: using 'su -' without giving a user name will default to switching to the root user.] Typing 'exit', 'logout' or CTRL-D will return you to your original user account.
