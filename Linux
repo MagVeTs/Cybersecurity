@@ -178,7 +178,7 @@ The 'su -' command is used for changing users (su = switch user). [Note: using '
 * sudo - stands for "super user do" change to root user for one command then it switches back
 The list of users who have sudo rights is found in the sudoers file. The safe, best practice way to edit this file is using the command: 'sudo visudo'
 * userdel - delete a user
-* groupadd - add a group
+* groupadd - add a group (list of groups stored in /etc/group; every user automatically is assigned their own group which is the same as their username; they can also be assigned to created groups)
 
 
 Linux CLI
