@@ -51,6 +51,9 @@ Installing Packages (programs, apps, etc.)
 Also see Network Chuck's info (in the cited video) on the following package managers:
 * aptitude
 * snapd
+
+Some program languages have their own package managers for tthe packages written in those languages:
+PiP - this is a Python language package manager for certain packages written in Python
 ---------------------------------------------------------
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
 The command 'cd ~' will return you to your home directory from wherever you are in the file system.
