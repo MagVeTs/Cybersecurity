@@ -48,7 +48,7 @@ Installing Packages (programs, apps, etc.)
 * sudo apt update && sudo apt full-upgrade
 - will do the same as 'sudo apt update && sudo apt upgrade' but will also remove any dependencies, etc. that are no longer needed for the upgraded packages
 
-Also see Network Chuck's info (in the cited video) on:
+Also see Network Chuck's info (in the cited video) on the following package managers:
 * aptitude
 * snapd
 ---------------------------------------------------------
