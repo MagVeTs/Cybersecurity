@@ -27,7 +27,9 @@ Installing Packages (programs, apps, etc.)
   sudo apt install <NAME_OF_PACKAGE>
   for example: sudo apt install pidgin
 - then you can run the package by typing its name as the command, e.g. pidgin 
-
+- to see a list of the repositories apt automatically checks (and edit the list), use the command:
+  sudo apt edit-sources
+  then choose an editor from the list it gives you
 
 ---------------------------------------------------------
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
