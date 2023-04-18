@@ -19,6 +19,7 @@ Installing Packages (programs, apps, etc.)
 
 * dpkg - will not find packages by name online (you need to download them first); it will also not automatically download an install the dependencies you need for the package you want
 
+
 * apt (advanced package tool) - the apt command will search for packages by name in its repository; you can also direct it to other repositories and it can download from them; it will install the package and install all its dependencies; better to use apt command when possible
 - Before using apt to install new package always give the command:
   sudo apt update
@@ -38,7 +39,18 @@ Installing Packages (programs, apps, etc.)
 * sudo apt show <NAME_OF_A_PACKAGE>
 - will tell you about a package
 * sudo apt search <NAME_OF_A_PACKAGE>
+* sudo apt remove <NAME_OF_A_PACKAGE> 
+- will delete package but not your user configs and data; if you reinstall the package you will be able to use them
+* sudo apt purge <NAME_OF_A_PACKAGE> 
+- will remove package and all associated data
+* sudo apt update && sudo apt upgrade
+- will check the repositories for updates to all your installed packages and if it finds updates for them it will upgrade them using those updates
+* sudo apt update && sudo apt full-upgrade
+- will do the same as 'sudo apt update && sudo apt upgrade' but will also remove any dependencies, etc. that are no longer needed for the upgraded packages
 
+Also see Network Chuck's info (in the cited video) on:
+* aptitude
+* snapd
 ---------------------------------------------------------
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
 The command 'cd ~' will return you to your home directory from wherever you are in the file system.
