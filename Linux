@@ -52,9 +52,25 @@ Also see Network Chuck's info (in the cited video) on the following package mana
 * aptitude
 * snapd
 
-Some program languages have their own package managers for tthe packages written in those languages:
+Some program languages have their own package managers for the packages written in those languages:
 PiP - this is a Python language package manager for certain packages written in Python
 RubyGems (uses command 'gem install') - this is a Ruby language package manager for certain packages written in Ruby
+
+Installing packages from GitHub
+-------------------------------
+* First make sure 'git' is installed on your system. If it is not, install it using:
+sudo apt install git
+* If git is installed, you can now install packages directly from GitHub by using the command:
+git clone <URL_OF_GitHub_REPOSITORY_CONTAINING_PACKAGE_THAT_YOU_WANT>
+(example: git clone https://github.com/fleetcaptain/Turbolist3r)
+The package will be placed in the directory you are presently in.
+* Now, check the folder that was downloaded and see if there is a "requirements.txt" document in it. If there is you can download the requirements as follows. If the executable is a .py (Python) program, you can use the following command:
+- pip install -r requirements.txt (if you have python2)
+- pip3 install -r requirements.txt (if you have python3)
+* To run the python script the command is:
+- python <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python2)
+- python3 <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python3)
+
 ---------------------------------------------------------
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
 The command 'cd ~' will return you to your home directory from wherever you are in the file system.
