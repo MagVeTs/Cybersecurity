@@ -260,8 +260,12 @@ stop and restart a Linux service
 reloads services configuration without restarting; not available for all services; you can also use the command 'sudo systemtemctl reload-or-restart <NAME_OF_SERVICE>' and it will reload if it can and if not it will restart
 * sudo systemtemctl disable <NAME_OF_SERVICE>
 will prevent service from starting at boot; however, if service is running now it will continue running
+* sudo systemtemctl enable <NAME_OF_SERVICE>
+will cause the service to start at boot
 * sudo systemtemctl status <NAME_OF_SERVICE>
-check status of a Linux service (if under "Active:" it says "inactive (dead)" the service is stopped; if it says "active (running) the service is running)
+check status of a Linux service 
+- if under "Active:" it says "inactive (dead)" the service is stopped; if it says "active (running) the service is running
+- if a service is running but has been disabled from starting at boot it will have "disabled" listed under "Loaded"
 * 
 
 
