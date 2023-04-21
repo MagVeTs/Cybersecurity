@@ -1,0 +1,15 @@
+Cracking a hash found in Linux's /etc/shadow file in order to get a password
+1) cat /etc/shadow
+example output:
+matt:$6$WHmIjebL7MA7KN9A$C4UBJB4WVI37r.Ct3Hbhd3YOcua3AUowO2w2RUNauW8IigHAyVlHzhLrIUxVSGa.twjHc71MoBJfjCTxrkiLR.:18798:0:99999:7:::
+
+2) copy hash and paste it into text file:
+$6$WHmIjebL7MA7KN9A$C4UBJB4WVI37r.Ct3Hbhd3YOcua3AUowO2w2RUNauW8IigHAyVlHzhLrIUxVSGa.twjHc71MoBJfjCTxrkiLR.
+save text file; in this case we will call it Matt
+
+3) run john the ripper as follows:
+john --wordlist=/usr/share/wordlists/rockyou.txt matt
+the password retrieved from the cracked hash will be shown amongst other data
+
+4) after having run john the ripper you can show just the password by the following command:
+john matt --show
