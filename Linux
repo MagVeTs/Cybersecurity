@@ -248,7 +248,7 @@ Linux Services (called daemons)
 - systemd - the so-called master daemon that all the other services (in this context referred to as as units), "fork" out from (a process tree). Systemd is an initialization system and service manager for all other services.
 
 commands:
-systemctl is the basis for the commands to control Linux services
+systemctl is the basis for the commands to control Linux services. It interacts with systemd which contols Linux services (daemons).
 
 * sudo systemtemctl stop <NAME_OF_SERVICE>
 stop a Linux service from running
@@ -267,8 +267,11 @@ check status of a Linux service
 - if under "Active:" it says "inactive (dead)" the service is stopped; if it says "active (running) the service is running
 - if a service is running but has been disabled from starting at boot it will have "disabled" listed under "Loaded"
 * sudo systemctl list-units
+lists all active services
 * sudo systemctl list-units --all
+lists active and inactive services
 * sudo systemctl list-unit-files
+lists the files of all services on the system; including files that have not yet been parsed and loaded into memory
 
 
 
