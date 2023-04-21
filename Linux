@@ -266,7 +266,9 @@ will cause the service to start at boot
 check status of a Linux service 
 - if under "Active:" it says "inactive (dead)" the service is stopped; if it says "active (running) the service is running
 - if a service is running but has been disabled from starting at boot it will have "disabled" listed under "Loaded"
-* 
+* sudo systemctl list-units
+* sudo systemctl list-units --all
+* sudo systemctl list-unit-files
 
 
 
