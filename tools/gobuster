@@ -1,0 +1,28 @@
+[From: TryHackMe Web Enumeration - Task 3 ; https://tryhackme.com/room/webenumerationv2 (with editing, etc.)]
+
+Introduction to Gobuster
+
+Topics covered:
+How to install Gobuster on Kali Linux
+How to use the "dir" mode to enumerate directories and several of its most useful options
+How to use the "dns" mode to enumerate domains/subdomains and several of its most useful option
+Where to go for help
+
+... What is Gobuster?
+As the name implies, Gobuster is written in Go (https://go.dev/). Go is an open-source, low-level language (much like C or Rust) developed by a team at Google and other contributors. If you'd like to learn more about Go, visit the website linked above.
+
+Installing Gobuster on Kali Linux
+
+Luckily, installing Gobuster on Kali Linux does not require any installation of Go and does not carry with it a complicated install process. This means no building from source or running any other complicated commands. The command is:
+sudo apt install gobuster
+
+... Useful Global Flags
+There are some useful Global flags that can be used as well. They are included in the table below. You can review these in the main documentation as well - here: https://github.com/OJ/gobuster.
+
+Flag	Long Flag	Description
+-t	--threads	Number of concurrent threads (default 10)
+-v	--verbose	Verbose output
+-z	--no-progress	Don't display progress
+-q	--quiet	Don't print the banner and other noise
+-o	--output	Output file to write results to
+It is recommended to change the number of threads to 64 to increase the speed of scans. If you don't change the number of threads, Gobuster can be a little slow.
