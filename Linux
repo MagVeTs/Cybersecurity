@@ -255,7 +255,7 @@ stop a Linux service from running
 * sudo systemtemctl start <NAME_OF_SERVICE>
 start a Linux service that has been stopped or not yet started
 * sudo systemtemctl restart <NAME_OF_SERVICE>
-stop and restart a Linux service
+stop and restart a Linux service (this is often used when a service is not working properly; often restarting it will fix the problem)
 * sudo systemtemctl reload <NAME_OF_SERVICE>
 reloads services configuration without restarting; not available for all services; you can also use the command 'sudo systemtemctl reload-or-restart <NAME_OF_SERVICE>' and it will reload if it can and if not it will restart
 * sudo systemtemctl disable <NAME_OF_SERVICE>
@@ -272,8 +272,8 @@ lists all active services (you can '| grep <NAME_OF_SERVICE>' to pull out specif
 lists active and inactive services
 * sudo systemctl list-unit-files
 lists the files of all services on the system; including files that have not yet been parsed and loaded into memory
-* journalctl -xe
-
+* sudo journalctl -xe
+- journalctl is the logs for systemd; it enables you to troubleshoot issues with services; this command will let you view all the logs; you can grep for a particular service that you are interested in
 
 Linux CLI
 ---------
