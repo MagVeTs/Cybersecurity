@@ -312,7 +312,7 @@ Processes can either be:
 foreground processes - these can be interacted with
 background processes - these must be first switched to foreground to interact with them [Note: you may be able to see data being generated from a background process - you just cannot interact with the process (e.g. you cannot stop or kill it).]
 * bg <JID> (see below under 'jobs' for info on JID)
-background a process
+background a process [Note: if you put an ampersand (&) at the end of a command that launches a process it will start as a background process, e.g. ping -c 300 google.com &]
 * fg <JID>
 
 * jobs
