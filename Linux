@@ -274,6 +274,37 @@ lists active and inactive services
 lists the files of all services on the system; including files that have not yet been parsed and loaded into memory
 * sudo journalctl -xe
 - journalctl is the logs for systemd; it enables you to troubleshoot issues with services; this command will let you view all the logs; you can grep for a particular service that you are interested in
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+[From: Network Chuck - KILL Linux processes!! (also manage them) // Linux for Hackers // EP 7 ; https://www.youtube.com/watch?v=LfC6pv8VISk&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=10]
+
+commands:
+* ps 
+shows running processes; however default is just to show processes running in the terminal you are entering the command from - you will usually need to add arguments
+
+* ps --help
+will show you ps help options; you have to then choose from them to see a help guide
+
+* ps -aux
+the arguments -aux are the most commonly used arguments for ps:
+a = show processes from all users
+u = list the user that each process belongs to
+x = show processes from everywhere (not just the processes executed from the terminal you are entering the command from)
+you can '| grep' for a particular process (not every system has pgrep installed)
+
+* pgrep <NAME_OF_PROCESS>
+this combines ps with grep to find a particular process and return its PID (process ID) - which is necessary for killing a process (Note: not every system has pgrep installed; you might need to do: ps -aux | grep <NAME_OF_PROCESS>)
+
+* kill <PID (PROCESS ID)>
+stops a process; used to stop unresponsive processes
+
+* top
+shows all currently running processes sorted in real time by CPU usage
+hitting 'q' exits top
+
+* htop
+the same information as top but with a nicer display
+hitting 'q' exits htop
+
 
 Linux CLI
 ---------
