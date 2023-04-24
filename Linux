@@ -297,6 +297,9 @@ this combines ps with grep to find a particular process and return its PID (proc
 * kill <PID (PROCESS ID)>
 stops a process; used to stop unresponsive processes
 
+<CTRL>-Z - puts process that is running in foreground (see below) of your terminal to sleep (i.e. pauses it) [typing: 'sleep' will also do this]
+<CTRL>-C - kills process that is running in foreground (see below) of your terminal (i.e. stops it)
+
 * top
 shows all currently running processes sorted in real time by CPU usage
 hitting 'q' exits top
@@ -304,6 +307,12 @@ hitting 'q' exits top
 * htop
 the same information as top but with a nicer display
 hitting 'q' exits htop
+
+Processes can either be:
+foreground processes - these can be interacted with
+background processes - these must be first switched to foreground to interact with them
+
+
 
 
 Linux CLI
