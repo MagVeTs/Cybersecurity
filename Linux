@@ -10,7 +10,7 @@ To upgrade/update, write in terminal:
 
 apt update -y && apt upgrade -y && apt dist-upgrade -y
 
-[hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)
+[hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)]
 
 ---------------------------------------------------------
 Installing Packages (programs, apps, etc.)
