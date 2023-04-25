@@ -300,6 +300,9 @@ stops a process; used to stop unresponsive processes
 <CTRL>-Z - puts process that is running in foreground (see below) of your terminal to sleep (i.e. stops it [stop here means pause])
 <CTRL>-C - kills process that is running in foreground (see below) of your terminal (i.e. ends it permanently)
 
+* pkill <NAME_OF_PROCESS(S)>
+will kill all processes with the name you inputted [can also be used with -9]
+
 * top
 shows all currently running processes sorted in real time by CPU usage
 hitting 'q' exits top
