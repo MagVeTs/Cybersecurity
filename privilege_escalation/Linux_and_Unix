@@ -226,7 +226,15 @@ If we type “thm” to the command line, these are the locations Linux will loo
 3) Can you modify $PATH?
 4) Is there a script/application you can start that will be affected by this vulnerability?
 
+For demo purposes, we will use the script below:
 
+#include<unistd.h>
+void main()
+{ setuid(0);
+  setgid(0);
+  system("thm");
+ }
+ 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
