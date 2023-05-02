@@ -22,3 +22,8 @@ http://threatexpress.com/
 Domain name selection is an important aspect of preparation for penetration tests and especially Red Team engagements. Commonly, domains that were used previously for benign purposes and were properly categorized can be purchased for only a few dollars. Such domains can allow a team to bypass reputation based web filters and network egress restrictions for phishing and C2 related tasks.
 
 This Python based tool was written to quickly query the Expireddomains.net search engine for expired/available domains with a previous history of use. It then optionally queries for domain reputation against services like Symantec Site Review (BlueCoat), IBM X-Force, and Cisco Talos. The primary tool output is a timestamped HTML table style report."
+------------------------------------------------------
+OffSec Tools
+https://offsec.tools/
+offsec.tools
+"A vast collection of security tools for bug bounty, pentest and red teaming"
