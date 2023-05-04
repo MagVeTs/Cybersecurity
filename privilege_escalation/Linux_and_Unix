@@ -11,6 +11,17 @@ The 'hostname' command will return the hostname of the target machine. Although 
 uname -a
 Will print system information giving us additional detail about the kernel used by the system. This will be useful when searching for any potential kernel vulnerabilities that could lead to privilege escalation.
 
+OS/Distro and Kernel Info
+-------------------------
+cat /etc/os-release
+"will provide quite a detailed account of your Linux operating system's version"
+cat /etc/*release
+"Slightly more information can be gathered using the *release file instead. This displays all information from files ending with the word "release" in the /etc/ directory, concatenated into a single output."
+- the above are about the OS distro, for kernel information use:
+cat /proc/version
+"You'll find the version number of your current Linux kernel, compiled from information from the /proc/sys/kernel/ostype, /proc/sys/kernel/osrelease, and /proc/sys/kernel/version files. As noted earlier, the cat command concatenates information from various files, which is what is happening here."
+(from: https://www.makeuseof.com/ - 10 Ways to Check Which Linux Version You're Running - PUBLISHED AUG 28, 2019)
+
 ps Command
 The ps command is an effective way to see the running processes on a Linux system. Typing ps on your terminal will show processes for the current shell.
 The output of the ps (Process Status) will show the following;
