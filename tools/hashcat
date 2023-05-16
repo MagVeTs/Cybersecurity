@@ -1,0 +1,5 @@
+Network Chuck - how to HACK a password // password cracking with Kali Linux and HashCat
+https://www.youtube.com/watch?v=z4_oqTZJqCo&list=PLIhvC56v63IIJZRa3lzK6IeBQOH_VFjUQ&index=9
+[note: I think he misinterprets the HashCat output at a couple of points in the video. He says that: 'Candidates.#1 eminem --> bearsbeets' are HashCat giving two options as to what the password might be. I believe they are just the beginning an end of the list of possible passwords that HashCat compared the hash to. In order to see the actual password that was matched to the hash, you need to check the output file you designated using the -o argument.]
+
+https://geekflare.com/password-cracking-with-hashcat/
