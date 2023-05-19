@@ -110,5 +110,8 @@ As this is a reverse shell, you should also run the Metasploit Handler module co
 Command Prompt
 C:\> msiexec /quiet /qn /i C:\Windows\Temp\malicious.msi
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-see: https://tryhackme.com/room/windowsprivesc20 - Task 5 (Abusing Service Misconfigurations)
+see: https://tryhackme.com/room/windowsprivesc20 - Task 5 (Abusing Service Misconfigurations) for an extensive discussion of elevating privileges covering:
+1) The SCM (Service Control Manager) and where to view information about services
+2) How to check for and abuse Insecure Permissions on Service Executables (2 methods).
+3) How to check for and abuse Unquoted Service Paths.
 
