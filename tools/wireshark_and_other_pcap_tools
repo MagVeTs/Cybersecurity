@@ -30,3 +30,10 @@ NOTE:  The two articles below were posted in 2013, so they're somewhat dated, bu
 Identifying a host on the network
 Examining Tor traffic"
 -------------------------------------------------------------------------
+A-Packets
+https://apackets.com/
+"Online pcap file analyzer
+Allow read and view pcap file online. Explore IPv4/IPv6, HTTP, Telnet, FTP, DNS, SSDP, WPA2 protocols details. You can build map of network structure and view nodes communications. Sniff and analyze network traffic and other pcap data.
+Analyse pcap files to view HTTP headers, request and response data. Extract transferred files, office documents, pictures. Find passwords for various protocols."
+[NOTE: whatever you upload becomes public if you upload as a public file]
+[hat tip: Network Chuck]
