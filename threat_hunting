@@ -3,3 +3,8 @@ https://github.com/mthcht/ThreatHunting-Keywords
 https://mthcht.github.io/ThreatHunting-Keywords/ - the database
 "List of keywords for ThreatHunting sessions"
 [huge and searchable]
+
+
+EVTX-to-MITRE-Attack
+https://github.com/mdecrevoisier/EVTX-to-MITRE-Attack
+"Set of EVTX samples (>270) mapped to MITRE Att@k tactic and techniques to measure your SIEM coverage or developed [sic] new use cases."
