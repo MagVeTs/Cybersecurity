@@ -110,9 +110,29 @@ As this is a reverse shell, you should also run the Metasploit Handler module co
 Command Prompt
 C:\> msiexec /quiet /qn /i C:\Windows\Temp\malicious.msi
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-see: https://tryhackme.com/room/windowsprivesc20 - Task 5 (Abusing Service Misconfigurations) for an extensive discussion of elevating privileges covering:
+see: https://tryhackme.com/room/windowsprivesc20 - Task 5 (Abusing Service Misconfigurations) for an extensive discussion of elevating privileges, covering:
 1) The SCM (Service Control Manager) and where to view information about services
 2) How to check for and abuse Insecure Permissions on Service Executables (2 methods).
 3) How to check for and abuse Unquoted Service Paths.
 4) How to check for and abuse Insecure Service Permissions (note: this is different from #1 Insecure Permissions on Service EXECUTABLES)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+see: https://tryhackme.com/room/windowsprivesc20 - Task 6 (Abusing dangerous privileges) for an extensive discussion of elevating privileges, including:
+"Windows Privileges
+Privileges are rights that an account has to perform specific system-related tasks. These tasks can be as simple as the privilege to shut down the machine up to privileges to bypass some DACL-based access controls.
+Each user has a set of assigned privileges that can be checked with the following command:
+whoami /priv
+A complete list of available privileges on Windows systems is available here: https://learn.microsoft.com/en-us/windows/win32/secauthz/privilege-constants. From an attacker's standpoint, only those privileges that allow us to escalate in the system are of interest. You can find a comprehensive list of exploitable privileges on the Priv2Admin Github project (https://github.com/gtworek/Priv2Admin)."
+and discussing specifically:
+1) SeBackup / SeRestore
+"The SeBackup and SeRestore privileges allow users to read and write to any file in the system, ignoring any DACL in place. The idea behind this privilege is to allow certain users to perform backups from a system without requiring full administrative privileges.
+Having this power, an attacker can trivially escalate privileges on the system by using many techniques ... [including] copying the SAM and SYSTEM registry hives to extract the local Administrator's password hash."
+2) SeTakeOwnership
+"The SeTakeOwnership privilege allows a user to take ownership of any object on the system, including files and registry keys, opening up many possibilities for an attacker to elevate privileges, as we could, for example, search for a service running as SYSTEM and take ownership of the service's executable."
+3) SeImpersonate / SeAssignPrimaryToken
+"These privileges allow a process to impersonate other users and act on their behalf. Impersonation usually consists of being able to spawn a process or thread under the security context of another user."
+
+
+
+
+
 
