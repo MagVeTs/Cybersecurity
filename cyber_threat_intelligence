@@ -7,7 +7,7 @@ Information on IPs, URLs, Domains, etc.:
 * https://www.shodan.io/
 * https://www.greynoise.io/ (search engine: https://viz.greynoise.io/)
 * https://www.virustotal.com/gui/home/upload
-
+* https://any.run/ (visits url and and shows you what happens in sandboxed environment)
 
 --------------------------------
 [hat tip: TryHackMe - Threat Intelligence Tools]
