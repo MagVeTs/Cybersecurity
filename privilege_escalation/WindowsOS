@@ -130,6 +130,18 @@ Having this power, an attacker can trivially escalate privileges on the system b
 "The SeTakeOwnership privilege allows a user to take ownership of any object on the system, including files and registry keys, opening up many possibilities for an attacker to elevate privileges, as we could, for example, search for a service running as SYSTEM and take ownership of the service's executable."
 3) SeImpersonate / SeAssignPrimaryToken
 "These privileges allow a process to impersonate other users and act on their behalf. Impersonation usually consists of being able to spawn a process or thread under the security context of another user."
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+see: https://tryhackme.com/room/windowsprivesc20 - Task 7 (Abusing vulnerable software) for an extensive discussion of elevating privileges, including:
+"Unpatched Software
+Software installed on the target system can present various privilege escalation opportunities. As with drivers, organisations and users may not update them as often as they update the operating system. You can use the wmic tool to list software installed on the target system and its versions. The command below will dump information it can gather on installed software (it might take around a minute to finish):
+
+wmic product get name,version,vendor
+
+Remember that the wmic product command may not return all installed programs. Depending on how some of the programs were installed, they might not get listed here. It is always worth checking desktop shortcuts, available services or generally any trace that indicates the existence of additional software that might be vulnerable.
+
+Once we have gathered product version information, we can always search for existing exploits on the installed software online on sites like exploit-db (https://www.exploit-db.com/), packet storm (https://packetstormsecurity.com/) or plain old Google, amongst many others..."
+[This Task includes the following case study: exploting a vulnerability in Druva inSync 6.6.3.]
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
