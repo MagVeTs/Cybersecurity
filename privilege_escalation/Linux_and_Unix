@@ -122,6 +122,7 @@ Reading the /etc/passwd file can be an easy way to discover users on the system.
 While the output can be long and a bit intimidating, it can easily be cut and converted to a useful list for brute-force attacks, using the following syntax:
 cat /etc/passwd | cut -d ":" -f 1
 Remember that this will return all users, some of which are system or service users that would not be very useful. Another approach could be to grep for “home” as real users will most likely have their folders under the “home” directory; syntax: cat /etc/passwd | grep home.
+[Note: Human users always have a UUID of greater than 1000 (the UUID is found in the third column of each entry). Any users whose UUID is not greater than 1000 are root/service/daemon users -- Jasper Alblas ; https://medium.com/@JAlblas/tryhackme-owasp-top-10-task-1-16-walkthrough-da5e96a4a803)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: TryHackMe - Linux Privilege Escalation ; https://tryhackme.com/room/linprivesc ; Task 4 - Automated Enumeration Tools (with some editing)]
