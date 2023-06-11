@@ -22,3 +22,10 @@ Crypto CTF challenges often present you with a set of these values, and you need
 
 There’s a lot more maths to RSA, and it gets quite complicated fairly quickly. If you want to learn the maths behind it, I recommend reading MuirlandOracle’s blog post here: https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Checking hashes in Linux Terminal
+----------------------------------
+md5sum <NAME_OF_FILE>
+sha1sum <NAME_OF_FILE>
+sha256sum <NAME_OF_FILE>
+[from: https://tryhackme.com/room/owasptop102021 ; task 18]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
