@@ -29,3 +29,7 @@ sha1sum <NAME_OF_FILE>
 sha256sum <NAME_OF_FILE>
 [from: https://tryhackme.com/room/owasptop102021 ; task 18]
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Subresource Integrity Hash [see here: https://tryhackme.com/room/owasptop102021 ; Task 19 - Software Integrity Failures]
+https://www.srihash.org/
+"SRI is a new W3C specification that allows web developers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source."
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
