@@ -1,4 +1,4 @@
-website_content_and_techStack_discovery
+Domain enumeration_website_content_and_techStack_discovery
 -----------------------------------------
 1) add "/robots.txt" at end of URL to discover pages the website owners do not want web-crawlers to catalog--TryHackMe
 
@@ -125,4 +125,18 @@ How do Discover Hidden Directories & Subdomains | Gobuster Tutorial
 https://www.youtube.com/watch?v=PKLAF_p1LtM
 ---------------------------------------------------------
 https://tools.emailhippo.com/Apps/Domain-Age-Checker - check age of a domain (extracted from WHOIS)
-
+---------------------------------------------------------
+https://github.com/tomnomnom/httprobe
+[Allows one to automate the probing of possible subdomains to discover which ones are presently accepting http/https requests; recommended by Heath Adams - The Cyber Mentor.
+also see:
+https://www.kali.org/tools/httprobe/
+and
+https://www.youtube.com/watch?v=r3885xjXJqs
+^excellent walkthrough of httprobe usage.]
+----------------------------------------------------------
+https://github.com/owasp-amass/amass
+[Massive tool for subdomain enumeration drawing from many sources; recommended by Heath Adams - The Cyber Mentor.
+also see:
+https://www.kali.org/tools/amass/
+https://securitytrails.com/blog/owasp-amass
+https://medium.com/hacker-toolbelt/owasp-amass-osint-reconnaissance-9b57d81fb958]
