@@ -10,3 +10,7 @@ https://www.kali.org/tools/
 ----------------------------------------------------------------------------------
 Network Chuck - learning hacking? DON'T make this mistake!! (hide yourself with Kali Linux and ProxyChains)
 https://www.youtube.com/watch?v=qsA8zREbt6g&list=PLIhvC56v63IJ9SYBtdDsNnORfTNFCXR8_&index=6
+----------------------------------------------------------------------------------
+When installing tools it is recommended to install them in the /opt directory.
+[Heath Adams - The Cyber Mentor]
+----------------------------------------------------------------------------------
