@@ -80,7 +80,9 @@ The package will be placed in the directory you are presently in.
 * To run the python script the command is:
 - python <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python2)
 - python3 <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python3)
-
+---------------------------------------------------------
+When installing tools it is recommended to install them in the /opt directory.
+[Heath Adams - The Cyber Mentor]
 ---------------------------------------------------------
 In the command line prompt the presence of ~ represents that a user is now in their home directory.
 The command 'cd ~' will return you to your home directory from wherever you are in the file system.
