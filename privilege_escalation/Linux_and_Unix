@@ -124,6 +124,11 @@ cat /etc/passwd | cut -d ":" -f 1
 Remember that this will return all users, some of which are system or service users that would not be very useful. Another approach could be to grep for “home” as real users will most likely have their folders under the “home” directory; syntax: cat /etc/passwd | grep home.
 [Note: Human users always have a UUID of greater than 1000 (the UUID is found in the third column of each entry). Any users whose UUID is not greater than 1000 are root/service/daemon users -- Jasper Alblas ; https://medium.com/@JAlblas/tryhackme-owasp-top-10-task-1-16-walkthrough-da5e96a4a803)
 
+Also see:
+* /etc/shadow
+* /etc/group
+* /etc/sudoers
+[hat tip: Heath Adams - The Cyber Mentor]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: TryHackMe - Linux Privilege Escalation ; https://tryhackme.com/room/linprivesc ; Task 4 - Automated Enumeration Tools (with some editing)]
 
