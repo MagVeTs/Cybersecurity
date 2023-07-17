@@ -12,6 +12,15 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y
 
 [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)]
 
+Heath Adams (The Cyber Mentor) recommends:
+* make copy of VM before attempting update/upgrade
+* switching to root (sudo su -)
+* then run: apt update && apt upgrade
+
+Heath Adams (The Cyber Mentor) recommends:
+https://github.com/Dewalt-arch/pimpmykali
+"Kali Linux Fixes for Newly Imported VM's"
+also see: How To Install PimpMyKali in Kali Linux - Home Hacking Lab Video 3 (https://www.youtube.com/watch?v=hH_Qbv4RIi8)
 ---------------------------------------------------------
 Installing Packages (programs, apps, etc.)
 
@@ -332,7 +341,17 @@ background a process [Note: if you put an ampersand (&) at the end of a command 
 
 * jobs
 shows a list of all running and sleeping (called stopped [meaning paused]) jobs in your terminal, and the identifying number (JID [Job ID] - not the same as the PID) that has been assigned to them
+-------------------------------------------------------
+Linux Networking Commands
+-------------------------
+`ip a` replaces `ifconfig`
+[`ifconfig` output does not include `iwconfig` output; `ip a` should include both `ifconfig` and `iwconfig` output]
 
+`ip n` replaces `arp -a`
+
+`ip r` displays routing table, including: destination networks, gateway IP addresses, and network interfaces
+
+--------------------------------------------------------
 
 Linux CLI
 ---------
@@ -698,3 +717,4 @@ Other OS's	Command line: perl -e "print scalar(localtime(epoch))" (If Perl is in
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 Introduction to Named Pipes
 https://www.linuxjournal.com/article/2156
+-----------------------------------------------------------------------------
