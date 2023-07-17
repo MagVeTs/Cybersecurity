@@ -29,7 +29,8 @@ Installing Packages (programs, apps, etc.)
 * dpkg - will not find packages by name online (you need to download them first); it will also not automatically download an install the dependencies you need for the package you want
 
 
-* apt (advanced package tool) - the apt command will search for packages by name in its repository; you can also direct it to other repositories and it can download from them; it will install the package and install all its dependencies; better to use apt command when possible
+* apt (advanced package tool) - the apt command will search for packages by name in its repository; you can also direct it to other repositories and it can download from them; it will install the package and install all its dependencies; better to use apt command when possible 
+[note: if `apt` is not present on the Linux machine it can be installed using the command: `sudo dnf install apt` (hat tip: SW)]
 - Before using apt to install new package always give the command:
   sudo apt update
   this will have apt communicate with its repository so it will have the most up-to-date list of packages for you to draw from.
