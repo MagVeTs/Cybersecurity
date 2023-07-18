@@ -202,9 +202,18 @@ Option           |             Meaning
 4) -oX FILENAME                save output in XML format; most convenient for processing the output in other programs
 5) -oA FILENAME	               save output in normal, XML and Grepable formats
 
-NOTE: EVERYTHING IN THIS SECTION COMES FROM TryHackMe's FOUR Nmap ROOMS (https://tryhackme.com/room/nmap01 - https://tryhackme.com/room/nmap04); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
+NOTE: EVERYTHING IN THE ABOVE SECTION COMES FROM TryHackMe's FOUR Nmap ROOMS (https://tryhackme.com/room/nmap01 - https://tryhackme.com/room/nmap04); SOME IS VERBATIM ; SOME IS EDITED OR REPHRASED
 =======================================================================================================================================================================
-
 Nmap Scripting Engine
 https://www.youtube.com/watch?v=M-Uq7YSfZ4I
 [hat tip: Jonathan Erez]
+--------------------------------------------------------
+Nmap info/advice from Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300/)
+
+* The nmap stealth scan (-sS) is now the default scan so you do not need to use the -sS argument.
+* 99% of the time the only scans you will use in pentesting are -sS and -sU (the UDP scan)
+* if you have good reason to believe a port is open you may want to use the -Pn ("treat all hosts as online -- skip host discovery") argument to tell nmap not to assume ports are open and not bother with a ping (this will help in a situation where a port is open but is configured not to respond to a ping; if you do not use -Pn nmap will ping and receive no response and assume the port is closed)
+* use the -A argument to accomplish the equivalent of -sV [service detection], -sC [script detection], and -O [OS detection]; however, you might want to first do a basic scan without -A just to find the open ports; once you know which ports are open you scan only those ports that are open again with the -A argument; this will save alot of time
+* the -sS scan only looks for TCP so you still need to run -sU to determine if UDP services are running on a port
+* run -sS with -p- to find all services by checking all ports
+* it is probably better to run -sU without -p- in order to just check the top 1000 ports (the default when no `-p` argument is given) because if you run -p- it will take very long to get results since UDP is a connectionless protocol
