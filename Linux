@@ -356,13 +356,11 @@ Linux Networking Commands
 
 --------------------------------------------------------
 
-Linux CLI
----------
+Linux CLI (Terminal Emulator)
+-----------------------------
 
 Basics
 ------
-
-------------------------------------------
 Commands must be separated from arguments (e.g. -a) and file names by at least one space or tab; but multiple spaces or tabs is not a problem.
 Multiple arguments can be combined in one dash (-) with no spaces, e.g. -l -a -c = -lac
 You can run more than one command per line if you use a semicolon (;), e.g.:
@@ -383,6 +381,9 @@ If a program is stuck in an infinite loop pressing Ctrl-c will stop the program 
 Some commands that require an argument will also create a problem if one forgets to add the argument. For example, if you type 'cat' with no filename and press enter the terminal will move the cursor to the next line but no output or prompt will appear. Pressing CTRL-c or CTRL-d will bring back the prompt.
 If the Enter key is not working try: CTRL-j or CTRL-m.
 [hat tip: Linux Tutorials | Commands in Linux when things go wrong | GeeksforGeeks ; https://www.youtube.com/watch?v=7zG1RAVcrKM&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=9]
+
+If you want to switch to a new line to write the rest of you command (because the command is long and you want it to be more readable to yourself) you can do a backslash (\) and then hit enter. The CLI will not run the command that you have entered so far; instead, the CLI will switch to a new line and you can enter the rest of the command. After entering the full command, press enter again and the entire command will be run at once just as if it was all on the same line.
+[hat tip: Network Chuck]
 
 who - displays list of users currently logged on to the system and information about them (e.g. login time)
 whoami - displays the name of the user logged into the terminal
