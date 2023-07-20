@@ -1,7 +1,7 @@
 smbclient allows a connection to be made to smb shares
 
 syntax:
-smbclient -L \\\\<IP_address_of_smb_share>
-[Note: use at least two \\; Heath Adams uses four]
+smbclient -L \\\\<IP_address_of_smb_share>\\
+[Note: use at least two \\; Heath Adams uses four; if you use just two at beginning you do not have to use two at end; slashes are for Linux character escaping]
 
 [hat tip: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300]
