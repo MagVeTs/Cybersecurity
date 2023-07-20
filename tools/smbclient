@@ -9,5 +9,6 @@ syntax:
 * smbclient \\\\<IP_address_of_smb_share>\\<sharename>
 this command will access a particular share
 
+[Note if you do not know password try just hitting enter; anonymous access may be allowed.]
 
 [hat tip: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300]
