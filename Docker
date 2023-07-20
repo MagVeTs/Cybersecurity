@@ -1,5 +1,5 @@
-Installing Docker (with Docker Compose) on Linux:
+Installing Docker on Linux:
 > sudo apt update
-> sudo apt install docker.io docker-compose -y
+> sudo apt install docker.io -y
 
 [credit: Network Chuck - https://www.youtube.com/watch?v=DM65_JyGxCo]
