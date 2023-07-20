@@ -1,3 +1,11 @@
+Basic Metasploit Commands:
+
+search <keyword> - find a module by keyword
+use <name_of_module OR #_assigned_to_module_in_search_results>  - select a module for use
+info - receive info about the module you have selected to use
+
+[hat tip: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300]
+------------------------------------------------------------------------------------
 Metasploit: Introduction
 An introduction to the main components of the Metasploit Framework.
 From: https://tryhackme.com/room/metasploitintro [with some edits and rephrasing]
