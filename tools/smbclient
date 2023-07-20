@@ -1,0 +1,7 @@
+smbclient allows a connection to be made to smb shares
+
+syntax:
+smbclient -L \\\\<IP_address_of_smb_share>
+[Note: use at least two \\; Heath Adams uses four]
+
+[hat tip: Heath Adams - The Cyber Mentor; 
