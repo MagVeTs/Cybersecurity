@@ -29,4 +29,18 @@ This command will copy the file backup.tar.bz2 from the local system to the dire
 ...FTP could be secured using SSL/TLS by using the FTPS protocol which uses port 990. It is worth mentioning that FTP can also be secured using the SSH protocol which is the SFTP protocol. By default this service listens on port 22, just like SSH.
 
 ---------------------------------------------------------------------------------
+With some older ssh installations the following exchange may occur when you try to connect:
+> ssh <ip_address>
+Unable to negotiate with <ip_address> port 22: no matching key exchange method found. Their offer: diffie-hellman-group_exchange-sha1,diffie-hellman-group1-sha1
+
+The reply should be as follows:
+> ssh <ip_address> -oKexAlgorithms=+diffie-hellman-group1-sha1
+
+Another error will be received that will read:
+Unable to negotiate with <ip_address> port 22: no matching cipher found. Their offer: aes128-cbc, <list_of_other_ciphers>
+
+The reply should be as follows:
+> ssh <ip_address> -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc
+
+Connection should now be enabled.
 
