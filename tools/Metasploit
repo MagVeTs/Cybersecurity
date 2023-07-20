@@ -3,6 +3,8 @@ Basic Metasploit Commands:
 search <keyword> - find a module by keyword
 use <name_of_module OR #_assigned_to_module_in_search_results>  - select a module for use
 info - receive info about the module you have selected to use
+options - see options for the module you have selected to use
+set <name_of_option_you_want_to_set> <value_you_want_to_set_option_to> - set value of an option (example: set RHOSTS 192.168.100.10)
 
 [hat tip: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300]
 ------------------------------------------------------------------------------------
