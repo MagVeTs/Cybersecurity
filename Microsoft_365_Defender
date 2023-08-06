@@ -11,3 +11,8 @@ Playbook for compromised users:
 * reset password
 * enforce conditional access
 * designate user as compromised
+
+In order to block an IP or URL, go to:
+settings > endpoints > indicators > domain/url
+
+In order to block/delete/mark as phishing an email go to the email (in "Explorer" ([under "Email & collaboration"] and click on email; then choose "Take Actions". Note: it appears that the deletion/blocking of the email will only apply to the specific user who received the email. Check to see who else received the email. Make sure to also designate the email as phishing/malware in "Alerts"
