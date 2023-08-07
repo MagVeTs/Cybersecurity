@@ -488,7 +488,13 @@ The important take away from this task:
 
 Reverse and Bind shells are an essential technique for gaining remote code execution on a machine, however, they will never be as fully featured as a native shell. Ideally we always want to escalate into using a "normal" method for accessing the machine, as this will invariably be easier to use for further exploitation of the target.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
+When receiving a meterpreter prompt, entering the command `shell` will give you a shell:
+meterpreter > shell
+
+However, this will not be a fully functional shell as represented by the fact that there is no prompt. In order to get a full tty shell see below.
+--------------------------
 From: https://steflan-security.com/linux-tty-shell-cheat-sheet/ [with some editing of layout]
 Linux TTY Shell Cheat Sheet
 May 13, 2021 | by Stefano Lanaro
