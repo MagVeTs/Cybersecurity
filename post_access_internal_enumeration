@@ -1,0 +1,13 @@
+Post Access Internal Enumeration (getting the Lay of the Land)
+--------------------------------------------------------------
+[from: https://tryhackme.com/room/thelayoftheland]
+Windows Environments
+--------------------
+
+Network Enumeration:
+
+> netstat -na
+output shows open TCP and UDP ports
+
+> arp -a
+output shows IP addresses in the network and their corresponding "physical" MAC addresses
