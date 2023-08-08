@@ -6,8 +6,11 @@ Windows Environments
 
 Network Enumeration:
 
-> netstat -na
+PowerShell > netstat -na
 output shows open TCP and UDP ports
 
-> arp -a
+PowerShell > arp -a
 output shows IP addresses in the network and their corresponding "physical" MAC addresses
+
+PowerShell > systeminfo | findstr Domain
+output shows if device is part of Active Directory domain
