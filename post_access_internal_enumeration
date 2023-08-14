@@ -62,3 +62,11 @@ also see:
 https://github.com/PwnDexter/Invoke-EDRChecker
 https://github.com/PwnDexter/SharpEDRChecker
 [enumerates AV/EDR present on device]
+
+PowerShell > wmic product get name,version
+output is all applications installed on system (and their versions)
+
+PowerShell > Get-ChildItem -Hidden -Path <particular path, e.g. C:\Users\ralph\Desktop\>
+output is hidden directories
+
+
