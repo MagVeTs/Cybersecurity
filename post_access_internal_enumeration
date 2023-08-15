@@ -78,6 +78,7 @@ PowerShell > wmic service where "name like 'THM Demo'" get Name,PathName
 
 PowerShell > Get-Process -Name thm-demo
 [run this command with the exact name of the service obtained from the previous command (in this case: thm-demo) to get the process ID of the chosen service]
+[note: when searching the exact name of the service do NOT include the extension, i.e. `-Name thm-demo` NOT `-Name thm-demo.exe`]
 
 PowerShell > netstat -noa |findstr "LISTENING" |findstr "3212"
 [run this command to take the process ID obtained from the previous command (in this case: 3212) and check if it is listening on any ports]
