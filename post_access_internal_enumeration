@@ -68,5 +68,18 @@ output is all applications installed on system (and their versions)
 
 PowerShell > Get-ChildItem -Hidden -Path <particular path, e.g. C:\Users\ralph\Desktop\>
 output is hidden directories
+[note the Get-ChildItem cmdlet can also be used to search for text strings and backup files]
+
+PowerShell > net start
+output is a list of services running on the device
+
+PowerShell > wmic service where "name like 'THM Demo'" get Name,PathName
+[note: if you want more info about a particular service you see in the list generates by `net start` command (e.g. you saw a service called "THM Demo") you would run this command to get the exact name and path of the chosen service]
+
+PowerShell > Get-Process -Name thm-demo
+[run this command with the exact name of the service obtained from the previous command (in this case: thm-demo) to get the process ID of the chosen service]
+
+PowerShell > netstat -noa |findstr "LISTENING" |findstr "3212"
+[run this command to take the process ID obtained from the previous command (in this case: 3212) and check if it is listening on any ports]
 
 
