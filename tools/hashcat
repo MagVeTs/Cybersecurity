@@ -8,3 +8,4 @@ https://geekflare.com/password-cracking-with-hashcat/
 When trying to find the hashcat module for the type of hash you want to crack run the command:
 > hashcat --help | grep <type_of_hash>
 the output will give you the module number you need to enter after the `-m` argument
+[from Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48478207]
