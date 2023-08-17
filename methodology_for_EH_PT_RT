@@ -82,8 +82,10 @@ From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Cou
 On CTFs, brute-forcing or using default credentials for a secure service like SSH is usually not the route you are expected to go. However, in a real PT one does conduct such attacks in order to see if weak or default crdentials are being used; and also to see if the brute-force attempt is caught and stopped by the clent's security, as it should be.
 --------------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
-
-When running hashcat (or another password cracking program) it will go much faster if it is run on the base OS as opposed to in a VM. This is because a VM will use the CPU to run hashcat; whereas, if you run it in the base OS you will be utilizing your GPU which is faster than the CPU. [Note: hashcat can run on a Windows OS.]
+Cracking hashes
+----------------
+* Heath Adams prefers hashcat to john the ripper as a hashcracking tool.
+* When running hashcat (or another password cracking program) it will go much faster if it is run on the base OS as opposed to in a VM. This is because a VM will use the CPU to run hashcat; whereas, if you run it in the base OS you will be utilizing your GPU which is faster than the CPU. [Note: hashcat can run on a Windows OS.]
 --------------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
@@ -221,10 +223,7 @@ Having a fully interactive shell can help immensely while enumerating a given ho
 --------------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
-Cracking hashes
-----------------
-* Heath Adams prefers hashcat to john the ripper as a hashcracking tool.
-* Avoid running hashcracking tools on VMs as this tremendously slows down performance.
+
 
 
 
