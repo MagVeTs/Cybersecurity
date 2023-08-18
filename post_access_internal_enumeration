@@ -83,4 +83,7 @@ PowerShell > Get-Process -Name thm-demo
 PowerShell > netstat -noa |findstr "LISTENING" |findstr "3212"
 [run this command to take the process ID obtained from the previous command (in this case: 3212) and check if it is listening on any ports]
 
-
+[note: the below commands are used in order to accomplish a DNS zone transfer in order to get the DNS info for the AD domain]
+PowerShell > nslookup.exe
+PowerShell > server <server_ip>
+PowerShell > ls -d <domain>
