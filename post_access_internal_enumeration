@@ -1,8 +1,9 @@
 Post Access Internal Enumeration (getting the Lay of the Land)
 --------------------------------------------------------------
-[from: https://tryhackme.com/room/thelayoftheland]
+[from: https://tryhackme.com/room/thelayoftheland and https://tryhackme.com/room/enumerationpe]
 Windows Environments
 --------------------
+Note: if you have a basic shell on a Windows machine (cmd.exe) you can get a PowerShell CLI (assuming PowerShell is installed on the system) by simply giving the command: `powershell.exe`.
 
 Network Enumeration:
 
