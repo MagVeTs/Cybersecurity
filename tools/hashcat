@@ -14,7 +14,7 @@ https://geekflare.com/password-cracking-with-hashcat/
 > hashcat --help | grep <type_of_hash>
 the output will give you the module number you need to enter after the `-m` argument
 
-* Once a hash has been cracked once it gets stored in what is called a potfile. The benefit of this is that if the same hash shows up again it will be quickly found by hashcat in the potfile without hashcat needing to go through the whole dictionary file (e.g. rockyou.txt) to find the password. However, if you try to crack a hash that is already in the potfile again the password will not be shown unless you add the `--show` argument to the command, e.g.:
+* Once a hash has been cracked once it gets stored in what is called a potfile. The benefit of this is that if the same hash shows up again it will be quickly found by hashcat in the potfile without hashcat needing to go through the whole password dictionary file (e.g. rockyou.txt) to find the password. However, if you try to crack a hash that is already in the potfile again the password will not be shown unless you add the `--show` argument to the command, e.g.:
 > hashcat -m 5600 hash.txt /usr/share/wordlists/rockyou.txt --show
 
 * hashcat (and other hash cracking tools) should preferably be run on bare metal so that the computer can use its GPU to do the cracking (which is faster than using the CPU). Sometimes hashcat may not work at all in a VM. If that happens, you can try the `--force` argument and that may work, e.g.:
@@ -23,6 +23,9 @@ the output will give you the module number you need to enter after the `-m` argu
 * When running hashcat on metal it is a good idea to add `-O` (for optimize) as that optimizes (speeds up) the speed of the cracking.
 
 * The file rockyou2021 is available and is much, much bigger than the original rockyou file
-[Note: I found a copy here: https://github.com/ohmybahgosh/RockYou2021.txt -- MagVeTs]
+[Note: I found a copy here: https://github.com/ohmybahgosh/RockYou2021.txt --MagVeTs]
+
+* Using the `-r` argument with a rule you can take a password list and fuzz it to generate more passwords to be hashed and compared to the hash you have. A helpful rule to use is OneRule.
+[Note: I found a copy here: https://github.com/NotSoSecure/password_cracking_rules (also see: https://notsosecure.com/one-rule-to-rule-them-all) --MagVeTs]
 
 [from Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48478207]
