@@ -22,6 +22,7 @@ the output will give you the module number you need to enter after the `-m` argu
 
 * When running hashcat on metal it is a good idea to add `-O` (for optimize) as that optimizes (speeds up) the speed of the cracking.
 
-* The file rockyou2021 is available and is much, much bigger than the original rockyou file 
+* The file rockyou2021 is available and is much, much bigger than the original rockyou file
+[Note: I found a copy here: https://github.com/ohmybahgosh/RockYou2021.txt -- MagVeTs]
 
 [from Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48478207]
