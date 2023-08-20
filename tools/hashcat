@@ -25,7 +25,9 @@ the output will give you the module number you need to enter after the `-m` argu
 * The file rockyou2021 is available and is much, much bigger than the original rockyou file
 [Note: I found a copy here: https://github.com/ohmybahgosh/RockYou2021.txt --MagVeTs]
 
-* Using the `-r` argument with a rule you can take a password list and fuzz it to generate more passwords to be hashed and compared to the hash you have. A helpful rule to use is OneRule.
+* Using the `-r` argument with a ruleset you can take a password list and fuzz it to generate more passwords to be hashed and compared to the hash you have. A helpful ruleset to use is OneRule.
 [Note: I found a copy here: https://github.com/NotSoSecure/password_cracking_rules (also see: https://notsosecure.com/one-rule-to-rule-them-all) --MagVeTs]
+
+* For CTFs, usually, the regular rockyou file (without adding rulesets) is enough.
 
 [from Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48478207]
