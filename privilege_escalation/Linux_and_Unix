@@ -1,3 +1,93 @@
+[From: https://tryhackme.com/room/enumerationpe ; Task 3 - Linux Enumeration]
+
+System
+------
+> ls /etc/*-release
+locate all files with release (i.e. OS version info) - then `cat` the files found
+
+> hostname
+output is system name
+
+`cat` the following files for infor on users and groups including password hashes:
+> cat /etc/passwd
+> sudo cat /etc/shadow (only available for root user or if you can run as sudo on it)
+> cat /etc/group
+
+> ls -lh /var/mail/
+the discovered directories may contain info on users and sensitive files
+
+> ls -lh /usr/bin/
+and
+> ls -lh /usr/bin/
+finds installed applications
+
+> rpm -qa
+lists all installed packages on a RPM-based Linux system
+
+> dpkg -l
+lists all installed packages on a Debian-based Linux system
+
+> who
+lists presently logged in users
+
+> w
+lists presently logged in users AND what they are doing
+
+> id
+print user and group IDs
+
+> last
+print list of last users to log in
+
+> sudo -l
+print users who have sudo privileges
+
+Networking
+----------
+> ip address show
+or
+> ip a s
+[these commands replace: ifconfig -a]
+
+> cat /etc/resolv.conf
+find DNS server
+
+> netstat
+has the following flags to choose from:
+-a = listening and non-listening sockets
+-l = only listening sockets
+-n = only numeric outout; do not resolve IP address and port
+-t = show TCP connections
+-u = show UDP connections
+-x = UNIX
+-p = show PID and program name associated with each port (aka socket) - note: only will return this info when run as `sudo`
+Note: these flags came be combined, e.g. sudo netstat -plt
+Note: netstat may pick up things missed by the nmap scan done before initial access
+
+> lsof
+* lsof = list open files
+* Note: to get full list run as `sudo`
+* adding -i will pull only files connected to network connections
+* if you are only interested in a specific port, the syntax is: lsof -i :<port_number>
+
+Running Services
+----------------
+> ps
+has the following flags to choose from:
+-e = all processes
+-f = full-format
+-j = jobs format
+-l = long format
+-u = user-oriented format
+Note: `ps axf` will print a process tree using ASCII
+Note: the BSD equivalent of the above commands is `ps aux`
+Note: `| grep <keyword>` can be added when looking for a specific process
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
 [From: TryHackMe - Linux Privilege Escalation ; https://tryhackme.com/room/linprivesc ; Task 3 - Enumeration (with editing, changes, and additions)]
 
 Enumeration is the first step you have to take once you gain access to any system. You may have accessed the system by exploiting a critical vulnerability that resulted in root-level access or just found a way to send commands using a low privileged account. Penetration testing engagements, unlike CTF machines, don't end once you gain access to a specific system or user privilege level. As you will see, enumeration is as important during the post-compromise phase as it is before.
