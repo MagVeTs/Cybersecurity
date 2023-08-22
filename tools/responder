@@ -15,8 +15,9 @@ https://academy.tcm-sec.com/courses/1152300/lectures/48477902
 * only works with machines that have SMB signing either DISABLED or NOT ENFORCED (this is default for workstations; but servers usually have SMB signing enabled and enforced)
 * only worthwhile if the relayed credentials have at least local admin priv on the machine you are attacking
 * sample nmap scan to check which machines in domain do not have SMB signing enforced:
-nmap --script=smb2-security-mode.nse -p445 10.0.0.0/24
-(or try Nessus to find these vulnerable machines)
+nmap --script=smb2-security-mode.nse -p445 10.0.0.0/24 -Pn
+note: it is worthwhile to add the -Pn flag in case the devices you are scanning are configured not to respond to pings
+note: Nessus can also be used to find machines vulnerable to this attack
 1) configure responder for SMB relay:
 sudo nano /etc/responder/Responder.conf
 turn `SMB =` and `HTTP =` both to OFF
