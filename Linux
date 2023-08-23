@@ -12,7 +12,7 @@ To upgrade/update, write in terminal:
   [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)]
 
 * sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
-  [hat tip: Syatem Exploited - https://youtu.be/hkLmuXhrizU?t=317]
+  [hat tip: System Exploited - https://youtu.be/hkLmuXhrizU?t=317]
 
 Heath Adams (The Cyber Mentor) recommends:
 * make copy of VM before attempting update/upgrade
