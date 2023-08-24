@@ -1,11 +1,73 @@
 Post Access Internal Enumeration (getting the Lay of the Land)
 --------------------------------------------------------------
-[from: https://tryhackme.com/room/thelayoftheland and https://tryhackme.com/room/enumerationpe]
-Windows Environments
---------------------
-Note: if you have a basic shell on a Windows machine (cmd.exe) you can get a PowerShell CLI (assuming PowerShell is installed on the system) by simply giving the command: `powershell.exe`.
+[from: https://tryhackme.com/room/enumerationpe ; Task 4 - Windows Enumeration]
 
-Network Enumeration:
+Windows Environment Enumeration using cmd.exe:
+
+System
+------
+C:\>systeminfo
+* system information (e.g. build number and installed patches)
+
+C:\>wmic qfe get Caption,Description
+* installed updates
+
+C:\>net start
+* installed and started Windows services
+
+C:\>wmic product get name,version,vendor
+* installed apps
+
+Users
+-----
+C:\>whoami
+* find user you are running as
+
+C:\>whoami /priv
+* find your user's privieges
+
+C:\>whoami /groups
+* find the groups your user belongs to
+
+C:\>net user
+* list user accounts on the device
+
+C:\>net group
+* list groups on the device (use this command if the device IS a Windows Domain Controller)
+
+C:\>net localgroup
+* list groups on the device (use this command if the device is NOT a Windows Domain Controller)
+
+C:\>net localgroup administrators
+* list users who belong to the administrators group
+
+C:\>net accounts
+* local device settings (e.g. password policy)
+[Note: use `net accounts /domain` if the device is part of a domain]
+
+Networking
+-----------
+C:\>ipconfig /all
+* full network config info including DNS servers
+
+C:\>netstat -abno
+* listening ports; active connections; programs using the ports
+[Note the following flags:
+-a = all listening ports and active connections
+-b = name of binary (executable) using the connection
+-n = do not resolve IP addresses (just give numeric addresses)
+-o = display process id (PID) associated with each connection
+Note: netstat may provide information missed by nmap; netstat is also quiet, unlike nmap]
+
+C:\>arp -a
+* physical (MAC) addresses of systems on the same LAN that recently communicated with the device you are on, mapped to their IP addresses
+
+--------------------------------------------------------------
+[from: https://tryhackme.com/room/thelayoftheland and https://tryhackme.com/room/enumerationpe]
+
+Windows Environment Enumeration using PowerShell:
+
+[Note: if you have a basic shell on a Windows machine (cmd.exe) you can get a PowerShell CLI (assuming PowerShell is installed on the system) by simply giving the command: `powershell.exe`.]
 
 PowerShell > netstat -na
 output shows open TCP and UDP ports
