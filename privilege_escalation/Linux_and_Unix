@@ -82,11 +82,6 @@ has the following flags to choose from:
 Note: `ps axf` will print a process tree using ASCII
 Note: the BSD equivalent of the above commands is `ps aux`
 Note: `| grep <keyword>` can be added when looking for a specific process
-
-
-
-
-
 ---------------------------------------------------------------------------------------------------------------------
 [From: TryHackMe - Linux Privilege Escalation ; https://tryhackme.com/room/linprivesc ; Task 3 - Enumeration (with editing, changes, and additions)]
 
