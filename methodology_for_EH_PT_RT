@@ -225,7 +225,9 @@ Having a fully interactive shell can help immensely while enumerating a given ho
 --------------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
+* when capturing hashes using responder.py it is a good idea to run responder right as employees are coming in to work in the morning or coming back from lunch because that is when they are likely to be signing-in
 
+* mitm6 should only be run for 5-10 minutes at a time because it may cause network problems
 
 
 
