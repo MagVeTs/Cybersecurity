@@ -229,6 +229,8 @@ From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Cou
 
 * mitm6 should only be run for 5-10 minutes at a time because it may cause network problems
 
+* accounts with no log-ins ever (such as might be shown in the output from mitm6) may be honeypots
+
 
 
 
