@@ -151,6 +151,29 @@ PowerShell > nslookup.exe
 PowerShell > server <server_ip>
 PowerShell > ls -d <domain>
 ---------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/enumerationpe ; Task 5]
+
+Windows Enumeration using tools found on a Kali Linux machine that can query the Windows Server
+-------------
+DNS Zone Transfer - collect DNS info about the domain
+$ dig -t AXFR <DOMAIN_NAME> @<DNS_SERVER_IP_ADDRESS>
+* Note: the `-t AXFR` flag is used to request a zone transfer
+
+Server Message Block (SMB) - check shares using net share (when you have SSH connection to the Windows Server)
+$ net share
+
+SNMP (Simple Network Management Protocol) - snmpcheck
+* snmpcheck collects valuable information regarding devices present on the network; very important info for attackers
+* install snmpcheck as follows:
+$ git clone https://gitlab.com/kalilinux/packages/snmpcheck.git
+$ cd snmpcheck/
+$ gem install snmp
+$ chmod +x snmpcheck-1.9.rb
+* run snmpcheck as follows:
+$ /opt/snmpcheck/snmpcheck.rb <SERVER_IP> -c <COMMUNITY_STRING (usually the string is: public)>
+- in this example the executable is in /opt/snmpcheck/ and the full path is given to run it
+
+---------------------------------------------------------------------------------------------------------------
 LOLBAS
 https://lolbas-project.github.io/
 Living Off The Land Binaries, Scripts and Libraries
