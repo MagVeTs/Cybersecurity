@@ -225,6 +225,8 @@ Having a fully interactive shell can help immensely while enumerating a given ho
 --------------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
+* Most pentests begin from within the network [you send a laptop or RaspberryPi to the client and they plug it into their internal network]. However, you are not given a user account and will be attempting to compromise one.
+
 * HA likes to begin internal pentests with responder.py (he uses mitm6 later if necessary because he considers it like a "cheat code" - it is so effective)
 
 * when capturing hashes using responder.py it is a good idea to run responder right as employees are coming in to work in the morning or coming back from lunch because that is when they are likely to be signing-in
