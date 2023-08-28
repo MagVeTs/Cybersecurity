@@ -1,3 +1,6 @@
 bloodhound
 -----------
 
+* see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; "Domain Enumeration with Bloodhound" - https://academy.tcm-sec.com/courses/1152300/lectures/48515110
+* often updated so it is worthwhile to run the following command before using, even if bloodhound is already on your system:
+$ sudo pip install bloodhound
