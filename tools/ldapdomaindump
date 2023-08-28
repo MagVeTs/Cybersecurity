@@ -1,0 +1,6 @@
+see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; "Domain enumeration with ldapdomaindump" - https://academy.tcm-sec.com/courses/1152300/lectures/48515026
+* built in to Kali Linux
+syntax:
+sudo ldapdomaindump ldaps://<ip_of_domain_controller> -u '<DOMAIN_NAME\compromised_user>' -p <compromised_user's_password> -o <path_to_directory_that_you_want_the_info_to_be_dumped_into>
+* if you do not use a -o flag it will dump into the directory you are in
+* to view the dump through html the syntax is: firefox <name_of_dump_file_you_want_to_see>
