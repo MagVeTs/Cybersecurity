@@ -1,0 +1,17 @@
+BloodHound
+-----------
+
+* see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; "Domain Enumeration with Bloodhound" - https://academy.tcm-sec.com/courses/1152300/lectures/48515110
+* often updated so it is worthwhile to run the following command before using, even if bloodhound is already on your system:
+$ sudo pip install bloodhound
+* after installation/update, the syntax is as follows:
+$ sudo neo4j console
+- this console is necessary for the use of bloodhound
+- after running this command a local host link (e.g. "Remote interface available at: http://localhost:7474") will be created that you can click on to get to the neo4j console through a browser window
+* if this is the first access you will be asked to sign in, the credentials are:
+UN: neo4j
+PW: neo4j
+(you will be asked to change your password)
+* return to the terminal and input:
+$ sudo bloodhound
+* bloodhound will now open and you will input your neo4j UN/PW
