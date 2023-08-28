@@ -244,6 +244,15 @@ From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Cou
 
 * in general try to multi-task by running different tools at the same time if possible; or investigating one thing while simultaneously running a tool to search for others
 
+* think outside the box
+
+* if after a few days one can not get anywhere with compromising an account; ask the client to create an account for you [anticipating a situation where a user's account is compromised, e.g. through phishing]; then you can do more enumeration using the account that was created and work from there to compromise other accounts and escalate privileges
+
+* remember that ENUMERATION is the most fundamental part of pentesting, etc. - everything is built on what is discovered through enumeration
+--------------------------
+
+
+
 
 
 
