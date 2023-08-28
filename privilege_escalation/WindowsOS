@@ -171,8 +171,14 @@ $ gem install snmp
 $ chmod +x snmpcheck-1.9.rb
 * run snmpcheck as follows:
 $ /opt/snmpcheck/snmpcheck.rb <SERVER_IP> -c <COMMUNITY_STRING (usually the string is: public)>
-- in this example the executable is in /opt/snmpcheck/ and the full path is given to run it
-
+* in this example the executable is in /opt/snmpcheck/ and the full path is given to run it
+* the output may very well use up and overflow the terminal screen; follow the above command with:
+`| more`
+or
+`| less`
+or
+`> snmpcheck.txt`
+in order to be able to view and scroll through the full output
 ---------------------------------------------------------------------------------------------------------------
 LOLBAS
 https://lolbas-project.github.io/
