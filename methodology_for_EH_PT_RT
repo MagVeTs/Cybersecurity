@@ -240,9 +240,11 @@ From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Cou
 * if scans are taking awhile and no hashes are being captured - try looking at websites (e.g. use the http_version tool within msfconsole on Metasploit)
  to see what hosts are alive and look for default credentials (e.g. on Jenkins)
 
+* make sure to consider looking for default credentials on printers and the like (e.g. Pass-Back Attack [https://www.mindpointgroup.com/blog/how-to-hack-through-a-pass-back-attack])
+
 * in general try to multi-task by running different tools at the same time if possible; or investigating one thing while simultaneously running a tool to search for others
 
-* make sure to consider looking for default credentials on printers and the like
+
 
 
 
