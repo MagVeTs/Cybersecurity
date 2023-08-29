@@ -1,5 +1,12 @@
-BloodHound
------------
+BloodHound 
+https://github.com/BloodHoundAD/BloodHound
+https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267
+-------------------------------------------------------
+
+"BloodHound (https://github.com/BloodHoundAD/BloodHound) is an application used to visualize active directory environments. The front-end is built on electron and the back-end is a Neo4j database, the data leveraged is pulled from a series of data collectors also referred to as ingestors which come in PowerShell and C# flavours.
+It can be used on engagements to identify different attack paths in Active Directory (AD), this encompasses access control lists (ACLs), users, groups, trust relationships and unique AD objects. The tool can be leveraged by both blue and red teams to find different paths to targets ... Specifically, it is a tool I’ve found myself using more and more recently on internal engagements and when compromising a domain as it is a quick way to visualise attack paths and understand users’ active directory properties."
+[from: https://www.pentestpartners.com/security-blog/bloodhound-walkthrough-a-tool-for-many-tradecrafts/]
+
 
 * see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; "Domain Enumeration with Bloodhound" - https://academy.tcm-sec.com/courses/1152300/lectures/48515110
 1) often updated so it is worthwhile to run the following command before using, even if bloodhound is already on your system:
@@ -19,3 +26,14 @@ $ sudo bloodhound
 $ sudo bloodhound-python -d <DOMAIN_NAME> -u <compromised_username> -p <user's_password> -ns <name_server_i.e._ip_of_domain_controller> -c all
 - the `-c` flag determines what data is being collected (in this case "all")
 7) Return to the bloodhound GUI and choose "upload data" from the right side of screen; then go to your bloodhound directory and choose all the files you want to upload
+8) After uploading data to the BloodHound GUI you can use it to view and analyze the data in a user-friendly way
+
+
+Guides to using BloodHound:
+* TryHackMe - https://tryhackme.com/room/postexploit ; Task 3 "Enumeration w/ Bloodhound"
+* https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux
+* https://www.pentestpartners.com/security-blog/bloodhound-walkthrough-a-tool-for-many-tradecrafts/
+* https://www.sans.org/blog/bloodhound-sniffing-out-path-through-windows-domains/
+* https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/bloodhound
+* Active Directory Enumeration With BloodHound (Hackersploit) - https://www.youtube.com/watch?v=sGO4F23Xik4
+* BLOODHOUND Domain Enumeration (Active Directory #06) (John Hammond) - https://www.youtube.com/watch?v=yp8fw72oQvY
