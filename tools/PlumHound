@@ -3,4 +3,5 @@ PlumHound
 https://github.com/PlumHound/PlumHound
 
 * see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; "Domain Enumeration with Plumhound" - https://academy.tcm-sec.com/courses/1152300/lectures/48515111
-
+syntax:
+$ sudo git clone https://github.com/PlumHound/PlumHound.git
