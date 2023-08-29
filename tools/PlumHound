@@ -9,3 +9,6 @@ $ sudo git clone https://github.com/PlumHound/PlumHound.git
 $ cd PlumHound
 $ sudo pip3 install -r requirements.txt
 $ sudo python3 PlumHound.py --easy -p <your_neo4j_password>
+[this command is done to make sure that PlumHound is working properly; if it executes the task correctly you move on to other more helpful queries]
+
+
