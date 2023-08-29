@@ -1,4 +1,4 @@
-PlumHound
+PlumHound (sister program to BloodHound; you must have neo4j and BloodHound running to use PlumHound; see BloodHound in Tools in this repository)
 ----------
 https://github.com/PlumHound/PlumHound
 
@@ -8,4 +8,4 @@ $ cd /opt
 $ sudo git clone https://github.com/PlumHound/PlumHound.git
 $ cd PlumHound
 $ sudo pip3 install -r requirements.txt
-
+$ sudo python3 PlumHound.py --easy -p <your_neo4j_password>
