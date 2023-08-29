@@ -180,6 +180,29 @@ or
 `> snmpcheck.txt`
 in order to be able to view and scroll through the full output
 ---------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/enumerationpe ; Task 6 - More Tools For Windows]
+
+Sysinternals Suite
+* Suite of GUI tools
+* includes:
+Utility Name	    Description
+Process Explorer	Shows the processes along with the open files and registry keys
+Process Monitor     Monitor the file system, processes, and Registry
+PsList	            Provides information about processes
+PsLoggedOn	        Shows the logged-in users
+* includes other tools, see here: https://docs.microsoft.com/en-us/sysinternals/downloads/
+* also see: https://tryhackme.com/room/btsysinternalssg
+
+Process Hacker
+* GUI tool for gathering information about running processes
+* https://processhacker.sourceforge.io/
+
+GhostPack Seatbelt
+* https://github.com/GhostPack/Seatbelt
+* written in C#
+* must be compiled using MS Visual Studio before running
+[also see: https://specterops.gitbook.io/ghostpack/ -- MagVeTs]
+---------------------------------------------------------------------------------------------------------------
 LOLBAS
 https://lolbas-project.github.io/
 Living Off The Land Binaries, Scripts and Libraries
