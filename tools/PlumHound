@@ -7,4 +7,5 @@ syntax:
 $ cd /opt
 $ sudo git clone https://github.com/PlumHound/PlumHound.git
 $ cd PlumHound
+$ sudo pip3 install -r requirements.txt
 
