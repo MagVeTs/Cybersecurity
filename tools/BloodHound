@@ -1,6 +1,7 @@
 BloodHound 
 https://github.com/BloodHoundAD/BloodHound
 https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267
+* also see the article in this repository under Tools for PlumHound
 -------------------------------------------------------
 
 "BloodHound (https://github.com/BloodHoundAD/BloodHound) is an application used to visualize active directory environments. The front-end is built on electron and the back-end is a Neo4j database, the data leveraged is pulled from a series of data collectors also referred to as ingestors which come in PowerShell and C# flavours.
