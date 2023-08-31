@@ -4,6 +4,11 @@ Red Teaming = RT
 - terms may be used interchangeably in this doc, unless otherwise indicated
 ----------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
+For Kali Linux VMs install and run pimpmykali
+"Kali Linux Fixes for Newly Imported VM's"
+https://github.com/Dewalt-arch/pimpmykali
+----------------------
+From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 
 * After nmapping an IP some ports will have services that are "low hanging fruit", meaning that they are running services for which a lot of exploits exist. Others will be running services that are less likely to be easily exploitable. Focus on the "low hanging fruit" first.
 
