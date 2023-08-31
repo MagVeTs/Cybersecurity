@@ -1,5 +1,5 @@
 crackmapexec
 -------------
 
-
 Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48489913
+$ crackmapexec smb <ip/CIDR> -u <user> -d <domain> -p <password>
