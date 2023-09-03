@@ -30,3 +30,7 @@ $ crackmapexec smb <ip/CIDR> -u <user> -H <hash> --local-auth -M lsassy
 
 $ cmedb
 - this command accesses a database of all your actions using crackmapexec and what you recovered with your commands
+
+NOTE:
+HA says that pass-the-hash attacks work for NTLMv1; not NTLMv2. NTLMv2 works for relay attacks ("Pass Attacks" - https://academy.tcm-sec.com/courses/1152300/lectures/48489919).
+------------------------------------------------------------------------------------------------------------------
