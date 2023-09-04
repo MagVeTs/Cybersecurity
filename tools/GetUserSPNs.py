@@ -7,4 +7,4 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 $ sudo GetUserSPNs.py <DOMAIN/username:password> -dc-ip <ip_of_DC> -request
 
 - this will dump the Kerberos hash from the DC which you will then attempt to crack (e.g. using hashcat)
-- SPN stands for ServicePrincipalName ; a service account within the AD
+- SPN stands for ServicePrincipalName ; a service account (e.g. SQLService) within the AD
