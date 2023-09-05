@@ -69,55 +69,55 @@ Windows Environment Enumeration using PowerShell:
 
 [Note: if you have a basic shell on a Windows machine (cmd.exe) you can get a PowerShell CLI (assuming PowerShell is installed on the system) by simply giving the command: `powershell.exe`.]
 
-PowerShell > netstat -na
+PS > netstat -na
 output shows open TCP and UDP ports
 
-PowerShell > arp -a
+PS > arp -a
 output shows IP addresses in the network and their corresponding "physical" MAC addresses
 
-PowerShell > systeminfo | findstr Domain
+PS > systeminfo | findstr Domain
 output shows if device is part of Active Directory domain
 
-PowerShell > Get-ADUser -Filter *
+PS > Get-ADUser -Filter *
 output shows all active directory user accounts
 
-PowerShell > wmic /namespace:\\root\securitycenter2 path antivirusproduct
+PS > wmic /namespace:\\root\securitycenter2 path antivirusproduct
 or
-PowerShell > Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct
+PS > Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct
 output shows installed AV software
 
-PowerShell > Get-Service WinDefend
+PS > Get-Service WinDefend
 output is service state of Windows Defender
 
-PowerShell > Get-MpComputerStatus | select RealTimeProtectionEnabled
+PS > Get-MpComputerStatus | select RealTimeProtectionEnabled
 output is whether Windows Defender is enabled
 
-PowerShell > Get-NetFirewallProfile | Format-Table Name, Enabled
+PS > Get-NetFirewallProfile | Format-Table Name, Enabled
 output is whether firewall is enabled
 
-PowerShell > Get-NetFirewallRule | select DisplayName, Enabled, Description
+PS > Get-NetFirewallRule | select DisplayName, Enabled, Description
 output is firewall rules
 
-PowerShell > Set-NetFirewallProfile -Profile Domain, Public, Private -Enabled False
+PS > Set-NetFirewallProfile -Profile Domain, Public, Private -Enabled False
 command disables firewall (need admin privileges to run it)
 
-PowerShell > Test-NetConnection -ComputerName 127.0.0.1 -Port 80
+PS > Test-NetConnection -ComputerName 127.0.0.1 -Port 80
 output will confirm if inbound port 80 connection is open and allowed to pass firewall
 [note: -ComputerName can also check remote targets in the network if their IP is given]
 [note: also see TcpClient cmdlet]
 
-PowerShell > Get-EventLog -List
+PS > Get-EventLog -List
 output is available event logs on the local device
 also see: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
 
-PowerShell > Get-Process | Where-Object { $_.ProcessName -eq "Sysmon" }
+PS > Get-Process | Where-Object { $_.ProcessName -eq "Sysmon" }
 or
-PowerShell > Get-CimInstance win32_service -Filter "Description = 'System Monitor service'"
+PS > Get-CimInstance win32_service -Filter "Description = 'System Monitor service'"
 or
-PowerShell > reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Sysmon/Operational
+PS > reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Sysmon/Operational
 output is whether Sysmon is installed on device
 
-PowerShell > findstr /si '<ProcessCreate onmatch="exclude">' C:\tools\*
+PS > findstr /si '<ProcessCreate onmatch="exclude">' C:\tools\*
 output is location of Sysmon file 
 also see: https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon and https://tryhackme.com/room/sysmon
 
@@ -126,30 +126,71 @@ https://github.com/PwnDexter/Invoke-EDRChecker
 https://github.com/PwnDexter/SharpEDRChecker
 [enumerates AV/EDR present on device]
 
-PowerShell > wmic product get name,version
+PS > wmic product get name,version
 output is all applications installed on system (and their versions)
 
-PowerShell > Get-ChildItem -Hidden -Path <particular path, e.g. C:\Users\ralph\Desktop\>
+PS > Get-ChildItem -Hidden -Path <particular path, e.g. C:\Users\ralph\Desktop\>
 output is hidden directories
 [note the Get-ChildItem cmdlet can also be used to search for text strings and backup files]
 
-PowerShell > net start
+PS > net start
 output is a list of services running on the device
 
-PowerShell > wmic service where "name like 'THM Demo'" get Name,PathName
+PS > wmic service where "name like 'THM Demo'" get Name,PathName
 [note: if you want more info about a particular service you see in the list generates by `net start` command (e.g. you saw a service called "THM Demo") you would run this command to get the exact name and path of the chosen service]
 
-PowerShell > Get-Process -Name thm-demo
+PS > Get-Process -Name thm-demo
 [run this command with the exact name of the service obtained from the previous command (in this case: thm-demo) to get the process ID of the chosen service]
 [note: when searching the exact name of the service do NOT include the extension, i.e. `-Name thm-demo` NOT `-Name thm-demo.exe`]
 
-PowerShell > netstat -noa |findstr "LISTENING" |findstr "3212"
+PS > netstat -noa |findstr "LISTENING" |findstr "3212"
 [run this command to take the process ID obtained from the previous command (in this case: 3212) and check if it is listening on any ports]
 
 [note: the below commands are used in order to accomplish a DNS zone transfer in order to get the DNS info for the AD domain]
-PowerShell > nslookup.exe
-PowerShell > server <server_ip>
-PowerShell > ls -d <domain>
+PS > nslookup.exe
+PS > server <server_ip>
+PS > ls -d <domain>
+
+More Powershell Enumeration Commands
+------------------------------------
+see: https://tryhackme.com/room/powershell ; Task 4 - Enumeration
+and see: https://deskel.github.io/posts/thm/hacking-with-powershell (walkthrough of THM room)
+
+PS > Get-LocalUser
+- list user accounts found on the machine
+
+PS > Get-LocalUser -SID "<SID>"
+- find a user by SID
+
+PS > Get-LocalGroup
+- list groups found on the machine
+
+PS > Get-LocalGroup | Measure
+- count of groups found on the machine
+
+PS > Get-NetIPAddress
+- print info re machines IP addresses
+
+PS > Get-NetTCPconnection
+- list all TCP ports
+
+PS > Get-NetTCPconnection -State Listen
+- list all TCP ports that are listening
+
+PS > Get-NetTCPconnection -LocalPort 445
+- information about port 445
+
+PS > Get-HotFix
+- list applied patches
+
+PS > Get-HoxFix -ID <hot_fix_id>
+- search for a patch by ID
+
+PS > Get-ChildItem -Path C:\ -Include *.bak* -File -Recurse -ErrorAction SilentlyContinue
+- search for all backup files
+
+
+
 ---------------------------------------------------------------------------------------------------------------
 [from: https://tryhackme.com/room/enumerationpe ; Task 5]
 
