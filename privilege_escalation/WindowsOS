@@ -78,7 +78,7 @@ output shows IP addresses in the network and their corresponding "physical" MAC 
 PowerShell > systeminfo | findstr Domain
 output shows if device is part of Active Directory domain
 
-PowerShell > Get-ADUser  -Filter *
+PowerShell > Get-ADUser -Filter *
 output shows all active directory user accounts
 
 PowerShell > wmic /namespace:\\root\securitycenter2 path antivirusproduct
