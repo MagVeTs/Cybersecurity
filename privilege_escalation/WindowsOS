@@ -189,8 +189,17 @@ PS > Get-HoxFix -ID <hot_fix_id>
 PS > Get-ChildItem -Path C:\ -Include *.bak* -File -Recurse -ErrorAction SilentlyContinue
 - search for all backup files
 
+PS > Get-Process
+- list all running processes
 
+PS > Get-Scheduledtask
+- list all scheduled tasks
 
+PS > Get-Scheduledtask -TaskName <name_of_task>
+- find a specific scheduled task by name
+
+PS > Get-Acl <PATH, e.g. C:\>
+- find who owns a path
 ---------------------------------------------------------------------------------------------------------------
 [from: https://tryhackme.com/room/enumerationpe ; Task 5]
 
