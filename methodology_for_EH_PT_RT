@@ -257,11 +257,16 @@ From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Cou
 
 * remember that ENUMERATION is the most fundamental part of pentesting, etc. - everything is built on what is discovered through enumeration
 --------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Post-Domain Compromise Attack Strategy" - https://academy.tcm-sec.com/courses/1152300/lectures/48496778
 
-
-
-
-
+- After obtaining Domain Admin access to a DC in an AD environment, if you have more time on the engagement, it is recommended to:
+* start over and find a different method of compromise (this gives the client added value)
+* dump the NTDS.dit and crack all the passwords found there
+* enumerate domain shares and search for sensitive info (e.g. PII) that might not be supposed to be there
+* establish persistence by creating a new Domain Admin account; this will also test if the client notices it (MAKE SURE TO DELETE IT AT THE END OF THE ENGAGEMENT)
+* establish persistence by creating a Golden Ticket
+--------------------------
 
 
 
