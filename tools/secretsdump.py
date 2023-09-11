@@ -21,7 +21,7 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 $ secretsdump.py <domain>/<username>:'<password>'@<target_ip> -just-dc-ntlm
 
 NOTE: when getting an NTLM hash in order to attempt to crack it you need the NT part of the hash, not the LM part. The NT part is the SECOND part of the hash; the part that comes AFTER the colon.
-TIP: One can write a simple Bash script to break the lines of each NTLM account at the colons and extract just the username and NT hash; however, if you have Microsoft Excel you can:
+TIP from HA: One can write a simple Bash script to break the lines of each NTLM account at the colons and extract just the username and NT hash; however, if you have Microsoft Excel you can:
 * copy the whole file and paste into a spreadsheet
 * choose the Data option and then the Text to Columns option
 * choose Delimited
