@@ -29,3 +29,6 @@ TIP from HA: One can, of course, write a simple Bash script to break the lines o
 * choose Next and Finish
 * you will now have everything in nice columns and you can delete all but the username and NT hash columns and then begin to crack them.
 [The ability to parse text into columns using delimiters is also available in Google Sheets (Data > Split text to Columns) --MagVeTS]
+NOTE: See the linked lecture video above for even more information regarding working with spreadsheets to merge the data showing the username-hash combinations with a spreadsheet containing hash-password combinations retrieved from hashcat. This will allow you to create one spreadsheet with columns for username-hash-password combinations. The process involves using the vlookup function. Here is a link to an article about using vlookup in Google Sheets: https://www.makeuseof.com/use-vlookup-function-google-sheets/. Here is info on using vlookup in Excel: https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1. --MagVeTs]
+---------------
+
