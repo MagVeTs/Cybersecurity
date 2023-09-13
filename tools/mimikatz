@@ -1,7 +1,27 @@
 mimikatz
 --------
+
+
+good resource: Unofficial Guide to Mimikatz & Command Reference (https://adsecurity.org/?page_id=1821)
+
+--------
 From: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 "Mimikatz Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/48496452
 "Credential Dumping with Mimikatz" - https://academy.tcm-sec.com/courses/1152300/lectures/48496456
 - use the mimikatz found in this github repository: https://github.com/gentilkiwi/mimikatz/, not this one: https://github.com/ParrotSec/mimikatz
 - at this point use of mimikatz will be picked up by any AV/EDR system so it can only be used without triggering an alert if it is heavily obfuscated or you are already in control of the AV/EDR.
+
+$ mimikatz.exe
+- launch mimikatz
+
+mimikatz #
+- this is the mimikatz command line prompt
+
+mimikatz # privilege::debug
+- always run this command first; you should receive:
+Privilege '20' OK
+as the response
+see here: https://adsecurity.org/?page_id=1821, where it explains: "PRIVILEGE::Debug – get debug rights (this or Local System rights is required for many Mimikatz commands)"
+
+
+
