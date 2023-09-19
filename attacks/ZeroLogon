@@ -1,0 +1,15 @@
+ZeroLogon
+---------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Abusing ZeroLogon" - https://academy.tcm-sec.com/courses/1152300/lectures/33690015
+
+* This attack can easily destroy an AD DC so it should not be used on a pentest. Instead, scan for the vulnerability but do not actually run it.
+* HA does show in the video how to run it and how to restore the DC
+* The attack resets the DC password to null
+* Helpful links suggested by HA:
+
+        What is ZeroLogon? - https://www.trendmicro.com/en_us/what-is/zerologon.html
+
+        dirkjanm CVE-2020-1472 - https://github.com/dirkjanm/CVE-2020-1472
+
+        SecuraBV ZeroLogon Checker - https://github.com/SecuraBV/CVE-2020-1472
