@@ -13,3 +13,14 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
         dirkjanm CVE-2020-1472 - https://github.com/dirkjanm/CVE-2020-1472
 
         SecuraBV ZeroLogon Checker - https://github.com/SecuraBV/CVE-2020-1472
+* If you are running the attack (e.g. in a virtual environment lab) git clone from https://github.com/dirkjanm/CVE-2020-1472
+* Also, make sure you have the latest version of impacket installed
+* run SecuraBV ZeroLogon Checker - https://github.com/SecuraBV/CVE-2020-1472 to check if the DC is vulnerable (you can copy the raw code from the repository and paste it into a doc and run it with python3
+syntax from repository:
+
+"Given a domain controller named EXAMPLE-DC with IP address 1.2.3.4, run the script as follows:
+
+$ ./zerologon_tester.py EXAMPLE-DC 1.2.3.4
+
+The DC name should be its NetBIOS computer name. If this name is not correct, the script will likely fail with a STATUS_INVALID_COMPUTER_NAME error."
+* 
