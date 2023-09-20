@@ -6,7 +6,11 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 
 There are a few PrintNightmare attacks. HA does walkthrough of:
 cube0x0 RCE - https://github.com/cube0x0/CVE-2021-1675
+which is a Remote Code Execution (RCE) attack
 
-He also has a link to this one:
+[He also provides a link to this one:
 calebstewart LPE - https://github.com/calebstewart/CVE-2021-1675
+which is a Local Privilege Escalation (LPE) attack]
+
+
 
