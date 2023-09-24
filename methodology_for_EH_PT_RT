@@ -267,6 +267,21 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 * establish persistence by creating a new Domain Admin account; this will also test if the client notices it (MAKE SURE TO DELETE IT AT THE END OF THE ENGAGEMENT)
 * establish persistence by creating a Golden Ticket
 --------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+HA has three AD attack case studies; two of them exist both as in-depth blog posts and as high-level video overviews in the course. One is just a video.
+Here are the links:
+*  AD Case Study #1 - https://academy.tcm-sec.com/courses/1152300/lectures/48475902
+   https://tcm-sec.com/pentest-tales-001-you-spent-how-much-on-security
+*  AD Case Study #2 - https://academy.tcm-sec.com/courses/1152300/lectures/48475903
+   https://tcm-sec.com/pentest-tales-002-digging-deep
+*  AD Case Study #3 - https://academy.tcm-sec.com/courses/1152300/lectures/48475904
+--------------------------
+
+
+
+
+
+
 
 
 
