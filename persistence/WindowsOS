@@ -1,3 +1,8 @@
+For a general overview of persistence methodology and practices during pentesting engagments see:
+
+Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Maintaining Access Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/24781515
+-----------------------
 from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersistence
 
 Assign Group Memberships
