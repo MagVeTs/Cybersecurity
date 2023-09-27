@@ -1,0 +1,11 @@
+Pivoting Between Networks
+-------------------------
+After compromising a machine you may discover that while it resides on one network it also has a NIC that is connected to a separate network that you can not access (even to ping). The information here is intended to assist you in gaining access to that separate network.
+
+---------------------------------------------------------------------------------------
+from:
+Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Pivoting Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/48272040
+"Pivoting Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/48272042
+
+
