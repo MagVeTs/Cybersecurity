@@ -28,4 +28,19 @@ For example:
 
 $ proxychains nmap -p88 <IP_ADDRESS_OF_MACHINE_ON_SECOND_NETWORK>
 
+NOTE: when scanning all ports using proxychain to run nmap, it sometimes works better to use a TCP Connect scan instead of the default SYN scan, syntax:
+$ proxychains nmap <IP_ADDRESS> -sT
+
+Proxychains can also run attacks, e.g. Kerberoasting:
+$ proxychains GetUserSPNs.py <DOMAIN>/<USERNAME>:<PASSWORD> -dc-ip <IP_OF_DC> -request
+
+Proxychains can allow remote access to a machine, e.g. through RDP to a Windows OS:
+$ proxychains xfreerdp /u:<USERNAME> /p:<PASSWORD> /v:<IP_ADDRESS>
+
+Proxychains can also allow you to access the browser on the machine you are pivoting into:
+
+$ proxychains firefox 
+
+[NOTE: In order for this command to work, Firefox must be closed on your own device before running the command.]
+
 
