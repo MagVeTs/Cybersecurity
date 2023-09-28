@@ -1,0 +1,22 @@
+c2
+-----
+
+see: https://tryhackme.com/room/introtoc2
+
+Task 2 covers:
+- structure of c2 network (agents on victim machines; listener on C2 server)
+- communications from agents to c2 server called "beaconing"
+- use of sleep timers (e.g. jitter) to randomize when agents beacon; thereby hiding from NIDS/NIPS/XDRs etc.
+- payloads that instruct compromise machine when/where to beacon came be stageless or staged (droppers)
+- payloads came be in many languages
+- payloads may include various modules, e.g. post-exploitation and pivoting
+- use of SMB Beacon to pivot thereby allowing a compromised machine in a non-restricted network segment to act as a proxy for compromised machines residing in a restricted network segment; thereby, allowing the machines in the retricted segment to still comunicate with the C2 server
+- use of Domain Fronting (e.g. using Cloudflare as a proxy) to hide the C2 server's real IP and make it look like the communications are going to a legitimate address
+- use of "C2 Profiles" (such as: NGINX Reverse Proxy, Apache Mod_Proxy/Mod_Rewrite, and Malleable HTTP C2 Profiles) to enable C2 server to differentiate between connections coming from compromised machines and connections coming from security analysts. Commands are only given to genuine compromised machines. Other connections are routed to innocent looking web page, instead. Also see: https://blog.zsec.uk/cobalt-strike-profiles/.
+
+
+
+
+
+
+
