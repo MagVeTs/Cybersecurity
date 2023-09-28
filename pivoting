@@ -1,11 +1,31 @@
 Pivoting Between Networks
 -------------------------
-After compromising a machine you may discover that while it resides on one network it also has a NIC that is connected to a separate network that you can not access (even to ping). The information here is intended to assist you in gaining access to that separate network.
 
----------------------------------------------------------------------------------------
-from:
-Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 "Pivoting Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/48272040
 "Pivoting Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/48272042
+
+After compromising a machine you may discover that while it resides on one network it also has a NIC that is connected to a separate network that you can not access (even to ping). The information here is intended to assist you in gaining access to that separate network.
+
+Tools for pivoting:
+
+1) Proxychains
+
+$ cat /etc/proxychains4.conf
+- [note: on a later version of Kali Linux the version number may not be 4; just start writing "cat /etc/proxychains and hit <TAB> and it will properly autocomplete]
+- at bottom of file it should say:
+socks4 127.0.0.1 9050
+Note 9050 which is the port that will be used for binding; it is ok if a different port is there instead; you can also change the port if you want
+
+Now connect using ssh (with proxychains) to the compromised machine:
+
+$ ssh -f -N -D 9050 -i <NAME_OF_FILE_WITH_SSH_CREDS> <USERNAME>@<IP_ADDRESS_COMPROMISED_MACHINE>
+-f = background SSH
+-N = do not execute remote commands; simply conduct port forwarding
+-D = bind port
+
+Now you can issue commands, using proxychains, through the machine you have compromised to machines on the network accessible through the machine you have compromised's second NIC.
+For example:
+
+$ proxychains nmap -p88 <IP_ADDRESS_OF_MACHINE_ON_SECOND_NETWORK>
 
 
