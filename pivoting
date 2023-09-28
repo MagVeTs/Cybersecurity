@@ -9,7 +9,7 @@ After compromising a machine you may discover that while it resides on one netwo
 
 Tools for pivoting:
 
-1) Proxychains
+1) proxychains
 
 $ cat /etc/proxychains4.conf
 - [note: on a later version of Kali Linux the version number may not be 4; just start writing "cat /etc/proxychains and hit <TAB> and it will properly autocomplete]
@@ -41,7 +41,25 @@ $ proxychains xfreerdp /u:<USERNAME> /p:<PASSWORD> /v:<IP_ADDRESS>
 Proxychains can also allow you to pivot into being able to access (using a browser) an internal webserver through the compromised machine you are using as the proxy:
 
 $ proxychains firefox <INTERNAL_WEBSERVER_IP>
-
 [NOTE: In order for this command to work, Firefox must be closed on your own device before running the command.]
+
+2) sshuttle
+
+Not installed by default on Kali Linux. Install throught the command:
+
+$ sudo pip install sshuttle
+
+syntax
+
+$ sshuttle -r <USERNAME>@<IP_ADDRESS_OF_COMPROMISED_MACHINE> <IP_ADDRESS_OF_NETWORK_BEING_PIVOTED_INTO/SUBNET_MASK#> --ssh-cmd "ssh -i <FILENAME>"
+- "ssh -i <FILENAME>" = command to begin ssh and use the info in the cited file provide credentials
+
+
+
+
+
+
+
+
 
 
