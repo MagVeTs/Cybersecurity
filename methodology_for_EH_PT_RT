@@ -285,10 +285,10 @@ When the PT is done the environment must be returned to the state it was in befo
 * Removing all added user accounts.
 * Returning all settings back to their original configurations.
 
-NOTE: In order to be able to do this, it is important to take a careful notes of every action that is taken within the environment. These notes will allow you to revert everything back to its orgiginal state when the PT is over.
+[NOTE: In order to be able to do this, it is important to take a careful notes of every action that is taken within the environment. These notes will allow you to revert everything back to its original state when the PT is over. --MagVeTs]
 
-
-
+In a true Redteam scenario one would also go into the log files and remove all traces of actions taken in the environment.
+--------------------------
 
 
 
