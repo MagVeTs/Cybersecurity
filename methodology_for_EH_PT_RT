@@ -276,8 +276,16 @@ Here are the links:
    https://tcm-sec.com/pentest-tales-002-digging-deep
 *  AD Case Study #3 - https://academy.tcm-sec.com/courses/1152300/lectures/48475904
 --------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Cleaning Up" - https://academy.tcm-sec.com/courses/1152300/lectures/24781513
 
+When the PT is done the environment must be returned to the state it was in before the PT. This includes:
+* Removing all added executables, scripts, and files.
+* Removing all malware and rootkits.
+* Removing all added user accounts.
+* Returning all settings back to their original configurations.
 
+NOTE: In order to be able to do this, it is important to take a careful notes of every action that is taken within the environment. These notes will allow you to revert everything back to its orgiginal state when the PT is over.
 
 
 
