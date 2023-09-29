@@ -14,6 +14,33 @@ Task 2 covers:
 - use of Domain Fronting (e.g. using Cloudflare as a proxy) to hide the C2 server's real IP and make it look like the communications are going to a legitimate address
 - use of "C2 Profiles" (such as: NGINX Reverse Proxy, Apache Mod_Proxy/Mod_Rewrite, and Malleable HTTP C2 Profiles) to enable C2 server to differentiate between connections coming from compromised machines and connections coming from security analysts. Commands are only given to genuine compromised machines. Other connections are routed to innocent looking web page, instead. Also see: https://blog.zsec.uk/cobalt-strike-profiles/.
 
+Task 3 covers:
+
+Common C2 Frameworks - Free and Paid
+
+Free C2 Frameworks
+
+Metasploit - https://www.metasploit.com/
+
+Armitage (extension of Metasploit; has a GUI) - https://web.archive.org/web/20211006153158/http://www.fastandeasyhacking.com/
+
+Powershell Empire/Starkiller - https://bc-security.gitbook.io/empire-wiki/ [PowerShell Empire] and https://github.com/BC-SECURITY/Starkiller ; also see: https://tryhackme.com/room/rppsempire
+
+Covenant - https://github.com/cobbr/Covenant
+
+Sliver - https://github.com/BishopFox/sliver and https://bishopfox.com/
+
+Paid C2 Frameworks
+
+Cobalt Strike - https://www.cobaltstrike.com/
+
+Brute Ratel - https://bruteratel.com/ and video training page: https://bruteratel.com/tabs/tutorials/
+
+Other C2 Frameworks
+
+Comprehensive list of C2 frameworks:
+- C2 Matrix Project - https://howto.thec2matrix.com/
+
 
 
 
