@@ -45,7 +45,7 @@ $ proxychains firefox <INTERNAL_WEBSERVER_IP>
 
 2) sshuttle
 
-Not installed by default on Kali Linux. Install throught the command:
+Not installed by default on Kali Linux. Install through the command:
 
 $ sudo pip install sshuttle
 
