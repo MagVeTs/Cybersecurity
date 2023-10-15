@@ -10,11 +10,10 @@ https://github.com/tomnomnom/assetfinder
 HA holds highly of Tomnomnom
 
 to install:
-- make sure you have Go installed on your Kali (see the pimpmykali section under "tools" in this repository for an easy way to accomplish this)
+- make sure you have Go installed on your Kali (see the pimpmykali file in the "tools" folder in this repository for an easy way to accomplish this)
 $ go get -u github.com/tomnomnom/assetfinder
 
 after installation:
-
 $ assetfinder <name_of_domain>.<tld>
 [e.g. tesla.com]
 
