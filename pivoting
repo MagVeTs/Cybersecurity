@@ -52,10 +52,15 @@ $ sudo pip install sshuttle
 syntax
 
 $ sshuttle -r <USERNAME>@<IP_ADDRESS_OF_COMPROMISED_MACHINE> <IP_ADDRESS_OF_NETWORK_BEING_PIVOTED_INTO/SUBNET_MASK#> --ssh-cmd "ssh -i <FILENAME>"
-- "ssh -i <FILENAME>" = command to begin ssh and use the info in the cited file provide credentials
 
+- "ssh -i <FILENAME>" = command to begin ssh and use the info in the cited file to provide credentials
+- once sshuttle is begun, e.g. by the above command, one can run commands on the new network without invoking the sshuttle command each time [unlike with proxychains which requires writing proxychains before each command. For example, one could issue the command `nmap <IP_ADDRESS_IN_NEW_NETWORK> -p88` and scan port 88 for an IP address in the new network.
 
-
+3) chisel
+another tool that can be used for pivoting, see here:
+https://github.com/jpillora/chisel
+"Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH. Single executable including both client and server. Written in Go (golang). Chisel is mainly useful for passing through firewalls, though it can also be used to provide a secure endpoint into your network."
+-------------------------
 
 
 
