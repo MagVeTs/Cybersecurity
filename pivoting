@@ -43,6 +43,8 @@ Proxychains can also allow you to pivot into being able to access (using a brows
 $ proxychains firefox <INTERNAL_WEBSERVER_IP>
 [NOTE: In order for this command to work, Firefox must be closed on your own device before running the command.]
 
+NOTE: HA prefers "proxychains" to the following two tools (possibly just because he is used to it).
+
 2) sshuttle
 
 Not installed by default on Kali Linux. Install through the command:
