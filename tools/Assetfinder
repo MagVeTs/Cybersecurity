@@ -1,6 +1,7 @@
 Assetfinder
 ------------
 
+------------------------------------------------------------------------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 "Finding subdomains with Assetfinder" - https://academy.tcm-sec.com/courses/1152300/lectures/24781573
 
@@ -47,6 +48,7 @@ Do not forget to make it executable before running it:
 $ chmod +x <name_of_script_file>.sh
 
 
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
