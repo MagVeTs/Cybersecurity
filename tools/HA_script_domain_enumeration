@@ -1,6 +1,12 @@
 BASH script written by Heath Adams (The Cyber Mentor) for domain enumeration using Assetfinder and Amass
 -----------------------------------------------------------------------
-from: 
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+* 
+* "Finding Subdomains with Amass" - https://academy.tcm-sec.com/courses/1152300/lectures/24781572
+
+- https://github.com/owasp-amass/amass
+
+
 You can create the below script using the gedit command:
 $ gedit <name_of_script_file>.sh
 
