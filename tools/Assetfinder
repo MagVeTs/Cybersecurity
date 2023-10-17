@@ -22,7 +22,8 @@ $ assetfinder <name_of_domain>.<tld>
 e.g. assetfinder tesla.com >> tesla_subdomains.txt
 - the output will be both subdomains AND domains that may be related even if they are NOT subdomains. If you only want subdomains then add the following argument:
 $ assetfinder --subs-only <domain>
-- the best option, in HA's opinion, is to run the full assetfinder discovery and then grep the subdomains. Here is a bash script that will do that:
+- the best option, in HA's opinion, is to run the full assetfinder discovery and then grep the subdomains.
+Here is a bash script that will do that:
 ------------------
 #!/bin/bash
 url=$1 # $1 means the first argument
@@ -41,7 +42,7 @@ assetfinder $url >> $url/recon/assets.txt # runs assetfinder with full discovery
 cat $url/recon/assets.txt | grep $1 >> $url/recon/final.txt # extracts only subdomains of the main domain and forwards them to a new file named "final"
 rm $url/recon/assets.txt # NOTE: only leave this command in the script if you want to then remove the "assets" file
 ------------------
-You can create the file using the gedit command:
+You can create the above script using the gedit command:
 $ gedit <name_of_script_file>.sh
 
 Do not forget to make it executable before running it:
