@@ -1,12 +1,14 @@
 BASH script written by Heath Adams (The Cyber Mentor) for domain enumeration using Assetfinder and Amass
 -----------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
-* 
+
+* "Finding subdomains with Assetfinder" - https://academy.tcm-sec.com/courses/1152300/lectures/24781573
 * "Finding Subdomains with Amass" - https://academy.tcm-sec.com/courses/1152300/lectures/24781572
 
+- https://github.com/tomnomnom/assetfinder
 - https://github.com/owasp-amass/amass
 
-
+NOTES:
 You can create the below script using the gedit command:
 $ gedit <name_of_script_file>.sh
 
@@ -26,8 +28,16 @@ if [ ! -d "$url/recon" ];then
 
 fi
 
-echo "[+] "Harvesting subdomains with assetfinder..."
-assetfinder $url >> $url/recon/assets.txt # runs assetfinder with full discovery and forwards output to new file named "assets"
-cat $url/recon/assets.txt | grep $1 >> $url/recon/final.txt # extracts only subdomains of the main domain and forwards them to a new file named "final"
-rm $url/recon/assets.txt # NOTE: only leave this command in the script if you want to then remove the "assets" file
+echo "[+] Harvesting subdomains with Assetfinder..."
+assetfinder $url >> $url/recon/af_full_output.txt # runs assetfinder with full discovery and forwards output to new file named "af_full_output"
+cat $url/recon/af_full_output.txt | grep $1 >> $url/recon/af_sd_output.txt # extracts only subdomains of the main domain and forwards them to a new file named "af_sd_output"
+rm $url/recon/af_full_output.txt # NOTE: only leave this command in the script if you want to then remove the "af_full_output.txt" file
+
+echo "[+] Harvesting subdomains with Amass..."
+amass enum -d $url >> $url/recon/amass_raw_output.txt
+sort -u $url/recon/amass_raw_output.txt >> $url/recon/amass_output.txt
+rm $url/recon/amass_raw_output.txt
+
+
+
 ------------------
