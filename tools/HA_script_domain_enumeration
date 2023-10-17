@@ -17,7 +17,7 @@ $ chmod +x <name_of_script_file>.sh
 
 ------------------
 #!/bin/bash
-url=$1 # $1 means the first argument
+url=$1 # $1 means the first argument that you will enter when you give the command to run this BASH script
 
 if [ ! -d "$url" ];then # these lines create the needed directories if they do not yet exist
         mkdir $url
