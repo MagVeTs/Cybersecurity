@@ -1,4 +1,5 @@
-Amass
+Amass - IMPORTANT! see: tools/HA_script_domain_enumeration
+
 ------
 
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
@@ -17,3 +18,4 @@ https://medium.com/hacker-toolbelt/owasp-amass-osint-reconnaissance-9b57d81fb958
 https://medium.com/@digomic_88027/owasp-amass-journey-through-the-cyber-threat-map-ce785d386873
 https://blog.intigriti.com/2021/06/08/hacker-tools-amass-hunting-for-subdomains/
 https://www.dionach.com/blog/how-to-use-owasp-amass-an-extensive-tutorial/
+
