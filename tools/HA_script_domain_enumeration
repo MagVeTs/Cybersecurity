@@ -1,0 +1,27 @@
+BASH script written by Heath Adams (The Cyber Mentor) for domain enumeration using Assetfinder and Amass
+-----------------------------------------------------------------------
+from: 
+You can create the below script using the gedit command:
+$ gedit <name_of_script_file>.sh
+
+Do not forget to make it executable before running it:
+$ chmod +x <name_of_script_file>.sh
+
+------------------
+#!/bin/bash
+url=$1 # $1 means the first argument
+
+if [ ! -d "$url" ];then # these lines create the needed directories if they do not yet exist
+        mkdir $url
+fi
+
+if [ ! -d "$url/recon" ];then 
+        mkdir $url/recon
+
+fi
+
+echo "[+] "Harvesting subdomains with assetfinder..."
+assetfinder $url >> $url/recon/assets.txt # runs assetfinder with full discovery and forwards output to new file named "assets"
+cat $url/recon/assets.txt | grep $1 >> $url/recon/final.txt # extracts only subdomains of the main domain and forwards them to a new file named "final"
+rm $url/recon/assets.txt # NOTE: only leave this command in the script if you want to then remove the "assets" file
+------------------
