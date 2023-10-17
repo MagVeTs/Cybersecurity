@@ -289,9 +289,10 @@ When the PT is done the environment must be returned to the state it was in befo
 
 In a true Redteam scenario one would also go into the log files and remove all traces of actions taken in the environment.
 --------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Finding Subdomains with Amass" - https://academy.tcm-sec.com/courses/1152300/lectures/24781572
 
-
-
-
+It is recommended to use multiple subdomain/related domain enumeration tools (e.g. Assetfinder, Amass, etc.) in order to avoid inadvertently missing a subdomain or related domain that does not appear in one of the tools
+--------------------------
 
 
