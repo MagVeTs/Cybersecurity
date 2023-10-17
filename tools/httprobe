@@ -9,3 +9,4 @@ https://github.com/tomnomnom/httprobe
 
 $ go install github.com/tomnomnom/httprobe@latest
 
+sed 's/https\?:\/\///' | tr -d ':443'
