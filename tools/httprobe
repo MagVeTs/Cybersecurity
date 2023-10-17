@@ -6,3 +6,6 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 
 https://github.com/tomnomnom/httprobe
 "Take a list of domains and probe for working HTTP and HTTPS servers"
+
+$ go install github.com/tomnomnom/httprobe@latest
+
