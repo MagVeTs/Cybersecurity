@@ -43,7 +43,5 @@ sort -u $url/recon/amass_raw_output.txt >> $url/recon/amass_output.txt
 rm $url/recon/amass_raw_output.txt
 
 echo "[+] Probing for alive subdomains with Httprobe..."
-cat $url/recon/amass_output.txt | sort -u | httprobe | 
-
-
+cat $url/recon/amass_output.txt | httprobe | sed 's/https\?:\/\///' >> $url/recon/alive_subdomains.txt
 ------------------
