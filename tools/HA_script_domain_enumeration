@@ -38,10 +38,12 @@ cat $url/recon/af_full_output.txt | grep $1 >> $url/recon/af_sd_output.txt      
 rm $url/recon/af_full_output.txt                                                   # NOTE: only leave this command in the script if you want to then remove the "af_full_output.txt" file
 
 echo "[+] Harvesting subdomains with Amass..."
-amass enum -d $url >> $url/recon/amass_raw_output.txt
-sort -u $url/recon/amass_raw_output.txt >> $url/recon/amass_output.txt
-rm $url/recon/amass_raw_output.txt
+amass enum -d $url >> $url/recon/amass.txt
+
+echo "[+] Combining and sorting Assetfinder and Amass outputs..."
+cat $url/recon/af_sd_output.txt $url/recon/amass.txt >> raw_af_amass_output.txt | sort -u >> af_amass_output.txt
+rm raw_af_amass_output.txt
 
 echo "[+] Probing for alive subdomains with Httprobe..."
-cat $url/recon/amass_output.txt | httprobe | sed 's/https\?:\/\///' >> $url/recon/alive_subdomains.txt
+cat $url/recon/af_amass_output.txt | httprobe | sed 's/https\?:\/\///' >> $url/recon/alive_subdomains.txt
 ------------------
