@@ -5,6 +5,9 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 * "Finding subdomains with Assetfinder" - https://academy.tcm-sec.com/courses/1152300/lectures/24781573
 * "Finding Subdomains with Amass" - https://academy.tcm-sec.com/courses/1152300/lectures/24781572
 * "Finding Alive Domains with Httprobe" - https://academy.tcm-sec.com/courses/1152300/lectures/24781575
+* "Screenshotting Websites with GoWitness" - https://academy.tcm-sec.com/courses/1152300/lectures/24781576
+* "Automating the Enumeration Process" - https://academy.tcm-sec.com/courses/1152300/lectures/24781574
+* 
 
 
 - https://github.com/tomnomnom/assetfinder
@@ -20,6 +23,9 @@ Do not forget to make it executable before running it:
 $ chmod +x <name_of_script_file>.sh
 
 ------------------
+My adaptation of his script (a work in progress...):
+
+
 #!/bin/bash
 url=$1                            # $1 means the first argument that you will enter when you give the command to run this BASH script
 
@@ -46,6 +52,7 @@ rm raw_af_amass_output.txt
 
 echo "[+] Probing for alive subdomains with Httprobe..."
 cat $url/recon/af_amass_output.txt | httprobe | sed 's/https\?:\/\///' >> $url/recon/alive_subdomains.txt
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 HA's full script as found in the Pastebin that he links to in his lecture (https://pastebin.com/MhE6zXVt):
