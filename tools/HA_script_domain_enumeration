@@ -7,12 +7,12 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 * "Finding Alive Domains with Httprobe" - https://academy.tcm-sec.com/courses/1152300/lectures/24781575
 * "Screenshotting Websites with GoWitness" - https://academy.tcm-sec.com/courses/1152300/lectures/24781576
 * "Automating the Enumeration Process" - https://academy.tcm-sec.com/courses/1152300/lectures/24781574
-* 
 
 
 - https://github.com/tomnomnom/assetfinder
 - https://github.com/owasp-amass/amass
 - https://github.com/tomnomnom/httprobe
+- https://github.com/sensepost/gowitness
 
 -------------------
 NOTES:
