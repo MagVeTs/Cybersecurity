@@ -1,5 +1,26 @@
+Docker
+-------
+
 Installing Docker on Linux:
 > sudo apt update
 > sudo apt install docker.io -y
 
 [credit: Network Chuck - https://www.youtube.com/watch?v=iX0HbrfRyvc&list=PLIhvC56v63IJlnU4k60d0oFIrsbXEivQo&index=6]
+
+---------------------------------------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Lab Setup" - https://academy.tcm-sec.com/courses/1152300/lectures/47848127
+
+$ sudo apt update
+
+$ sudo apt upgrade
+
+$ sudo apt install docker.io
+
+$ sudo apt install docker-compose
+
+$ docker --version
+# if you want to see the version of Docker you have installed
+
+
+
