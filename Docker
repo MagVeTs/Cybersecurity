@@ -17,10 +17,12 @@ $ sudo apt upgrade
 
 $ sudo apt install docker.io
 
-$ sudo apt install docker-compose
-
 $ docker --version
 # if you want to see the version of Docker you have installed
+
+$ sudo apt install docker-compose
+
+
 
 
 
