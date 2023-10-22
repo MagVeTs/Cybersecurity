@@ -22,7 +22,37 @@ $ docker --version
 
 $ sudo apt install docker-compose
 
+$ docker-compose --version
+# if you want to see the version of Docker Compose you have installed
 
+In the lab setup being discussed in the lecture, one downloads the tar file available below the lecture video (peh-web-labs.tar.gz) and then cd to the directory containing the file. The one runs the following commands.
 
+$ tar -xf peh-web-labs.tar.gz
+
+$ cd peh
+
+$ cd labs
+
+then finally and significant for proper use of Docker, one runs Docker Compose from within the directory that holds the downloaded "docker-compose.yml" file (the "labs" directory in this case). The command is:
+
+$ sudo docker-compose up
+
+In order to stop a Docker container from running use:
+<CTRL><C>.
+
+In order to run the Docker container in the background so that it will be running but you can still use the terminal add -d to the "up" command, as follows:
+
+$ sudo docker-compose up -d
+
+In order to see what Docker containers are presently running, use the command:
+$ sudo docker ps -a
+
+In order to stop all currently running Docker containers, use the command:
+$ sudo docker-compose stop
+
+In order to remove Docker containers use the following command:
+$ sudo docker rm <CONTAINER_ID>
+or, to remove all containers on the system:
+$ sudo docker rm $(sudo docker ps -aq)
 
 
