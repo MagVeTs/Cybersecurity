@@ -1,8 +1,9 @@
 Burp Suite and Foxy Proxy
 ---------------------------
 
-From: 
-Lab Setup - https://academy.tcm-sec.com/courses/1152300/lectures/47848127 
-Burp Suite comes pre-installed on Kali Linux.
-Foxy Proxy can be installed from here (it is for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+From: from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+Lab Setup - https://academy.tcm-sec.com/courses/1152300/lectures/47848127 (starting at approximately 06:34 in the video)
+
+* Burp Suite comes pre-installed on Kali Linux.
+* Foxy Proxy can be installed from here (it is for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 
