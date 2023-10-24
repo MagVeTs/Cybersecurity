@@ -1,3 +1,11 @@
+SQL Injection (SQLi)
+--------------------
+
+SQLi cheat sheets
+-----------------
+* https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ThriveDX
 
@@ -40,9 +48,15 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 * SQL Injection - UNION - https://academy.tcm-sec.com/courses/1152300/lectures/47778484
 * SQL Injection - Blind Part 1 - https://academy.tcm-sec.com/courses/1152300/lectures/47778495
 * SQL Injection - Blind Part 2 - https://academy.tcm-sec.com/courses/1152300/lectures/47778501
-* SQL Injection - Challenge Waklthrough - https://academy.tcm-sec.com/courses/1152300/lectures/47779065
+* SQL Injection - Challenge Waklthrough [sic] - https://academy.tcm-sec.com/courses/1152300/lectures/47779065
 
 To learn how SQL works try the free interactive tutorials found here: https://www.w3schools.com/sql/
 
+# is a terminator symbol
+e.g. jeremy' or 1=1#
 
+-- - is a terminator symbol for MySQL databases
+e.g. jeremy' or 1=1-- -
 
+Recommended SQLi cheat sheet: https://portswigger.net/web-security/sql-injection/cheat-sheet
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
