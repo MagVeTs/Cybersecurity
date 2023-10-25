@@ -58,5 +58,8 @@ e.g. jeremy' or 1=1#
 -- - is a terminator symbol for MySQL databases
 e.g. jeremy' or 1=1-- -
 
+- When using Burp Suite to check for SQLi, one can also add the SQLi to a session cookie and it may be possible to do the SQLi in that fashion, see SQL Injection - Blind Part 1 - https://academy.tcm-sec.com/courses/1152300/lectures/47778495 at approximately 08:35
+
+
 Recommended SQLi cheat sheet: https://portswigger.net/web-security/sql-injection/cheat-sheet
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
