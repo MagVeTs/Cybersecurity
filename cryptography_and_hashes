@@ -6,12 +6,16 @@ Tools for encrypting and decrypting and hashing:
 
 
 
-* Checking hashes in Linux Terminal
+* Checking hashes in Linux Terminal [from: https://tryhackme.com/room/owasptop102021 ; task 18]
 $ md5sum <NAME_OF_FILE>
 $ sha1sum <NAME_OF_FILE>
 $ sha256sum <NAME_OF_FILE>
-[from: https://tryhackme.com/room/owasptop102021 ; task 18]
 
+
+
+* Subresource Integrity Hash [see here: https://tryhackme.com/room/owasptop102021 ; Task 19 - Software Integrity Failures]
+https://www.srihash.org/
+"SRI is a new W3C specification that allows web developers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source."
 
 --------------------------------------------------------
 From: https://tryhackme.com/room/encryptioncrypto101 ; Task 6 -  RSA - Rivest Shamir Adleman [with some editing, changes, and additions]
@@ -37,10 +41,7 @@ CTFs involving RSA
 Crypto CTF challenges often present you with a set of these values, and you need to break the encryption and decrypt a message to retrieve the flag.
 
 There’s a lot more maths to RSA, and it gets quite complicated fairly quickly. If you want to learn the maths behind it, I recommend reading MuirlandOracle’s blog post here: https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Subresource Integrity Hash [see here: https://tryhackme.com/room/owasptop102021 ; Task 19 - Software Integrity Failures]
-https://www.srihash.org/
-"SRI is a new W3C specification that allows web developers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source."
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
