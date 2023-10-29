@@ -3,7 +3,7 @@ Cryptography and Hashes
 Tools for encrypting and decrypting and hashing:
 
 * GNU_Privacy_Guard - see: tools/GNU_Privacy_Guard in this repository
-
+* OpenSSL - see: tools/OpenSSL in this repository
 
 
 * Checking hashes in Linux Terminal [from: https://tryhackme.com/room/owasptop102021 ; task 18]
