@@ -2,6 +2,8 @@ OpenSSL
 -------
 see: https://www.openssl.org/
 
+Symmetric
+---------
 from: https://tryhackme.com/room/cryptographyintro ; "Symmetric Cryptography" - Task 2
 
 syntax:
@@ -17,4 +19,34 @@ $ openssl aes-256-cbc -pbkdf2 -iter <NUMBER> -e -in message.txt -out encrypted_m
 
 $ openssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_message -out original_message.txt
 # decrypts a file that has been encrypted with 10,000 iterations
+
+
+
+Asymmetric
+----------
+
+from: https://tryhackme.com/room/cryptographyintro ; "Assymmetric Cryptography" - Task 3
+
+syntax:
+
+$ openssl genrsa -out private-key.pem 2048
+# `genrsa` uses RSA asymmetric encryption to generate an RSA private key; `-out` saves the resultant private key as a file called "private-key.pem"; "2048" sets the key size to be 2048 bits 
+
+$ openssl rsa -in private-key.pem -pubout -out public-key.pem
+# takes the private key created in the previous command and inputs it in the form of the "private-key.pem" file; we then generate the matching public key with the argument `-pubout`; we save the public key with the argument `-out public-key.pem` which creates a file containing the public key
+
+$ openssl rsa -in private-key.pem -text -noout
+# this command will give information regarding the RSA variables that were used to create the key
+# the values of p, q, N, e, and d are given as prime1, prime2, modulus, publicExponent, and privateExponent respectively
+
+$ openssl pkeyutl -encrypt -in plaintext.txt -out ciphertext -inkey public-key.pem -pubin
+# this command is given when starting with the public key; it will encrypt a file using the public key
+
+$ openssl pkeyutl -decrypt -in ciphertext -inkey private-key.pem -out decrypted.txt
+# the owner of the private key can issue this command to use his private key to decrypt the text that was encrypted using his public key.
+
+
+
+
+
 
