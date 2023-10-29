@@ -2,7 +2,13 @@ GNU Privacy Guard (aka  GnuPG or GPG)
 --------------------------------------
 
 from: https://tryhackme.com/room/cryptographyintro - Task 2 "Symmetric Encryption"
+
 https://gnupg.org/
+
+Encrypting and Decrypting documents using GNU Privacy Guard
+
+$ gpg --version
+# check supported ciphers
 
 $ gpg --symmetric --cipher-algo <CIPHER> <FILE_NAME>.txt
 # <CIPHER> = name of chosen cipher
