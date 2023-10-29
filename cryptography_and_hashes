@@ -1,3 +1,19 @@
+Cryptography and Hashes
+-----------------------
+Tools for encrypting and decrypting and hashing:
+
+* GNU_Privacy_Guard - see: tools/GNU_Privacy_Guard in this repository
+
+
+
+* Checking hashes in Linux Terminal
+$ md5sum <NAME_OF_FILE>
+$ sha1sum <NAME_OF_FILE>
+$ sha256sum <NAME_OF_FILE>
+[from: https://tryhackme.com/room/owasptop102021 ; task 18]
+
+
+--------------------------------------------------------
 From: https://tryhackme.com/room/encryptioncrypto101 ; Task 6 -  RSA - Rivest Shamir Adleman [with some editing, changes, and additions]
 
 The math(s) side
@@ -22,16 +38,7 @@ Crypto CTF challenges often present you with a set of these values, and you need
 
 There’s a lot more maths to RSA, and it gets quite complicated fairly quickly. If you want to learn the maths behind it, I recommend reading MuirlandOracle’s blog post here: https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-see: tools/GNU_Privacy_Guard in this repository
 
-
-
-Checking hashes in Linux Terminal
-----------------------------------
-md5sum <NAME_OF_FILE>
-sha1sum <NAME_OF_FILE>
-sha256sum <NAME_OF_FILE>
-[from: https://tryhackme.com/room/owasptop102021 ; task 18]
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Subresource Integrity Hash [see here: https://tryhackme.com/room/owasptop102021 ; Task 19 - Software Integrity Failures]
 https://www.srihash.org/
