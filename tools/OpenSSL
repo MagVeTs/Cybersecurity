@@ -24,7 +24,6 @@ $ openssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_message -out original
 
 Asymmetric
 ----------
-
 from: https://tryhackme.com/room/cryptographyintro ; "Assymmetric Cryptography" - Task 3
 
 syntax:
@@ -44,6 +43,22 @@ $ openssl pkeyutl -encrypt -in plaintext.txt -out ciphertext -inkey public-key.p
 
 $ openssl pkeyutl -decrypt -in ciphertext -inkey private-key.pem -out decrypted.txt
 # the owner of the private key can issue this command to use his private key to decrypt the text that was encrypted using his public key.
+
+
+Asymmetric Diffie-Hellman Key Exchange
+--------------------------------------
+from: https://tryhackme.com/room/cryptographyintro ; "Diffie-Hellman Key Exchange" - Task 4
+
+syntax:
+
+$ openssl dhparam -out dhparams.pem 2048
+# dhparam = specifies that you want to create a Diffie-Hellman Key
+# -out dhparams.pem = name of file that is outputted and conatins the key
+# 2048 = chosen size in bits (could also be 4096 for example)
+
+$ openssl dhparam -in dhparams.pem -text -noout
+# this command allows you to view the parameters of the key that has been created; "P" will show the prime number that was used (written in hexadecimal); "G" will show the Generator
+
 
 
 
