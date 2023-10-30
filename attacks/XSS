@@ -3,6 +3,7 @@ XSS
 
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 * "XSS - Introduction" - https://academy.tcm-sec.com/courses/1152300/lectures/47778441
+- Traditionally, the command `alert(1)` was used to check for XSS. Due to changes in Chrome it is better to use `print()` or `prompt("hello")`; see here: https://portswigger.net/research/alert-is-dead-long-live-print
 * "XSS - DOM Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778510
 * "XSS - Stored Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778529
 * "XSS - Challenge Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/47778530
