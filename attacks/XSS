@@ -7,6 +7,7 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 - In order to understand the basics of JavaScript take 20-30 minutes and study it using this free interactive site: https://www.w3schools.com/js/
 - Traditionally, the command `alert(1)` was used to check for XSS. Due to changes in Chrome it is better to use `print()` or `prompt("hello")`; see here: https://portswigger.net/research/alert-is-dead-long-live-print
 * "XSS - DOM Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778510
+- With DOM based XSS the vulnerability is on the client side (not the server side). This means that the vulnerability exists in the way the browser application installed on the user device interprets the JavaScript of the XSS vulnerable website in question. If you open the Network tab in the Developer Tools of the website, you will see that the input that is being posted is not going out to a server and coming back but rather staying on the local device. You can test this by entering an input; if when you enter an input nothing (no 200 or 400 messages; no GET or POST messages) appear in the Network tab, this means that everything is happening in the client.
 * "XSS - Stored Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778529
 * "XSS - Challenge Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/47778530
 
