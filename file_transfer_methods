@@ -3,16 +3,16 @@ Transfering files (including executables) between devices by turning one device 
 
 1) turn device that has file on it into a web server by going to the directory where file resides and opening terminal
 2) command:
-python3 -m http.server <PORT, e.g. 9000>
+$ sudo python3 -m http.server <PORT, e.g. 9000>
 now this device is a server
 3) On the device that you wish to download the file to (i.e. the client), open terminal in directory you want file to download to
 4) command:
-wget http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
+$ wget http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
 Note: you may not be allowed to download files into every directory. The /tmp directory is likely to allow files to be downloaded to it using wget.
 5) allow execution of the file, command:
-chmod a+x <FILE_NAME>
+$ chmod a+x <FILE_NAME>
 6)execute the file from the directory it is in, command:
-./<FILE_NAME>
+$ ./<FILE_NAME>
 
 Note: if you have access to a web browser on the machine you are transferring the file to, you can enter simply enter:
 http://<IP_of_SERVER>:<SERVER_PORT, e.g. 9000>/<FILE_NAME>
