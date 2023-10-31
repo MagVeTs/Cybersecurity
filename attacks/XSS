@@ -3,6 +3,8 @@ XSS
 
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 * "XSS - Introduction" - https://academy.tcm-sec.com/courses/1152300/lectures/47778441
+- XSS makes use of JavaScript to run malicious actions in a target's web browser
+- In order to understand the basics of JavaScript take 20-30 minutes and study it using this free interactive site: https://www.w3schools.com/js/
 - Traditionally, the command `alert(1)` was used to check for XSS. Due to changes in Chrome it is better to use `print()` or `prompt("hello")`; see here: https://portswigger.net/research/alert-is-dead-long-live-print
 * "XSS - DOM Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778510
 * "XSS - Stored Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778529
