@@ -16,6 +16,7 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 - It is worth testing first for HTML injection because that is easier to accomplish; if HTML injection works then start playing around to find the syntax that might be needed to get XSS to work. HTML injection can be tested by entering:
 <h1>test</h1>
 in the input box
+- When testing for XSS it can be useful to set up a webhook. This will allow your XSS command to exfiltrate data (e.g. an Admin password that was harvested using an XSS payload) to a server for storage. In a real pentest you would send the data to a AWS EC2 server (or similar setup) that you control so that no one else could see it. For non-sensitive information it is easy to use this website: https://webhook.site/. When you go to it it will automatically create a webhook for you (note: that is public) and when you add that webhook to your payload and then the payload is run the data will appear on the webhook page that was just created. 
 * "XSS - Challenge Walkthrough" - https://academy.tcm-sec.com/courses/1152300/lectures/47778530
 
 ---------------------------------------------------
