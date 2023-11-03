@@ -16,6 +16,7 @@ $ openssl aes-256-cbc -d -in encrypted_message -out original_message.txt
 
 $ openssl aes-256-cbc -pbkdf2 -iter <NUMBER> -e -in message.txt -out encrypted_message
 # encrypts; the `-pbkdf2` argument uses Password-Based Key Derivation Function 2 (PBKDF2) to add protection against brute-force attacks; the `-iter` argument chooses how many times to iterate the password in order to create the encryption key (e.g. `-iter 10000` will iterate 10,000 times)
+# "PBKDF2 (Password-Based Key Derivation Function 2). PBKDF2 takes the password and the salt and submits it through a certain number of iterations, usually hundreds of thousands" [from https://tryhackme.com/room/cryptographyintro - Task 7 "Authenticating with passwords]
 
 $ openssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_message -out original_message.txt
 # decrypts a file that has been encrypted with 10,000 iterations
