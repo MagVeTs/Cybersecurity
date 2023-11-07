@@ -6,3 +6,4 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 "XXE - External Entities Injection" - https://academy.tcm-sec.com/courses/1152300/lectures/47848120
 
 * TCM recommended repository of XXE injection payloads: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection
+* Not such a common vulnerability anymore, but it is still worth
