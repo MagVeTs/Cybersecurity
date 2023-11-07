@@ -1,5 +1,5 @@
-IDOR
------
+IDOR (Insecure Direct Object Reference) and BOLA (Broken Object Level Authorization)
+-------------------------------------------------------------------------------------
 
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 "IDOR - Insecure Direct Object Reference" - https://academy.tcm-sec.com/courses/1152300/lectures/47848121
