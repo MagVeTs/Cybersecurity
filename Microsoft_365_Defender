@@ -35,5 +35,7 @@ settings > endpoints > indicators > urls/domains
 * In order to block (for the entire 365 domain) an IP/URL as an email sender domain, go to:
 Email & collaboration > Policies & rules > Threat policies > Tenant allow and block list
 -----------------------------------------------------
+* When investigating a potentially compromised user check their Sign-logs and Audit logs; these are accessible from https://portal.azure.com/ (after searching for and selecting the user; you will see them in the left-hand column).
+* It may be necessary to check the much more extensive audit logs available by going to https://security.microsoft.com/ and choosing the "Audit" option in the left-hand column. Then you can search by user, dates, etc. This audit may take a few minutes to complete. You may need to click refresh above the list of searches to see that the search is done.
 
 
