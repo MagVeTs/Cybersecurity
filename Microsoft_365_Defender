@@ -43,5 +43,6 @@ Email & collaboration > Policies & rules > Threat policies > Tenant allow and bl
 -----------------------------------------------------
 * When investigating a potentially compromised user check their Sign-logs and Audit logs; these are accessible from https://portal.azure.com/ (after searching for and selecting the user; you will see them in the left-hand column).
 * It may be necessary to check the much more extensive audit logs available by going to https://security.microsoft.com/ and choosing the "Audit" option in the left-hand column. Then you can search by user, dates, etc. This audit may take a few minutes to complete. You may need to click refresh above the list of searches to see that the search is done.
-
+* Note: phishing emails might come into group mailboxes. In such cases, one should also check who are the other members of the group mailboxes and investigate whether they also were compromised.
+- In order to check which users are members of a specific group, sign-in to admin.microsoft.com
 
