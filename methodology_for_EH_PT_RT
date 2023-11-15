@@ -294,5 +294,7 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 
 It is recommended to use multiple subdomain/related domain enumeration tools (e.g. Assetfinder, Amass, etc.) in order to avoid inadvertently missing a subdomain or related domain that does not appear in one of the tools
 --------------------------
-
-
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"002_Pentest_Report_Writing" - https://academy.tcm-sec.com/courses/1152300/lectures/24793688
+see: https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report
+--------------------------
