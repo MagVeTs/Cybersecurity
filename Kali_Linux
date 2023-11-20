@@ -28,8 +28,8 @@ $ sudo su -
 $ sudo apt update && sudo apt upgrade
 
 TIP: Updating/upgrading Kali linux could conceivably break the OS; it is recommended to use a VM and first make a copy of the VM before attempting to update/upgrade it.
-TIP: It is recommended to use https://github.com/Dewalt-arch/pimpmykali - "Kali Linux Fixes for Newly Imported VM's" which is a curated update/upgrade that will not break anything
-
+TIP: It is highly recommended to use https://github.com/Dewalt-arch/pimpmykali - "Kali Linux Fixes for Newly Imported VM's" which is a curated update/upgrade that is frequently updated, and will not break anything, and was created by one of HA's colleagues (known as Dewalt).
+TIP: When installing tools it is recommended to install them in the /opt directory.
 
 ***
 "Here are explanations and examples of the commands mentioned in this video:
@@ -52,14 +52,4 @@ These commands are commonly used in Linux systems for updating packages, install
 ("Installing and Updating Tools" - https://academy.tcm-sec.com/courses/1152300/lectures/24747385)
 ***
 
-
-
-
-----------------------------------------------------------------------------------
-When installing tools it is recommended to install them in the /opt directory.
-[Heath Adams - The Cyber Mentor]
-----------------------------------------------------------------------------------
-Heath Adams - The Cyber Mentor, highly recommends the following Kali Linux optimization package created by one of his colleagues:
-https://github.com/Dewalt-arch/pimpmykali
-"Kali Linux Fixes for Newly Imported VM's"
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
