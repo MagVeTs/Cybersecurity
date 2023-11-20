@@ -1,14 +1,16 @@
 pimpmykali.sh
 --------------
-from Heath Adam - The Cyber Mentor's organization
+Created by Dewalt who works for Heath Adam - The Cyber Mentor's organization
+
+from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
+"Installing and Updating Tools" - https://academy.tcm-sec.com/courses/1152300/lectures/24747385
 
 https://github.com/Dewalt-arch/pimpmykali
 "Kali Linux Fixes for Newly Imported VM's"
 
 installs alot of important tools
 
-discussed during HA's course: Practical Ethical Hacking - The Complete Course
-see: "Installing Go" - https://academy.tcm-sec.com/courses/1152300/lectures/33690638
+[also discussed during "Installing Go" - https://academy.tcm-sec.com/courses/1152300/lectures/33690638]
 
 syntax for installing:
 
