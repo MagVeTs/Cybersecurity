@@ -4,13 +4,13 @@ Created by Dewalt who works for Heath Adam - The Cyber Mentor's organization
 
 from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
 "Installing and Updating Tools" - https://academy.tcm-sec.com/courses/1152300/lectures/24747385
+[also discussed during "Installing Go" - https://academy.tcm-sec.com/courses/1152300/lectures/33690638]
+
+
+TIP: It is highly recommended to use https://github.com/Dewalt-arch/pimpmykali - "Kali Linux Fixes for Newly Imported VM's" which is a curated update/upgrade that is frequently updated, and will not break anything, and was created by one of HA's colleagues (known as Dewalt). It installs a lot of important tools.
 
 https://github.com/Dewalt-arch/pimpmykali
 "Kali Linux Fixes for Newly Imported VM's"
-
-installs alot of important tools
-
-[also discussed during "Installing Go" - https://academy.tcm-sec.com/courses/1152300/lectures/33690638]
 
 syntax for installing:
 
