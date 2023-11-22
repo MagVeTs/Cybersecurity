@@ -18,6 +18,7 @@ ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
 done
 fi
 
+# #!/bin/bash = tells Linux that we are running a Bash script and all the files relating to the Bash scripting tool are located in the /bin/bash directory
 # ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
 # -c 1 = amount of packets to be sent
 # cut -d " " = extract section of line as delimited by spaces (d = delimiter)
