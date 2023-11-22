@@ -13,12 +13,14 @@ echo "You forgot an IP address!"
 echo "Syntax: ./ipsweep.sh 192.168.1"
 
 else
-for ip in `seq 1 254`; do
-ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+for lastoctet in `seq 1 254`; do
+ping -c 1 $1.$lastoctet | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
 done
 fi
 
 # #!/bin/bash = tells Linux that we are running a Bash script and all the files relating to the Bash scripting tool are located in the /bin/bash directory
+# for = creates a "for loop"
+# `seq 1 254` = commands that the value that is given the name "lastoctet" is filled with numbers in sequence from 1 - 254
 # ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
 # -c 1 = amount of packets to be sent
 # cut -d " " = extract section of line as delimited by spaces (d = delimiter)
