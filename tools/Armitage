@@ -1,0 +1,63 @@
+Armitage
+-----------
+From:
+"Intro to C2" - https://tryhackme.com/room/introtoc2
+Task 4 - Setting up a C2 Framework
+
+"Armitage is a GUI for the Metasploit Framework, and because of this, it has almost all aspects of a standard C2 framework...
+
+Setting Up Armitage
+Downloading, Building, and Installing Armitage"
+
+1) Clone the repository from Gitlab:
+$ git clone https://gitlab.com/kalilinux/packages/armitage.git && cd armitage
+
+2) Build the current release:
+$ bash package.sh
+
+3) After completion of building process check ./releases/unix/ to confirm build:
+$ cd ./release/unix/ && ls -la
+
+You should see something like this:
+
+drwxr-xr-x 2 root root    4096 Feb  6 20:20 .
+drwxr-xr-x 4 root root    4096 Feb  6 20:20 ..
+-rwxr-xr-x 1 root root      75 Feb  6 20:20 armitage
+-rw-r--r-- 1 root root 4334705 Feb  6 20:20 armitage.jar
+-rw-r--r-- 1 root root   25985 Feb  6 20:20 armitage-logo.png
+-rw-r--r-- 1 root root     282 Feb  6 20:20 build.txt
+-rw-r--r-- 1 root root 6778470 Feb  6 20:20 cortana.jar
+-rw-r--r-- 1 root root    1491 Feb  6 20:20 license.txt
+-rw-r--r-- 1 root root    4385 Feb  6 20:20 readme.txt
+-rwxr-xr-x 1 root root    2665 Feb  6 20:20 teamserver
+-rw-r--r-- 1 root root   85945 Feb  6 20:20 whatsnew.txt
+
+The two most important files are:
+- armitage -  file used to launch GUI to connect to the Armitage Teamserver.
+- teamserver - starts Armitage server; multiple users will be able to connect to it; takes two arguments (IP Address that redteam will connect to; shared password redteam will use to authenticate)
+
+4) Make sure Metasploit is properly configured; it is heavily used by Armitage; enable Metasploit DB capabilities by starting PostgreSQL:
+$ systemctl start postgresql && systemctl status postgresql
+
+5) Start Metasploit DB:
+$ msfdb --use-defaults delete
+[NOTE: do not be in Root when you run this command]
+
+6) Start/Connect to Armitage; and set your password:
+$ cd /opt/armitage/release/unix && ./teamserver <YourIP> <PASSWORD>
+
+7) Start Armitage client (you only need to cd to the directory if you have left the directory since the last command):
+$ cd /opt/armitage/release/unix && ./armitage
+
+Note:
+"When operating a C2 Framework, you never want to expose the management interface publicly; You should always listen on a local interface, never a public-facing one. This complicates access for fellow operators. Fortunately, there is an easy solution for this. For operators to gain access to the server, you should create a new user account for them and enable SSH access on the server, and they will be able to SSH port forward TCP/55553.  Armitage explicitly denies users listening on 127.0.0.1; this is because it is essentially a shared Metasploit server with a "Deconfliction Server" that when multiple users are connecting to the server, you're not seeing everything that your other users are seeing. With Armitage, you must listen on your tun0/eth0 IP Address [https://tryhackme.com/room/introtoc2]."
+
+
+
+
+
+
+
+
+
+
