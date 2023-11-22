@@ -19,8 +19,10 @@ done
 fi
 
 # ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
-# -c = amount of packets to be sent
-
+# -c 1 = amount of packets to be sent
+# cut -d " " = extract section of line as delimited by spaces (d = delimiter)
+# -f 4 = the section of line that is to be extracted is the section that comes right before the fourth space (f = field)
+# tr -d ":" = deletes the ":" (tr = translate; the -d after `tr` says to delete the character(s) that appear in quotation marks)
 
 "Frequently Asked Questions:
 
