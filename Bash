@@ -4,6 +4,8 @@ Bash
 from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
 "Scripting with Bash" - https://academy.tcm-sec.com/courses/1152300/lectures/24747417
 
+# Ping Sweeper
+
 #!/bin/bash
 if [ "$1" == "" ]
 then
@@ -15,6 +17,10 @@ for ip in `seq 1 254`; do
 ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
 done
 fi
+
+# ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
+# -c = amount of packets to be sent
+
 
 "Frequently Asked Questions:
 
