@@ -1,10 +1,15 @@
 Bash
 -----
 
+
+------------------------------------------------------------------------------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
 "Scripting with Bash" - https://academy.tcm-sec.com/courses/1152300/lectures/24747417
 
-# Ping Sweeper
+# IPSweep (Ping Sweeper)
+# This Bash script will ping (ICMP) an entire /24 subnet and return a list of IP addresses that respond to a ping within the network
+
+------------------------
 
 #!/bin/bash
 if [ "$1" == "" ]
@@ -18,17 +23,26 @@ ping -c 1 $1.$lastoctet | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
 done
 fi
 
+----------------------------
 # #!/bin/bash = tells Linux that we are running a Bash script and all the files relating to the Bash scripting tool are located in the /bin/bash directory
 # for = creates a "for loop"
-# `seq 1 254` = commands that the value that is given the name "lastoctet" is filled with numbers in sequence from 1 - 254
+# lastoctet in `seq 1 254` = commands that the value that is given the name "lastoctet" is filled with numbers in sequence from 1 - 254
 # ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
 # -c 1 = amount of packets to be sent
+# $1.$lastoctet = $1 means that the first argument ((in this case an IP address) that is given AFTER the command to run the script (which is argument $0) should be placed here in the script; $lastoctet means that the value that has been designated as lastoctet is to be replaced with the numbers 1 through 254 sequentially each time the script loop iterates (as was established earlier in the script)
 # cut -d " " = extract section of line as delimited by spaces (d = delimiter)
 # -f 4 = the section of line that is to be extracted is the section that comes right before the fourth space (f = field)
 # tr -d ":" = deletes the ":" (tr = translate; the -d after `tr` says to delete the character(s) that appear in quotation marks)
+
+NOTE: after creating the script save it as ipsweep.sh and do not forget to make it executable:
+$ chmod +x ipsweep.sh
+NOTE: The syntax to run the sweep on an entire /24 subnet is (for example):
+$ ./ipsweep 192.168.4
 
 "Frequently Asked Questions:
 
 Question: My bash script is producing an error with “seq”. How do I resolve?
 
 Resolution: Ensure use of backtick (`) instead of using single quote ('). Alternatively, use $(seq 1 254) instead of seq"
+------------------------------------------------------------------------------------------------------------------------------------------
+
