@@ -1,0 +1,22 @@
+Port Forwarding (with SSH; also known as SSH Tunneling)
+---------------------------------------------------------
+
+from: https://phoenixnap.com/kb/ssh-port-forwarding
+"To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a hostname.
+
+The basic syntax for a local port forward command is straightforward:
+
+$ ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname
+
+⦁    ssh – Starts the SSH client program on the local machine and establishes a secure connection to the remote SSH server.
+
+⦁    -L local_port:destination_server_ip:remote_port – The local port on the local client is being forwarded to the port of the destination remote server.
+
+⦁    ssh_server_hostname – This element of the syntax represents the hostname or IP address of the remote SSH server.
+
+A practical example of an SSH port forwarding command would take the following form:
+
+$ ssh –L 5901:188.17.0.5:4492 pnap@ssh.server.com
+
+In the example above, all traffic sent to port 5901 on your local host is being forwarded to port 4492 on the remote server located at 188.17.0.5.
+
