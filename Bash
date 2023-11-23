@@ -39,8 +39,18 @@ fi
 
 NOTE: after creating the script save it as ipsweep.sh and do not forget to make it executable:
 $ chmod +x ipsweep.sh
+
 NOTE: The syntax to run the sweep on an entire /24 subnet is (for example):
 $ ./ipsweep 192.168.4
+
+Note: You can send the generated IPs into a text document which will facilitate its future use:
+$ ./ipsweep 192.168.4 > live_ips.txt
+
+Note: Once you have a text doc of the IPs that respond to a ping you can use the following one-line script to have nmap scan the live IPs:
+$ for ip in $(cat live_ips.txt); do nmap $ip; & done
+# ip in $(cat live_ips.txt) = iteratively take each line from the live_ips.txt and designate it as $ip
+# do nmap $ip = run nmap on the $ip value
+
 
 "Frequently Asked Questions:
 
