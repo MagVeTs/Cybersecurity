@@ -5,6 +5,7 @@ Bash
 ------------------------------------------------------------------------------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
 "Scripting with Bash" - https://academy.tcm-sec.com/courses/1152300/lectures/24747417
+HA's modification of a script he got from Georgia Wyman
 
 # IPSweep (Ping Sweeper)
 # This Bash script will ping (ICMP) an entire /24 subnet and return a list of IP addresses that respond to a ping within the network
