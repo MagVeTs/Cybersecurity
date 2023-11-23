@@ -18,5 +18,6 @@ A practical example of an SSH port forwarding command would take the following f
 
 $ ssh –L 5901:188.17.0.5:4492 pnap@ssh.server.com
 
-In the example above, all traffic sent to port 5901 on your local host is being forwarded to port 4492 on the remote server located at 188.17.0.5.
+In the example above, all traffic sent to port 5901 on your local host is being forwarded to port 4492 on the remote server located at 188.17.0.5."
+-----------------------------------------------------------
 
