@@ -26,14 +26,16 @@ fi
 
 ----------------------------
 # #!/bin/bash = tells Linux that we are running a Bash script and all the files relating to the Bash scripting tool are located in the /bin/bash directory
+# [ "$1" == "" ] = means that if the first argument (in this case an IP address) that is given AFTER the command to run the script (which is argument $0) is left empty...
 # for = creates a "for loop"
 # lastoctet in `seq 1 254` = commands that the value that is given the name "lastoctet" is filled with numbers in sequence from 1 - 254
 # ping = send an ICMP (Internet Control Message Protocol) packet to the IP address
 # -c 1 = amount of packets to be sent
-# $1.$lastoctet = $1 means that the first argument ((in this case an IP address) that is given AFTER the command to run the script (which is argument $0) should be placed here in the script; $lastoctet means that the value that has been designated as lastoctet is to be replaced with the numbers 1 through 254 sequentially each time the script loop iterates (as was established earlier in the script)
+# $1.$lastoctet = $1 means that the first argument (in this case an IP address) should be placed here in the script; $lastoctet means that the value that has been designated as lastoctet is to be replaced with the numbers 1 through 254 sequentially each time the script loop iterates (as was established earlier in the script)
 # cut -d " " = extract section of line as delimited by spaces (d = delimiter)
 # -f 4 = the section of line that is to be extracted is the section that comes right before the fourth space (f = field)
 # tr -d ":" = deletes the ":" (tr = translate; the -d after `tr` says to delete the character(s) that appear in quotation marks)
+# & = run this "for" loop with the 1-254 sequence simultaneously (to save time); if the `&` was replaced by an `;` then the loop would still run but each number of the 1-254 sequence would only be run after the previous number was done being run
 
 NOTE: after creating the script save it as ipsweep.sh and do not forget to make it executable:
 $ chmod +x ipsweep.sh
