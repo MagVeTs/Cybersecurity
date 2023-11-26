@@ -45,4 +45,19 @@ Email & collaboration > Policies & rules > Threat policies > Tenant allow and bl
 * It may be necessary to check the much more extensive audit logs available by going to https://security.microsoft.com/ and choosing the "Audit" option in the left-hand column. Then you can search by user, dates, etc. This audit may take a few minutes to complete. You may need to click refresh above the list of searches to see that the search is done.
 * Note: phishing emails might come into group mailboxes. In such cases, one should also check who are the other members of the group mailboxes and investigate whether they also were compromised.
 - In order to check which users are members of a specific group, sign-in to admin.microsoft.com
+-----------------------------------------------------
+Kusto Query Language (KQL) query to retrieve any user connections with a domain or domains:
+
+let Domains = pack_array("rejasypuertas.es", "fincalosaljibes.com"); 
+DeviceNetworkEvents
+| where Timestamp > ago(30d) 
+| where RemoteUrl in(Domains)
+
+[NOTE: go to https://security.microsoft.com/ and then Hunting > Advanced Hunting in order to input the query]
+[NOTE: replace example domains with actual domains]
+[hat tip: YS]
+-----------------------------------------------------
+
+
+
 
