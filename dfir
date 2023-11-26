@@ -19,6 +19,10 @@ The Hitchhiker's Guide to DFIR
 https://start.me/p/q6mw4Q/forensics
 [hat tip: RM; huge repository of links]
 
+What2Log
+https://what2log.com/
+[Really great tool; among other things, it gives you Powershell scripts that you can run to pull events.
+It has guides for Windows and for Linux machines.]
 ------------------------------------------------------------------------------------
 List of sources providing preparedness checklists for cyber incidents:
 1. Singapore's Cyber Security Agency (CSA) - Incident Response Checklist: https://www.csa.gov.sg/Tips-Resource/Resources/singcert/incident-response-checklist
