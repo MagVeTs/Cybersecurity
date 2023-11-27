@@ -11,4 +11,6 @@ from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete 
 "Introduction to Python"
 "Introduction" - https://academy.tcm-sec.com/courses/1152300/lectures/24747419
 "Strings" - https://academy.tcm-sec.com/courses/1152300/lectures/24747380
-- declaring: `#!/bin/python3` at the beginning of your code will allow you to run the script by just writing `./name_of_script.py`. Otherwise you would have to write `python3 name_of_script.py` in order for the device to know where to look to get the parameters of the Python language in order to run the script
+- declaring: `#!/bin/python3` at the beginning of your code will allow you to run the script by just writing `./name_of_script.py`. Otherwise you would have to write `python3 name_of_script.py` in order for the device to know where to look to get the parameters of the Python language in order to run the script. This declaration is necessary for Linux and all Unix systems (including MacOS).
+
+
