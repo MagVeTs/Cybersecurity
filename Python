@@ -7,3 +7,8 @@ https://www.pentesteracademy.com/course?id=1
 [hat tip: https://niiconsulting.com/checkmate/2017/06/a-detail-guide-on-oscp-preparation-from-newbie-to-oscp/]
 ----------------------------------------------------------------------------
 
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+"Introduction to Python"
+"Introduction" - https://academy.tcm-sec.com/courses/1152300/lectures/24747419
+"Strings" - https://academy.tcm-sec.com/courses/1152300/lectures/24747380
+- declaring: `#!/bin/python3` at the beginning of your code will allow you to run the script by just writing `./name_of_script.py`. Otherwise you would have to write `python3 name_of_script.py` in order for the device to know where to look to get the parameters of the Python language in order to run the script
