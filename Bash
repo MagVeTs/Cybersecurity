@@ -1,7 +1,10 @@
 Bash
 -----
+helpful AI tool: https://butterfi.sh/
+"Butterfish is for people who work from the command line, it adds AI prompting to your shell (bash, zsh) with OpenAI. Think Github Copilot for shell.
 
-
+Here’s how it works: use your shell as normal, start a command with a capital letter to prompt the AI. The AI sees the shell history, so you can ask contextual questions like “Why did that command fail?”."
+[hat tip: RM]
 ------------------------------------------------------------------------------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete Course"
 "Scripting with Bash" - https://academy.tcm-sec.com/courses/1152300/lectures/24747417
