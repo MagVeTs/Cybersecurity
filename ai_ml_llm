@@ -1,5 +1,16 @@
-"OpenAI CEO Sam Altman shows how to build your own GPT app in less than 4 minutes - without writing a single line of code."
+AI/ML/LLM
+---------
+
+* helpful AI tool:
+https://butterfi.sh/
+"Butterfish is for people who work from the command line, it adds AI prompting to your shell (bash, zsh) with OpenAI. Think Github Copilot for shell.
+Here’s how it works: use your shell as normal, start a command with a capital letter to prompt the AI. The AI sees the shell history, so you can ask contextual questions like “Why did that command fail?”."
+[hat tip: RM]
+
+
+* "OpenAI CEO Sam Altman shows how to build your own GPT app in less than 4 minutes - without writing a single line of code."
 https://www.linkedin.com/posts/zainkahn_absolute-madness-openai-ceo-sam-altman-activity-7128011745868050432-Ox5K/
+[hat tip: RM]
 ----------------------------------------------------------------------------------
 LLM Hacker's Handbook
 https://doublespeak.chat/#/handbook
