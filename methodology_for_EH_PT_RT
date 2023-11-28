@@ -2,6 +2,33 @@ Ethical Hacking = EH
 Pentesting = PT
 Red Teaming = RT
 - terms may be used interchangeably in this doc, unless otherwise indicated
+==============================================================================================================
+Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+
+Passive Reconnaisance Overview - https://academy.tcm-sec.com/courses/1152300/lectures/24747401
+
+Tools:
+
+Target Validation: WHOIS, nslookup, dnsrecon
+
+Finding Subdomains: Google Fu, dig, Nmap, Sublist3r, Bluto, crt.sh, etc.
+
+Fingerprinting: Nmap, Wappalyzer, WhatWeb, BuiltWith, Netcat
+
+Data Breaches: HaveIBeenPwned, Breach-Parse, WeLeakInfo
+
+
+
+
+
+
+
+
+
+
+
+
+==============================================================================================================
 ----------------------
 From Heath Adams - The Cyber Mentor (Practical Ethical Hacking: The Complete Course - https://academy.tcm-sec.com/courses/1152300)
 For Kali Linux VMs install and run pimpmykali
