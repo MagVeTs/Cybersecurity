@@ -3,7 +3,7 @@ Microsoft 365 Defender
 
 -----------------------------------------------------
 Playbook for compromised users:
-* kill session
+* revoke sessions
 * reset password
 * enforce conditional access if not already enforced (see below "Enforcing MFA on a User")
 * designate user as compromised (see below "Designating User as Compromised"
