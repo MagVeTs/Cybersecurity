@@ -57,7 +57,7 @@ DeviceNetworkEvents
 [NOTE: replace example domains with actual domains]
 [hat tip: YS]
 -----------------------------------------------------
-
+Defender may raise an alert regarding a sign-in from an anomalous IP address. If the user who signed-in is an IT provider this may sometimes be a False Positive (FP) caused in the following way. The IT professional may have remotely accessed the device of another user (using a remote desktop app such as AnyDesk or RDP) in order to fix something on the user's device. This could lead  Defender to associate the assisted user's sign-in IP with the IT professional's sign-in logs and raise an alert for an anomalous IP. One clue that can point to the fact that this is not a compromise is if the MFA record shows that the MFA passed because the device had already authenticated at an earlier time (e.g. " MFA not required during Windows broker logon flow"). Of course, this data point can not rule out the possiblity that the device itself was compromised at some earlier point. In order to identify a situation where the anomalous IP is caused by the IT professional accessing the user's device remotely, it is recommended to go to https://portal.azure.com/ and then go to Users > Sign-in logs. (One does not choose a specific user but rather retrieves the user sign-in logs for the entire environment.) One filters the logs using the anomalous IP address. If that IP address appears as associated with a user in the environment this would indicate the likelihood that the IT professional was accessing that user's device remotely and that was what caused the alert.
 
 
 
