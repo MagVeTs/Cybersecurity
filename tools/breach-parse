@@ -7,3 +7,4 @@ Practical Ethical Hacking - The Complete Course
 
 https://github.com/hmaverickadams/breach-parse
 "A tool for parsing breached passwords"
+NOTE: In the next video HA says that the DB for this tool is not updated and the dehashed website is better [https://www.dehashed.com/] ; however, dehashed costs money for certain uses
