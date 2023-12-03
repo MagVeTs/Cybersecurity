@@ -14,3 +14,7 @@ https://github.com/infosecn1nja/AD-Attack-Defense
 "Attack and defend active directory using modern post exploitation adversary tradecraft activity"
 
 see Tools > PingCastle in this repository for an AD/AzureAD vuln scanning platform
+
+Most common Active Directory misconfigurations and default settings that put your organization at risk
+https://blog.nviso.eu/2023/10/26/most-common-active-directory-misconfigurations-and-default-settings-that-put-your-organization-at-risk/
+* list of really important things to search for when doing PT on an AD environment (uses PowerShell searches and the tool Rubeus)
