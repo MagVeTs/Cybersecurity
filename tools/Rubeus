@@ -1,0 +1,8 @@
+Rubeus
+-------
+https://github.com/GhostPack/Rubeus
+
+also see:
+"Most common Active Directory misconfigurations and default settings that put your organization at risk"
+https://blog.nviso.eu/2023/10/26/most-common-active-directory-misconfigurations-and-default-settings-that-put-your-organization-at-risk/
+* list of really important things to search for when doing PT on an AD environment (uses PowerShell searches and the tool Rubeus)
