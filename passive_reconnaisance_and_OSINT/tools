@@ -10,7 +10,7 @@ FOCA (Fingerprinting Organizations with Collected Archives)
 https://github.com/ElevenPaths/FOCA
 GUI interface; similar to Metagoofil; retrieves metadata from documents on target website; not Linux compatible
 [recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60;
-also discussed in: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/)]
+also discussed in: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
 
 Maltego
 https://www.maltego.com/downloads/#tab-2
@@ -21,7 +21,7 @@ Linux based; search through documents on a target's website; retrieve metadata; 
 https://github.com/opsdisk/metagoofil
 https://www.kali.org/tools/metagoofil/
 https://gitlab.com/kalilinux/packages/metagoofil
-[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/)]
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
 
 OSINT Framework
 https://osintframework.com/
@@ -50,3 +50,9 @@ Browser extension to ease login"
 Epios
 https://epieos.com/
 "Retrieve information linked to an email address, leaving no traces"
+
+the Harvester
+* gathers employee names, email addresses, subdomains, hosts, PGP key entries, open ports and service banners from servers
+* installed by default on Kali linux; can use Google or other search engines; can search LinkedIn and other social media
+* recon-ng is similar but better
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools"]
