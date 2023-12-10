@@ -8,15 +8,17 @@ https://inteltechniques.com/tools/index.html
 
 FOCA (Fingerprinting Organizations with Collected Archives)
 https://github.com/ElevenPaths/FOCA
-[recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60]
+GUI interface; similar to Metagoofil; retrieves metadata from documents on target website; not Linux compatible
+[recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60;
+also discussed in: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/)]
 
 Maltego
 https://www.maltego.com/downloads/#tab-2
 [recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.61]
 
 Metagoofil
-Linux based; search through documents on a target's website; retrieve metadata
-CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/)
+Linux based; search through documents on a target's website; retrieve metadata; uses Python; can be used on all OSs not just Linux
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/)]
 
 OSINT Framework
 https://osintframework.com/
