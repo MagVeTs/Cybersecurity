@@ -56,3 +56,16 @@ the Harvester
 * installed by default on Kali linux; can use Google or other search engines; can search LinkedIn and other social media
 * recon-ng is similar but better
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools"]
+
+recon-ng
+* like the Harvester, but better
+* really complete, all-in-one tool, for passive reconnaisance/OSINT (in the same way that Metasploit is an all-in-one tool for exploits)
+* has all kinds of modules that allow it to be used for many types of OSINT searches
+* Python based' cross-platform compatabile
+* installed on Kali Linux by default
+* syntax:
+$ recon-ng
+# starts recon-ng
+$ recon-ng -w <NAME_OF_WORKSPACE>
+# starts and creates a workspace to store all your OSINT on a particular target
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
