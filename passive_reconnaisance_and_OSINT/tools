@@ -1,3 +1,8 @@
+Censys
+https://search.censys.io/
+* find hosts and networks and see how they are configured
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
+
 SET (Social Engineers Toolkit) - David Kennedy
 https://www.trustedsec.com/tools/the-social-engineer-toolkit-set/
 [recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.59]
@@ -14,7 +19,9 @@ also discussed in: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - J
 
 Maltego
 https://www.maltego.com/downloads/#tab-2
+* allows visual mapping of relationships between people, devices, etc. in order to see paths to follow to achieve compromise (like detective using strings on a corkboard)
 [recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.61]
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
 
 Metagoofil
 Linux based; search through documents on a target's website; retrieve metadata; uses Python; can be used on all OSs not just Linux
@@ -69,3 +76,10 @@ $ recon-ng
 $ recon-ng -w <NAME_OF_WORKSPACE>
 # starts and creates a workspace to store all your OSINT on a particular target
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
+
+Shodan
+https://www.shodan.io/
+* search for public facing servers, IoT, etc. owned by your target, in their IP range
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
+
+
