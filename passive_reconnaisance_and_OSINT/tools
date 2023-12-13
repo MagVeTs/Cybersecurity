@@ -89,6 +89,7 @@ recon-ng
 * Python based' cross-platform compatabile
 * installed on Kali Linux by default
 * by default no modules are loaded in recon-ng; you must install modules to use (see below)
+* NOTE: big change in recon-ng syntax between version 4 and version 5; online guides and tutorials for a different version than is being used will not be helpful
 * syntax:
 $ recon-ng
 # starts recon-ng
@@ -96,11 +97,11 @@ $ recon-ng -w <NAME_OF_WORKSPACE>
 # starts within a workspace that you have already created to store all your OSINT on a particular target
 [recon-ng] > help
 # displays list of commands; choose a command about which you wish to learn more and enter it - info will be displayed
-[recon-ng] > workspaces create <WORKSPACE_NAME>
+[recon-ng][default] > workspaces create <WORKSPACE_NAME>
 # creates workspace
-[recon-ng] > workspaces list
+[recon-ng][default] > workspaces list
 # list available workspaces
-[recon-ng] > workspaces load <WORKSPACE_NAME>
+[recon-ng][default] > workspaces load <WORKSPACE_NAME>
 # load a particular workspace
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and "Using OSINT Tools]
 
