@@ -83,6 +83,8 @@ NOTE: Google may consider theHarvester a bot and block it from properly executin
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and "Using OSINT Tools]
 
 recon-ng
+- https://www.kali.org/tools/recon-ng/
+- https://hackertarget.com/recon-ng-tutorial/
 * like the Harvester, but better
 * really complete, all-in-one tool, for passive reconnaisance/OSINT (in the same way that Metasploit is an all-in-one tool for exploits)
 * has all kinds of modules that allow it to be used for many types of OSINT searches
@@ -92,17 +94,33 @@ recon-ng
 * NOTE: big change in recon-ng syntax between version 4 and version 5; online guides and tutorials for a different version than is being used will not be helpful
 * syntax:
 $ recon-ng
-# starts recon-ng
+# starts recon-ng; prompt will change to: `[recon-ng][default] > `
+
 $ recon-ng -w <NAME_OF_WORKSPACE>
-# starts within a workspace that you have already created to store all your OSINT on a particular target
+# starts within a workspace that you have already created to store all your OSINT on a particular target; ; the prompt will change to: `[recon-ng][WORKSPACE_NAME] > `
+
 [recon-ng] > help
 # displays list of commands; choose a command about which you wish to learn more and enter it - info will be displayed
+
 [recon-ng][default] > workspaces create <WORKSPACE_NAME>
 # creates workspace
+
 [recon-ng][default] > workspaces list
 # list available workspaces
+
 [recon-ng][default] > workspaces load <WORKSPACE_NAME>
-# load a particular workspace
+# load a particular workspace; the prompt will change to: `[recon-ng][WORKSPACE_NAME] > `
+
+[recon-ng][default] > modules search
+# list modules already installed
+
+[recon-ng][default] > marketplace search
+# list all the modules available for installation
+
+[recon-ng][default] > marketplace install recon/domains-contacts/whois_pocs
+# installs a particular module (in this case the module is "recon/domains-contacts/whois_pocs"
+NOTE: some modules will require API key to use; for example in order to use the module that searches Twitter you first need to register with Twitter and request an API key (see here: https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api); then you can plug the API key into the associated module and use it
+
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and "Using OSINT Tools]
 
 Shodan
