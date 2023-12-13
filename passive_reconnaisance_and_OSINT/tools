@@ -68,7 +68,7 @@ Epios
 https://epieos.com/
 "Retrieve information linked to an email address, leaving no traces"
 
-the Harvester
+theHarvester
 * gathers employee names, email addresses, subdomains, hosts, PGP key entries, open ports and service banners from servers
 * installed by default on Kali linux; can use Google or other search engines; can search LinkedIn and other social media
 * recon-ng is similar but better
