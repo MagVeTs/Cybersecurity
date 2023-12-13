@@ -83,6 +83,8 @@ recon-ng
 * syntax:
 $ recon-ng
 # starts recon-ng
+$ help
+# displays list of commands
 $ recon-ng -w <NAME_OF_WORKSPACE>
 # starts and creates a workspace to store all your OSINT on a particular target
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
