@@ -87,7 +87,7 @@ $ recon-ng
 $ recon-ng -w <NAME_OF_WORKSPACE>
 # starts within a workspace that you have already created to store all your OSINT on a particular target
 [recon-ng] > help
-# displays list of commands; choose a command that you want to learn options
+# displays list of commands; choose a command about which you wish to learn more and enter it - info will be displayed
 [recon-ng] > workspaces create <WORKSPACE_NAME>
 # creates workspace
 [recon-ng] > workspaces list
