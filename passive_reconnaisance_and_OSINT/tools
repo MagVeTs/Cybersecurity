@@ -102,7 +102,7 @@ $ recon-ng -w <NAME_OF_WORKSPACE>
 [recon-ng] > help
 # displays list of commands; choose a command about which you wish to learn more and enter it - info will be displayed
 
-[recon-ng][default] > workspaces create <WORKSPACE_NAME>
+[recon-ng][default] > workspaces create <WORKSPACE_NAME, e.g. tesla>
 # creates workspace
 
 [recon-ng][default] > workspaces list
@@ -122,21 +122,28 @@ $ recon-ng -w <NAME_OF_WORKSPACE>
 
 [recon-ng][default] > marketplace install recon/domains-contacts/whois_pocs
 # installs a particular module (in this case the module is "recon/domains-contacts/whois_pocs"
-# NOTE: some modules will require API key to use; for example in order to use the module that searches Twitter you first need to register with Twitter and request an API key (see here:      
+# NOTE: some modules will require API key to use; for example in order to use the module that searches Twitter you first need to register with Twitter and request an API key (see here:
 # https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api); then you can plug the API key into the associated module and use it
 
-[recon-ng][default] > marketplace load whois_pocs
-# loads a particular module; the prompt will change to: `[recon-ng][default][whois_pocs] > `
+[recon-ng][tesla] > marketplace load whois_pocs
+# loads a particular module; the prompt will change to: `[recon-ng][tesla][whois_pocs] > `
 
-[recon-ng][default][whois_pocs] > db schema
+[recon-ng][tesla][whois_pocs] > info
+# display info re the current module
+
+[recon-ng][tesla][whois_pocs] > db schema
 # shows available fields in the database that can be populated with data
 
-[recon-ng][default][whois_pocs] > db insert domains
+[recon-ng][tesla][whois_pocs] > db insert domains
 # chooses the "domains" field as the field that will be receiving data; the target domains will be input into this field
 # a prompt will appear for the data: `domain (TEXT): `
+# you can add multiple domains but you have to issue the `db insert domains` for each one 
+
+[recon-ng][tesla][whois_pocs] > show domains
+# see a list of domains in the db
 
 
-[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and "Using OSINT Tools]
+[CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and at length in "Using OSINT Tools]
 
 Shodan
 https://www.shodan.io/
