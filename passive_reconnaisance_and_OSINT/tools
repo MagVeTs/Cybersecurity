@@ -117,9 +117,24 @@ $ recon-ng -w <NAME_OF_WORKSPACE>
 [recon-ng][default] > marketplace search
 # list all the modules available for installation
 
+[recon-ng][default] > marketplace install all
+# installs all modules (the ones that do not yet have API keys installed will generate error messages stating that)
+
 [recon-ng][default] > marketplace install recon/domains-contacts/whois_pocs
 # installs a particular module (in this case the module is "recon/domains-contacts/whois_pocs"
-NOTE: some modules will require API key to use; for example in order to use the module that searches Twitter you first need to register with Twitter and request an API key (see here: https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api); then you can plug the API key into the associated module and use it
+# NOTE: some modules will require API key to use; for example in order to use the module that searches Twitter you first need to register with Twitter and request an API key (see here:      
+# https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api); then you can plug the API key into the associated module and use it
+
+[recon-ng][default] > marketplace load whois_pocs
+# loads a particular module; the prompt will change to: `[recon-ng][default][whois_pocs] > `
+
+[recon-ng][default][whois_pocs] > db schema
+# shows available fields in the database that can be populated with data
+
+[recon-ng][default][whois_pocs] > db insert domains
+# chooses the "domains" field as the field that will be receiving data; the target domains will be input into this field
+# a prompt will appear for the data: `domain (TEXT): `
+
 
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and "Using OSINT Tools]
 
