@@ -42,9 +42,10 @@ Comprehensive list of C2 frameworks:
 - C2 Matrix Project - https://howto.thec2matrix.com/
 
 
-Task 7  Advanced C2 Setups, covers
+Task 7  Advanced C2 Setups, covers:
 setting up a C2 redirector in Metasploit
 
-
+Task 8  Wrapping Up, contains:
+Link to "C2 Matrix" an extensive Google Sheet comparing many C2 platforms: https://docs.google.com/spreadsheets/d/1b4mUxa6cDQuTV2BPC6aA-GR4zGZi0ooPYtBe4IgPsSc/edit#gid=0
 
 
