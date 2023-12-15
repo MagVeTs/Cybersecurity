@@ -10,6 +10,7 @@ https://tryhackme.com/room/redteamrecon ; Task 6 - Recon-ng
 ----------------------------------------------
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and at length in "Using OSINT Tools]
 
+recon-ng
 * like the Harvester, but better
 * really complete, all-in-one tool, for passive reconnaisance/OSINT (in the same way that Metasploit is an all-in-one tool for exploits)
 * has all kinds of modules that allow it to be used for many types of OSINT searches
