@@ -1,6 +1,9 @@
 DNS records
 ------------
 
+
+
+---------------------------------------------------------------------------------------------
 Types of DNS Records
 --------------------
 A - links hostname (domain) to IPv4
@@ -12,3 +15,24 @@ SOA (Start Of Authority) - contains important info re domain/zone (a zone is all
 TXT (Text) - allows admins to add machine readable into DNS records; e.g. to say that a certain other service has authority to use a particular domain name (for example allowing your outsourced IT support to send emails with your domain name to your employees)
 SRV (Service) - used to specify host and port to be used for a specific service (e.g. VoIP)
 NS (Nameserver) - used to specify which DNS server is authoritative for your domains; e.g. you might buy a domain name from a provider like GoDaddy and they would be your NS; later you might switch your provider to Google Domains and you would need to update the NS record
+
+
+[from: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion - https://www.udemy.com/course/pentestplus/ - "DNS Information"]
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
