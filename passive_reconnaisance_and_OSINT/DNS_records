@@ -21,7 +21,14 @@ Examining DNS Records for OSINT can help to:
 * identify addresses of servers being used by the domain (as hostnames or IPs)
 * what type of web server, email server, record server, etc. is being used (can point to possible vulnerabilities that can be exploited)
 * identify services being used by the domain (e.g. SaaS cloud based tools) - for this purpose the most important DNS records are: MX, TXT, and SR
-* 
+
+Command line tools to retrieve DNS records and domain ownership records [including points of contact]:
+* nslookup
+* dig
+* host
+* whois (both a Linux command line tool and a website)
+$ whois tesla.com
+NOTE: whois info is no longer as valuable as it once was because there is now the option to for domain owners to maintain privacy and not disclose a lot of the info that used to be mandatory in a whois record; it is still worth checking though
 
 [from: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion - https://www.udemy.com/course/pentestplus/ - "DNS Information"]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
