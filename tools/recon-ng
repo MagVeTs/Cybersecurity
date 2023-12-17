@@ -68,15 +68,15 @@ $ recon-ng -w <NAME_OF_WORKSPACE>
 [recon-ng][tesla][whois_pocs] > show domains
 # see a list of domains in the db; `show` followed by any schema present in the db will pull that schema
 
-[recon-ng][tesla][[recon-ng][tesla][whois_pocs] > run
+[recon-ng][tesla][whois_pocs] > run
 # runs the present module (in this case `whois_pocs`)
 
-[recon-ng][tesla][[recon-ng][tesla][whois_pocs] > show contacts
+[recon-ng][tesla][whois_pocs] > show contacts
 # retrieves contacts from db (these contacts were added by running the `whois_pocs` module); remember:  `show` followed by any schema present in the db will pull that schema
 # NOTE: info from other modules used in the workspace will also be loaded to the same db; the info will be tagged with the module that produced it
 
-[recon-ng][tesla][[recon-ng][tesla][whois_pocs] > back
-# goes back a level in the prompt; in this case the present module will be exited, so `[recon-ng][tesla][[recon-ng][tesla][whois_pocs] > ` will change to `[recon-ng][tesla][[recon-ng][tesla] > `
+[recon-ng][tesla][whois_pocs] > back
+# goes back a level in the prompt; in this case the present module will be exited, so `[recon-ng][tesla][whois_pocs] > ` will change to `[recon-ng][tesla] > `
 
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) - "OSINT Tools" and at length in "Using OSINT Tools]
 -----------------------------------------------------
