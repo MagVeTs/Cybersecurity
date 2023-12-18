@@ -1,3 +1,29 @@
+URL and URI
+------------
+
+https://url-decode.com/
+https://url-decode.com/tool/url-encode
+
+----------------------------------------------------------------------------------------------------------------------
+HTTP Request Methods
+GET
+POST
+PUT
+HEAD
+DELETE
+PATCH
+OPTIONS
+CONNECT
+TRACE
+[https://www.w3schools.com/tags/ref_httpmethods.asp]
+
+* data submitted by url delimeted by `?`
+
+
+
+[from: "CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam" - Jason Dion - https://www.udemy.com/course/pentestplus/ ; "URL Analysis"]
+
+----------------------------------------------------------------------------------------------------------------------
 WhereGoes
 https://wheregoes.com/
 "URL Redirect Checker
