@@ -1,9 +1,6 @@
 URL and URI
 ------------
 
-https://url-decode.com/
-https://url-decode.com/tool/url-encode
-
 ----------------------------------------------------------------------------------------------------------------------
 HTTP Request Methods
 GET
@@ -17,9 +14,34 @@ CONNECT
 TRACE
 [https://www.w3schools.com/tags/ref_httpmethods.asp]
 
-* data submitted by url delimeted by `?`
+HTTP Response Codes
+Five classes:
+"1xx informational response – the request was received, continuing process
+2xx successful – the request was successfully received, understood, and accepted
+3xx redirection – further action needs to be taken in order to complete the request
+4xx client error – the request contains bad syntax or cannot be fulfilled
+5xx server error – the server failed to fulfil an apparently valid request"
+- https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
 
+In URLs:
+* data submitted by url is delimited by `?` symbol
+* query parameters - format is name=value pairs; ampersands (&) used to delimit the pairs; multiple query parameters may be submitted in one url
+* # - delimits "fragment" or "anchor ID"; webserver does not process this section; processed on the client side to direct browser to a part of the webpage (see: https://www.geeksforgeeks.org/what-is-the-use-of-symbol-in-link-url/); can be abused by threat actor to inject JavaScript
+
+URL Encoding (aka Percent Encoding)
+* used to encode 8 bit characters used in URLs
+* URLs can have unreserved and reserved ASCII set characters
+- unreserved characters = a-z A-Z 0-9 - . _  ~ (these characters can be used in URLs but have no special unique meaning in URLs)
+- reserved characters = : / ? # [ ] @ ! $ & ' ( ) * + , ; = (these characters can be used in URLs but have a special unique meaning in URLs)
+* URLs can not contain "unsafe characters"
+- unsafe characters = \ < > { } and: null string termination, carriage return, line feed, end of file, tab, space
+* percent encoding will allow the submission of any safe OR unsafe ASCII character (or binary data) in the URL
+* percent encoding can be abused to run malicious scripts and other attacks
+* table of characters and their percent encoding equivalents: https://www.w3schools.com/tags/ref_urlencode.asp?_sm_au_=iVVDMg0TSmrMV6Dm
+* online tool to decode/encode percent encoding:
+- https://url-decode.com/
+- https://url-decode.com/tool/url-encode
 
 [from: "CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam" - Jason Dion - https://www.udemy.com/course/pentestplus/ ; "URL Analysis"]
 
