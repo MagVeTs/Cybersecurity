@@ -39,9 +39,19 @@ URL Encoding (aka Percent Encoding)
 * percent encoding will allow the submission of any safe OR unsafe ASCII character (or binary data) in the URL
 * percent encoding can be abused to run malicious scripts and other attacks
 * table of characters and their percent encoding equivalents: https://www.w3schools.com/tags/ref_urlencode.asp?_sm_au_=iVVDMg0TSmrMV6Dm
+* some examples:
+! = %21
+& = %26
+= = %3D
+@ = %40
+? = %3F
+% = %25
+# = %23
+$ = %24
 * online tool to decode/encode percent encoding:
 - https://url-decode.com/
 - https://url-decode.com/tool/url-encode
+* NOTE: attackers sometimes "double-encode" by encoding the % sign used at the beginning of each code
 
 [from: "CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam" - Jason Dion - https://www.udemy.com/course/pentestplus/ ; "URL Analysis"]
 
