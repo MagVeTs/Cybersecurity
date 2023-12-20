@@ -12,6 +12,7 @@ Cryptographic Inspection
 * many servers offer the use of older cipher suites in order to be able to serve clients with older cipher suites on their browsers; this makes servers vulnerable to downgrade attacks where we can force the server to communicate using out-of-date cipher suites and then exploit the web session
 * in order to see a webserver's cipher suite use:
 http://ssllabs.com/
+[or: https://dnschecker.org/ssl-certificate-examination.php - MagVeTs]
 and enter hostname or domain to check the full cipher suite; very extensive report
 * check if webserver's digital certificates are out-of-date or personally issued; in such cases users may have gotten used to clicking through warnings on their browsers that the site may not be safe; this will allow you to spoof the website and the user will not be bothered by the warnings that appear
 * OSINT can be gathered from the digital certificate by looking in SAN field and for wildcards:
