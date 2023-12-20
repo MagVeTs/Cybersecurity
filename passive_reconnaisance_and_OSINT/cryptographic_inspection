@@ -1,3 +1,29 @@
 Cryptographic Inspection
 -------------------------
 
+* cryptographic inspection - check validity of webserver certificates and look for vulnerabilities to exploit
+* for example is the webserver using SSL 2, SSL 3, TLS 1.0, TLS 1.3, etc., etc.
+* this info can be gleaned from the server's digital certificate and associated cipher suite
+* out-of-date protocols such as SSL 2 and 3 are vulnerable
+* cipher suite - defines algorithm used by client and server for encryption and hashing during communication
+* Cybersecurity professionals must understand how to read cipher suites; some examples:
+- ECDHE_RSA_AES128_GCM_SHA256
+- TLS_AES_256_GCM_SHA384
+* many servers offer the use of older cipher suites in order to be able to serve clients with older cipher suites on their browsers; this makes servers vulnerable to downgrade attacks where we can force the server to communicate using out-of-date cipher suites and then exploit the web session
+* in order to see a webserver's cipher suite use:
+http://ssllabs.com/
+and enter hostname or domain to check the full cipher suite; very extensive report
+* check if webserver's digital certificates are out-of-date or personally issued; in such cases users may have gotten used to clicking through warnings on their browsers that the site may not be safe; this will allow you to spoof the website and the user will not be bothered by the warnings that appear
+* OSINT can be gathered from the digital certificate by looking in SAN field and for wildcards:
+- the Subject Name Alternative (SAN) field lists other domain names that fall under that certificate, e.g. (diontraining.com, diontraining.org, diontraining.net); this is also called a "multi-domain certificate"
+- subdomains can be included in the certificate by using wildcards, e.g. *.diontraining.com
+* In order to check whether a digital certificate is still valid the client browser checks the cetificate's expiration date and then checks if the certificate has been placed on a CRL (Certificate Revocation List)
+* Another option is for the client to take the certificate's serial number and check its validity [using the Online Certificate Status Protocol (OCSP)] by querying a OCSP Responder server
+* In order to save the client browser from having to perform these checks some websites use:
+- Certificate Pinning (HTTP Public Key Pinning) - this is exploitable and has been deprecated
+- Certificate Stapling - webserver checks the certificate with the OSCP Responder and provides the client browser with the timestamped response
+- HSTS (HTTP Strict Transport Security) - webserver tells browsers to only use https (and not http); forces the use of safe encrypted tunnel; prevents on-path attacks; however, some servers just redirect the browser from an http site to the https site (this is exploitable); note: browsers have a list of many sites that should never be accessed using http - if a target PT site is on the list this will make it more difficult for a PT to exploit the site through an on-path attack
+
+[from: "CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam" - Jason Dion - https://www.udemy.com/course/pentestplus/ ; "Cryptographic Flaws"]
+
+
