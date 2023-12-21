@@ -1,1 +1,37 @@
+Log Analysis
+------------
+
+-------------------------------------------------------------------------------------------------------
+Log Types
+
+"Application Logs: Messages about specific applications, including status, errors, warnings, etc.
+Audit Logs: Activities related to operational procedures crucial for regulatory compliance.
+Security Logs: Security events such as logins, permissions changes, firewall activity, etc.
+Server Logs: Various logs a server generates, including system, event, error, and access logs.
+System Logs: Kernel activities, system errors, boot sequences, and hardware status.
+Network Logs: Network traffic, connections, and other network-related events.
+Database Logs: Activities within a database system, such as queries and updates.
+Web Server Logs: Requests processed by a web server, including URLs, response codes, etc."
+
+Log Formats
+
+Structured - easiest to parse
+* Field Delimited Formats - Comma-Separated Values (CSV) and Tab-Separated Values (TSV)
+* JavaScript Object Notation (JSON)
+* eXtensible Markup Language (XML)
+* W3C Extended Log Format (ELF) - used by Microsoft Internet Information Services (IIS) Web Server
+
+Semi-structured - mixture of firmly delimited and "free-form" text
+* Syslog Message Format
+* Windows Event Log (EVTX) Format
+
+Unstructured - may be difficult to parse and input to other systems
+* NCSA Common Log Format (CLF) - default on Apache HTTP servers
+* NCSA Combined Log Format (Combined) - adds some more fields to CLF; default on Nginx HTTP Servers
+
+[from: https://tryhackme.com/room/introtologs ; Task 3]
+-------------------------------------------------------------------------------------------------------
+
+
+
 
