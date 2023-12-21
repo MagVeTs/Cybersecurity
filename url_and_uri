@@ -89,9 +89,9 @@ You can see the actual website the shortened link is redirecting you to by appen
 -----------------------------------------------------------------------------------------------------------------------
 Create Abbreviated URLs:
 
-https://tinyurl.com/app (hat tip: Jonathan Erez)
+https://tinyurl.com/app (hat tip: JE)
 
-https://bitly.com/ (hat tip: Jonathan Erez)
+https://bitly.com/ (hat tip: JE)
 ------------------------------------------------------------------------------------------------------------------------
 Unfurl
 https://dfir.blog/unfurl/
@@ -106,7 +106,7 @@ Great tool!
 URL Decoder (e.g. it changes % to characters)
 https://url-decode.com/
 Note: there is also a tab on the website to go to many other useful tools
-[hat tip: Jonathan Erez]
+[hat tip: JE]
 ------------------------------------------------------------------------------------------------------------------------
 Chart of ASCII encoding in URL (% encoding)
 https://www.w3schools.com/tags/ref_urlencode.ASP
