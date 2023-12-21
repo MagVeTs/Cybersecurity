@@ -1,0 +1,48 @@
+Linux Log Config and Retrieval
+------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------
+from: https://tryhackme.com/room/introtologs ; Task 4 "Collection, Management, and Centralisation" (with some minor editing)
+
+A)
+
+Synchronize time in the device in order to ensure logs will have correct timestamps:
+
+$ ntpdate pool.ntp.org
+# synchronize (requires internet connectivity)
+$ date
+# check date/time
+
+B)
+
+Use rsyslog to collect logs. 
+Example use config of rsyslog to log all sshd messages to designated file
+
+1) Open a Terminal.
+2) Ensure rsyslog is Installed: You can check if rsyslog is installed by running the command:
+$ sudo systemctl status rsyslog
+3) Create a Configuration File: Use a text editor to create a new configuration file, for example: 
+$ gedit /etc/rsyslog.d/98-websrv-02-sshd.conf
+or
+$ nano /etc/rsyslog.d/98-websrv-02-sshd.conf
+or
+$ vi /etc/rsyslog.d/98-websrv-02-sshd.conf
+or
+$ vim /etc/rsyslog.d/98-websrv-02-sshd.conf
+4) Add the Configuration: Add the following lines in /etc/rsyslog.d/98-websrv-02-sshd.conf to direct the sshd messages to the specific log file:
+$FileCreateMode 0644
+:programname, isequal, "sshd" /var/log/websrv-02/rsyslog_sshd.log
+5) Save and Close the Configuration File.
+6) Restart rsyslog: Apply the changes by restarting rsyslog with the command:
+$ sudo systemctl restart rsyslog
+7) Verify the Configuration: You can verify the configuration works by initiating an SSH connection to localhost via ssh localhost or by checking the log file after a minute or two:
+$ ssh localhost
+$ cd /var/log/websrv-02/
+$ ls -lsa
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
