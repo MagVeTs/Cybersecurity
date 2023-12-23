@@ -46,7 +46,7 @@ logrotate - "a tool that automates log file rotation, compression, and managemen
 
 Example: configure log management for /var/log/websrv-02/rsyslog_sshd.log using logrotate
 
-Running this script will take an existing 
+Running this script will take an existing log file (in this case rsyslog_sshd.log) compress it and hash the compression. The final result will be that the original log file has been replaced by a compressed version of the log file and a separate document containing a hash of the compression.
 
 1) Create a config file:
 $ sudo gedit /etc/logrotate.d/98-websrv-02_sshd.conf
