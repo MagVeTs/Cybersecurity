@@ -85,6 +85,9 @@ The tool provides powerful UI with highlighting, filtering, search, folding inco
 LogViewer can show huge log files without significant resource consumption because it reads only the part of the file that a user is watching. No indexing."
 Demo video: https://www.youtube.com/watch?v=OE7nAiNX07Q
 -------------------------------------------------------------------------------------------------------------------------------------
-
+from: https://tryhackme.com/room/introtologs ; Task 6 - "Hands-on Exercise: Log analysis process, tools, and techniques"
+Use Linux command line tools to parse, select, manipulate, and sort un-parsed log files before viewing.
+Use tools such as: cat, grep, sort, uniq, awk, and sed.
+Check 
 
 
