@@ -46,7 +46,7 @@ logrotate - "a tool that automates log file rotation, compression, and managemen
 
 Example: configure log management for /var/log/websrv-02/rsyslog_sshd.log using logrotate
 
-Running this script will take an existing log file (in this case rsyslog_sshd.log) compress it and hash the compression. The final result will be that the original log file has been replaced by a compressed version of the log file and a separate document containing a hash of the compression.
+Running this script will take an existing log file (in this case rsyslog_sshd.log) compress it and hash the compression. The final result will be that the original log file has been replaced by a compressed version of the log file and a separate document containing a hash of the compression. It is explained in https://tryhackme.com/room/introtologs - Task 6 that hashes of logs are important in order to assure admissibility in court (by preventing tampering).
 
 1) Create a config file:
 $ sudo gedit /etc/logrotate.d/98-websrv-02_sshd.conf
