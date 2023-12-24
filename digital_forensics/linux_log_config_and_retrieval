@@ -74,5 +74,17 @@ $ sudo gedit /etc/logrotate.d/98-websrv-02_sshd.conf
 4) manually execute:
 $ sudo logrotate -f /etc/logrotate.d/98-websrv-02_sshd.conf
 -------------------------------------------------------------------------------------------------------------------------------------
+from: https://tryhackme.com/room/introtologs ; Task 6 - "Hands-on Exercise: Log analysis process, tools, and techniques"
+
+Free open source program to view log files in the browser:
+LogViewer
+https://github.com/sevdokimov/log-viewer
+"Web UI for viewing logs"
+"LogViewer is a Web application for monitoring server logs in real-time in the browser.
+The tool provides powerful UI with highlighting, filtering, search, folding inconsiderable text. Merging several logs into one view works as well.
+LogViewer can show huge log files without significant resource consumption because it reads only the part of the file that a user is watching. No indexing."
+Demo video: https://www.youtube.com/watch?v=OE7nAiNX07Q
+-------------------------------------------------------------------------------------------------------------------------------------
+
 
 
