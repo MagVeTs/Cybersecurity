@@ -1,0 +1,16 @@
+SIGMA Rules
+-----------
+
+- Sigma rules are written in YAML and are used to detect malicious behaviour; usually within a SIEM platform
+
+* https://github.com/SigmaHQ/sigma
+
+* https://pypi.org/project/sigmatools/0.17.0/
+
+* https://socprime.com/blog/sigma-rules-the-beginners-guide/
+
+* https://www.picussecurity.com/resource/glossary/what-is-sigma-rule
+
+* https://www.csoonline.com/article/572973/sigma-rules-explained-when-and-how-to-use-them-to-log-events.html
+
+* https://sigmahq.io/docs/basics/rules.html
