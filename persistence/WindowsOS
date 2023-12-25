@@ -2,12 +2,14 @@ For a general overview of persistence methodology and practices during pentestin
 
 Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 "Maintaining Access Overview" - https://academy.tcm-sec.com/courses/1152300/lectures/24781515
------------------------
-from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersistence
+------------------------------------------------------------------------------------
+from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersistence ; Task 2 -  Tampering With Unprivileged Accounts
+
+The idea here is to grant admin privileges to a regular user account tha you have access to so that even if you lose access to the admin account you have compromised, you will maintain admin privileges.
 
 Assign Group Memberships
 ------------------------
-Note: you need access with an account with administrator privileges to do the following commands.
+Note: you need access with an account with administrator privileges to do the following commands; you also need to have access to the user accounts to which you are granting admin privileges.
 
 Administrators Group
 --------------------
