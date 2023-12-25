@@ -262,7 +262,7 @@ Discovery/Enumeration
 ---------------------
 Use the 'systeminfo' command in the CLI in order to learn about the system including whether the device you have penetrated is part of an Active Directory domain (or, perhaps, even the Domain Controller)
 see:  https://tryhackme.com/room/thelayoftheland ; Task 4 - Active Directory (AD) Environment
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [From: https://tryhackme.com/room/windowsprivesc20 - Tasks 1-4 ; with editing ,etc.]
 
 Places to harvest passwords from:
@@ -449,4 +449,7 @@ List of privilege escalation resources:
 * Token Kidnapping - https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
 * Hacktricks - Windows Local Privilege Escalation - https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
