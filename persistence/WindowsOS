@@ -7,6 +7,8 @@ from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersist
 
 The idea here is to grant admin privileges to a regular user account tha you have access to so that even if you lose access to the admin account you have compromised, you will maintain admin privileges.
 
+
+------------------------------------------------------------------------
 Assign Group Memberships
 ------------------------
 Note: you need access with an account with administrator privileges to do the following commands; you also need to have access to the user accounts to which you are granting admin privileges.
@@ -21,6 +23,9 @@ Backup Operators Group
 C:\> net localgroup "Backup Operators" <username> /add
 - adding a user to this group, instead of Administrators may look less suspicious
 - "Users in this group won't have administrative privileges but will be allowed to read/write any file or registry key on the system, ignoring any configured DACL. This would allow us to copy the content of the SAM and SYSTEM registry hives, which we can then use to recover the password hashes for all the users, enabling us to escalate to any administrative account trivially."
+- the names of the read/write privileges that are assigned by default to those in the Backup Operators Group are:
+* "SeBackupPrivilege: The user can read any file in the system, ignoring any DACL in place."
+* "SeRestorePrivilege: The user can write any file in the system, ignoring any DACL in place."
 
 In addition, the user will need to be added to the "Remote Management Users" group to be able to connect remotely using WinRM or the "Remote Desktop Users" group to be able to connect remotely using RDP. The commands are:
 
@@ -57,6 +62,16 @@ $ evil-winrm -i <MACHINE_IP> -u Administrator -H <HASH>
 * https://www.kali.org/tools/evil-winrm/
 * https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/
 * https://github.com/Hackplayers/evil-winrm]
+------------------------------------------------------------------------
+
+Special Privileges and Security Descriptors
+
+As discussed above in regards to the Backup Operators group the privileges:
+SeBackupPrivilege
+SeRestorePrivilege
+will allow a user to read/write any system file no matter what DACL it has.
+Assigning these privileges to a user no matter what group they are in will give that user those privileges.
+
 
 
 
