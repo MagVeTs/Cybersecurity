@@ -31,7 +31,42 @@ Unstructured - may be difficult to parse and input to other systems
 
 [from: https://tryhackme.com/room/introtologs ; Task 3]
 -------------------------------------------------------------------------------------------------------
+Anomalous Indicators that if found in a log may indicate attack:
 
+--------------------
+SQL Injection:
 
+' [single quote]
+-- [comment]
+# [comment]
+UNION [union statement]
+WAITFOR DELAY [time based attack]
+SLEEP() [time based attack]
+
+NOTE: for more SQL injections, see here: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
+NOTE: SQL injections are often found in the q= (query parameter) of the URL
+NOTE: payload may be URL-encoded and need to be first decoded in order to be recognized
+--------------------
+XSS (Cross-site Scripting):
+
+<script> [script tag]
+onmouseover [event handler]
+onclick [event handler]
+onerror [event handler]
+
+NOTE: XSS payload is often inserted into search= (search parameter) in the URL
+--------------------
+Path Traversal (aka Directory Traversal):
+
+../
+../../
+etc.
+also look for sensitive file paths, e.g. /etc/passwd and /etc/shadow
+
+NOTE: payload may be URL encoded (%2E = . and %2F = /) or double-encoded
+NOTE: more directory traversal payloads: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Directory%20Traversal/README.md
+
+[from: https://tryhackme.com/room/introtologanalysis ; Task 4 - "Detection Engineering"]
+-------------------------------------------------------------------------------------------------------
 
 
