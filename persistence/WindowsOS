@@ -5,7 +5,7 @@ Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 ------------------------------------------------------------------------------------
 from: Windows Local Persistence - https://tryhackme.com/room/windowslocalpersistence ; Task 2 -  Tampering With Unprivileged Accounts
 
-The idea here is to grant admin privileges to a regular user account tha you have access to so that even if you lose access to the admin account you have compromised, you will maintain admin privileges.
+The idea here is to grant admin privileges to a regular user account that you have access to so that even if you lose access to the admin account you have compromised, you will maintain admin privileges.
 
 
 ------------------------------------------------------------------------
@@ -67,10 +67,15 @@ $ evil-winrm -i <MACHINE_IP> -u Administrator -H <HASH>
 Special Privileges and Security Descriptors
 
 As discussed above in regards to the Backup Operators group the privileges:
-SeBackupPrivilege
-SeRestorePrivilege
+* SeBackupPrivilege
+* SeRestorePrivilege
 will allow a user to read/write any system file no matter what DACL it has.
 Assigning these privileges to a user no matter what group they are in will give that user those privileges.
+[Here is a link to info on Windows OS privileges: https://learn.microsoft.com/en-us/windows/win32/secauthz/privilege-constants]
+If one has admin privileges, one can use the `secedit` command to add privileges to any user.
+C:\Users\Administrator> secedit /export /cfg config.inf
+# export the current config file to a temporary location to be edited
+
 
 
 
