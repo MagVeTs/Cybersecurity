@@ -45,6 +45,8 @@ Now a `whoami /groups` search should show:
 BUILTIN\Backup Operators             Alias            S-1-5-32-551 Mandatory group, Enabled by default, Enabled group
 
 After taking the above steps, the "Backup Operators" user will be able to log in remotely using WinRM or RDP and have the right to read/write to any file or registry key remotely.
+WinRM can be used from a Linux attack box to sign in using Evil-Win. The sign-in syntax is:
+$ evil-winrm -i <TARGET_MACHINE_IP> -u <USERNAME> -p <PASSWORD>
 
 The user will now be able to download copies of the SYSTEM and SAM files to the remote host machine using PowerShell.
 The commands are:
