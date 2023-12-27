@@ -77,7 +77,7 @@ If one has admin privileges, one can use the `secedit` command to add privileges
 
 1) Export the current config file to a temporary location to be edited:
    C:\Users\Administrator> secedit /export /cfg config.inf
-the file is now located at C:\Users\Administrator\config.inf and can be opened and edited using the Notepad app
+[the file is now located at C:\Users\Administrator\config.inf and can be opened and edited using the Notepad app]
 
 2) Add the desired user to the lines in the config file that list users who enjoy the SeBackupPrivilege and the SeRestorePrivilege:
    SeBackupPrivilege= <USERNAME>
