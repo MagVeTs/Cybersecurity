@@ -75,5 +75,15 @@ $ awk '$9 >= 400' apache.log
 # https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
 # https://www.gnu.org/software/gawk/manual/gawk.html
 
-
+grep
+$ grep "admin" apache.log
+# extract just the lines that have "admin" in them from the log file
+$ grep -c "admin" apache.log
+# display a count of the number of lines in the log file that have "admin" in them
+$ grep -n "admin" apache.log
+# extract just the lines that have "admin" in them from the log file and also prepend the number of the line they are found on followed by a `:` (colon) and then followed by immediately (with no space) the full extracted line
+$ grep -v "/index.php" apache.log
+# extract just the lines that do NOT have "/index.php" anywhere in them
+# grep has many more capabilities, see here:
+# https://www.gnu.org/software/grep/manual/grep.html
 
