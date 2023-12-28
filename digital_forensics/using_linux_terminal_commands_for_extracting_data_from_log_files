@@ -70,6 +70,10 @@ $ awk '$9 >= 400' apache.log
 # $9 = the 9th field in the line 
 # awk default delimits based on whitespace (the first whitespace is actually considered to be before the beginning of the line, so the first text block [until what LOOKS like the first whitespace] is $1])
 # awk has many more capabilities, see: 
+# Awk cheatsheet: https://quickref.me/awk
 # https://www.theunixschool.com/p/awk-sed.html
+# https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+# https://www.gnu.org/software/gawk/manual/gawk.html
+
 
 
