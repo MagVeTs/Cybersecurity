@@ -59,10 +59,17 @@ $ sed 's/31\/Jul\/2023/July 31, 2023/g' apache.log
 # adding `-i` to the command will cause the original file to be updated
 # another option is to use `>` to redirect the `sed` output to a new file (or even to overwrite the data in the old file)
 # NOTE: `sed` has many more capabilities, see:
+# Sed cheatsheet: https://quickref.me/sed
 # https://www.theunixschool.com/p/awk-sed.html
-# 
+# https://www.howtogeek.com/666395/how-to-use-the-sed-command-on-linux/
+# https://www.gnu.org/software/sed/manual/sed.html
 
-
-
+awk - used to accomplish conditional actions based on specific field values
+$ awk '$9 >= 400' apache.log
+# print log entries where the HTTP response code is greater than or equal to 400
+# $9 = the 9th field in the line 
+# awk default delimits based on whitespace (the first whitespace is actually considered to be before the beginning of the line, so the first text block [until what LOOKS like the first whitespace] is $1])
+# awk has many more capabilities, see: 
+# https://www.theunixschool.com/p/awk-sed.html
 
 
