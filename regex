@@ -1,0 +1,25 @@
+Regular Expressions (regex)
+---------------------------
+
+RegExr
+https://regexr.com/
+"RegExr is an online tool to learn, build, & test Regular Expressions (RegEx / RegExp)."
+"Results update in real-time as you type.
+Roll over a match or expression for details.
+Validate patterns with suites of Tests.
+Save & share expressions with others.
+Use Tools to explore your results.
+Full RegEx Reference with help & examples."
+
+
+https://www.rexegg.com/regex-quickstart.html#chars
+"Quick-Start: Regex Cheat Sheet"
+[hat tip: TryHackMe]
+
+-------------------------------------
+from: https://tryhackme.com/room/introtologanalysis ; Task 7 - " Log Analysis Tools: Regular Expressions"
+
+
+
+
+https://tryhackme.com/room/catregex - Regular Expressions
