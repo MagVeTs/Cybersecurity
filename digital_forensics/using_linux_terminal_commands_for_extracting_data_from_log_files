@@ -88,4 +88,5 @@ $ grep "110.122.65.76" apache.log | grep "/login.php"
 # this is the equivalent of the AND boolean operator; the command first greps for the first string and then pipes the result to grep for the second string
 # grep has many more capabilities, see here:
 # https://www.gnu.org/software/grep/manual/grep.html
+# grep can be used together with Regular Expressions (regex); one adds the -E flag (grep -E) to signify that you are searching for a pattern and not not just an exact string
 
