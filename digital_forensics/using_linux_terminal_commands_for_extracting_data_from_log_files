@@ -84,6 +84,8 @@ $ grep -n "admin" apache.log
 # extract just the lines that have "admin" in them from the log file and also prepend the number of the line they are found on followed by a `:` (colon) and then followed by immediately (with no space) the full extracted line
 $ grep -v "/index.php" apache.log
 # extract just the lines that do NOT have "/index.php" anywhere in them
+$ grep "110.122.65.76" apache.log | grep "/login.php"
+# this is the equivalent of the AND boolean operator; the command first greps for the first string and then pipes the result to grep for the second string
 # grep has many more capabilities, see here:
 # https://www.gnu.org/software/grep/manual/grep.html
 
