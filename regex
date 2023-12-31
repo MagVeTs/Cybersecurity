@@ -38,8 +38,44 @@ Example regex used to find all IP addresses in a file:
 # {3} = commands that the previous "capturing group" ([0-9]{1,3}\.) will repeat 3 times as part of the sought pattern
 # [0-9]{1,3} - match a 1, 2, or 3 digit number; each digit may be between 0-9; this pattern will return any number between 0-999; this is for the 4th octet in the IP address
 # \b= closing word boundary anchor; ensures the match is on a FULL IP address
+-------------------------------------
+
+from: https://tryhackme.com/room/catregex - Regular Expressions
+
+the basic syntax for regex is:
+$ egrep <pattern> <file> 
+# NOTE: `egrep` <pattern> <file>` is the equivalent of `grep -E <pattern> <file>`
+
+When you are looking for an exact string of text you use: grep '<string>' <file>; but when you are trying to retrieve all lines that match a certain pattern (e.g. all IP addresses) you use regex and use either `grep -E` or `egrep` and then the regex pattern.
+The patterns as expressed using regex are called "charsets" and are defined using square brackets: [ ]
+
+[abc] will match a, b, and c (every occurrence of each letter)
+
+[abc]zz will match azz, bzz, and czz.
+
+You can also use a - dash to define ranges:
+[a-c]zz is the same as above.
+
+And then you can combine ranges together:
+[a-cx-z]zz will match azz, bzz, czz, xzz, yzz, and zzz.
+
+Most notably, this can be used to match any alphabetical character:
+[a-zA-Z] will match any single letter (lowercase or uppercase).
+
+You can use numbers too:
+file[1-3] will match file1, file2, and file3.
+
+Then, there is a way to exclude characters from a charset with the ^ hat symbol, and include everything else.
+[^k]ing will match ring, sing, $ing, but not king.
+
+Of course, you can exclude charsets, not just single characters.
+[^a-c]at will match fat and hat, but not bat or cat.
+
+Note 1: Don't confuse strings with charsets. The charset [abc] will match the string abc, but also cba and ca. It doesn't match the string, but rather every occurrence of the specified characters in that string.
 
 
 
 
-https://tryhackme.com/room/catregex - Regular Expressions
+
+
+
