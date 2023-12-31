@@ -28,4 +28,18 @@ $ grep -E 'post=1[0-9]' apache-ex2.log
 # the `post=` section is a string (strings and patterns can be searched for together)
 # 1[0-9] = this is the regex pattern that is being sought; in this case the pattern is a two digit number whose first digit is 1 and whose second digit is either 0,1,2,3,4,5,6,7,8, or 9; any line from the log that contains  # the string `post=` immediately followed by a number that matches the pattern will be displayed
 
+
+Example regex used to find all IP addresses in a file:
+\b([0-9]{1,3}\.){3}[0-9]{1,3}\b
+# \b = opening word boundary anchor; ensures the match is on a FULL IP address
+# [0-9]{1,3} = match a 1, 2, or 3 digit number; each digit may be between 0-9; this pattern will return any number between 0-999
+# NOTE: even though IPv4 addresses octets are always between 1-255, using the simpler pattern employed here will also accomplish the goal of retrieving all IP addresses
+# \. = escapes interpreting the `.` as part of the pattern command; instead the `.` is treated as a literal and searched for
+# {3} = commands that the previous "capturing group" ([0-9]{1,3}\.) will repeat 3 times as part of the sought pattern
+# [0-9]{1,3} - match a 1, 2, or 3 digit number; each digit may be between 0-9; this pattern will return any number between 0-999; this is for the 4th octet in the IP address
+# \b= closing word boundary anchor; ensures the match is on a FULL IP address
+
+
+
+
 https://tryhackme.com/room/catregex - Regular Expressions
