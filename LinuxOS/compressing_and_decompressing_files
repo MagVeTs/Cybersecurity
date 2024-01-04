@@ -1,0 +1,49 @@
+compressing_and_decompressing_files
+------------------------------------
+
+from: https://www.cyberciti.biz/faq/how-to-unzip-a-zip-file-using-the-linux-and-unix-bash-shell-terminal/
+
+unzip
+-----
+"Unzip is a program to unpack, list, test, and compressed (extract) files and it may not be installed by default."
+
+$ sudo apt-get install unzip
+OR
+$ sudo apt install unzip
+# if unzip is not already installed, use these commands to install it on Ubuntu/Debian systems (see: https://www.cyberciti.biz/faq/how-to-unzip-a-zip-file-using-the-linux-and-unix-bash-shell-terminal/ for info on installing it on other Linux distros)
+
+$ man unzip
+# read full unzip manual
+
+$ unzip --help
+# read basic help info for unzip
+
+$ unzip <FILE_NAME>.zip
+# extract a file; extracted file will be in the directory you are presently in
+
+$ unzip <ARCHIVE_NAME>.zip
+# extract an archive
+
+$ unzip -d /destination/directory/path <FILE_NAME>.zip
+# extract to a particular location
+
+tar
+---
+
+Note: use of tar requires that unzip is already installed
+
+$ man tar
+# read full tar manual
+
+$ unzip --help
+# read basic help info for tar
+
+$ tar xvf <FILE_NAME>.zip
+OR
+$ tar -xvf <FILE_NAME>.zip
+# extract a file; extracted file will be in the directory you are presently in
+
+$ tar xvf <FILE_NAME>.zip -C /destination/directory/path
+OR
+$ tar -xvf <FILE_NAME>.zip -C /destination/directory/path
+# extract to a particular location
