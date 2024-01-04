@@ -36,6 +36,12 @@ What2Log
 https://what2log.com/
 [Really great tool; among other things, it gives you Powershell scripts that you can run to pull events.
 It has guides for Windows and for Linux machines.]
+
+Alternate Data Streams
+https://www.malwarebytes.com/blog/news/2015/07/introduction-to-alternate-data-streams
+https://www.deepinstinct.com/blog/the-abuse-of-alternate-data-stream-hasnt-disappeared
+[hat tip: ThriveDX]
+
 ------------------------------------------------------------------------------------
 List of sources providing preparedness checklists for cyber incidents:
 1. Singapore's Cyber Security Agency (CSA) - Incident Response Checklist: https://www.csa.gov.sg/Tips-Resource/Resources/singcert/incident-response-checklist
