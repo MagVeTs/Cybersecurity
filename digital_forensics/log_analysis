@@ -68,5 +68,8 @@ NOTE: more directory traversal payloads: https://github.com/swisskyrepo/Payloads
 
 [from: https://tryhackme.com/room/introtologanalysis ; Task 4 - "Detection Engineering"]
 -------------------------------------------------------------------------------------------------------
+CyberChef
+https://gchq.github.io/CyberChef/
+- CyberChef has a module where you can input your regex and run it on the text you paste in the Input window. Not only that, there is an option to upload files (including compressed files) and run the regex on the files. This can be useful for log analysis. See: https://tryhackme.com/room/introtologanalysis ; Task 8 - "Log Analysis Tools: CyberChef"
 
 
