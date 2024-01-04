@@ -1,1 +1,51 @@
 https://github.com/bluecapesecurity/PWF/blob/main/Resources/PracticalWindowsForensics-cheat-sheet.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To see a history of PowerShell commands used on a device, go to:
+$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+(you can also search the device for: "ConsoleHost_history.txt"
+[hat tip: TryHackMe, Almond Force <https://www.youtube.com/watch?v=kjDKgdoFufo>, and most importantly: https://0xdf.gitlab.io/2018/11/08/powershell-history-file.html]
+
+File Signatures (Hex) List
+https://www.garykessler.net/library/file_sigs.html
+[hat tip: TryHackMe]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Normal Core Windows Processes appearing in TaskManager:
+
+"A Task Manager provides some of the Core Windows Processes running in the background. Below is a summary of running processes that are considered normal behaviour.
+
+Note: ">" symbol represents a parent-child relationship. System (Parent) > smss.exe (Child)
+
+System
+System > smss.exe
+csrss.exe
+wininit.exe
+wininit.exe > services.exe
+wininit.exe > services.exe > svchost.exe
+lsass.exe
+winlogon.exe
+explorer.exe
+
+In addition, the processes with no depiction of a parent-child relationship should not have a Parent Process under normal circumstances, except for the System process, which should only have System Idle Process (0) as its parent process." -- TryHackMe [https://tryhackme.com/room/introtoendpointsecurity - Task 2]
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Forensic Focus
+https://www.forensicfocus.com/
+"For Digital Forensics & E-Discovery Professionals"
+and especially:
+https://www.forensicfocus.com/resources/
+"Resources
+A curated list of the best digital forensics and incident response (DFIR) resources."
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+MyEventLog
+https://www.myeventlog.com/
+https://www.myeventlog.com/search/browse
+"MyEventlog.com, is a free searchable database containing solutions and comments to event log and syslog messages. Unlike other web sites, MyEventlog.com is completely free for everybody, and does not require a subscription. MyEventlog.com does not feature any banner ads."
+
+LOLBAS
+Living Off The Land Binaries and Scripts (and now also Libraries)
+"The goal of the LOLBAS project is to document every binary, script, and library that can be used for Living Off The Land techniques."
+https://lolbas-project.github.io/#
+https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md
+[hat tip: TryHackMe]
+
