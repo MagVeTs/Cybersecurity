@@ -1,0 +1,39 @@
+MyEventLog
+https://www.myeventlog.com/
+https://www.myeventlog.com/search/browse
+"MyEventlog.com, is a free searchable database containing solutions and comments to event log and syslog messages. Unlike other web sites, MyEventlog.com is completely free for everybody, and does not require a subscription. MyEventlog.com does not feature any banner ads."
+
+LOLBAS
+Living Off The Land Binaries and Scripts (and now also Libraries)
+"The goal of the LOLBAS project is to document every binary, script, and library that can be used for Living Off The Land techniques."
+https://lolbas-project.github.io/#
+https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md
+[hat tip: TryHackMe]
+
+Unfurl
+https://dfir.blog/unfurl/
+"Takes a URL and expands ("unfurls") it into a directed graph, extracting every bit of information from the URL and exposing the obscured." -- Operator Handbook [Netmux : 2020], p.245.
+Great tool!
+
+The Hitchhiker's Guide to DFIR
+https://start.me/p/q6mw4Q/forensics
+[hat tip: RM; huge repository of links]
+
+What2Log
+https://what2log.com/
+[Really great tool; among other things, it gives you Powershell scripts that you can run to pull events.
+It has guides for Windows and for Linux machines.]
+------------------------------------------------------------------------------------
+List of sources providing preparedness checklists for cyber incidents:
+1. Singapore's Cyber Security Agency (CSA) - Incident Response Checklist: https://www.csa.gov.sg/Tips-Resource/Resources/singcert/incident-response-checklist
+2. NIST SP 800-61 Revision 2 - Computer Security Incident Handling Guide (Appendix D: Incident Handling Checklist): https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+3. SANS Institute - Incident Response Plan Template and Checklist: https://www.sans.org/score/incident-response-plan-template
+4. State of California Department of Technology - Cyber Incident Response Checklist: https://cdt.ca.gov/security/cyber-incident-response-checklist/
+5. European Union Agency for Cybersecurity (ENISA) - Good Practice Guide on Incident Management: https://www.enisa.europa.eu/publications/good-practice-guide-on-incident-management
+6. US-CERT - Cyber Resilience Review (CRR) Self-Assessment Package: https://www.us-cert.gov/ccubedvp/assessments
+[from: RM]
+--------------------------------------------------------------------------------------
+CERT Societe Generale - IRM-2022 (Incident Response Methodologies 2022)
+https://github.com/certsocietegenerale/IRM/
+very helpful playbooks
+[hat tip: JS]
