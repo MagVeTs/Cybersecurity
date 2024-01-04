@@ -11,6 +11,19 @@ Save & share expressions with others.
 Use Tools to explore your results.
 Full RegEx Reference with help & examples."
 
+RegExLib - Regular Expression Library
+https://www.regexlib.com/Default.aspx - home page
+https://www.regexlib.com/Search.aspx - search for expressions
+https://www.regexlib.com/DisplayPatterns.aspx - browse by category
+- this site contains pre-written regex expressions that can be used in many common use cases
+
+CyberChef
+https://gchq.github.io/CyberChef/
+- CyberChef has a module where you can input your regex and run it on the text you paste in the Input window. Not only that, there is an option to upload files (including compressed files) and run the regex on the files. See: https://tryhackme.com/room/introtologanalysis ; Task 8 - "Log Analysis Tools: CyberChef"
+
+Regex Cheat Sheets
+-------------------
+https://cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 https://www.rexegg.com/regex-quickstart.html#chars
 "Quick-Start: Regex Cheat Sheet"
