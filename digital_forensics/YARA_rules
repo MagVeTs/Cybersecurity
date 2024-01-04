@@ -4,6 +4,8 @@ YARA Rules
 * YARA documentation 
   https://yara.readthedocs.io/en/stable/index.html 
 
+* https://github.com/VirusTotal/yara
+
 * https://github.com/Yara-Rules/rules
 
 * https://www.malwarebytes.com/blog/news/2017/09/explained-yara-rules
