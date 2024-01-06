@@ -177,42 +177,6 @@ The 'touch' command can create a file. It can also change a file's timestamps (a
 
 [From: Linux Tutorials | touch command | GeeksforGeeks ; https://www.youtube.com/watch?v=tpUyBbD4LQE&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=29]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-Compressing and archiving files and directories
------------------------------------------------
-archiving (tar utility) - takes multiple files/directories and turns them into one file (.tar)
-compressing (gzip utility) - takes a file and compresses it to have a smaller size (.gz)
-
-You can compress a regular file or an archive (.tar) file.
-
-tar syntax
-tar -cf tarfile.tar file1 file2 (archives file1 and file2 into a tar archive file called tarfile.tar)
-tar -xf tarfile.tar (extracts file1 and file2 from the tar archive called tarfile.tar)
-
-gzip syntax:
-gzip file1.txt (compresses file1 into file1.txt.gz)
-gunzip file1.txt.gz (decompresses file1.txt.gz back to file1.txt)
-
-To check how much disk usage is taken up by a file use the 'du' command
-syntax:
-du <FILENAME>
-You can also use these arguments:
--h (file size in human readable format)
--hc (file sizes and total size)
-[From: Linux Tutorials | Compressing and Archiving Files in Linux | tar and zip commands | GeeksforGeeks; https://www.youtube.com/watch?v=KucqplDh7LI&list=PLqM7alHXFySFc4KtwEZTANgmyJm3NqS_L&index=31]
-
-Note: gzip only can compress one file at a time. tar only archives multiple files into one file, it does not compress. You must first tar and then gzip the tar if you want to compress multiple files at once.
-However, multiple files can be archived and compressed in the terminal using 'zip' to do both at once.
-syntax: 
-* zip <NAME_OF_ZIP_FILE_BEING_CREATED> <NAME_OF_FIRST_FILE_BEING_ZIPPED> <NAME_OF_SECOND_FILE_BEING_ZIPPED>
-The resulting file will have a .zip extension.
-To unzip a zipped file, use the syntax: unzip <NAME_OF_ZIPPED_FILE>.
-
-Another option for archiving files is rar. Rar files are both archived and compressed. rar files have a .rar extension.
-The syntax is:
-rar a <NAME_OF_RAR_FILE_BEING_CREATED> <NAME_OF_FIRST_FILE_BEING_RARRED> <NAME_OF_SECOND_FILE_BEING_RARRED> [the a parameter is to add the archive]
-unrar e <NAME_OF_RAR_FILE_BEING_EXTRACTED> [the e parameter is to extract the files from the archive]
-[From: LetsDefend]
---------------------------------------------------------------------------------------------------------------------------------------------------------
 Wildcards can be used with most commands in Linux (such as ls or cp).
 Wildcards can be used at the beginning, middle, or end of search string.
 * = 0, 1, or many characters
