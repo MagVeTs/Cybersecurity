@@ -1,10 +1,18 @@
 compressing_and_decompressing_files
 ------------------------------------
 
-
+----------------------------------------------------------------------------------------------------------------------------------
 zip/unzip
+----------
 
-from: https://www.cyberciti.biz/faq/how-to-unzip-a-zip-file-using-the-linux-and-unix-bash-shell-terminal/
+from:
+* https://www.networkworld.com/article/968632/how-to-compress-files-on-linux-5-ways.html
+* https://www.cyberciti.biz/faq/how-to-unzip-a-zip-file-using-the-linux-and-unix-bash-shell-terminal/
+
+$ zip ./bigfile.zip bigfile
+# note: original file is last argument in the command
+# note: the zip command leaves the original file as is; it just creates an additional compressed file
+# note: zip compressed files can also be opened on Windows OS; not just UNIX/Linux OS
 
 unzip
 -----
@@ -29,17 +37,27 @@ $ unzip <ARCHIVE_NAME>.zip
 
 $ unzip -d /destination/directory/path <FILE_NAME>.zip
 # extract to a particular location
-
+----------------------------------------------------------------------------------------------------------------------------------
 tar
 ---
-
+from:
+* https://www.networkworld.com/article/968632/how-to-compress-files-on-linux-5-ways.html
+* https://www.cyberciti.biz/faq/how-to-unzip-a-zip-file-using-the-linux-and-unix-bash-shell-terminal/
+Note: tar is mainly intended to take a bunch of files and create a "tar ball" of them; meaning clump them all together into one filr called an "archive"; tar can then compress that archive file using gzip
 Note: use of tar requires that unzip is already installed
+Note: the tar command leaves the original files as is; it just creates a tar archive of them in addition to the original files
 
 $ man tar
 # read full tar manual
 
-$ unzip --help
+$ tar --help
 # read basic help info for tar
+
+$ tar cfz bin.tgz bin/*
+          ^         ^
+          |         +-- files to include in the archive
+          + new archive file
+# this command (with the `cfz` flags) creates the archive (tar ball) and then compresses it
 
 $ tar xvf <FILE_NAME>.zip
 OR
@@ -50,7 +68,40 @@ $ tar xvf <FILE_NAME>.zip -C /destination/directory/path
 OR
 $ tar -xvf <FILE_NAME>.zip -C /destination/directory/path
 # extract to a particular location
+----------------------------------------------------------------------------------------------------------------------------------
+gzip
+-----
+from: https://www.networkworld.com/article/968632/how-to-compress-files-on-linux-5-ways.html
 
+$ gzip bigfile
+# compresses named file
+# NOTE: gzip replaces the original file with the compressed file; compressed file has .gz extension
+
+$ gunzip bigfile.gz
+# decompresses named file
+----------------------------------------------------------------------------------------------------------------------------------
+bzip2
+-----
+from: https://www.networkworld.com/article/968632/how-to-compress-files-on-linux-5-ways.html
+
+$ bzip bigfile
+# compresses named file
+# NOTE: bzip2 replaces the original file with the compressed file; compressed file has .bz2 extension
+
+$ bunzip2 bigfile.bz2
+# decompresses named files
+----------------------------------------------------------------------------------------------------------------------------------
+xz
+---
+$ xz bigfile
+# compresses named file
+# NOTE: xz replaces the original file with the compressed file; compressed file has .xz extension
+# xz is newer than other tools; compresses files to a smaller size than other tools; takes longer than other tools
+
+$ xz -d bigfile.xz
+OR
+$ unxz bigfile.xz
+# decompresses named file
 
 -----------------------------------------------------------------------------------------------------------------
 Compressing and archiving files and directories
