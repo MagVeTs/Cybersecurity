@@ -105,7 +105,9 @@ $ unxz bigfile.xz
 ----------------------------------------------------------------------------------------------------------------------------------
 rar
 ---
-from: https://www.howtogeek.com/create-extract-list-rar-files-on-linux/
+from:
+* https://www.howtogeek.com/create-extract-list-rar-files-on-linux/
+* https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/
 NOTE: rar creates an archive taking multiple files and turning them into one compressed archive file
 NOTE: rar is mainly used for WindowsOS and needs to be installed in Linux
 
@@ -147,9 +149,15 @@ $ rar a -v1M files.part.rar test1.txt test2.txt
 
 $ rar a -p files.rar
 # adds password for accessing rar archive
+# for rar archives for which the password is missing, see:
+- https://www.afterdawn.com/software/security/misc_security_tools/free-rar-password-cracker-expert.cfm
+- https://www.softpedia.com/get/System/Back-Up-and-Recovery/Free-RAR-Password-Recovery.shtml
+(rar password crackers recommemded by: https://www.lifewire.com/rar-file-2622216)
 
 $ rar k files.rar
 $ locks rar archive and prevents it from being modified
+
+
 -----------------------------------------------------------------------------------------------------------------
 Compressing and archiving files and directories
 -----------------------------------------------
