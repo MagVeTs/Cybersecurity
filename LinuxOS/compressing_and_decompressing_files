@@ -102,7 +102,54 @@ $ xz -d bigfile.xz
 OR
 $ unxz bigfile.xz
 # decompresses named file
+----------------------------------------------------------------------------------------------------------------------------------
+rar
+---
+from: https://www.howtogeek.com/create-extract-list-rar-files-on-linux/
+NOTE: rar creates an archive taking multiple files and turning them into one compressed archive file
+NOTE: rar is mainly used for WindowsOS and needs to be installed in Linux
 
+for Debian based distros (like Kali Linux) the installation command is:
+$ sudo apt-get install unrar-free
+
+to create a rar archive:
+$ rar a test.rar test1.txt test2.txt test3.txt test4.txt test5.txt
+# the `a` flag tells system to take multiple files and compressing them into an archive
+# test.rar = example name you are giving the archive you are creating
+# test1.txt test2.txt test3.txt test4.txt test5.txt = example files you are archiving 
+
+to extract files from a rar archive:
+$ unrar e test.rar
+# the `e` flag tells system to extract the individual files out of the archive
+# test.rar = example name of rar archive file from which individual files are being extracted
+# default is to extract the files to current directory; if you want the files to be extracted elsewhere, add path to desired directory at the end of the command
+
+$ unrar x files.rar
+# `x` flag tells system to output the directory structure of the files extracted from the rar archive (what files are within what directories)
+
+$ unrar l files.rar
+# list files/directories in rar without extracting
+
+$ unrar t files.rar
+# test files in rar for errors; if there are no errors they will be marked OK
+
+$ rar u test.rar test6.txt​​​​​
+# update test.rar by adding test6.txt to the rar archive
+
+$ rar d test.rar test6.txt
+# delete test6.txt from test.rar
+
+$ rar r test.rar
+# repair a rar archive
+
+$ rar a -v1M files.part.rar test1.txt test2.txt
+# takes test1.txt and test2.txt and archives them as files.part.rar; then splits files.part.rar into 1MB chunks which will be named "files.part.rar", "files.part2.rar", "files.part3.rar", etc.
+
+$ rar a -p files.rar
+# adds password for accessing rar archive
+
+$ rar k files.rar
+$ locks rar archive and prevents it from being modified
 -----------------------------------------------------------------------------------------------------------------
 Compressing and archiving files and directories
 -----------------------------------------------
