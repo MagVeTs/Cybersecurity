@@ -1,6 +1,0 @@
-Encoding and Decoding
-----------------------
-
-To encode in the terminal:
-$ echo "TEXT" | base64
-# output will be in base64 encoding
