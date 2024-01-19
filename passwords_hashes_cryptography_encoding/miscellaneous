@@ -1,6 +1,332 @@
 miscellaneous
 --------------
+CrackStation
+https://crackstation.net/
+"CrackStation uses massive pre-computed lookup tables to crack password hashes. These tables store a mapping between the hash of a password, and the correct password for that hash. The hash values are indexed so that it is possible to quickly search the database for a given hash. If the hash is present in the database, the password can be recovered in a fraction of a second. This only works for "unsalted" hashes."
+[hat tip: TryHackMe]
 
+----------------------------------------------------------------------
+THC Hydra
+https://github.com/vanhauser-thc/thc-hydra
+From: https://tryhackme.com/room/protocolsandservers2 ; task 6 [with some editing]
+Hydra supports many protocols, including FTP, POP3, IMAP, SMTP, SSH, and all methods related to HTTP. The general command-line syntax is:
+hydra -l USERNAME -P WORDLIST.TXT SERVER SERVICE
+
+where we specify the following options:
+
+-l USERNAME: -l should precede the username, i.e. the login name of the target.
+-P WORDLIST.TXT: -P precedes the wordlist.txt file, which is a text file containing the list of passwords you want to try with the provided username, e.g. /usr/share/wordlists/rockyou.txt
+SERVER is the hostname or IP address of the target server.
+SERVICE indicates the service which you are trying to launch the dictionary attack (e.g. ftp or imap)
+
+Consider the following concrete examples:
+
+hydra -l mark -P /usr/share/wordlists/rockyou.txt 10.10.69.61 ftp will use mark as the username as it iterates over the provided passwords against the FTP server.
+hydra -l mark -P /usr/share/wordlists/rockyou.txt ftp://10.10.69.61 is identical to the previous example. 10.10.69.61 ftp is the same as ftp://10.10.69.61.
+hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.10.69.61 ssh will use frank as the user name as it tries to login via SSH using the different passwords.
+
+There are some extra optional arguments that you can add:
+
+-s PORT to specify a non-default port for the service in question.
+-V or -vV, for verbose, makes Hydra show the username and password combinations that are being tried. This verbosity is very convenient to see the progress, especially if you are still not confident of your command-line syntax.
+-t n where n is the number of parallel connections to the target. -t 16 will create 16 threads used to connect to the target.
+-d, for debugging, to get more detailed information about what’s going on. The debugging output can save you much frustration; for instance, if Hydra tries to connect to a closed port and timing out, -d will reveal this right away.
+Once the password is found, you can issue CTRL-C to end the process. 
+
+More hydra information [from: https://tryhackme.com/room/passwordattacks ; Task 8 [with edits, etc.]:
+Hydra can attack many types of network services to brute-force, etc. their passwords (e.g. http web-logins, FTP, SMTP, and SSH)
+Often, within hydra, each service has its own options and the syntax hydra expects takes getting used to. It's important to check the help options for more information and features.
+
+ftp
+example syntax:
+hydra -l ftp -P passlist.txt ftp://10.10.x.x
+-l ftp we are specifying a single username, use-L for a username wordlist
+-P Path specifying the full path of wordlist, you can specify a single password by using -p.
+ftp://10.10.x.x the protocol and the IP address or the fully qualified domain name (FDQN) of the target.
+Remember that sometimes you don't need to brute-force and could first try default credentials.
+
+smtp
+example syntax:
+hydra -l email@company.xyz -P /path/to/wordlist.txt smtp://10.10.x.x -v 
+Note: same as ftp; only with a different service (an SMTP server) specified instead; also note the `-v` flag for verbose so that each attempted login appears in terminal
+
+ssh
+example syntax:
+hydra -L users.lst -P /path/to/wordlist.txt ssh://10.10.x.x -v
+Note: same as ftp and smtp; only, in this example a file of possible users was employed by using the `-L` flag and naming the file
+
+http login pages
+Using hydra, it is important to specify the type of HTTP request, whether GET or POST. Checking hydra options: hydra http-get-form -U, we can see that hydra has the following syntax for the http-get-form option:
+
+<url>:<form parameters>:<condition string>[:<optional>[:<optional>]
+
+... we need to analyze the HTTP request that we need to send, and that could be done either by using your browser dev tools or using a web proxy such as Burp Suite.
+sample syntax:
+hydra -l admin -P 500-worst-passwords.txt 10.10.x.x http-get-form "/login-get/index.php:username=^USER^&password=^PASS^:S=logout.php" -f 
+-l admin  we are specifying a single username, use-L for a username wordlist
+
+-P Path specifying the full path of wordlist, you can specify a single password by using -p.
+
+10.10.x.x the IP address or the fully qualified domain name (FQDN) of the target.
+
+http-get-form the type of HTTP request, which can be either http-get-form or http-post-form.
+
+Next, we specify the URL, path, and conditions that are split using `:`
+
+login-get/index.php the path of the login page on the target webserver.
+
+username=^USER^&password=^PASS^ the parameters to brute-force, we inject ^USER^ to brute force usernames and ^PASS^ for passwords from the specified dictionary.
+
+The following section is important to eliminate false positives by specifying the 'failed' condition with F= or specifying success conditions with S=. You will get more information about these conditions by analyzing the webpage or in the enumeration stage! What you set for these values depends on the response you receive back from the server for a failed login attempt and a successful login attempt. For example, if you receive a message on the webpage 'Invalid password' after a failed login, set F=Invalid Password.
+
+If during the enumeration, we found that the webserver serves a page called logout.php it may be guessed that upon logging into the login page with valid credentials the logout.php link will appear somewhere on the page in order to enable a logout at the end of the session. Therefore, in order to have proof that the login was successful we could tell hydra to look for the text logout.php within the HTML for every request. We do this by setting `S=logout.php` as the success condition to identify the valid credentials.
+
+-f this flag tells hydra to stop the brute-forcing attacks after finding a valid username and password as signified by the presence of the success condition (in this case logout.php).
+-----------------------------------------------------------------------------
+LM, NTLM, Net-NTLMv2, oh my!
+A Pentester’s Guide to Windows Hashes
+https://medium.com/@petergombos/lm-ntlm-net-ntlmv2-oh-my-a9b235c58ed4
+------------------------------------------------------------------------------
+Default Passwords by Product Name:
+https://cirt.net/passwords
+https://default-password.info/
+https://datarecovery.com/rd/default-passwords/
+[hat tip: https://tryhackme.com/room/passwordattacks - Task 3]
+------------------------------------------------------------------------------
+Lists of commonly used/weak passwords:
+https://wiki.skullsecurity.org/index.php?title=Passwords
+https://github.com/danielmiessler/SecLists/tree/master/Passwords
+[hat tip: https://tryhackme.com/room/passwordattacks - Task 3]
+------------------------------------------------------------------------------
+Lists of leaked passwords:
+https://github.com/danielmiessler/SecLists/tree/master/Passwords/Leaked-Databases
+[hat tip: https://tryhackme.com/room/passwordattacks - Task 3]
+------------------------------------------------------------------------------
+How to prep password lists for use by combining multiple lists and removing duplicates:
+> cat list1.txt list2.txt list3.txt > aggregated_list.txt
+> sort aggregated_list.txt | uniq -u > deduplicated_aggregated_list.txt
+[hat tip: https://tryhackme.com/room/passwordattacks - Task 3]
+------------------------------------------------------------------------------
+It is worthwhile to create a custom list for a company. The cewl tool will crawl and scrape a company's website and pull strings that fit certain criteria and generate a wordlist for brute forcing based on those strings.
+example syntax:
+> cewl -w list.txt -d 5 -m 5 http://thm.labs
+`-w` - output file
+`-d` - minimum string length
+`-m` - webcrawling/spidering depth level (2 is default)
+`http://thm.labs` - url to search
+----------------------------------------------------------------------------
+Employ the tool `username_generator` to create a list of possible usernames to brutefore. One supplies employee names and `username_generator` produces a list that combines them in many different ways.
+example: John Smith, becomes:
+johnsmith
+smithjohn
+jsmith
+josmith
+smithj
+john_smith
+smith_john
+etc.
+syntax:
+> git clone https://github.com/therodri2/username_generator.git
+> cd username_generator
+> python3 username_generator.py -h [shows help message and arguments]
+> echo "John Smith" > users.txt
+> python3 username_generator.py -w users.txt
+----------------------------------------------------------------------------
+Crunch
+------
+Employ the tool `crunch` to generate all possible random combinations of designated letters/numbers/symbols in order to use them in a brute force attack:
+syntax:
+crunch -h 
+help screen
+
+crunch 2 2 01234abcd -o crunch.txt
+generates "words" of minimum 2 characters and maximum 2 characters using all possible combinations of the following numbers/letters: 01234abcd Output is written to crunch.txt file.
+
+crunch also lets us specify a character set using the -t option to combine words of our choice. Here are some of the other options that could be used to help create different combinations of your choice:
+
+@ - lower case alpha characters
+
+, - upper case alpha characters
+
+% - numeric characters
+
+^ - special characters including space
+For example, if part of the password is known to us, and we know it starts with pass and is followed by two numbers, we can use the % symbol from above to match the numbers. Here we generate a wordlist that contains "pass" followed by 2 numbers:
+crunch 6 6 -t pass%%
+[From: https://tryhackme.com/room/passwordattacks ; Task 4 ; with editing, etc.]
+---------------------------------------------------------------------------------------------------
+CUPP - Common User Passwords Profiler
+------------------
+Python tool for creating custom wordlists to brute force from. The wordlists are created based on information you supply regarding the user. There is a 1337/leet mode option which will replace letters wiyh leetspeak numbers and characters.
+The git repository is here: https://github.com/Mebus/cupp.
+syntax:
+> git clone https://github.com/Mebus/cupp.git
+change to the CUPP directory and run:
+> python3 cupp.py
+[add -h for help page]
+> python3 cupp.py -i
+interactive mode where you fill in info about user; press enter to skip fields you do not know the answer to
+> python3 cupp.py -l
+see and choose from a list of custom wordlists that can be chosen; e.g. languages (japanese, yiddish, italian) or subjects (literature, music, movieTV)
+> python3 cupp.py -a
+pull a list of default usernames/passwords from the Alecto database
+[From: https://tryhackme.com/room/passwordattacks ; Task 4 ; with editing, etc.]
+-------------------------------------------------------------------------------------------------------
+Network Chuck - how to HACK a password // password cracking with Kali Linux and HashCat
+https://www.youtube.com/watch?v=z4_oqTZJqCo&list=PLIhvC56v63IIJZRa3lzK6IeBQOH_VFjUQ&index=9
+[note: I think he misinterprets the HashCat output at a couple of points in the video. He says that: 'Candidates.#1 eminem --> bearsbeets' are HashCat giving two options as to what the password might be. I believe they are just the beginning an end of the list of possible passwords that HashCat compared the hash to. In order to see the actual password that was matched to the hash, you need to check the output file you designated using the -o argument.]
+---------------------------------------------------------------------------------------------------------
+https://geekflare.com/password-cracking-with-hashcat/
+---------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/passwordattacks ; Task 5 [with edits, etc.]
+
+"Dictionary attack
+A dictionary attack is a technique used to guess passwords by using well-known words or phrases. The dictionary attack relies entirely on pre-gathered wordlists that were previously generated or found. It is important to choose or create the best candidate wordlist for your target in order to succeed in this attack."
+
+sample hashcat syntax for a dictionary attack:
+
+hashcat -a 0 -m 0 f806fc5a2a0d5ba2471600758452799c /usr/share/wordlists/rockyou.txt
+-a 0  - sets the attack mode to a dictionary attack
+
+-m 0  - sets the hash mode for cracking MD5 hashes; for other types, run hashcat -h for a list of supported hashes. [Use `hashid` or `hash-identifier` on the hash first in order to identify it and learn the hashcat mode for the identified hash type.]
+
+f806fc5a2a0d5ba2471600758452799c - this option could be a single hash like our example or a file that contains a hash or multiple hashes.
+
+/usr/share/wordlists/rockyou.txt - the wordlist/dictionary file for our attack
+
+Note: once a password has been cracked you can quickly show it again by `--show`
+so, in the above example you would first run:
+hashcat -a 0 -m 0 f806fc5a2a0d5ba2471600758452799c /usr/share/wordlists/rockyou.txt
+The output would be:
+
+f806fc5a2a0d5ba2471600758452799c:rockyou         
+                                                 
+Session..........: hashcat
+Status...........: Cracked
+Hash.Name........: MD5
+Hash.Target......: f806fc5a2a0d5ba2471600758452799c
+Time.Started.....: Mon Jul 24 19:54:36 2023 (0 secs)
+Time.Estimated...: Mon Jul 24 19:54:36 2023 (0 secs)
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:   545.8 kH/s (0.87ms) @ Accel:1024 Loops:1 Thr:1 Vec:8
+Recovered........: 1/1 (100.00%) Digests
+Progress.........: 2048/14344384 (0.01%)
+Rejected.........: 0/2048 (0.00%)
+Restore.Point....: 0/14344384 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidates.#1....: 123456 -> lovers1
+
+Started: Mon Jul 24 19:53:57 2023
+Stopped: Mon Jul 24 19:54:37 2023
+
+If you ran hashcat and the hash again with `--show`, like this: `hashcat F806FC5A2A0D5BA2471600758452799C --show`
+the output would be:
+f806fc5a2a0d5ba2471600758452799c:rockyou
+
+Brute-Force attack
+"a brute-force attack aims to try all combinations of a character or characters. For example, let's assume that we have a bank account to which we need unauthorized access. We know that the PIN contains 4 digits as a password. We can perform a brute-force attack that starts from 0000 to 9999 to guess the valid PIN based on this knowledge. In other cases, a sequence of numbers or letters can be added to existing words in a list, such as admin0, admin1, .. admin9999."
+hashcat has charset options that could be used to generate your own combinations. The charsets can be found in hashcat help option [`hashcat --help`]
+sample bruteforce syntax:
+hashcat -a 3 ?d?d?d?d --stdout
+-a 3  - sets the attacking mode as a brute-force attack
+
+?d?d?d?d - the ?d tells hashcat to use a digit. In our case, ?d?d?d?d for four digits starting with 0000 and ending at 9999
+
+--stdout - print the result to the terminal
+-----------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/passwordattacks ; Task 6 [with edits, etc.]
+
+Rule-Based attacks
+"Rule-Based attacks are also known as hybrid attacks. Rule-Based attacks assume the attacker knows something about the password policy. Rules are applied to create passwords within the guidelines of the given password policy and should, in theory, only generate valid passwords. Using pre-existing wordlists may be useful when generating passwords that fit a policy — for example, manipulating or 'mangling' a password such as 'password': p@ssword, Pa$$word, Passw0rd, and so on."
+
+One can use john the ripper [or hashcat] to mangle a wordlist of passwords.
+"John the ripper has a config file that contains rule sets, which is located at /etc/john/john.conf or /opt/john/john.conf depending on your distro or how john was installed. You can read /etc/john/john.conf and look for List.Rules to see all the available rules."
+One can take a wordlist and run it through John the ripper having chosen on of john's many available rule-sets and receive an output that contains the original wordlist together with many new variations
+example syntax:
+john --wordlist=/tmp/single-password-list.txt --rules=KoreLogic --stdout
+
+--wordlist= to specify the wordlist or dictionary file. 
+
+--rules= to specify which rule or rules to use; in this case KoreLogic an excellent rule set
+
+--stdout to print the output to the terminal.
+
+Custom rules
+One can also add custom rules to the end if the john.conf file and use them
+example syntax:
+user@machine$ sudo vi /etc/john/john.conf 
+[List.Rules:THM-Password-Attacks] 
+Az"[0-9]" ^[!@#$]
+
+[List.Rules:THM-Password-Attacks] - specify the rule name THM-Password-Attacks.
+
+Az - represents a single word from the original wordlist/dictionary using -p [meaning, I believe, that the `-p` flag is used when you are supplying a single password to be used; as opposed to the `-P` which is followed by a path to a file containing a list of passwords to use -- MagVeTs].
+
+"[0-9]" - append a single digit (from 0 to 9) to the end of the word. For two digits, we can add "[0-9][0-9]" and so on.  
+
+^[!@#$] - add a special character at the beginning of each word. ^ means the beginning of the line/word. Note, changing ^ to $ will append the special characters to the end of the line/word.
+-----------------------------------------------------------------------------------------------------------------
+From: https://tryhackme.com/room/passwordattacks ; Task 9 - Password Spray Attacks [with edits, etc.]
+
+Difference between brute-force attack and password spray attack:
+* brute-force - test many common/predictable passwords against one username
+* password spraying - test one common/predictable password against many usernames
+Note: password spraying attacks are less likely than brute-force attacks to trigger account lockouts
+
+Common and weak passwords often follow a pattern and format, e.g.
+
+* SeasonYear (e.g. Fall2020)
+* MonthYear (e.g. November2020)
+* CompanyNameRandomNumbers (e.g. TryHackMe01)
+Note: If a password complexity policy is enforced within the organization, we may need to create a password that includes symbols to fulfill the requirement, such as October2021!, Spring2021!, October2021@, etc.
+Note: For better success in a password spraying attack, first enumerate the target and gather OSINT to compile a list of valid usernames/email addresses.
+
+Tools for password spraying at various services:
+* hydra [sample syntax: hydra -L usernames-list.txt -p Spring2021 ssh://10.1.1.10]
+* https://github.com/xFreed0m/RDPassSpray - against RDP [sample syntax: python3 RDPassSpray.py -U usernames-list.txt -p Spring2021! -t 10.100.10.240:3026]
+* Metasploit (auxiliary/scanner/smb/smb_login) - against smb
+* https://github.com/blacklanternsecurity/TREVORspray 
+TREVORspray is a modular password sprayer with threading, clever proxying, loot modules, and more!
+* https://github.com/knavesec/CredMaster
+Launch a password spray / brute force attach via Amazon AWS passthrough proxies, shifting the requesting IP address for every authentication attempt. This dynamically creates FireProx APIs for more evasive password sprays.
+* https://github.com/dafthack/MailSniper
+MailSniper is a penetration testing tool for searching through email in a Microsoft Exchange environment for specific terms (passwords, insider intel, network architecture information, etc.). It can be used as a non-administrative user to search their own email or by an Exchange administrator to search the mailboxes of every user in a domain.
+MailSniper also includes additional modules for password spraying, enumerating users and domains, gathering the Global Address List (GAL) from OWA and EWS and checking mailbox permissions for every Exchange user at an organization.
+-----------------------------------------------------------------------------------------------------------------
+NTLM hashes
+------------
+
+"Windows hashes are the way Windows stores passwords on machines. First, let's clarify things.
+NTLM (aka NT) hashes are local users hashes
+NTLMv1/v2 (aka Net-NTLMv1/v2) hashes are used for network authentication
+MSCASHv1/v2 (aka DCCv1/v2) hashes are domain users hashes
+
+NTLM ≠ NTLMv1/v2 ≠ MSCASHv1/v2
+
+NTLM hashes are composed of two parts:
+
+LM hash (turned off since Windows Vista / Windows 2008)
+NT hash (can be lonely, it stays NTLM hash)"
+
+- the LM hash is listed first, followed by a colon, followed by the NT hash:
+<LM>:<NT>
+[from: https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/post-exploitation/extracting-credentials/retrieve-windows-hashes]
+-----------------------------------------------------------------------------------------------------------------
+Heath Adams - The Cyber Mentor
+Practical Ethical Hacking - The Complete Course
+"Pass Attacks" - https://academy.tcm-sec.com/courses/1152300/lectures/48489919
+
+HA says that pass-the-hash attacks work for NTLMv1; not NTLMv2. NTLMv2 works for relay attacks.
+-----------------------------------------------------------------------------------------------------------------
+from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course ; https://academy.tcm-sec.com/courses/1152300/lectures/48489922
+When CRACKING an NTLM hash you only need the NT part (given AFTER the colon) not the LM part (given BEFORE the colon)
+------------------------------------------------------------------------------------------------------------------
+https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+
+
+
+----------------------------------------------------------
 Subresource Integrity Hash [see here: https://tryhackme.com/room/owasptop102021 ; Task 19 - Software Integrity Failures]
 https://www.srihash.org/
 "SRI is a new W3C specification that allows web developers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source."
