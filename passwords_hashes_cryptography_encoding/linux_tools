@@ -23,3 +23,8 @@ $ sha256hmac message.txt --key s!Kr37
 [from: https://tryhackme.com/room/cryptographyintro ; Task 5 - Hashing]
 
 
+Tools for Encoding and Decoding
+----------------------
+To encode in the terminal:
+$ echo "TEXT" | base64
+# output will be in base64 encoding
