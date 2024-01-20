@@ -1,6 +1,9 @@
 NTLM hashes
 ------------
 
+NTLM to Password
+"Input NT/LM hashes in hex format, one per line"
+https://ntlm.pw/
 -----------------------------------------------------------------------------
 LM, NTLM, Net-NTLMv2, oh my!
 A Pentester’s Guide to Windows Hashes
