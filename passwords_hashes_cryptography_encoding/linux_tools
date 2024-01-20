@@ -31,6 +31,10 @@ $ echo "TEXT" | base64
 
 Tools for Cracking Passwords and Hashes
 ---------------------------------------
+* hashcat
+see: MagVeTs/Cybersecurity/tools/hashcat
+* john the ripper
+see: MagVeTs/Cybersecurity/tools/john_the_ripper
 * thc-hydra
 see: MagVeTs/Cybersecurity/tools/thc-hydra
 
