@@ -94,37 +94,7 @@ pull a list of default usernames/passwords from the Alecto database
 ---------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------
-From: https://tryhackme.com/room/passwordattacks ; Task 6 [with edits, etc.]
 
-Rule-Based attacks
-"Rule-Based attacks are also known as hybrid attacks. Rule-Based attacks assume the attacker knows something about the password policy. Rules are applied to create passwords within the guidelines of the given password policy and should, in theory, only generate valid passwords. Using pre-existing wordlists may be useful when generating passwords that fit a policy — for example, manipulating or 'mangling' a password such as 'password': p@ssword, Pa$$word, Passw0rd, and so on."
-
-One can use john the ripper [or hashcat] to mangle a wordlist of passwords.
-"John the ripper has a config file that contains rule sets, which is located at /etc/john/john.conf or /opt/john/john.conf depending on your distro or how john was installed. You can read /etc/john/john.conf and look for List.Rules to see all the available rules."
-One can take a wordlist and run it through John the ripper having chosen on of john's many available rule-sets and receive an output that contains the original wordlist together with many new variations
-example syntax:
-john --wordlist=/tmp/single-password-list.txt --rules=KoreLogic --stdout
-
---wordlist= to specify the wordlist or dictionary file. 
-
---rules= to specify which rule or rules to use; in this case KoreLogic an excellent rule set
-
---stdout to print the output to the terminal.
-
-Custom rules
-One can also add custom rules to the end if the john.conf file and use them
-example syntax:
-user@machine$ sudo vi /etc/john/john.conf 
-[List.Rules:THM-Password-Attacks] 
-Az"[0-9]" ^[!@#$]
-
-[List.Rules:THM-Password-Attacks] - specify the rule name THM-Password-Attacks.
-
-Az - represents a single word from the original wordlist/dictionary using -p [meaning, I believe, that the `-p` flag is used when you are supplying a single password to be used; as opposed to the `-P` which is followed by a path to a file containing a list of passwords to use -- MagVeTs].
-
-"[0-9]" - append a single digit (from 0 to 9) to the end of the word. For two digits, we can add "[0-9][0-9]" and so on.  
-
-^[!@#$] - add a special character at the beginning of each word. ^ means the beginning of the line/word. Note, changing ^ to $ will append the special characters to the end of the line/word.
 -----------------------------------------------------------------------------------------------------------------
 From: https://tryhackme.com/room/passwordattacks ; Task 9 - Password Spray Attacks [with edits, etc.]
 
