@@ -212,24 +212,7 @@ Launch a password spray / brute force attach via Amazon AWS passthrough proxies,
 MailSniper is a penetration testing tool for searching through email in a Microsoft Exchange environment for specific terms (passwords, insider intel, network architecture information, etc.). It can be used as a non-administrative user to search their own email or by an Exchange administrator to search the mailboxes of every user in a domain.
 MailSniper also includes additional modules for password spraying, enumerating users and domains, gathering the Global Address List (GAL) from OWA and EWS and checking mailbox permissions for every Exchange user at an organization.
 -----------------------------------------------------------------------------------------------------------------
-NTLM hashes
-------------
 
-"Windows hashes are the way Windows stores passwords on machines. First, let's clarify things.
-NTLM (aka NT) hashes are local users hashes
-NTLMv1/v2 (aka Net-NTLMv1/v2) hashes are used for network authentication
-MSCASHv1/v2 (aka DCCv1/v2) hashes are domain users hashes
-
-NTLM ≠ NTLMv1/v2 ≠ MSCASHv1/v2
-
-NTLM hashes are composed of two parts:
-
-LM hash (turned off since Windows Vista / Windows 2008)
-NT hash (can be lonely, it stays NTLM hash)"
-
-- the LM hash is listed first, followed by a colon, followed by the NT hash:
-<LM>:<NT>
-[from: https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/post-exploitation/extracting-credentials/retrieve-windows-hashes]
 -----------------------------------------------------------------------------------------------------------------
 Heath Adams - The Cyber Mentor
 Practical Ethical Hacking - The Complete Course
