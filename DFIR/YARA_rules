@@ -1,12 +1,14 @@
 YARA Rules
 ------------
 
+YARA
+https://github.com/VirusTotal/yara
+https://github.com/Yara-Rules/rules
+
 * YARA documentation 
   https://yara.readthedocs.io/en/stable/index.html 
 
-* https://github.com/VirusTotal/yara
-
-* https://github.com/Yara-Rules/rules
+* https://yara.readthedocs.io/en/stable/writingrules.html
 
 * https://www.malwarebytes.com/blog/news/2017/09/explained-yara-rules
 
@@ -21,4 +23,38 @@ YARA Rules
 from: https://tryhackme.com/room/yara 
 
 Task 4 - Introduction to YARA Rules
+* When running YARA rules there are always two arguments: 1) the name of the rule being run and 2) the file/directory/PID (Process ID) the rule is being run against:
+$ yara <RULE_NAME>.yar <DIRECTORY_NAME>
+
+* YARA rules themselves have the syntax:
+
+rule {
+
+
+} 
+
+The entire rule except the word "rule" and the rule name is written within the curly brackets.
+YARA rules must always contain at least 1) the rule name [which comes after "rule" and before the opening curly bracket] and 2) the condition upon which the rule obtains, e.g.:
+
+rule examplerule {
+        condition: true
+}
+
+In this case "examplerule" is the name of the rule and "true" is the condition. "condition: true" means that the rule checks whether the the file/directory/PID against which it is run is "true", .i.e. exists.
+So if you ran the rule as follows:
+$ yara examplerule.yar test.txt
+and test.txt did exist, the response would be:
+examplerule test.txt
+meaning that test.txt meets the condition of the rule because it is "true" in regards to existing
+If test.txt did not exist an error message would be generated:
+error scanning test.txt: could not open file
+
+YARA rules can have a meta section (see: https://www.malwarebytes.com/blog/news/2017/09/explained-yara-rules) which does not affect the actual use of the rule but rather give metadata about the rule, e.g.:
+rule examplerule {
+        meta: 
+             created = <DATE>
+             author = <NAME>
+             desc = <EXPLANATION OF PURPOSE OF RULE>
+        condition: true
+}
 
