@@ -21,6 +21,10 @@ https://github.com/Yara-Rules/rules
   https://www.youtube.com/watch?v=BM23_H2GGMA
 
 * YARA cheat sheet: https://medium.com/malware-buddy/security-infographics-9c4d3bd891ef#18dd
+
+* There exists platforms/modules that allow you to create YARA rules directly from the malware files:
+- https://cuckoosandbox.org/ 
+- https://pypi.org/project/pefile/
 ---------------------------------------------
 from: https://tryhackme.com/room/yara 
 
