@@ -25,6 +25,13 @@ https://github.com/Yara-Rules/rules
 * There exists platforms/modules that allow you to create YARA rules directly from the malware files:
 - https://cuckoosandbox.org/ 
 - https://pypi.org/project/pefile/
+
+* Pre-created YARA rules:
+- Awesome YARA
+  "A curated list of awesome YARA rules, tools, and people."
+  https://github.com/InQuest/awesome-yara
+
+
 ---------------------------------------------
 from: https://tryhackme.com/room/yara 
 
