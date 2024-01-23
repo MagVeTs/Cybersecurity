@@ -32,10 +32,9 @@ https://github.com/Yara-Rules/rules
   https://github.com/InQuest/awesome-yara
 
 
----------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 from: https://tryhackme.com/room/yara 
 
-Task 4 - Introduction to YARA Rules
 * When running YARA rules there are always two arguments: 1) the name of the rule being run and 2) the file/directory/PID (Process ID) the rule is being run against:
 $ yara <RULE_NAME>.yar <DIRECTORY_NAME>
 
@@ -62,7 +61,7 @@ meaning that test.txt meets the condition of the rule because it is "true" in re
 If test.txt did not exist an error message would be generated:
 error scanning test.txt: could not open file
 
-YARA rules can have a meta section (see: https://www.malwarebytes.com/blog/news/2017/09/explained-yara-rules) which does not affect the actual use of the rule but rather give metadata about the rule, e.g.:
+* YARA rules can have a meta section (see: https://www.malwarebytes.com/blog/news/2017/09/explained-yara-rules) which does not affect the actual use of the rule but rather give metadata about the rule, e.g.:
 rule examplerule {
         meta: 
              created = <DATE>
@@ -70,4 +69,65 @@ rule examplerule {
              desc = <EXPLANATION OF PURPOSE OF RULE>
         condition: true
 }
+
+* YARA rules usally combine a strings section which lists strings to search for with conditions that define when the rule is triggered by those strings.
+Here are some examples:
+-------------
+rule helloworld_checker1{
+	strings:
+		$string1 = "Hello World!"
+
+	condition:
+		$string1
+}
+# rule is true for a target if that target contains the string "Hello World!" exactly as written
+-------------
+rule helloworld_checker2{
+	strings:
+		$string1 = "Hello World!"
+		$string2 = "hello world"
+		$string3 = "HELLO WORLD"
+
+	condition:
+		any of them
+}
+# rule is true for a target if the target contains any one of the three strings
+-------------
+rule helloworld_checker3{
+	strings:
+		$string1 = "Hello World!"
+
+	condition:
+       $string1 <= 10
+}
+# rule is true for a target if the target contains "Hello World!" (exactly as written) 10 or less times
+-------------
+rule helloworld_checker4{
+	strings:
+		$string1 = "Hello World!" 
+        
+        condition:
+	        $string1 and filesize < 10KB 
+}
+# rule is true for a target if the target contains "Hello World!" (exactly as written) AND the target file is less than 10KB in size
+-------------
+Some useful conditions operators:
+<= {less than or equal to}
+>= {more than or equal to}
+!= {not equal to}
+and
+not
+or 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
