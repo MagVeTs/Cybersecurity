@@ -119,9 +119,32 @@ and
 not
 or 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Using the tool called Loki to scan files for YARA rule matches:
 
+see: https://github.com/Neo23x0/Loki/tree/master
+     https://github.com/Neo23x0/Loki/blob/master/README.md
+     https://github.com/Neo23x0/Loki/releases - to download the newest release
 
+from: https://tryhackme.com/room/yara ; Task 7 - "Other tools and Yara" and Task 8 - "Using LOKI and its Yara rule set"
+"LOKI is a free open-source IOC (Indicator of Compromise) scanner created/written by Florian Roth."
+It draws upon the following to match and alert on suspicious/malicious files:
+1) File Names
+2) Yara Rules
+3) Hashes
+4) Connections to known C2s servers 
 
+syntax:
+$ python3 loki.py -h
+# help menu
+
+$ python3 loki.py --update
+# run before scanning to update the `signature-base` directory within the `Loki` directory with up-to-date YARA rules that will be used for scanning
+
+$ python3 loki.py -p path/to/directory/or/file/being/scanned
+# run this command from within the `Loki` directory to scan a directory/file that is elsewhere; `-p` stands for path
+
+$ python3 path/to/Loki/loki.py -p .
+# run this command from within a directory to scan the directory
 
 
 
