@@ -1,26 +1,42 @@
 
-Goosint
-"130 Web-enabled OSINT and Cybersecurity Tools."
-"Goosint [is] focused on the most popular web-based Open Source Intelligence and Cybersecurity Tools. The goal is to help you find free cybersecurity, Threat Intelligence and OSINT resources."
-https://goosint.com/
+Card Generator
+https://cardgenerator.org/
+"Generate credit card numbers with all required details for online signup and testing purposes."
 
 Censys
 https://search.censys.io/
 * find hosts and networks and see how they are configured
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
 
-SET (Social Engineers Toolkit) - David Kennedy
-see: MagVeTs > Cybersecurity > tools > SET - Social Engineers Toolkit
-
-IntelTechniques - Michael Bazzell
-https://inteltechniques.com/tools/index.html
-[recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60]
+Epios
+https://epieos.com/
+"Retrieve information linked to an email address, leaving no traces"
 
 FOCA (Fingerprinting Organizations with Collected Archives)
 https://github.com/ElevenPaths/FOCA
 GUI interface; similar to Metagoofil; retrieves metadata from documents on target website; not Linux compatible
 [recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60;
 also discussed in: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
+
+Goosint
+"130 Web-enabled OSINT and Cybersecurity Tools."
+"Goosint [is] focused on the most popular web-based Open Source Intelligence and Cybersecurity Tools. The goal is to help you find free cybersecurity, Threat Intelligence and OSINT resources."
+https://goosint.com/
+
+Ghunt
+https://github.com/mxrch/GHunt
+"GHunt (v2) is an offensive Google framework, designed to evolve efficiently.
+It's currently focused on OSINT, but any use related with Google is possible.
+Features :
+CLI usage and modules
+Python library usage
+Fully async
+JSON export
+Browser extension to ease login"
+
+IntelTechniques - Michael Bazzell
+https://inteltechniques.com/tools/index.html
+[recommended in: Social Engineering: The Science of Human Hacking, Christopher Hadnagy, 2018, John Wiley & Sons Inc., p.60]
 
 Maltego
 https://www.maltego.com/downloads/#tab-2
@@ -40,27 +56,8 @@ OSINT Tools Library
 https://flashpoint.io/blog/osint-tools-library/
 A constantly updated list of web-based OSINT tools and techniques from across the open-source intelligence community, curated by Flashpoint
 
-Card Generator
-https://cardgenerator.org/
-"Generate credit card numbers with all required details for online signup and testing purposes."
-
-Ghunt
-https://github.com/mxrch/GHunt
-"GHunt (v2) is an offensive Google framework, designed to evolve efficiently.
-It's currently focused on OSINT, but any use related with Google is possible.
-Features :
-CLI usage and modules
-Python library usage
-Fully async
-JSON export
-Browser extension to ease login"
-
-Epios
-https://epieos.com/
-"Retrieve information linked to an email address, leaving no traces"
-
-theHarvester
-see: MagVeTs > Cybersecurity > tools > theHarvester
+porch-pirate
+see: MagVeTs/Cybersecurity/tools/porch-pirate
 
 recon-ng
 see: MagVeTs > Cybersecurity > tools > recon-ng
@@ -69,5 +66,13 @@ Shodan
 https://www.shodan.io/
 * search for public facing servers, IoT, etc. owned by your target, in their IP range
 [CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion (https://www.udemy.com/course/pentestplus/) "OSINT Tools"]
+
+SET (Social Engineers Toolkit) - David Kennedy
+see: MagVeTs > Cybersecurity > tools > SET - Social Engineers Toolkit
+
+theHarvester
+see: MagVeTs > Cybersecurity > tools > theHarvester
+
+
 
 
