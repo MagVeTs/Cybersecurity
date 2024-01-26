@@ -1,7 +1,7 @@
 porch-pirate
 -------------
 
-porch-pirate is a tool that was created to search within Postman (a very popular API platform) for all kinds of "secrets" such as API keys, passwords, and authentication tokens.
+porch-pirate is a tool that was created to search within Postman (a very popular API platform) for all kinds of "secrets" such as API keys, passwords, and authentication tokens. Has been expanded to find all sorts of OSINT.
 
 
 https://github.com/mandconsultinggroup/porch-pirate
@@ -13,7 +13,9 @@ https://mandconsulting.ca/plundering-postman-with-porch-pirate-osint/
 
 https://securityonline.info/porch-pirate-the-most-comprehensive-postman-recon-osint-client-and-framework/
 
+$ python3 -m pip install porch-pirate
 
+$ porch-pirate -s “coca-cola.com“
 
 
 
