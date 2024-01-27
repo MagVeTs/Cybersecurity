@@ -2,6 +2,16 @@ Unix Epoch Time
 ----------------
 
 "Unix time is a date and time representation widely used in computing. It measures time by the number of seconds that have elapsed since 00:00:00 UTC on 1 January 1970, the beginning of the Unix epoch, less adjustments made due to leap seconds. Unix time originated as the system time of Unix operating systems." (Wikipedia)
+-----------------------------------------
+date -d
+--------
+Convert a Unix (Epoch) timestamp to human-readable format
+# Convert Unix timestamp to human readable
+$ date -d 1656685875
+Fri, 01 Jul 2022 14:31:15 +0000
+# Current time as UNIX timestamp
+$ date "+%s"
+-----------------------------------------
 
 Epoch Converter
 https://www.epochconverter.com/
