@@ -1,0 +1,42 @@
+How to interpret the /etc/passwd file
+-------------------------------------
+Credit: https://linuxize.com/post/etc-passwd-file/ --
+There are several different authentication schemes that can be used on Linux systems. The most commonly used and standard scheme is to perform authentication against the /etc/passwd and /etc/shadow files.
+
+/etc/passwd is a plain text-based database that contains information for all user accounts on the system. It is owned by root and has 644 permissions . The file can only be modified by root or users with sudo privileges and readable by all system users.
+
+Modifying the /etc/passwd file by hand should be avoided unless you know what you are doing. Always use a command that is designed for the purpose. For example, to modify a user account, use the usermod command, and to add a new user account use the useradd command.
+
+/etc/passwd Format
+The /etc/passwd file is a text file with one entry per line, representing a user account. To view the contents of the file, use a text editor or a command such as cat: $ cat /etc/passwd
+
+Usually, the first line describes the root user, followed by the system and normal user accounts. New entries are appended at the end of the file.
+
+Each line of the /etc/passwd file contains seven comma-separated fields:
+
+Output
+mark:x:1001:1001:mark,,,:/home/mark:/bin/bash
+[--] - [--] [--] [-----] [--------] [--------]
+|    |   |    |     |         |        |
+|    |   |    |     |         |        +-> 7. Login shell
+|    |   |    |     |         +----------> 6. Home directory
+|    |   |    |     +--------------------> 5. GECOS
+|    |   |    +--------------------------> 4. GID
+|    |   +-------------------------------> 3. UID
+|    +-----------------------------------> 2. Password
++----------------------------------------> 1. Username
+
+01. Username. The string you type when you log into the system. Each username must be a unique string on the machine. The maximum length of the username is restricted to 32 characters.
+02. Password. In older Linux systems, the user’s encrypted password was stored in the /etc/passwd file. On most modern systems, this field is set to x, and the user password is stored in the /etc/shadow file.
+03. UID. The user identifier is a number assigned to each user. It is used by the operating system to refer to a user.
+04. GID. The user’s group identifier number, referring to the user’s primary group. When a user creates a file , the file’s group is set to this group. Typically, the name of the group is the same as the name of the user. User’s secondary groups are listed in the /etc/groups file.
+05. GECOS or the full name of the user. This field contains a list of comma-separated values with the following information:
+User’s full name or the application name.
+ - Room number.
+ - Work phone number.
+ - Home phone number.
+ - Other contact information.
+06. Home directory. The absolute path to the user’s home directory. It contains the user’s files and configurations. By default, the user home directories are named after the name of the user and created under the /home directory.
+07. Login shell. The absolute path to the user’s login shell. This is the shell that is started when the user logs into the system. On most Linux distributions, the default login shell is Bash.
+--Credit: https://linuxize.com/post/etc-passwd-file/
+--------------------------------------------------------------------------------------------------------------------------------------------------------
