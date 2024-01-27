@@ -1,0 +1,63 @@
+Installing Packages (programs, apps, etc.)
+---------------------------------------------
+
+[from: Network Chuck - apt, dpkg, git, Python PiP (Linux Package Management) // Linux for Hackers // EP 5 ; https://www.youtube.com/watch?v=vX3krP6JmOY&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=6]
+
+* dpkg - will not find packages by name online (you need to download them first); it will also not automatically download an install the dependencies you need for the package you want
+
+
+* apt (advanced package tool) - the apt command will search for packages by name in its repository; you can also direct it to other repositories and it can download from them; it will install the package and install all its dependencies; better to use apt command when possible 
+[note: if `apt` is not present on the Linux machine it can be installed using the command: `sudo dnf install apt` (hat tip: SW)]
+- Before using apt to install new package always give the command:
+  sudo apt update
+  this will have apt communicate with its repository so it will have the most up-to-date list of packages for you to draw from.
+- Then use this command to have apt search its repository and install the package you desire:
+  sudo apt install <NAME_OF_PACKAGE>
+  for example: sudo apt install pidgin
+- then you can run the package by typing its name as the command, e.g. pidgin 
+
+* sudo apt edit-sources
+- to see a list of the repositories apt automatically checks (and edit the list)
+  choose an editor from the list of editors it gives you
+* apt list
+- this will list all packages in the repositories that apt is checking
+* apt list --installed 
+- this will list all packages installed on your system (you can '| grep' to search for a specific package)
+* sudo apt show <NAME_OF_A_PACKAGE>
+- will tell you about a package
+* sudo apt search <NAME_OF_A_PACKAGE>
+* sudo apt remove <NAME_OF_A_PACKAGE> 
+- will delete package but not your user configs and data; if you reinstall the package you will be able to use them
+* sudo apt purge <NAME_OF_A_PACKAGE> 
+- will remove package and all associated data
+* sudo apt update && sudo apt upgrade
+- will check the repositories for updates to all your installed packages and if it finds updates for them it will upgrade them using those updates
+* sudo apt update && sudo apt full-upgrade
+- will do the same as 'sudo apt update && sudo apt upgrade' but will also remove any dependencies, etc. that are no longer needed for the upgraded packages
+
+Also see Network Chuck's info (in the cited video) on the following package managers:
+* aptitude
+* snapd
+
+Some program languages have their own package managers for the packages written in those languages:
+PiP - this is a Python language package manager for certain packages written in Python
+RubyGems (uses command 'gem install') - this is a Ruby language package manager for certain packages written in Ruby
+
+Installing packages from GitHub
+-------------------------------
+* First make sure 'git' is installed on your system. If it is not, install it using:
+sudo apt install git
+* If git is installed, you can now install packages directly from GitHub by using the command:
+git clone <URL_OF_GitHub_REPOSITORY_CONTAINING_PACKAGE_THAT_YOU_WANT>
+(example: git clone https://github.com/fleetcaptain/Turbolist3r)
+The package will be placed in the directory you are presently in.
+* Now, check the folder that was downloaded and see if there is a "requirements.txt" document in it. If there is you can download the requirements as follows. If the executable is a .py (Python) program, you can use the following command:
+- pip install -r requirements.txt (if you have python2)
+- pip3 install -r requirements.txt (if you have python3)
+* To run the python script the command is:
+- python <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python2)
+- python3 <NAME_OF_SCRIPT>.py <ARGUMENTS> (if you have python3)
+---------------------------------------------------------
+When installing tools it is recommended to install them in the /opt directory.
+[Heath Adams - The Cyber Mentor]
+---------------------------------------------------------
