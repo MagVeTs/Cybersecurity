@@ -6,24 +6,7 @@ Linux Resources:
 Linux Terminal Shortcut Cheat Sheet
 https://www.faqforge.com/linux/linux-terminal-shortcut-cheat-sheet/
 -------------------------------------------------------
-To upgrade/update, write in terminal:
 
-* apt update -y && apt upgrade -y && apt dist-upgrade -y
-  [hat tip: Get Cyber (https://www.youtube.com/watch?v=_mvPASM89a0)]
-
-* sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
-  [hat tip: System Exploited - https://youtu.be/hkLmuXhrizU?t=317]
-
-Heath Adams (The Cyber Mentor) recommends:
-* make copy of VM before attempting update/upgrade
-* switching to root (sudo su -)
-* then run: apt update && apt upgrade
-
-Heath Adams (The Cyber Mentor) recommends:
-https://github.com/Dewalt-arch/pimpmykali
-"Kali Linux Fixes for Newly Imported VM's"
-also see: How To Install PimpMyKali in Kali Linux - Home Hacking Lab Video 3 (https://www.youtube.com/watch?v=hH_Qbv4RIi8)
----------------------------------------------------------
 Installing Packages (programs, apps, etc.)
 
 [from: Network Chuck - apt, dpkg, git, Python PiP (Linux Package Management) // Linux for Hackers // EP 5 ; https://www.youtube.com/watch?v=vX3krP6JmOY&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL&index=6]
