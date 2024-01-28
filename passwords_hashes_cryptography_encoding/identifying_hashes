@@ -6,7 +6,7 @@ https://pypi.org/project/hashID/
 "Identify the different types of hashes used to encrypt data and especially passwords."
 see: https://tryhackme.com/room/hashingcrypto101 - Task 4 "Recognising password hashes", where it is noted: "Automated hash recognition tools such as https://pypi.org/project/hashID/ exist, but they are unreliable for many formats. For hashes that have a prefix, the tools are reliable. Use a healthy combination of context and tools.  If you found the hash in a web application database, it's more likely to be md5 than NTLM. Automated hash recognition tools often get these hash types mixed up, which highlights the importance of learning yourself ... Windows passwords are hashed using NTLM, which is a variant of md4. They're visually identical to md4 and md5 hashes, so it's very important to use context to work out the hash type."
 
-Very good resource that lists hash types and gives info on them including their prefixes: https://hashcat.net/wiki/doku.php?id=example_hashes
+Very good resource that lists hash types and gives info on them including their prefixes and the hashcat module number to be used to crack each one: https://hashcat.net/wiki/doku.php?id=example_hashes
 recommended by:  https://tryhackme.com/room/hashingcrypto101 - Task 4 "Recognising password hashes"
 
 
