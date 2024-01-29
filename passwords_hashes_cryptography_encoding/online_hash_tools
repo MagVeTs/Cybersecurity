@@ -14,3 +14,19 @@ https://hashes.com/en/decrypt/hash
 NTLM to Password
 "Input NT/LM hashes in hex format, one per line"
 https://ntlm.pw/
+
+Online Hash Crack
+https://www.onlinehashcrack.com/
+
+Hash/Dehash
+https://md5hashing.net/hash
+---------------------------------------------
+Online Sites for Identifying Hashes:
+* https://hashes.com/en/tools/hash_identifier
+* https://md5hashing.net/hash_type_checker
+* https://hashcat.net/wiki/doku.php?id=example_hashes
+
+----------------------------------------------
+Generating hashes:
+* https://www.browserling.com/tools/all-hashes
+* https://md5hashing.net/hash
