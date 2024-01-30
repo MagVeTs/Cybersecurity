@@ -22,6 +22,7 @@ the output will give you the module number you need to enter after the `-m` argu
 
 * hashcat (and other hash cracking tools) should preferably be run on bare metal so that the computer can use its GPU to do the cracking (which is faster than using the CPU). Sometimes hashcat may not work at all in a VM. If that happens, you can try the `--force` argument and that may work, e.g.:
 > hashcat -m 5600 hash.txt /usr/share/wordlists/rockyou.txt --force
+[note: however, see below, that using  `--force` can lead to both false positives and false negatives]
 
 * When running hashcat on metal it is a good idea to add `-O` (for optimize) as that optimizes (speeds up) the speed of the cracking.
 
