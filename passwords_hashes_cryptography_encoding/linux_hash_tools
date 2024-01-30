@@ -33,6 +33,9 @@ Tools for Identifying Hashes
 ------------------------------
 * hashid
 see: MagVeTs/Cybersecurity/tools/hashid
+*hash-identifier
+see: MagVeTs/Cybersecurity/tools/hash-identifier
+also see: https://medium.com/infosec-adventures/identifying-and-cracking-hashes-7d580b9fd7f1 where these tools are discussed and it says that hash-id has more functionality; it can give you hashcat mode code and john the ripper format
 
 Tools for Cracking Passwords and Hashes
 ---------------------------------------
