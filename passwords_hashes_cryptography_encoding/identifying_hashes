@@ -25,4 +25,7 @@ For other hash types, you'll normally need to go by length, encoding or some res
 Online Site for Identifying Hashes:
 * https://hashes.com/en/tools/hash_identifier
 ---------------------------------------------------------------------------------
-
+Linux Tool for Hash Identification
+-----------------------------------
+see: MagVeTs/Cybersecurity/tools/hashid
+---------------------------------------------------------------------------------
