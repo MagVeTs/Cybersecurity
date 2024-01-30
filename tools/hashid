@@ -7,3 +7,6 @@ hashID is a tool written in Python 3.x which supports the identification of over
 
 $ sudo apt install hashid
 # dependencies = Python3
+
+also see: https://medium.com/infosec-adventures/identifying-and-cracking-hashes-7d580b9fd7f1
+"The best thing about this tool is that it can print the corresponding hashcat mode code and john format."
