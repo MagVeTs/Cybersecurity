@@ -61,3 +61,10 @@ The package will be placed in the directory you are presently in.
 When installing tools it is recommended to install them in the /opt directory.
 [Heath Adams - The Cyber Mentor]
 ---------------------------------------------------------
+From: https://linuxopsys.com/topics/install-software-on-linux
+"Which Location software is installed on Linux?
+Depending on the method of software applications installation directory varies.
+Package managers normally installed the program binaries in /usr/bin directory.
+The /opt is the directory reserved for software that is not part of the default installation.
+For snap, the files are stored in /var/lib/snapd/snaps."
+---------------------------------------------------------
