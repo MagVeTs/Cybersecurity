@@ -1,0 +1,9 @@
+hashid
+-------
+
+https://www.kali.org/tools/hashid/
+"Identify the different types of hashes used to encrypt data and especially passwords.
+hashID is a tool written in Python 3.x which supports the identification of over 175 unique hash types using regular expressions. It is able to identify a single hash or parse a file and identify the hashes within it."
+
+$ sudo apt install hashid
+# dependencies = Python3
