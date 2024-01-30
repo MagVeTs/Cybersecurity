@@ -4,6 +4,7 @@ john the ripper
 
 ------------------------------------------
 see: https://medium.com/infosec-adventures/identifying-and-cracking-hashes-7d580b9fd7f1
+see: MagVeTs/Cybersecurity/passwords_hashes_cryptography_encoding/linux_etc_passwd_file
 ------------------------------------------
 Cracking a hash found in Linux's /etc/shadow file in order to get a password
 1) cat /etc/shadow
