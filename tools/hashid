@@ -10,3 +10,4 @@ $ sudo apt install hashid
 
 also see: https://medium.com/infosec-adventures/identifying-and-cracking-hashes-7d580b9fd7f1
 "The best thing about this tool is that it can print the corresponding hashcat mode code and john format."
+Note: the first suggested hash in the list of possible hashes may not necessarily be the corrct one
