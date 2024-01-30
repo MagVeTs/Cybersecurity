@@ -40,3 +40,13 @@ User’s full name or the application name.
 07. Login shell. The absolute path to the user’s login shell. This is the shell that is started when the user logs into the system. On most Linux distributions, the default login shell is Bash.
 --Credit: https://linuxize.com/post/etc-passwd-file/
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+from: https://medium.com/infosec-adventures/identifying-and-cracking-hashes-7d580b9fd7f1
+Upon obtaining access to the /etc/shadow and the /etc/passwd files, it is necessary to combine them in order that usernames are matched with the hashes of their corresponding passwords to facilitate credential harvesting. The `unshadow` command will do this. It takes the two mentioned /etc files and combines them to create a new file with username/password-hashes pairs.
+$ unshadow passwd_file shadow_file > creds_file
+Then a password cracker (like john the ripper) can be used to run a wordlist (e.g. rockyou) against the hashes in the creds_file
+
+
+
+
+
+
