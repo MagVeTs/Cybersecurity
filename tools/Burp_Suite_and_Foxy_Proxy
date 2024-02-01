@@ -1,8 +1,14 @@
 Burp Suite and Foxy Proxy
 ---------------------------
-Download latest Burp Suite release: https://portswigger.net/burp/releases
-Install Foxy Proxy (for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+
+
+* Burp Suite is preinstalled on Kali Linux
+* Download latest Burp Suite release: https://portswigger.net/burp/releases
+* Install Foxy Proxy (for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+
 from: https://tryhackme.com/room/burpsuitebasics ; Task 2 - "What is Burp Suite"
 "In essence, Burp Suite is a Java-based framework designed to serve as a comprehensive solution for conducting web application penetration testing. It has become the industry standard tool for hands-on security assessments of web and mobile applications, including those that rely on application programming interfaces (APIs).
 
@@ -10,11 +16,8 @@ Simply put, Burp Suite captures and enables manipulation of all the HTTP/HTTPS t
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
+see: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 Lab Setup - https://academy.tcm-sec.com/courses/1152300/lectures/47848127 (starting at approximately 06:34 in the video)
-
-* Burp Suite comes pre-installed on Kali Linux.
-* Foxy Proxy can be installed from here (it is for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
