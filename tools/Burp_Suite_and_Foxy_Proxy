@@ -1,11 +1,14 @@
 Burp Suite and Foxy Proxy
 ---------------------------
-
+Download latest Burp Suite release: https://portswigger.net/burp/releases
+Install Foxy Proxy (for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 from: https://tryhackme.com/room/burpsuitebasics ; Task 2 - "What is Burp Suite"
 "In essence, Burp Suite is a Java-based framework designed to serve as a comprehensive solution for conducting web application penetration testing. It has become the industry standard tool for hands-on security assessments of web and mobile applications, including those that rely on application programming interfaces (APIs).
 
 Simply put, Burp Suite captures and enables manipulation of all the HTTP/HTTPS traffic between a browser and a web server. This fundamental capability forms the backbone of the framework. By intercepting requests, users have the flexibility to route them to various components within the Burp Suite framework ... The ability to intercept, view, and modify web requests before they reach the target server or even manipulate responses before they are received by our browser makes Burp Suite an invaluable tool for manual web application testing ... Burp Suite Community Edition ... is freely accessible for non-commercial use within legal boundaries ... Burp Suite also offers Professional and Enterprise editions, which come with advanced features and require licensing"
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 from: Heath Adams - The Cyber Mentor ; Practical Ethical Hacking - The Complete Course
 Lab Setup - https://academy.tcm-sec.com/courses/1152300/lectures/47848127 (starting at approximately 06:34 in the video)
