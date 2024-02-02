@@ -55,6 +55,12 @@ Explanation: Clones a Git repository from the specified URL using the Git versio
 Example: Running sudo git clone https://github.com/Dewalt-arch/pimpmykali.git would clone the repository from the given URL and create a local copy of the repository's files and version history.
 These commands are commonly used in Linux systems for updating packages, installing new software, and managing version-controlled repositories. The sudo command is used to execute commands with superuser privileges. The apt command is used for package management in Debian-based distributions. The git command is used for version control and working with Git repositories."
 ("Installing and Updating Tools" - https://academy.tcm-sec.com/courses/1152300/lectures/24747385)
-***
-
 --------------------------------------------------------------------------------
+* "Kali Linux Quick Start Guide - Kali Linux Package Management" - https://www.youtube.com/watch?v=xdgUV578buY
+* https://linuxconfig.org/gui-software-installers-for-kali-linux
+* https://www.jamesparker.dev/what-is-the-default-package-manager-in-kali-linux/
+
+
+
+
+
