@@ -68,3 +68,8 @@ Package managers normally installed the program binaries in /usr/bin directory.
 The /opt is the directory reserved for software that is not part of the default installation.
 For snap, the files are stored in /var/lib/snapd/snaps."
 ---------------------------------------------------------
+https://www.wikihow.com/Install-Software-on-Linux
+https://linuxopsys.com/topics/install-software-on-linux
+"How to install software in Linux (properly)" - https://www.youtube.com/watch?v=xdgUV578buY
+
+
