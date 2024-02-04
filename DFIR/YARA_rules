@@ -145,10 +145,35 @@ $ python3 loki.py -p path/to/directory/or/file/being/scanned
 
 $ python3 path/to/Loki/loki.py -p .
 # run this command from within a directory to scan the directory
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+yarGen
+https://github.com/Neo23x0/yarGen
+"yarGen is a generator for YARA rules"
 
+from: https://tryhackme.com/room/yara ; Task 9 - " Creating Yara rules with yarGen"
+If one discovers a malicious file that does not yet have a YARA rule written for it, then it becomes necessary to create a new YARA rule. The tool yarGen came be used to create YARA rules. It can extract strings from the malware file and then filter out all strings found in its database of strings that are also present in goodware. It then uses the strings which are unique to the malware to produce a YARA rule that is less likely to trigger false positives.
 
+Syntax:
 
+$ python3 yarGen.py --update
+# update before running to ensure that you are working with an up-to-date DB of goodware strings
 
+$ python3 yarGen.py -m /path/to/malware/file --excludegood -o /path/where/to/output/new/yaraRule.yar
+# --excludegood = remove all strings that are also found in goodware before creating new YARA rule
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+also see: 
+yarAnalyzer
+https://github.com/Neo23x0/yarAnalyzer/
+"Yara Rule Analyzer and Statistics
+yarAnalyzer creates statistics on a yara rule set and files in a sample directory."
+[hat tip: from: https://tryhackme.com/room/yara ; Task 9 - " Creating Yara rules with yarGen"]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+also see:
+* https://www.nextron-systems.com/2015/02/16/write-simple-sound-yara-rules/
+* https://www.nextron-systems.com/2015/10/17/how-to-write-simple-but-sound-yara-rules-part-2/
+* https://www.nextron-systems.com/2016/04/15/how-to-write-simple-but-sound-yara-rules-part-3/
+[hat tip: from: https://tryhackme.com/room/yara ; Task 9 - " Creating Yara rules with yarGen"]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
