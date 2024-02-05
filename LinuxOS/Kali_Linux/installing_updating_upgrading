@@ -10,6 +10,8 @@ from: Heath Adams - The Cyber Mentor: "Practical Ethical Hacking - The Complete 
 
 * "Installing and Updating Tools" - https://academy.tcm-sec.com/courses/1152300/lectures/24747385
 
+* also see MagVeTs/Cybersecurity/LinuxOS/Kali_Linux/pimp_my_kali
+
 TIP: It may be necessary to first switch to root user before running update/upgrade (sudo might not be enough):
 $ sudo su -
 $ sudo apt update && sudo apt upgrade
