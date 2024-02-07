@@ -32,7 +32,7 @@ https://github.com/Yara-Rules/rules
   https://github.com/InQuest/awesome-yara
 
 * Also see: https://valhalla.nextron-systems.com/
-Web interface to search for YARA and Sigma rules by keyword, tag, ATT&CK technique, SHA256 or rule name
+Web interface to search for YARA and Sigma rules by keyword, tag, ATT&CK technique, SHA256, or rule name
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 from: https://tryhackme.com/room/yara 
 
