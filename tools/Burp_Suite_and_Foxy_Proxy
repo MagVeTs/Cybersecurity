@@ -4,7 +4,10 @@ Burp Suite and Foxy Proxy
 
 * Burp Suite is preinstalled on Kali Linux
 * Download latest Burp Suite release: https://portswigger.net/burp/releases
-* Install Foxy Proxy (for the Firefox browser): https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+* Install Foxy Proxy (for the Firefox browser):
+- https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+[Standard has an extra function called "Patterns" that "basic" does not have; see here: https://proxyway.com/guides/foxyproxy-chrome-firefox]
+- https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-basic/
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
