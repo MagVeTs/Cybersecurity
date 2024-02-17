@@ -14,6 +14,11 @@ Foxy Proxy
 [Standard has an extra function called "Patterns" that "basic" does not have; see here: https://proxyway.com/guides/foxyproxy-chrome-firefox]
 - https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-basic/
 * see: https://tryhackme.com/room/burpsuitebasics ; Task 9 - "Connecting through the Proxy (FoxyProxy)"
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Guides to Burp Suite (and Foxy Proxy):
+
+* https://tryhackme.com/room/burpsuitebasics
+* https://tryhackme.com/room/burpsuiterepeater
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Extensive introduction to Burp Suite: https://tryhackme.com/room/burpsuitebasics
