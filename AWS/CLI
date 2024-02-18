@@ -1,0 +1,20 @@
+------------------------------------------------------------------------
+AWS CLI 
+--------
+S3 syntax:
+
+* aws s3 ls s3://<url> 
+lists files in S3 bucket
+
+* aws s3 cp s3://<url>/<file_to_be_copied> <file_name_to_create_on_your device>
+copies files from S3 bucket to your device
+
+add:
+--profile <your_profile_name>
+--no-sign-request [in order to access publicly accessible S3 buckets]
+-------------------------------------------------------------------------
+my-arsenal-of-aws-security-tools
+https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+"List of open source tools for AWS security: defensive, offensive, auditing, DFIR, etc."
+[includes a list of a lot of offensive tools]
+[hat tip: YS]
