@@ -3,7 +3,14 @@ General
 
 
 https://tryhackme.com/room/cloud101aws ; Task 4 - More Reliable"
+https://tryhackme.com/room/cloud101aws ; Task 5 - "Distributed Across the World (and in Space)"
+
+Regions and Availability Zones
+-------------------------------
 "AWS defines a "region" as "a physical location around the world where we cluster data centers." A region will be made up of one or more "availability zones." These data centers that make up an availability zone will all be located within 60 miles of each other in the given region ... An Availability Zone (AZ) is one or more discrete data centers with redundant power, networking, and connectivity in an AWS Region. These separations mean that an outage of one AZ due to lost power, networking issues, or ISP connectivity issues should not affect any other AZ. AWS further intends for availability zones to be the key failover capability required by end-customers ... applications built on AWS are generally considered to be highly resilient if deployed in a multi-AZ configuration."
+
+Naming Conventions
+-------------------
 "AWS names regions and availability zones are based on a common naming convention. For regions, names commonly start with one of a few different designations:
 
 af (Africa)
@@ -16,3 +23,7 @@ us (United States)
 A cardinal direction (North, South, East, West, Central) or a combination (SouthEast, NorthWest) is appended to the abbreviation based on where the region is inside of the geography of the region (e.g., us-east for those data centers considered to be in the eastern USA). The convention follows with a numerical designation (1, 2, 3, etc.) based on whether it is the first, second, third, etc. region within the geographic location.
 
 For example, af-south-1 is located in Cape Town, South Africa. It is a region on the African continent (af), in the southern portion of that geographic area (south), and the first such region (1). There are other designations that are less common such as US GovCloud, and those associated with AWS China, but the general naming convention can provide you with helpful context as you use AWS."
+
+Fighting Latency
+----------------
+
