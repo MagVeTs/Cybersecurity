@@ -40,5 +40,16 @@ AWS account:
 - designated by a unique non-reusable 12-digit number, the Account ID
 - acts as a security boundary by working with AWS Identity and Access Management (AWS IAM)
 
+Root User
+----------
+- every account has root user connected with a specific email address
+- a particular email can only be associated with a root user for one AWS account
+- root user is IAM "superuser" with complete administrative permissions over associated AWS account
+- even root users are NOT default MFA enforced; must be deliberately enabled
+- there are tools that can enumerate root user email addresses, e.g.:
+  Quiet Riot
+  https://github.com/righteousgambit/quiet-riot
+  "Unauthenticated enumeration of AWS, Azure, and GCP Principals"
+
 
 
