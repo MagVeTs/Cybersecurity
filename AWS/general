@@ -38,7 +38,7 @@ AWS Account
 AWS account:
 - container for AWS resources
 - designated by a unique non-reusable 12-digit number, the Account ID
-- acts as a security boundary in association with AWS Identity and Access Management (IAM)
+- acts as a security boundary by working with AWS Identity and Access Management (AWS IAM)
 
 
 
