@@ -4,6 +4,8 @@ General
 
 https://tryhackme.com/room/cloud101aws ; Task 4 - More Reliable"
 https://tryhackme.com/room/cloud101aws ; Task 5 - "Distributed Across the World (and in Space)"
+https://tryhackme.com/room/awsbasicconcepts ; Task 2 - "Basic Concept — AWS Account and Root User"
+
 
 Regions and Availability Zones
 -------------------------------
@@ -30,3 +32,13 @@ AWS regions allow geo-distribution of servers. This allows servers to be physica
 AWS provides  CloudFront, the AWS Content Delivery Network (CDN) - "enables intelligent traffic routing and caching for end user requests" - cuts down on latency
 AWS provides DNS service Route53 which "allows customers to route traffic based on traffic geo-location" - cuts down on latency
 AWS provides EC2 Elastic Load Balancers (ELBs) - cuts down on latency
+
+AWS Account
+-----------
+AWS account:
+- container for AWS resources
+- designated by a unique non-reusable 12-digit number, the Account ID
+- acts as a security boundary in association with AWS Identity and Access Management (IAM)
+
+
+
