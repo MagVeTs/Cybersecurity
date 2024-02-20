@@ -5,6 +5,8 @@ General
 https://tryhackme.com/room/cloud101aws ; Task 4 - More Reliable"
 https://tryhackme.com/room/cloud101aws ; Task 5 - "Distributed Across the World (and in Space)"
 https://tryhackme.com/room/awsbasicconcepts ; Task 2 - "Basic Concept — AWS Account and Root User"
+https://tryhackme.com/room/awsbasicconcepts ; Task 5 - "Basic Concept — AWS Organizations"
+https://tryhackme.com/room/awsbasicconcepts ; Task 6 - "Basic Concept — Virtual Private Cloud (VPC)"
 
 
 Regions and Availability Zones
@@ -50,6 +52,49 @@ Root User
   Quiet Riot
   https://github.com/righteousgambit/quiet-riot
   "Unauthenticated enumeration of AWS, Azure, and GCP Principals"
+
+AWS Organizations
+------------------
+* AWS provides a structure (known as an "AWS Organization") to allow large enterprises to manage their many AWS accounts.
+
+* An AWS Organization contains a "parent container" called the "Organization Root"
+
+* The Organization Root can contain many "Organizational Units (OUs)"
+
+* OUs can themselves contain many nested OUs
+
+* OUs can each contain many "AWS Accounts"
+
+* Each AWS Account can contain many "User Accounts"
+
+* An AWS Organization has a primary account to manage the whole AWS Organization; this account is called the "AWS Organization Management Account"
+
+* The AWS Organization Management Account has an assigned role called  "OrganizationAccountAccessRole" which gives it access to any account within its AWS Organization (see https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html)
+
+* Other User Accounts within the AWS Organization can be given privileges that allow them to "switch-role/assume-role" in regards to some of the administrative permissions held by the AWS Organization Management Account, thereby allowing them to perform needed admin duties within the AWS Organization
+
+* The AWS Organization Management Account also hosts the logging capabilities for the whole AWS Organization using the AWS service called CloudTrail Organization Trail.
+
+* The AWS Organization Management Account also hosts SSO capabilities using integrated IdPs like Azure AD or Okta.
+
+* AWS Organizations have AWS Organization Policies (e.g. Service Control Policies [SCPs]) which can be configured to put access and privilege restrictions on OUs and Accounts.
+NOTE: Organization Policies have no control over AWS Organization Management Accounts
+
+Virtual Private Clouds (VPCs)
+-----------------------------
+* Many organizations set up their AWS infrastructure as VPCs: "a software-defined network topology that represents AWS's "traditional" network infrastructure offering for customers. VPCs allow AWS users to restrict the connectivity to sensitive resources designed to be isolated or segmented from other workloads, and critically, from the public internet".
+
+* VPCs often contain:
+
+- Internet gateway - between VPC and internet
+- Egress-only internet gateway - IPv6 IP address allowed to initiate outbound connections to the internet; blocks inbound.
+- Carrier gateways - to telecommunications carrier networks.
+- NAT gateways - Network Address Translation service (NAT) gateways; connect private subnets to services outside VPC
+- DHCP - "by default, all EC2 instances (VMs) in a non-default VPC receive an unresolvable host name assigned by AWS. This can be updated to leverage custom domains." 
+- DNS - "by default, AWS provides DNS resolution to VPCs via the Route 53 Resolver, a global AWS DNS service."
+- Public and Elastic IP addressing -  "AWS maintains over 100 million public IPv4 IP addresses. Many of these addresses can be assigned by customers to specific resources. When using a Public IP address (AWS term), if the associated EC2 instance is stopped, the IP address will be reallocated to AWS, and a new IP address will be assigned if the public EC2 instance is ever restarted. However, with an Elastic IP address, the IP address is allocated to an AWS account ongoing and can be assigned to arbitrary resources as the customer chooses."
+
+
 
 
 
