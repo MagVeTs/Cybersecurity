@@ -7,7 +7,7 @@ https://tryhackme.com/room/cloud101aws ; Task 5 - "Distributed Across the World 
 https://tryhackme.com/room/awsbasicconcepts ; Task 2 - "Basic Concept — AWS Account and Root User"
 https://tryhackme.com/room/awsbasicconcepts ; Task 5 - "Basic Concept — AWS Organizations"
 https://tryhackme.com/room/awsbasicconcepts ; Task 6 - "Basic Concept — Virtual Private Cloud (VPC)"
-
+https://tryhackme.com/room/introductiontoawsiam ; Task 2 - "Introduction to AWS IAM"
 
 Regions and Availability Zones
 -------------------------------
@@ -93,6 +93,35 @@ Virtual Private Clouds (VPCs)
 - DHCP - "by default, all EC2 instances (VMs) in a non-default VPC receive an unresolvable host name assigned by AWS. This can be updated to leverage custom domains." 
 - DNS - "by default, AWS provides DNS resolution to VPCs via the Route 53 Resolver, a global AWS DNS service."
 - Public and Elastic IP addressing -  "AWS maintains over 100 million public IPv4 IP addresses. Many of these addresses can be assigned by customers to specific resources. When using a Public IP address (AWS term), if the associated EC2 instance is stopped, the IP address will be reallocated to AWS, and a new IP address will be assigned if the public EC2 instance is ever restarted. However, with an Elastic IP address, the IP address is allocated to an AWS account ongoing and can be assigned to arbitrary resources as the customer chooses."
+
+IAM (Identification and Access Management)
+------------------------------------------
+- Recognizes IAM Users and IAM Roles
+- IAM Users = "combine authentication, identity, and authorization into a single unit"
+- IAM Roles =  "typically delegate the authentication and identity to another system and primarily manage authorization"
+
+ARN (Amazon Resource Name)
+--------------------------
+-  IDs a resource uniquely across the entirety of AWS
+- used for identifying a resource in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, API calls, etc.
+- ARN made up of AWS Region, AWS Account ID, Service, and resource identifiers such as the resource name
+- ARN structure cheat sheet (from: https://towardsthecloud.com/amazon-resource-names-arns):
+
+arn:partition:service:region:account-id:resource-id
+arn:partition:service:region:account-id:resource-type/resource-id
+arn:partition:service:region:account-id:resource-type:resource-id
+
+partition – is the location where the resource is located. The available options are: aws, aws-cn and aws-us-gov.
+service – is the AWS service name that’s being used as a reference. For the ARN format, you need to use the service prefix name (see 2nd column in the table at: https://towardsthecloud.com/amazon-resource-names-arns).
+region – is the region that’s being used in your AWS account for the deployment of your AWS services/resources e.g. eu-central-1 for the data center in Frankfurt.
+account-id – is the ID of the AWS account that owns the resource, this typically consists of 12 numbers, and here are instructions on how to find it on your account: https://towardsthecloud.com/find-aws-account-id.
+resource-id – is a unique identifier to distinguish multiple resources from the same AWS resource.
+resource-type – AWS Services contain different types of resources, hence the resource type attribute. This lets you specify the resource in a more granular detail e.g. the service Amazon EC2 has a resource type called VPC.
+
+
+
+
+
 
 
 
