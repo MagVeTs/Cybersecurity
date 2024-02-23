@@ -137,7 +137,9 @@ IAM Identities aka IAM Principals
 - Each IAM Role has its own "AssumeRoleTrust Policy" that dictates what Principals can assume that role
 
 
-
+IAM Groups
+----------
+* IAM Users can be added to IAM Groups and permissions can be set for the group which are then inherited by all users that are member of that group
 
 
 
