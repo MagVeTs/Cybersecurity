@@ -1,6 +1,15 @@
 ------------------------------------------------------------------------
 AWS CLI 
 --------
+
+------------------------------------------------------------------------
+from: https://tryhackme.com/room/iamprincipals ; Task 5 - "Root User & AWS Account"
+* IAM Users cannot see the root email address of the account they are in
+* If the AWS Account is part of a greater AWS Organization the email of the Organization's Master Account can be found from the CLI:
+
+> aws organizations describe-organization
+
+------------------------------------------------------------------------
 S3 syntax:
 
 * aws s3 ls s3://<url> 
