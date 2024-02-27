@@ -150,5 +150,13 @@ IAM Policies - attached to IAM Principal; define resources upon which principal 
 Resource Policies - attached to Resource; define Principals allowed to act on Resource
 Service Control Policies (SCP)- set by AWS Organizations; sit outside AWS Accounts; part of an organization's Mangement Account; apply to all users in accounts including root users; used to prevent disabling of logging or other problematic actions
 
+IAM Credentials
+---------------
+Root
+- root account; enjoying all privileges
+- Note: for accounts created through AWS Organizations using API call CreateAccount the root password will be randomly generated and not viewable; in orser to login as root the password must first be reset
+- to login as root or to reset the root password, visit: https://signin.aws.amazon.com/signin ;from there one can choose to login as root or as a regular IAM User
+
+
 
 
