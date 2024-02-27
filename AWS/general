@@ -10,6 +10,7 @@ https://tryhackme.com/room/awsbasicconcepts ; Task 6 - "Basic Concept — Virtua
 https://tryhackme.com/room/introductiontoawsiam ; Task 2 - "Introduction to AWS IAM"
 https://tryhackme.com/room/iamprincipals
 https://tryhackme.com/room/iampermissions
+https://tryhackme.com/room/resourcepoliciesscps
 
 Regions and Availability Zones
 -------------------------------
@@ -142,7 +143,10 @@ IAM Groups
 ----------
 * IAM Users can be added to IAM Groups and permissions can be set for the group which are then inherited by all users that are member of that group
 
-
+IAM Policies vs. Resource Policies
+-----------------------------------
+IAM Policies - attached to IAM Principal; define resources upon which principal can act
+Resource Policies - attached to Resource; define Principals allowed to act on Resource
 
 
 
