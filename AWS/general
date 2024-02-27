@@ -147,7 +147,7 @@ IAM Policies vs. Resource Policies vs. Service Control Policies (SCPs)
 -----------------------------------------------------------------------
 IAM Policies - attached to IAM Principal; define resources upon which principal can act
 Resource Policies - attached to Resource; define Principals allowed to act on Resource
-Service Control Policies (SCP)- 
+Service Control Policies (SCP)- set by AWS Organizations; sit outside AWS Accounts; part of an organization's Mangement Account; apply to all users in accounts including root users; used to prevent disabling of logging or other problematic actions
 
 
 
