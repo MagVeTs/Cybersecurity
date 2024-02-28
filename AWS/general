@@ -164,7 +164,7 @@ AWS Access Keys
 
 - two types of access keys:
 
-1) Long-term Keys
+1) Long Term Access Keys
 - begin with the string `AKIA` (Access Key ID)
 - contain: Access Key ID and Secret Access Key
 - do not expire; best practice is to rotate them on a regular basis
@@ -176,7 +176,7 @@ AWS Access Keys
 - created in AWS Console or AWS CLI:
 user@machine$ aws iam create-access-key --user-name <USER_NAME>
 
-2) Session Keys
+2) Temporary Session Keys
 - begin with the string `ASIA` (Access Key ID)
 - contain: Access Key ID, Secret Access Key, and Session Token
 - have expiration date
