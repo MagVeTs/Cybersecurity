@@ -22,8 +22,27 @@ add:
 --profile <your_profile_name>
 --no-sign-request [in order to access publicly accessible S3 buckets]
 -------------------------------------------------------------------------
-my-arsenal-of-aws-security-tools
-https://github.com/toniblyx/my-arsenal-of-aws-security-tools
-"List of open source tools for AWS security: defensive, offensive, auditing, DFIR, etc."
-[includes a list of a lot of offensive tools]
-[hat tip: YS]
+
+AWS Access Keys
+[from: https://tryhackme.com/room/iamcredentials ; Task 5 - "AWS API Access Key"]
+
+NOTE: the Access Key ID for Long Term Access Keys always begin with the string `AKIA`.
+
+user@machine$ aws iam create-access-key --user-name student
+# create Long Term AWS Access Key
+
+user@machine$ aws iam update-access-key --access-key-id <AKIA...> --status Inactive
+# deactivate Long Term AWS Access Key
+
+user@machine$ aws iam update-access-key --access-key-id <AKIA...> --status Active
+# reactivate Long Term AWS Access Key
+
+user@machine$ aws iam delete-access-key --access-key-id <AKIA...>
+# delete Long Term AWS Access Key
+
+user@machine$ aws sts get-session-token
+# create Temporary Session key
+
+
+
+
