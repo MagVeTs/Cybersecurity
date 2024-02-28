@@ -157,6 +157,12 @@ Root
 - Note: for accounts created through AWS Organizations using API call CreateAccount the root password will be randomly generated and not viewable; in orser to login as root the password must first be reset
 - to login as root or to reset the root password, visit: https://signin.aws.amazon.com/signin ;from there one can choose to login as root or as a regular IAM User
 
+AWS Access Keys
+----------------
+- access keys are used to interact with AWS API
+- AWS Console also uses access keys on its backend
+- two types of access keys:
+* 
 
 
 
