@@ -44,8 +44,27 @@ user@machine$ aws sts get-session-token
 # create Temporary Session key
 
 -------------------------------------------------------------------------
- reconnaissance
+Reconnaissance
+---------------
+
 user@machine$ aws sts get-access-key-info --access-key-id <AKIA...>
-# for reconnaissance; identify an AWS Account from an Access Key ID that was found somewhere (e.g. in a GitHub repository)
+# identify an AWS Account from an Access Key ID that was found somewhere (e.g. in a GitHub repository)
+[from: https://tryhackme.com/room/iamcredentials ; Task 6 - "MFA in AWS and Best Practices around Credentials"]
+
+user@machine$ aws iam list-virtual-mfa-devices
+# check from within an account which users in the account have MFA enabled
+[from: https://tryhackme.com/room/iamcredentials ; Task 6 - "MFA in AWS and Best Practices around Credentials"; hint to the 1st question]
+-------------------------------------------------------------------------
+Credentials
+--------------
+user@machine$ curl 169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+# to retrieve ECS Container's credentials; "$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is populated if IAM Roles for Tasks is configured"
+[from: https://tryhackme.com/room/iamcredentials ; Task 7 - "How services get credentials"]
+
+user@machine$ curl $AWS_CONTAINER_CREDENTIALS_FULL_URI -H "X-aws-ec2-metadata-token: $AWS_CONTAINER_AUTHORIZATION_TOKEN" 
+# get temporary credentials through CloudShell
+[from: https://tryhackme.com/room/iamcredentials ; Task 7 - "How services get credentials"]
+
+
 
 
