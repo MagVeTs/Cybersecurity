@@ -43,6 +43,9 @@ user@machine$ aws iam delete-access-key --access-key-id <AKIA...>
 user@machine$ aws sts get-session-token
 # create Temporary Session key
 
-
+-------------------------------------------------------------------------
+ reconnaissance
+user@machine$ aws sts get-access-key-info --access-key-id <AKIA...>
+# for reconnaissance; identify an AWS Account from an Access Key ID that was found somewhere (e.g. in a GitHub repository)
 
 
