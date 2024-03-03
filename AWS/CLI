@@ -68,30 +68,29 @@ user@machine$ curl $AWS_CONTAINER_CREDENTIALS_FULL_URI -H "X-aws-ec2-metadata-to
 -------------------------------------------------------------------------
 [from: https://tryhackme.com/room/stscredentialslab]
 
+Creating a User; Adding the User to a Group; Creating an Access Key for the User by which the User can authenticate throught the AWS API
+
+
 user@machine$ aws iam create-user --user-name <USER_NAME>
-# create a user 
+# create a user (AWS CloudShell CLI)
 
 user@machine$ aws iam add-user-to-group --user-name <USER_NAME> --group-name <GROUP_NAME>
-# add user to a group
+# add user to a group (AWS CloudShell CLI)
 
 user@machine$ aws iam list-groups-for-user --user-name <USER_NAME>
-# list groups to which a user belongs
+# list groups to which a user belongs (AWS CloudShell CLI)
+
+user@machine$ aws iam create-access-key --user-name <USER_NAME>
+# create an Access Key for a user (AWS CloudShell CLI)
+
+user@machine$ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+user@machine$ export AWS_ACCESS_KEY_ID=AKIA...
+# these commands issued on the Attack Box allow it to connect to the associated AWS account using the AWS API
+
+user@machine$ aws sts get-caller-identity
+# this command issued on the Attack Box after inputting the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID will return the current AWS IAM User (it is for AWS what `whoami` is for Linux)
 
 
-{
-    "User": {
-        "Path": "/",
-        "UserName": "padawan",
-        "UserId": "AIDAVRGZZ7FGI2FZZX634",
-        "Arn": "arn:aws:iam::380561389900:user/padawan",
-        "CreateDate": "2024-03-03T20:25:10+00:00"
-    }
-"Groups": [
-        {
-            "Path": "/",
-            "GroupName": "padawans",
-            "GroupId": "AGPAVRGZZ7FGOIHQVD3OC",
-            "Arn": "arn:aws:iam::380561389900:group/padawans",
-            "CreateDate": "2024-03-02T21:35:52+00:00"
-        }
+
+
 
