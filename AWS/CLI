@@ -82,5 +82,12 @@ user@machine$ aws iam add-user-to-group --user-name <USER_NAME> --group-name <GR
         "Arn": "arn:aws:iam::380561389900:user/padawan",
         "CreateDate": "2024-03-03T20:25:10+00:00"
     }
-
+"Groups": [
+        {
+            "Path": "/",
+            "GroupName": "padawans",
+            "GroupId": "AGPAVRGZZ7FGOIHQVD3OC",
+            "Arn": "arn:aws:iam::380561389900:group/padawans",
+            "CreateDate": "2024-03-02T21:35:52+00:00"
+        }
 
