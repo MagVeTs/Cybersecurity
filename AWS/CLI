@@ -65,6 +65,22 @@ user@machine$ curl $AWS_CONTAINER_CREDENTIALS_FULL_URI -H "X-aws-ec2-metadata-to
 # get temporary credentials through CloudShell
 [from: https://tryhackme.com/room/iamcredentials ; Task 7 - "How services get credentials"]
 
+-------------------------------------------------------------------------
+[from: https://tryhackme.com/room/stscredentialslab]
 
+user@machine$ aws iam create-user --user-name <USER_NAME>
+# create a user 
+
+user@machine$ aws iam add-user-to-group --user-name <USER_NAME> --group-name <GROUP_NAME>
+# add user to a group
+
+{
+    "User": {
+        "Path": "/",
+        "UserName": "padawan",
+        "UserId": "AIDAVRGZZ7FGI2FZZX634",
+        "Arn": "arn:aws:iam::380561389900:user/padawan",
+        "CreateDate": "2024-03-03T20:25:10+00:00"
+    }
 
 
