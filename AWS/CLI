@@ -74,6 +74,10 @@ user@machine$ aws iam create-user --user-name <USER_NAME>
 user@machine$ aws iam add-user-to-group --user-name <USER_NAME> --group-name <GROUP_NAME>
 # add user to a group
 
+user@machine$ aws iam list-groups-for-user --user-name <USER_NAME>
+# list groups to which a user belongs
+
+
 {
     "User": {
         "Path": "/",
