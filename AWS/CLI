@@ -68,29 +68,46 @@ user@machine$ curl $AWS_CONTAINER_CREDENTIALS_FULL_URI -H "X-aws-ec2-metadata-to
 -------------------------------------------------------------------------
 [from: https://tryhackme.com/room/stscredentialslab]
 
-Creating a User; Adding the User to a Group; Creating an Access Key for the User by which the User can authenticate throught the AWS API
+Creating a User; Adding the User to a Group; Creating an Access Key for the User by which the User can authenticate throught the AWS API; having the user temporarily assume the role of another user
 
 
+1)
 user@machine$ aws iam create-user --user-name <USER_NAME>
 # create a user (AWS CloudShell CLI)
 
+2)
 user@machine$ aws iam add-user-to-group --user-name <USER_NAME> --group-name <GROUP_NAME>
 # add user to a group (AWS CloudShell CLI)
 
+3)
 user@machine$ aws iam list-groups-for-user --user-name <USER_NAME>
 # list groups to which a user belongs (AWS CloudShell CLI)
 
+4)
 user@machine$ aws iam create-access-key --user-name <USER_NAME>
 # create an Access Key for a user (AWS CloudShell CLI)
 
+5)
 user@machine$ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 user@machine$ export AWS_ACCESS_KEY_ID=AKIA...
 # these commands issued on the Attack Box allow it to connect to the associated AWS account using the AWS API
 
+6)
 user@machine$ aws sts get-caller-identity
 # this command issued on the Attack Box after inputting the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID will return the current AWS IAM User (it is for AWS what `whoami` is for Linux)
 
+7)
+user@machine$ aws sts assume-role --role-arn arn:aws:iam::<ACCOUNT_ID_OF_AWS_ACCOUNT>:role/<NAME_OF_ROLE> --role-session-name <NAME_CHOSEN_FOR_THIS_ROLE_ASSuMING_SESSION>
+# this command issued on the Attack Box (assuming the current user [as set in #5] is part of a group that allows him to assume the chosen role) will return temporary credentials (good for 60 minutes) that will be inputted in the Attack Box in the next step (#8); the `--role-session-name` is required in order to assist admins with monitoring by providing a name for the session during which a role was assumed
 
+8)
+user@machine$ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
+user@machine$ export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxxxxxxxxxx
+user@machine$ export AWS_SESSION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxx
+# these commands issued on the Attack Box will grant the user the temporary role requested in the previous step (#7)
 
+9)
+user@machine$ aws sts get-caller-identity
+# this command issued on the Attack Box should show the role that was temporarily assumed
 
 
