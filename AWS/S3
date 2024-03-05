@@ -1,4 +1,16 @@
 S3 Buckets
 -----------
 
+from: https://tryhackme.com/room/awss3service
 
+* S3 Buckets store files which are called "objects'
+* files can be stored hierarchically in one S3 bucket by using the forward slash (/) character to create nested folders
+* permissions can be configured to access a bucket; the most basic permissions are:
+  - s3:GetObject = Read permission
+  - s3:PutObject = Write permission
+* permissions can be granted to a whole bucket, a folder, or an individual object
+* buckets may have "object versioning" enabled; this means that any new versions of an object that are placed in the bucket manifest as a new additional object while the previous version also remains in the bucket and is not overwritten
+* buckets are default encrypted
+* Access Control Lists (ACLs) - there was an original syntax for controlling access to buckets; it has been deprecated but many older buckets still have them in place
+* there is a more human readable "bucket policy" syntax that is presently used to create an Access Control List to control access to a bucket
+* there is a danger with both the old and new syntax for the ACL that it could be written in a way that would grant access to any one with an AWS account or even anyone at all
