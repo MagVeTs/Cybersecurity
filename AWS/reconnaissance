@@ -5,6 +5,7 @@ Reconnaissance
 S3 Buckets
 ----------------------------
 from: https://tryhackme.com/room/awss3service ; Task 5 - "Lab: Identifying Misconfigured CloudFront Distributions"
+from: https://tryhackme.com/room/awss3service ; Task 6 - "Lab: Attacking Public S3 Buckets"
 
 1)
 AWS provides a URL that is publicly accessible with the contents of each bucket (buckets can, of course, be made non-public and since 2018 are default private).
