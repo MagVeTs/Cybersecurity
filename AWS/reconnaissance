@@ -1,0 +1,42 @@
+Reconnaissance
+---------------
+
+
+S3 Buckets
+----------------------------
+from: https://tryhackme.com/room/awss3service ; Task 5 - "Lab: Identifying Misconfigured CloudFront Distributions"
+
+1)
+AWS provides a URL that is publicly accessible with the contents of each bucket (buckets can, of course, be made non-public).
+
+Public S3 buckets naming conventions:
+
+http://s3.amazonaws.com/bucket/key (for a bucket created in the US East (N. Virginia) region)
+https://s3.amazonaws.com/bucket/key
+http://s3-region.amazonaws.com/bucket/key
+https://s3-region.amazonaws.com/bucket/key
+http://s3.region.amazonaws.com/bucket/key
+https://s3.region.amazonaws.com/bucket/key
+http://s3.dualstack.region.amazonaws.com/bucket/key (for requests using IPv4 or IPv6)
+https://s3.dualstack.region.amazonaws.com/bucket/key
+http://bucket.s3.amazonaws.com/key
+http://bucket.s3-region.amazonaws.com/key
+http://bucket.s3.region.amazonaws.com/key
+http://bucket.s3.dualstack.region.amazonaws.com/key (for requests using IPv4 or IPv6)
+http://bucket.s3-website.region.amazonaws.com/key (if static website hosting is enabled on the bucket)
+http://bucket.s3-accelerate.amazonaws.com/key (where the filetransfer exits Amazon's network at the last possible moment so as to give the fastest possible transfer speed and lowest latency)
+http://bucket.s3-accelerate.dualstack.amazonaws.com/key
+http://bucket/key (where bucket is a DNS CNAME record pointing to bucket.s3.amazonaws.com)
+https://access_point_name-account ID.s3-accesspoint.region.amazonaws.com (for requests via an access point granting restricted access to a bucket)
+[Source: Wikipedia]
+
+2)
+Companies often use the following naming conventions for S3 buckets:
+
+assets.{domain_name}.com.s3.amazonaws.com/
+
+{org_name}-prod.s3.amazonaws.com/
+
+
+Google Search example:
+org: bestcloudcompany site: s3.amazonaws.com
