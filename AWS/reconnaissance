@@ -37,6 +37,24 @@ assets.{domain_name}.com.s3.amazonaws.com/
 
 {org_name}-prod.s3.amazonaws.com/
 
+3)
+Keeping in mind the naming conventions mentioned in #2 and that search engines (e.g. Google) index the s3.amazonaws.com subdomain, one can use the following search to locate an index of a public S3 bucket:
 
 Google Search example:
 org: bestcloudcompany site: s3.amazonaws.com
+
+
+4)
+Another place to find an orgs S3 buckets is in the sourcecode of their website.
+One may find refs to S3 buckets embedded to provide images or other static content or there may be embedded Javascript scripts that point to S3 buckets.
+One can peruse the sourcecode in the developer's view of the website or use the follwoing tools to scan the site:
+* https://github.com/GerbenJavado/LinkFinder
+* https://github.com/w9w/JSA
+* https://github.com/lc/subjs
+
+5)
+In general, use the `nslookup` command against domains, subdomains, and IPs to find AWS resources. The site: https://crt.sh/ is also helpful in discovering subdomains as is subdomain discovery tools such as ffuf. Once located these subdomains can be converted into the known S3 naming conventions and then searched for in `nslookup` or searched for in Google using the syntax mentioned in #3.
+
+
+
+
