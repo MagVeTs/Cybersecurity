@@ -1,7 +1,8 @@
 ------------------------------------------------------------------------
 AWS CLI 
 --------
-
+* AWS provides a CLI within its console interface called CloudShell
+* In addtion the AWS CLI can be installed on diverse devices by following the instructions found here: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ------------------------------------------------------------------------
 from: https://tryhackme.com/room/iamprincipals ; Task 5 - "Root User & AWS Account"
 * IAM Users cannot see the root email address of the account they are in
@@ -109,5 +110,7 @@ user@machine$ export AWS_SESSION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxx
 9)
 user@machine$ aws sts get-caller-identity
 # this command issued on the Attack Box should show the role that was temporarily assumed
-
+----------------------------------------------------------------------------------------------------------------
+Once a public S3 bucket is identified it can be dumped using the following command from your Attack Box:
+kali@kali$ aws s3 sync s3://{bucket-name} . --no-sign-request
 
