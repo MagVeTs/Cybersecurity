@@ -117,6 +117,12 @@ Dumping a public S3 Bucket
 Once a public S3 bucket is identified it can be dumped using the following command from your Attack Box:
 kali@kali$ aws s3 sync s3://{bucket-name} . --no-sign-request
 # --no-sign-request = no AWS credentials used to sign the request; works when bucket is public
+
+IMPORTANT NOTE: If, for example, the bucket is called "assets.bestcloudcompany.org.s3.amazonaws.com" you would remove the ".s3.amazonaws.com" in the above command; the command would be:
+kali@kali$ aws s3 sync s3://assets.bestcloudcompany.org . --no-sign-request
+[hat tip: Tyler Ramesby ; AWS S3 - Attack and Defense --- [Attacking & Defending AWS - TryHackMe - Part 10] ; https://www.youtube.com/watch?v=-ctOmHsAnlw]
+
+
 [from: https://tryhackme.com/room/awss3service ; Task 6 - "Lab: Attacking Public S3 Buckets"]
 ----------------------------------------------------------------------------------------------------------------
 
