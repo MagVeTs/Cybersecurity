@@ -58,5 +58,5 @@ In general, use the `nslookup` command against domains, subdomains, and IPs to f
 
 6) Once a public S3 bucket is identified it can be dumped using the following command from your Attack Box (after configuring the AWS CLI on the box, see here: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 kali@kali$ aws s3 sync s3://{bucket-name} . --no-sign-request
-
+# --no-sign-request = no AWS credentials used to sign the request; works when bucket is public
 
