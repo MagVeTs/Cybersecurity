@@ -140,3 +140,9 @@ also see:
 https://www.kali.org/tools/amass/
 https://securitytrails.com/blog/owasp-amass
 https://medium.com/hacker-toolbelt/owasp-amass-osint-reconnaissance-9b57d81fb958]
+----------------------------------------------------------
+Security Headers
+https://securityheaders.com/
+https://scotthelme.co.uk/hardening-your-http-response-headers/
+- scans websites' security related http response headers and grades the site based on the configuration; flags what needs to be remediated
+----------------------------------------------------------
