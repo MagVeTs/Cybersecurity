@@ -1,0 +1,24 @@
+EC2
+---
+
+
+Connecting to an EC2 to Administrate It
+----------------------------------------
+
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 4 - "Connecting to your EC2 Instance"]
+
+SSH 
+----
+- used from Linux machines; use public/private key pair created during creation of EC2
+- NOTE: best security practice is to place EC2 server in private subnet without public IP address. In such cases, in order to connect using SSH from another device one would first set up a proxy jump host that is tunneled to the EC2 and has a public IP, then one would connect to the EC2 by way of the jump host. Another option is to set up a VPN.
+
+RDP
+----
+- used from Windows machines
+- the SSH Key is needed to decrypt the Administrator Password; this is then used to sign in using RDP (Remote Desktop Protocol)
+
+EC2 Connect
+------------
+- a newer AWS service called EC2 Instance Connect can be used
+- it is a browser-based ssh interface 
+- it uses temporary SSH public/private key pairs deployed by an agent using AWS IAM Permissions.
