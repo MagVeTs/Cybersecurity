@@ -1,7 +1,7 @@
 EC2
 ---
 
-
+------------------------------------------------------------------------------------------------------------
 Connecting to an EC2 to Administrate It
 ----------------------------------------
 
@@ -22,3 +22,23 @@ EC2 Connect
 - a newer AWS service called EC2 Instance Connect can be used
 - it is a browser-based ssh interface 
 - it uses temporary SSH public/private key pairs deployed by an agent using AWS IAM Permissions.
+
+
+AWS SSM
+-------
+
+EC2 Serial Console
+-------------------
+
+Summary of the major ways to connect to an EC2 Instance
+Method	        Requires Direct Network Access	Requires Agent	Requires EC2 IAM Permissions
+Direct SSH/RDP	          YES	                        NO	                    NO
+EC2 Instance Connect	    YES	                        YES                     NO
+                                              (Installed on amazon linux2)	    
+SSM Run Command	           NO	                        YES	                    YES
+SSM Session Manager	       NO	                        YES	                    YES
+EC2 Serial Console	       NO	                        NO                      NO
+                                         (but users must have a password set)
+------------------------------------------------------------------------------------------------------------
+
+
