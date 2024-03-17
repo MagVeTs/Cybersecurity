@@ -41,4 +41,44 @@ EC2 Serial Console	       NO	                        NO                      NO
                                          (but users must have a password set)
 ------------------------------------------------------------------------------------------------------------
 
+EC2 instances connecting to services using Instance MetaDataService (IMDS)
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 5 - "Instance Permissions"]
+
+
+- EC2 instances can connect to services using IMDS which listens on 169.254.169.254 and is a component of AWS Hypervisor
+CLI commands using EC2 Instance Console to connect to the instance and work with its IMDS:
+
+user@machine$ role_name=$( curl -s http://169.254.169.254/latest/meta-data/iam/security-credentials/ )
+user@machine$ echo "Role Name is $role_name"
+# gets the role name; stores role name in environment variable role_name; and echoes out role name
+
+user@machine$ curl -s http://169.254.169.254/latest/meta-data/iam/security-credentials/${role_name}
+# request session credentials for role
+
+user@machine$ instance_id=$( curl -s http://169.254.169.254/latest/meta-data/instance-id )
+user@machine$ echo "My Instance ID is $instance_id"
+user@machine$ aws ec2 modify-instance-metadata-options --instance-id $instance_id --http-tokens required --region us-east-1
+# enable IMDSv2 (safer than IMDSv1); require token to call instance metadata
+
+user@machine$ TOKEN=`curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+user@machine$ echo $TOKEN
+# get the token; token set for 21,600 seconds = 6 hours
+
+user@machine$ role_name=$( curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/iam/security-credentials/ )
+user@machine$ echo "Role Name is $role_name"
+user@machine$ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/iam/security-credentials/${role_name}
+# get credentials
+# `-H "X-aws-ec2-metadata-token: $TOKEN"` = "adds a custom header to your HTTP call. This makes it much more difficult to leverage standard SSRF exploits to access and exfiltrate AWS credentials via the IMDS."
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
