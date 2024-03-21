@@ -70,15 +70,24 @@ user@machine$ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.2
 # get credentials
 # `-H "X-aws-ec2-metadata-token: $TOKEN"` = "adds a custom header to your HTTP call. This makes it much more difficult to leverage standard SSRF exploits to access and exfiltrate AWS credentials via the IMDS."
 ------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 6 - "EC2 Networking & Storage"]
 
+EC2 Networking
+---------------
+ * EC2 Networking makes use of the Elastic Network Interface (ENI)
+* Each EC2 Instances has an ENI ; it is possible to configure multiple ENIs for an instance (used as a network device between two subnets, to add network capacity, or to provide a failover)
+* Each ENI has at least one Security Group to define what IP source addresses, ports, and protocols may communicate with ENI
+* By AWS Network Security default EC2's can only recieve traffic addressed to their IP; they can only send traffic originating in their IP; in order to use an EC2 as NAT/firewall/router disable this default check of source/destination
 
+[in: AWS CLI / CloudShell]
+$ aws ec2 describe-network-interfaces | jq '.NetworkInterfaces[0]'
+# helps understand netwotk topology outputs info re network interfaced; e.g. public IP, Private IP, and name/ID of Security Group, Subnet, and VPC
 
+------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 6 - "EC2 Networking & Storage"]
 
-
-
-
-
-
+EC2 Storage
+---------------
 
 
 
