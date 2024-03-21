@@ -87,7 +87,12 @@ $ aws ec2 describe-network-interfaces | jq '.NetworkInterfaces[0]'
 [from: https://tryhackme.com/room/amazonec2attackdefense ; Task 6 - "EC2 Networking & Storage"]
 
 EC2 Storage
----------------
-
-
+------------
+* Amazon Elastic Block Store (EBS) provides hard disk storage for EC2 Instances
+* hard disks are called EBS Volumes and may be SSD, HDD, or IOPS; available capacity: 1GB - 64TB
+* EBS Volumes provide snapshotting; used for backup and sharing; EBS Snapshots stored in Amazon S3 Buckets to save money
+* some types of EC2 instances can have ephemeral storage; these use SSD drives present in the device; ephemeral storage automatically erased on reboot; snapshots cannot be stored on ephemeral storage
+* both EBS Volumes and Snapshots are able to be encrypted; different types of KMS Encryption is available
+* EBS Snapshots able to be shared across AWS Accounts 
+* Note: danger exists that they may contain sensitive data, source code, or secrets
 
