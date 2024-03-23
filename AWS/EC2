@@ -134,11 +134,30 @@ $ sudo mount /dev/nvme1n1 /snapshot-recovery
 $ ls /snapshot-recovery
 # now the volume can be searched for secrets
 ------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 7 - "EC2 Configuration"]
 
 
+[command issued from CloudShell]
+$ aws ec2 describe-images --owners 019181489476
+# see a list of Amazon Machine Images (AMIs) available to your account that were configured by the 019181489476 (TryHackme AWS Development) account
+# omitting the `--owners` flag will pull a list of all available AMI's - which will be too big to handle and will time out
 
+------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 7 - "EC2 Configuration"]
 
+EC2 instances can be configured using UserData (which may contain secrets).
+The UserData can be accessed within an instance by going to:
+/var/lib/cloud/instance/scripts/part-001
+as root (sudo or su)
 
+Another way to access the UserData of an instance is to connect to it using EC2 Instance Connect or the SSM Session Manager and to issue the following commands:
+
+[commands issued from EC2 Instance Connect or the SSM Session Manager]
+$  TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+$  instance_id=$( curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/instance-id )
+$  aws ec2 describe-instance-attribute --attribute userData --instance-id $instance_id --region us-east-1 --query UserData --output text  | base64 -d
+#  takes output of `describe-instance-attribute` call; pulls UserData field (--query UserData); pipes through base64 decode to make readable the shell script
+------------------------------------------------------------------------------------------------------------
 
 
 
