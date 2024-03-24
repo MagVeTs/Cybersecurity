@@ -83,6 +83,17 @@ EC2 Networking
 $ aws ec2 describe-network-interfaces | jq '.NetworkInterfaces[0]'
 # helps understand netwotk topology outputs info re network interfaced; e.g. public IP, Private IP, and name/ID of Security Group, Subnet, and VPC
 
+(from ChatGPT, more info on the command:
+"This command utilizes the AWS Command Line Interface (CLI) to describe network interfaces of EC2 instances. Let's break down the components:
+
+- `aws ec2 describe-network-interfaces`: This part of the command instructs the AWS CLI to retrieve information about network interfaces associated with EC2 instances. It communicates with the EC2 service in your AWS account to fetch this information.
+
+- `|`: This symbol is the pipe operator in Unix-like operating systems. It takes the output from the preceding command (`aws ec2 describe-network-interfaces`) and passes it as input to the next command.
+
+- `jq '.NetworkInterfaces[0]'`: This part of the command utilizes `jq`, a lightweight and flexible command-line JSON processor. The command `.NetworkInterfaces[0]` is a filter applied by `jq` to the JSON output received from the previous command. It selects the first element (`[0]`) from the array of network interfaces (`NetworkInterfaces`). Essentially, it extracts information about the first network interface returned by the `aws ec2 describe-network-interfaces` command.
+
+In summary, the entire command fetches information about network interfaces associated with EC2 instances using the AWS CLI and then uses `jq` to filter and extract details about the first network interface from the JSON output. This could be useful for scripting or automation purposes where you want to extract specific information about network interfaces."
+
 ------------------------------------------------------------------------------------------------------------
 [from: https://tryhackme.com/room/amazonec2attackdefense ; Task 6 - "EC2 Networking & Storage"]
 
@@ -124,6 +135,15 @@ $ aws ec2 attach-volume --region <REPLACE-WITH-REGION> --device /dev/sdh --insta
 [in: EC2 Instance Console]
 $ sudo fdisk -l
 # check on new volume; output includes size of volume and name (e.g. /dev/nvme0n1p1)
+
+(from ChatGPT, more info on the command:
+"In the context of AWS CLI, the command sudo fdisk -l doesn't directly interact with AWS services. Instead, it's a Linux command typically used to list the partition tables for all disks on the system. Here's what each part of the command does:
+
+sudo: This command is used to execute another command with elevated privileges, typically requiring administrative permissions. It stands for "superuser do."
+
+fdisk: This is a command-line utility used for disk partitioning. When invoked with the -l option, it lists the partition tables for all disks attached to the system.
+
+So, when you run sudo fdisk -l in the context of AWS CLI, it will display information about the disk partitions on the local EC2 instance. This command does not directly interact with AWS services; rather, it provides information about the local storage configuration of the EC2 instance.")
 
 [in: EC2 Instance Console]
 $ sudo mkdir /snapshot-recovery
