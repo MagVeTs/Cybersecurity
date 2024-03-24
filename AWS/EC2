@@ -157,6 +157,35 @@ $  TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec
 $  instance_id=$( curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/instance-id )
 $  aws ec2 describe-instance-attribute --attribute userData --instance-id $instance_id --region us-east-1 --query UserData --output text  | base64 -d
 #  takes output of `describe-instance-attribute` call; pulls UserData field (--query UserData); pipes through base64 decode to make readable the shell script
+
+
+(Info from ChatGPT that breaks down the commands nicely:
+"These commands are used in conjunction with the AWS Command Line Interface (CLI) to retrieve metadata and user data from an EC2 instance in the AWS cloud. Let's break down each command:
+
+1. `TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")`
+
+   - This command uses the `curl` command-line tool to send an HTTP PUT request to a specific URL (`http://169.254.169.254/latest/api/token`). This URL is a well-known IP address within AWS EC2 instances that provides metadata and other information.
+   - The `-s` option is used to silence the progress output of `curl`.
+   - The `-X PUT` option specifies that the HTTP request method should be PUT.
+   - The `-H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` option sets a custom HTTP header named `X-aws-ec2-metadata-token-ttl-seconds` with a value of `21600`. This header specifies the time to live (TTL) for the token.
+   - The response from this request is expected to contain a token that will be stored in the `TOKEN` variable for later use.
+
+2. `instance_id=$( curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/instance-id )`
+
+   - This command uses the `curl` command-line tool to send an HTTP GET request to another URL (`http://169.254.169.254/latest/meta-data/instance-id`), which is another well-known URL for retrieving instance metadata.
+   - The `-H "X-aws-ec2-metadata-token: $TOKEN"` option sets a custom HTTP header named `X-aws-ec2-metadata-token` with the value of the previously retrieved token stored in the `TOKEN` variable.
+   - The `-s` option is used to silence the progress output of `curl`.
+   - The response from this request is expected to contain the instance ID of the EC2 instance, which will be stored in the `instance_id` variable for later use.
+
+3. `aws ec2 describe-instance-attribute --attribute userData --instance-id $instance_id --region us-east-1 --query UserData --output text | base64 -d`
+
+   - This command uses the AWS CLI (`aws ec2`) to describe an instance attribute called `userData` for the specified instance ID (`$instance_id`).
+   - `--region us-east-1` specifies the AWS region to use (in this case, US East 1). You may need to adjust this to match your region.
+   - `--query UserData --output text` specifies that the output should be in text format and should contain the value of the `UserData` attribute.
+   - The output of the `aws ec2 describe-instance-attribute` command, which is base64 encoded, is then piped (`|`) to the `base64 -d` command, which decodes the base64-encoded user data.
+   - The final output of this command should be the decoded user data associated with the specified EC2 instance.
+
+Overall, these commands are typically used within a script or automation to retrieve instance metadata and user data from within an EC2 instance in the AWS cloud.")
 ------------------------------------------------------------------------------------------------------------
 
 
