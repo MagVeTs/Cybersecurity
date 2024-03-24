@@ -207,6 +207,23 @@ $  aws ec2 describe-instance-attribute --attribute userData --instance-id $insta
 
 Overall, these commands are typically used within a script or automation to retrieve instance metadata and user data from within an EC2 instance in the AWS cloud.")
 ------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2attackdefense ; Task 8 -  "Load Balancers, Launch Configs, and AutoScaling"; rewritten by ChatGPT]
+
+"Many web applications hosted in the cloud are set up to automatically adjust their capacity, a process known as "auto scaling." This means that the application can dynamically increase or decrease the number of server instances it's running based on the current demand. This approach is cost-effective because it allows companies to utilize the cloud provider's surplus resources during peak usage instead of investing in hardware that may only be needed occasionally.
+
+In the realm of EC2 Auto Scaling, there are three main components:
+
+1. Elastic Load Balancers (ELBs) distribute incoming requests among a variable number of instances. They often trigger the addition or removal of instances based on demand.
+2. Launch Configurations contain the specifications needed to create a new instance, such as the Amazon Machine Image (AMI) and instance type.
+3. The Auto Scaling Group (ASG) is responsible for monitoring capacity and managing the creation or termination of instances in response to changes in demand.
+
+From a security standpoint, a few key considerations apply to EC2 Auto Scaling:
+
+- When scaling down, ASGs prioritize terminating the oldest instance. This means that the instance with the longest exposure to potentially untrusted traffic is usually the first to be removed.
+- Only the Load Balancer needs to be publicly accessible. The ELBs handle external traffic and then forward it internally to the EC2 instances using private Virtual Private Cloud (VPC) addressing. As a result, the EC2 instances don't require public IP addresses.
+- Depending on the type of Load Balancer used, it can handle the termination of encrypted TLS connections using the free AWS Certificate Management (ACM) system. Advanced Load Balancers like Application Load Balancers (ALBs) can also be equipped with an AWS Web Application Firewall (WAF), which helps detect and block common layer-7 (application layer) attacks as defined by OWASP (Open Web Application Security Project)."
+------------------------------------------------------------------------------------------------------------
+
 
 
 
