@@ -223,9 +223,11 @@ From a security standpoint, a few key considerations apply to EC2 Auto Scaling:
 - Only the Load Balancer needs to be publicly accessible. The ELBs handle external traffic and then forward it internally to the EC2 instances using private Virtual Private Cloud (VPC) addressing. As a result, the EC2 instances don't require public IP addresses.
 - Depending on the type of Load Balancer used, it can handle the termination of encrypted TLS connections using the free AWS Certificate Management (ACM) system. Advanced Load Balancers like Application Load Balancers (ALBs) can also be equipped with an AWS Web Application Firewall (WAF), which helps detect and block common layer-7 (application layer) attacks as defined by OWASP (Open Web Application Security Project)."
 ------------------------------------------------------------------------------------------------------------
+[from: https://tryhackme.com/room/amazonec2dataexfiltration ; Task 3 - "Phase 1 - Initial Access / Credential Access"]
 
-
-
+aws elbv2 describe-load-balancers --query LoadBalancers[].DNSName --output text
+# after using `aws configure` command to sign-in to a specific AWS account and a particular region within that account
+# list all load balancers in account in chosen region; display only their DNS Name
 
 
 
