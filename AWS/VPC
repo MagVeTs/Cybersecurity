@@ -1,0 +1,9 @@
+[from: https://tryhackme.com/room/attackingdefendingvpcs]
+
+The AWS Virtual Private Cloud (VPC) is a software-defined network structure within your AWS account. It serves to segregate your network traffic from that of other AWS customers, offering a secure and isolated environment. Customers have the flexibility to define their CIDR ranges, establish connections between VPCs, and link VPCs to their on-premises networks.
+
+VPCs are region-specific, necessitating the creation of a VPC in each region where VPC-based workloads are to be deployed. Upon the creation of a new AWS account, default VPCs are automatically provisioned in all standard regions, each utilizing the 172.31.0.0/16 CIDR Range. However, custom VPCs can employ any CIDR range, providing greater flexibility beyond RFC1918 CIDR ranges.
+
+The VPC Dashboard conveniently displays all VPCs, enabling users to monitor VPC activity across different regions. Each VPC is assigned a unique identifier, known as the VPC ID, which starts with "vpc-" and is distinguishable across all AWS accounts. While newer VPC IDs are 17 characters long, older ones retain an eight-character format.
+
+Networking within a VPC differs from traditional on-premises environments due to the software-defined and multi-tenant nature of the public cloud. In VPC environments, conventional networking protocols like ARP are not necessary for device discovery. Although ARP tables remain visible for compatibility with operating system networking stacks, common attack methods such as ARP Spoofing are ineffective within the VPC framework.
