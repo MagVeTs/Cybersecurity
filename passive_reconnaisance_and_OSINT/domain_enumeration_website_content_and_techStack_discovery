@@ -146,3 +146,16 @@ https://securityheaders.com/
 https://scotthelme.co.uk/hardening-your-http-response-headers/
 - scans websites' security related http response headers and grades the site based on the configuration; flags what needs to be remediated
 ----------------------------------------------------------
+In order to see what other domains a particular website reaches out to when it is accessed (e.g. in order to run outside scripts whose code remains in an outside library but is called upon during runtime to provide functionality for the website) follow these steps:
+
+1) Open the Developers Tools interface on the website (https://balsamiq.com/support/faqs/browserconsole/)
+2) Click on the "Network" tab
+3) Enter `DOMAIN:` in the search bar
+4) you will see a list of domains found in the website's code
+[hat tip: RM]
+----------------------------------------------------------
+
+
+
+
+
