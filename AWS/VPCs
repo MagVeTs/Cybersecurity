@@ -1,6 +1,8 @@
 [from: https://tryhackme.com/room/attackingdefendingvpcs]
 
-The AWS Virtual Private Cloud (VPC) is a software-defined network structure within your AWS account. It serves to segregate your network traffic from that of other AWS customers, offering a secure and isolated environment. Customers have the flexibility to define their CIDR ranges, establish connections between VPCs, and link VPCs to their on-premises networks.
+VPCs
+-----
+The AWS Virtual Private Cloud (VPC) is a software-defined network structure within an AWS account. It serves to segregate your network traffic from that of other AWS customers, offering a secure and isolated environment. Customers have the flexibility to define their CIDR ranges, establish connections between VPCs, and link VPCs to their on-premises networks.
 
 VPCs are region-specific, necessitating the creation of a VPC in each region where VPC-based workloads are to be deployed. Upon the creation of a new AWS account, default VPCs are automatically provisioned in all standard regions, each utilizing the 172.31.0.0/16 CIDR Range. However, custom VPCs can employ any CIDR range, providing greater flexibility beyond RFC1918 CIDR ranges.
 
@@ -8,14 +10,50 @@ The VPC Dashboard conveniently displays all VPCs, enabling users to monitor VPC 
 
 Networking within a VPC differs from traditional on-premises environments due to the software-defined and multi-tenant nature of the public cloud. In VPC environments, conventional networking protocols like ARP are not necessary for device discovery. Although ARP tables remain visible for compatibility with operating system networking stacks, common attack methods such as ARP Spoofing are ineffective within the VPC framework.
 
+VPC Subnets
+-----------
 Virtual Private Clouds (VPCs) are comprised of Subnets, with each Subnet confined to a single Availability Zone (AZ). Subnets must adhere to CIDR ranges that are subsets of the VPC CIDR range, and their CIDR ranges cannot overlap.
 
 Every VPC comes equipped with a VPC Router. As per AWS documentation, the VPC includes an implicit router, while route tables dictate the flow of network traffic. Each Subnet within the VPC must be linked to a route table, governing its routing (known as the subnet route table). Subnets can be explicitly associated with specific route tables, or they default to the main route table. Each Subnet can be linked to only one route table at a time, although multiple subnets can share the same subnet route table.
 
+IGW and VGW
+------------
 VPCs feature two notable route destinations: the Internet Gateway (IGW) and the Virtual Private Gateway (VGW). The IGW serves as the interface between the VPC and the internet, while the VGW acts as the interface between the VPC and on-premises networks.
 
 The terms "public subnet" and "private subnet" are often used in reference to VPC Subnets. However, AWS does not explicitly designate subnets as public or private. The distinction lies in how the route table directs traffic to the internet. A subnet with a direct route to the IGW is considered public, allowing resources within it with public IP addresses to be accessible from the internet. Conversely, subnets lacking public IP addresses and routes to the IGW are typically regarded as private. Even if a subnet automatically assigns public IP addresses to EC2 Instances, without a route to the IGW, those instances remain inaccessible from the internet.
 
 In the context of security, attackers may manipulate the route table to reroute traffic to the IGW, potentially circumventing security measures.
 
+Managed NAT Gateways
+---------------------
 AWS provides a service known as Managed NAT Gateways, which are EC2 Instances operated by AWS to facilitate Network Address Translation (NAT). This enables private subnets to connect to the internet. In a typical setup, you would direct traffic with a destination of 0.0.0.0/0 from your private subnet to the NAT Gateway. Meanwhile, for a public subnet, you would configure the route table to route traffic with a destination of 0.0.0.0/0 directly to the Internet Gateway (IGW).
+
+NACLs
+--------
+Network Access Control Lists, abbreviated as NACLs, serve as a firewall mechanism within AWS's VPC framework. NACLs are applied at the subnet level and operate in a stateless manner, meaning both inbound and outbound traffic must be explicitly permitted. These lists offer either Allow or Deny actions, which are evaluated in a predetermined sequence. Unlike IAM, where an explicit Deny supersedes an explicit Allow, NACL rules are sequentially processed until a matching rule is found. By default, NACLs include a Deny All rule.
+
+Due to their subnet-wide application, NACLs can have a significant impact if configured incorrectly, making them less commonly used compared to another form of network access control: security groups. In some cases, a central network security team will configure NACLs to block specific services without exceptions.
+
+Security Groups
+----------------
+Security Groups, on the other hand, are associated with individual resources like EC2 Instances or RDS Databases. They exclusively support allowance rules and operate in a stateful manner, featuring distinct rule sets for inbound (Ingress) and outbound (Egress) traffic.
+
+Security Groups serve as the primary method for managing network-level access to resources. They have the capability to reference either a CIDR range as a source or another Security Group ID. When a Security Group is referenced, any Elastic Network Interface (ENI) attached to that Security Group becomes a valid source for traffic.
+
+Security Groups vs NACLs
+-------------------------
+Below is a table provided by AWS (https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison) that outlines the distinctions between Security Groups and NACLs:
+
+Security Group:
+- Functions at the instance level.
+- Exclusively supports allow rules.
+- Operates in a stateful manner: Return traffic is automatically permitted, regardless of specific rules.
+- All rules are assessed prior to determining traffic allowance.
+- Applies to an instance only if the security group is designated during instance launch or later associated with the instance.
+
+Network ACL:
+- Functions at the subnet level.
+- Supports both allow and deny rules.
+- Operates in a stateless manner: Return traffic necessitates explicit allowance via rules.
+- Rules are processed sequentially, beginning with the lowest numbered rule, to determine traffic allowance.
+- Automatically applies to all instances within associated subnets, offering an additional layer of defense if security group rules are overly permissive.
