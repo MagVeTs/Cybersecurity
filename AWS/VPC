@@ -7,3 +7,15 @@ VPCs are region-specific, necessitating the creation of a VPC in each region whe
 The VPC Dashboard conveniently displays all VPCs, enabling users to monitor VPC activity across different regions. Each VPC is assigned a unique identifier, known as the VPC ID, which starts with "vpc-" and is distinguishable across all AWS accounts. While newer VPC IDs are 17 characters long, older ones retain an eight-character format.
 
 Networking within a VPC differs from traditional on-premises environments due to the software-defined and multi-tenant nature of the public cloud. In VPC environments, conventional networking protocols like ARP are not necessary for device discovery. Although ARP tables remain visible for compatibility with operating system networking stacks, common attack methods such as ARP Spoofing are ineffective within the VPC framework.
+
+Virtual Private Clouds (VPCs) are comprised of Subnets, with each Subnet confined to a single Availability Zone (AZ). Subnets must adhere to CIDR ranges that are subsets of the VPC CIDR range, and their CIDR ranges cannot overlap.
+
+Every VPC comes equipped with a VPC Router. As per AWS documentation, the VPC includes an implicit router, while route tables dictate the flow of network traffic. Each Subnet within the VPC must be linked to a route table, governing its routing (known as the subnet route table). Subnets can be explicitly associated with specific route tables, or they default to the main route table. Each Subnet can be linked to only one route table at a time, although multiple subnets can share the same subnet route table.
+
+VPCs feature two notable route destinations: the Internet Gateway (IGW) and the Virtual Private Gateway (VGW). The IGW serves as the interface between the VPC and the internet, while the VGW acts as the interface between the VPC and on-premises networks.
+
+The terms "public subnet" and "private subnet" are often used in reference to VPC Subnets. However, AWS does not explicitly designate subnets as public or private. The distinction lies in how the route table directs traffic to the internet. A subnet with a direct route to the IGW is considered public, allowing resources within it with public IP addresses to be accessible from the internet. Conversely, subnets lacking public IP addresses and routes to the IGW are typically regarded as private. Even if a subnet automatically assigns public IP addresses to EC2 Instances, without a route to the IGW, those instances remain inaccessible from the internet.
+
+In the context of security, attackers may manipulate the route table to reroute traffic to the IGW, potentially circumventing security measures.
+
+AWS provides a service known as Managed NAT Gateways, which are EC2 Instances operated by AWS to facilitate Network Address Translation (NAT). This enables private subnets to connect to the internet. In a typical setup, you would direct traffic with a destination of 0.0.0.0/0 from your private subnet to the NAT Gateway. Meanwhile, for a public subnet, you would configure the route table to route traffic with a destination of 0.0.0.0/0 directly to the Internet Gateway (IGW).
