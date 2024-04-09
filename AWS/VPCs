@@ -57,3 +57,53 @@ Network ACL:
 - Operates in a stateless manner: Return traffic necessitates explicit allowance via rules.
 - Rules are processed sequentially, beginning with the lowest numbered rule, to determine traffic allowance.
 - Automatically applies to all instances within associated subnets, offering an additional layer of defense if security group rules are overly permissive.
+
+Resource Location - Security Aspects
+-------------------------------------
+A crucial aspect of securing your AWS environment involves understanding the location of resources—whether they reside inside or outside a Virtual Private Cloud (VPC). Examples of services within a VPC include EC2 Instances, RDS Databases, and data warehouses like RedShift. Conversely, S3 Buckets and the AWS NoSQL Database DynamoDB are examples of resources situated outside the VPC. Resources within a VPC can be safeguarded using NACLs and Security Groups, enabling control over direct access. Resources outside the VPC, however, rely solely on IAM for protection.
+
+Elastic Network Interface (ENI) and Security Groups
+----------------------------------------------------
+Each resource within a VPC possesses an Elastic Network Interface (ENI) [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html], serving as a virtual network card within the VPC. ENIs can be attached to, detached from, and migrated between instances, often facilitating high-availability failover scenarios. Representing a DHCP lease from the VPC's DHCP server, ENIs may also feature a public IPv4 address if configured accordingly. While ENIs are associated with specific subnets, they can bridge an EC2 Instance across two subnets within the same availability zone.
+
+Security Groups are linked to ENIs, providing a comprehensive view of VPC resources by listing all associated ENIs within an account. This information can be accessed via the EC2 Console or the AWS CLI Command, utilizing the following command:
+$ aws ec2 describe-network-interfaces
+
+VPC Endpoints and AWS PrivateLink
+-----------------------------------
+To facilitate communication between resources inside a VPC and specific resources outside the VPC, AWS provides two interconnected services: VPC Endpoints and AWS PrivateLink [https://aws.amazon.com/privatelink/?privatelink-blogs.sort-by=item.additionalFields.createdDate&privatelink-blogs.sort-order=desc]. These services empower network or security teams to restrict or entirely eliminate internet egress within a VPC.
+
+Initially introduced alongside the Amazon S3 service, VPC Endpoints alleviate the need for machines in a private subnet to rely on a NatGateway for accessing S3. NatGateways impose a 1GB/s network limitation and can incur significant costs. Prior to VPC Endpoints, architects were compelled to expose machines requiring high-bandwidth operations to the internet to access S3. VPC Endpoints seamlessly integrate with S3 and DynamoDB.
+
+To implement VPC Endpoints, a route must be added to the VPC Route Table. This route's destination is an abstract representation of the service, referred to as a Managed Prefix List [https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html], rather than a specific CIDR Range.
+
+AWS employs Prefix Lists to map AWS CIDR Ranges into your VPC, simplifying the management of public IP addresses without necessitating alterations to VPC Route tables or security groups. You can view the CIDR Ranges for various services using the command:
+$ aws ec2 describe-prefix-lists
+
+VPC Endpoints have the capability to utilize IAM to restrict their usage to particular S3 Buckets or DynamoDB Tables. Nevertheless, an attacker could exploit a VPC endpoint to illicitly transfer data from a VPC. They would accomplish this by adding a VPC endpoint and using it to exfiltrate data from the VPC into an S3 bucket that they control.
+
+VPC PrivateLink functions as an Elastic Network Interface (ENI) within your VPC, linked to either an AWS Service or another AWS Customer. It serves as a means for AWS or its partners to deliver services to AWS customers without necessitating the allowance of traffic to the internet.
+
+DNS
+----
+AWS offers several services that can handle DNS functionality within your VPC. By default, instances within the VPC utilize the Amazon-provided DNS server. This server is always located at the "base of the VPC IPv4 network range, plus two". For instance, if your VPC CIDR is 192.168.15.0/24, the default DNS server would be 192.168.15.2. The Amazon DNS server resolves all public DNS entries.
+
+Alternatively, you can establish a Private Route53 HostedZone and associate it with the VPC. Route53 [https://aws.amazon.com/route53/] is Amazon's hosted DNS service, renowned for its high availability, global reach, and advanced health checks and failover capabilities. While Route53 will be discussed in more depth in future modules, it's important to understand that you can configure private DNS entries [https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html] resolved by the Amazon DNS provider for instances within your VPC.
+
+Moreover, the VPC's DNS server can be configured to handle requests from external networks, including on-premises networks, and to forward requests to on-premises DNS servers. However, it's crucial to recognize that DNS can serve as a potential lateral movement path, wherein compromising the cloud environment may lead to compromising corporate on-premises networks.
+
+To enhance DNS security, you can configure the Route 53 Resolver DNS Firewall and enable Resolver Query Logging to CloudWatch Logs. The DNS Firewall enables you to specify which DNS domains instances within your VPC (and machines leveraging the Route53 Resolver on-premises) are permitted to query or prohibited from querying. This serves as a safeguard against DNS exfiltration attacks. Additionally, DNS Query logs allow you to analyze DNS activity through your Route53 Resolver via Security Information and Event Management (SIEM) systems for further threat analysis.
+
+It's important to note that many advanced Route53 features incur additional costs, so it's crucial to be aware of any security-related charges you may be incurring.
+
+Lastly, your VPC is configured to send DNS Logs to the log group "VPCResolverLogs," which can be accessed through the CloudWatch Logs Console. You can search through the entire Log Group using the orange "Search log group" box located in the upper right corner.
+
+
+
+
+
+
+
+
+
+
