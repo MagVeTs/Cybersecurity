@@ -98,11 +98,39 @@ It's important to note that many advanced Route53 features incur additional cost
 
 Lastly, your VPC is configured to send DNS Logs to the log group "VPCResolverLogs," which can be accessed through the CloudWatch Logs Console. You can search through the entire Log Group using the orange "Search log group" box located in the upper right corner.
 
+Security Telemetry
+------------------
+In a Virtual Private Cloud (VPC), there are various methods for collecting security telemetry.
+
+VPC Flow Logs (https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html) function akin to NetFlow, recording packet headers while omitting packet contents. These logs can be directed to either CloudWatch Logs or an S3 Bucket. The latter option is more cost-effective and offers a multi-account, multi-regional approach, enabling organizations to centralize logging in a single S3 Bucket.
 
 
+Example log entry with explanation:
+A       B           C           D           E         F     G  H  I   J       K          L        M   N
+2 123456789012 eni-abcdef 52.46.145.233 10.100.0.118 443 52688 6 21 7010 1637966883 1637966911 ACCEPT OK
 
+A = Flow Log version number (typically 2 by default). 
+B = AWS account
+C= Elastic Network Interface (ENI) identifier
+D = source IP
+E = destination IP
+F = source Port
+G = destination Port
+H = protocol number (here TCP which is represented by 6)
+I = number of packets (21)
+J = number of bytes (7010)
+K = start time of flow (in Unix Epoch time)
+L = end time of flow (in Unix Epoch time)
+M = action taken (ACCEPT or REJECT)
+N = log status (usually OK)
 
+more info on log entries: https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-fields
 
+In 2019, AWS unveiled VPC Traffic Mirroring (https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html), which operates akin to a network tap on a per-ENI basis, facilitating deep packet inspection. However, there are certain restrictions on routing the mirrored traffic; a layer-3 route from the source ENI to the traffic mirror target is essential.
+
+DNS Logs, a component of CloudWatch as mentioned earlier, offer insight into the queries being made by machines within your VPC.
+
+Amazon GuardDuty (https://aws.amazon.com/guardduty/), a threat detection service, harnesses AWS Threat Intelligence and Machine Learning to identify potential threats. Utilizing VPC FlowLogs and DNS Logs, GuardDuty specializes in network threat detection.
 
 
 
