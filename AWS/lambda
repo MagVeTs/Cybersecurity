@@ -20,3 +20,8 @@ Understanding Lambda concurrency is crucial for both attackers and defenders. At
 Manipulating Lambda layers provides a means to inject malicious code into numerous functions, amplifying the scope of potential attacks.
 
 Lastly, leveraging the lambda:GetFunction API can aid in discovering pre-signed URLs for downloading code zip files, potentially exposing hardcoded sensitive information in applications.
+
+---------------------------------------------
+[from: https://tryhackme.com/room/lambdadataexfiltration]
+
+user@machine$ aws lambda list-functions
