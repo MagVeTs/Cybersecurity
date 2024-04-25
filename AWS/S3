@@ -26,5 +26,5 @@ user@machine$ aws s3 ls s3://mauhur-coins-380561389900
 2022-08-02 18:21:17        148 password.txt
 user@machine$ aws s3 cp s3://mauhur-coins-380561389900/password.txt .
 user@machine$ aws s3api get-bucket-policy --bucket mauhur-coins-380561389900 --query Policy --output text | jq .
-# `jq` is a command that causes the output to be displayed in a more readable format
+# `jq` is a command that causes the output to be displayed in a more readable format [see: https://www.youtube.com/watch?v=kyHKfSnrvhs&list=PLMoaZm9nyKaMwjXerbr2xXPgv_4uBOqU0&index=17]
 
