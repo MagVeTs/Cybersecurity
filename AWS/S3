@@ -14,3 +14,17 @@ from: https://tryhackme.com/room/awss3service
 * Access Control Lists (ACLs) - there was an original syntax for controlling access to buckets; it has been deprecated but many older buckets still have them in place
 * there is a more human readable "bucket policy" syntax that is presently used to create an Access Control List to control access to a bucket
 * there is a danger with both the old and new syntax for the ACL that it could be written in a way that would grant access to any one with an AWS account or even anyone at all
+----------------------------------------------------
+[from: https://tryhackme.com/room/lambdadataexfiltration]
+
+Sample S3 CLI Commands:
+
+user@machine$ aws s3 ls
+2022-06-25 09:06:52 mauhur-coins-380561389900
+2022-06-25 09:06:52 mordor-pics-380561389900
+user@machine$ aws s3 ls s3://mauhur-coins-380561389900
+2022-08-02 18:21:17        148 password.txt
+user@machine$ aws s3 cp s3://mauhur-coins-380561389900/password.txt .
+user@machine$ aws s3api get-bucket-policy --bucket mauhur-coins-380561389900 --query Policy --output text | jq .
+# `jq` is a command that causes the output to be displayed in a more readable format
+
