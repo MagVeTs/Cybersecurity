@@ -63,3 +63,28 @@ API Management Suite: API Gateway offers a comprehensive suite for API monitorin
 Security Features: Prioritizes security with OAuth 2.0 and IAM integration for access control. Additionally, SSL/TLS encryption safeguards data transmission.
 Additional Notes:
 API Gateway is a highly flexible and scalable service, enabling a wide range of integration possibilities beyond the listed functionalities.
+
+API Gateway as a Reverse Proxy:
+
+The AWS API Gateway service can be leveraged to function as a serverless reverse proxy. In this context, a reverse proxy acts as an intermediary between clients and a target server. It accepts client requests, forwards them to the target server, and relays the server's responses back to the clients. Traditional applications of reverse proxies include load balancing, caching, SSL termination, and concealing the identity of the backend server. 
+
+Potential Misuse Cases:
+
+While not the intended use case, malicious actors could potentially exploit API Gateway's reverse proxy functionality for the following purposes:
+
+Identity Masking: Hackers might utilize the proxy to mask their true IP address while launching attacks on web servers or other targets.
+
+IP Address Rotation: When configured as a "passthrough" proxy with a pool of IP addresses, API Gateway could be used to make requests appear as if they originate from any address within the pool See: https://bond-o.medium.com/aws-pass-through-proxy-84f1f7fa4b4b.
+
+This could be used to:
+
+Bypass IP-based Restrictions: Certain web applications or systems might block requests originating from specific IP addresses associated with suspicious activity. Rotating IP addresses could circumvent such restrictions.
+Evasion of Detection: Security measures might identify and block requests from known security tester IP addresses. Rotating addresses could help evade such detection.
+Simulating Real-world Scenarios: Real-world users access applications from diverse IP addresses. Rotating addresses allows for simulating these scenarios and potentially uncovering security vulnerabilities that might be exposed under varying IP origins.
+
+There are different options available for rotating IP addresses when using a proxy: 1) use a rotating proxy service; automatically switches within a pool of proxy servers; each request sent from different IP address. 2)  manually switch between different proxy servers; one can manually configure proxy settings in browser to do so 3) use tool designed to facilitate quick switching between proxy servers
+A tool called FireProx (created by Mike Felch ; Black Hills Information Security) grants this capability: https://github.com/ustayready/fireprox.
+
+
+
+
