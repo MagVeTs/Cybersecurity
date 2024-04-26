@@ -1,0 +1,65 @@
+AWS API Gateway
+------------------
+[from: https://tryhackme.com/room/awsapigateway]
+
+
+API Components -
+
+Endpoint: This is the URL location of the API, e.g., the address where you can "call" an API and the resources it can access on your behalf.
+
+Method: This specifies the type of request being made to the API, such as GET, POST, PUT, DELETE, etc.
+
+Headers: These are a component of HTTP, but are used by APIs to contain additional information about the request, such as authentication details, content type, and other metadata.
+
+Request body: This is the data sent to the API as part of the request. GET requests won't typically have a request body, but POST, PUT, and DELETE requests almost always do.
+
+Response: This is the data that the API sends in response to the request. It may include a status code, headers, and a response body.
+
+API Purpose - 
+
+APIs provide a granular mechanism for developers to allow user access to (potentially) sensitive "back-end" resources. Not only do APIs expose these capabilities for end users, but they also allow third-parties to build reliable ecosystems around a product that exposes an API. 
+
+Furthermore, as mentioned, modern APIs often expose a number of sensitive "back-end" resources hosted on behalf of the API. These resources are often "micro-services" that proxy the user request as a direct database write or query to the various systems that may be supporting the API functionality. If security errors are made in the development of the API capabilities, they may be exposed to any user who can authenticate to the API or even to unauthenticated users who attempt to use the API. These characteristics make AWS API Gateway a prime target for attackers.
+
+AWS API Gateway -
+
+These API Gateways allow customers to deploy REST, HTTP/S, and WebSocket APIs while making use of "serverless" infrastructure; REST and HTTP/S APIs are similar to each other (https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html); WebSocket APIs allow bi-directional communication; WebSocket APIs can push data to clients who connected at some point without the need for the client to send another request.
+
+API Gateway as the Integration Hub:
+
+AWS API Gateway acts as a management layer for APIs, allowing them to interact with various backend resources within the AWS ecosystem. These interactions are known as integrations (https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-integration-settings.html). When a client sends a request to an API hosted behind API Gateway, it triggers the configured integration to handle the logic and potentially access other AWS services.
+
+Lambda's Privileged Role:
+
+Among all the available integrations, Lambda functions hold a unique position. API Gateway treats Lambda as the default service proxy for its endpoints. This means that Lambda functions are the primary target for routing incoming API requests. This tight coupling simplifies development as developers can focus solely on writing the Lambda function's logic without needing to worry about underlying server infrastructure.
+
+Serverless Magic with Lambda:
+
+Lambda functions are the embodiment of serverless computing. Developers write code snippets (typically in languages like Python, Node.js, Java) containing the desired functionality. API Gateway then manages the execution environment and triggers the Lambda function upon receiving an API request. This eliminates the need for server provisioning and management, offering a cost-effective and scalable solution.
+
+Beyond Integrations: Lambda Authorizers for Granular Access Control
+
+While Lambda functions are popular choices for integrations with API Gateway, they offer another powerful capability: Lambda authorizers. These custom-developed Lambda functions act as gatekeepers, enforcing access control on API Gateway endpoints.
+
+Configurable Access Decisions:
+
+Lambda authorizers provide fine-grained control by analyzing incoming API requests and making authorization decisions based on pre-defined criteria. This criteria can be tailored to your specific needs, leveraging factors like:
+
+Request parameters: Validate specific parameters within the request to ensure they meet authorization requirements.
+API keys or tokens: Implement token-based authentication mechanisms like JWT to identify and authorize requests.
+Custom logic: Craft authorization rules based on any relevant data available to the Lambda function, enabling highly secure and dynamic access control.
+Security Implications of Misconfiguration:
+
+Improperly configured Lambda authorizers can introduce significant security vulnerabilities. If not implemented cautiously, they could grant unintended access to sensitive resources behind your API Gateway. It's crucial to thoroughly test and secure your authorizer functions to maintain a robust authorization layer.
+
+AWS API Gateway: Functionality Overview
+Integration Capabilities:
+AWS Managed API G ateways are available 
+Serverless Integration: API Gateway integrates with AWS Lambda to trigger serverless functions upon receiving API requests. Lambda functions handle request processing and response generation.
+Microservices Communication: Facilitate communication and integration between microservices (servers, containers, or serverless functions) by creating, deploying, and managing APIs for each service. Further integration with messaging services (SNS, SQS, EventBridge) is supported.
+Data Access: API Gateway seamlessly integrates with data storage services like Amazon DynamoDB and S3. This enables retrieval and modification of data as needed by API operations.
+Real-time Communication: Establish bi-directional, real-time communication channels between clients and servers using WebSockets integrated with API Gateway.
+API Management Suite: API Gateway offers a comprehensive suite for API monitoring, logging, and management. Gain insights into API usage patterns and maintain control over API behavior.
+Security Features: Prioritizes security with OAuth 2.0 and IAM integration for access control. Additionally, SSL/TLS encryption safeguards data transmission.
+Additional Notes:
+API Gateway is a highly flexible and scalable service, enabling a wide range of integration possibilities beyond the listed functionalities.
