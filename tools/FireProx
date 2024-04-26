@@ -6,7 +6,8 @@ FireProx
 https://github.com/ustayready/fireprox
 
 
-
+There are different options available for rotating IP addresses when using a proxy: 1) use a rotating proxy service; automatically switches within a pool of proxy servers; each request sent from different IP address. 2)  manually switch between different proxy servers; one can manually configure proxy settings in browser to do so 3) use tool designed to facilitate quick switching between proxy servers
+A tool called FireProx (created by Mike Felch ; Black Hills Information Security) grants this capability: https://github.com/ustayready/fireprox.
 FireProx uses AWS API Gateway to rotate IP addresses for web requests. It uses an API Gateway endpoint to redirect requests to configured domain/IP.
 Can be used for password spraying and other cred attacks (see: https://github.com/knavesec/CredMaster).
 Can be used to make requests to HTTP/S or WebSocket endpoints that have IP-based restrictions or use rate-limiting.
