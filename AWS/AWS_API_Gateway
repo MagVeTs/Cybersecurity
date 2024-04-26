@@ -84,7 +84,7 @@ Simulating Real-world Scenarios: Real-world users access applications from diver
 
 There are different options available for rotating IP addresses when using a proxy: 1) use a rotating proxy service; automatically switches within a pool of proxy servers; each request sent from different IP address. 2)  manually switch between different proxy servers; one can manually configure proxy settings in browser to do so 3) use tool designed to facilitate quick switching between proxy servers
 A tool called FireProx (created by Mike Felch ; Black Hills Information Security) grants this capability: https://github.com/ustayready/fireprox.
-
+See: MagVeTs/Cybersecurity/tools/FireProx
 
 
 
