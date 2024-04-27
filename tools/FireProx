@@ -20,4 +20,4 @@ user@machine$ cd fireprox
 
 user@machine$ pip3 install -r requirements.txt
 
-user@machine$ python3.9 fire.py
+user@machine$ python fire.py
