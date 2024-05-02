@@ -89,5 +89,39 @@ Can be used for password spraying and other cred attacks (see: https://github.co
 Can be used to make requests to HTTP/S or WebSocket endpoints that have IP-based restrictions or use rate-limiting.
 See: MagVeTs/Cybersecurity/tools/FireProx
 
+Lambda Authorizers for AWS API Gateway
+Functionality:
 
+Lambda authorizers are custom AWS Lambda functions that enforce authorization policies for API requests processed by API Gateway.
+These functions execute prior to API request processing and determine access rights for specific resources protected by API Gateway.
+The Lambda authorizer returns a policy document specifying whether a request is authorized or not.
+Benefits:
+
+Complex Authorization Logic: Enables implementation of intricate authorization rules within the Lambda function.
+Reduced Infrastructure Management: Eliminates the need for separate infrastructure to handle authorization tasks.
+Customizable Access Control: Provides flexibility in defining access requirements for API resources.
+Offloading Resource-intensive Tasks: Leverages Lambda's serverless architecture for potentially resource-heavy authorization logic.
+
+Cautions When Using Wildcards with Lambda Authorizers in API Gateway Paths
+Greedy Wildcard Behavior:
+
+The * wildcard in regular expressions is a greedy operator, matching the largest possible string within a path.
+When employed in API Gateway path matching with Lambda authorizers, this can lead to unintended consequences if not used cautiously.
+Example:
+
+A path pattern like /resource/* with a greedy * might unintentionally match additional path segments beyond the intended /resource portion. This could grant access to unintended resources.
+
+Mitigation Strategies:
+
+Grouping and Lazy Quantifiers: Utilize grouping constructs (parentheses) and non-greedy quantifiers (e.g., *?) to precisely control the matching behavior. These ensure the wildcard only matches the desired segment of the path. [see here: "In the lazy mode, the quantifiers match their preceding elements as few as possible and return the smallest matches. When quantifiers use the lazy mode, they’re often referred to as non-greedy quantifiers or lazy quantifiers. To transform a greedy quantifier into a non-greedy quantifier, you add an extra question mark to it" [https://www.javascripttutorial.net/regular-expression-non-greedy/])
+
+Security Implications:
+
+Inadvertent authorization due to greedy wildcards can introduce security vulnerabilities. Unauthenticated users might gain access to restricted resources if unintended paths are matched by the authorization policy.
+External Reference:
+
+For a detailed analysis of this security concern in the context of AWS API Gateway, refer to "The Fault In Our Stars" by Tenchi Security (https://www.tenchisecurity.com/the-fault-in-our-stars/).
+
+Abusing Greedy Expansion of Lambda Authorizer Policies
+"[When pentesting] Once we identify an API, we would typically use a tool such as ffuf (https://github.com/ffuf/ffuf) or kiterunner (https://github.com/assetnote/kiterunner) to perform the discovery of API endpoints through fuzzing. These techniques and tools can help identify potentially interesting endpoints and opportunities to expose data or gain additional access."
 
