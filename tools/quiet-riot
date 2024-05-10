@@ -1,4 +1,4 @@
-quiet-riot
+quiet_riot
 ----------
 
 https://github.com/righteousgambit/quiet-riot
@@ -9,6 +9,6 @@ see here: https://tryhackme.com/room/awsiamenumeration ; Task 4 - "Enumerating I
 
 
 user@machine~# pip3 install quiet-riot
-user@machine~# quiet-riot --help
+user@machine~# quiet_riot --help
 
 
