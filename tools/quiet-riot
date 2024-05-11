@@ -4,10 +4,9 @@ quiet_riot
 https://github.com/righteousgambit/quiet-riot
 see here: https://tryhackme.com/room/awsiamenumeration ; Task 4 - "Enumerating IAM Users and Roles"
 
-NOTE: quiet-riot allows you to scan AWS accounts for IAM Principals (Users or Roles) and Services; YOU DO NOT HAVE TO HAVE ACCESS TO AN ACCOUNT TO USE QUIET-RIOT TO SCAN IT.
+NOTE: quiet-riot allows you to scan AWS accounts for IAM Principals (Users or Roles) and Services; YOU DO NOT HAVE TO BE AUTEHNTICATED TO AN ACCOUNT TO USE QUIET-RIOT TO SCAN THAT ACCOUNT; YOU MERELY HAVE TO BE AUTHENTICATED TO ANY ACCOUNT THAT HAS THE PERMISSIONS CONFIGURED TO USE THE RESOURCES THAT quiet-RIOT NEEDS TO DO ITS SCANNING.
 
-
-[note: quiet-riot works great with using AWS CLI from an attack box after doing `aws configure`. quiet-riot will use the "default" credentials that are set up when you do `aws configure`. If you are trying to use quiet-riot from within the AWS CloudShell interface quiet-riot may look in ~/.aws/credentials and be unable to find anything because CloudShell uses AWS metadata service (https://kloudle.com/academy/a-technical-analysis-of-the-aws-cloudshell-service/) for the creds instead. So you will have to set up the creds in CloudShell first before running quiet-riot.]
+NOTE: quiet-riot works great with using AWS CLI from an attack box after doing `aws configure`. quiet-riot will use the "default" credentials that are set up when you do `aws configure`. If you are trying to use quiet-riot from within the AWS CloudShell interface quiet-riot may look in ~/.aws/credentials and be unable to find anything because CloudShell uses AWS metadata service (https://kloudle.com/academy/a-technical-analysis-of-the-aws-cloudshell-service/) for the creds instead. So you will have to set up the creds in CloudShell first before running quiet-riot.
 
 
 user@machine~# pip3 install quiet-riot
