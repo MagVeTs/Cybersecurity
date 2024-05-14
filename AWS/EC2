@@ -234,9 +234,8 @@ Issue command from Attack Box CLI:
 
 user@machine$ aws ec2 describe-instances   --query 'Reservations[*].Instances[*].[Tags[?Key == `Name`].Value,InstanceId,State.Name,InstanceType,PublicIpAddress,PrivateIpAddress]' --profile <PROFILE_NAME> --output text | sed 'N;s/\n/ /'
 # discovers all EC2 instances in a Profile's account; returns a list that includes EC2 Name, InstanceId, Status (running, stopped, etc), and Public and Private IPs
-
-from: https://tryhackme.com/room/amazonec2dataexfiltration
-
+# removing `--query` parameter and `sed`, and changing `--output` to json will return full data on each instance
+[from: https://tryhackme.com/room/amazonec2dataexfiltration]
 ------------------------------------------------------------------------------------------------------------
 
 
