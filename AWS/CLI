@@ -23,6 +23,15 @@ Default output format [None]: <choices are: text, yaml, yaml-stream, table>
 NOTE: You can also add a session token to your profile after it has been configured, as follows:
 user@machine$ aws configure --profile <PROFILE_NAME> set aws_session_token <SESSION_TOKEN>
 
+NOTE: You can pull info about your profile as follows:
+
+user@machine$ aws sts get-caller-identity --profile <PROFILE_NAME>
+{
+    "UserId": "AROASTZ6PFXLI5HNQFIFD:i-005203abca3ed64b2",
+    "Account": "123456789012",
+    "Arn": "arn:aws:sts::123456789012:assumed-role/XXXXXX/i-005203abca3ed64b2"
+}
+
 from: https://tryhackme.com/room/amazonec2dataexfiltration
 also see: https://medium.com/@prateek.malhotra004/mastering-aws-cli-a-comprehensive-guide-to-command-line-power-ca2260167839
 ------------------------------------------------------------------------
