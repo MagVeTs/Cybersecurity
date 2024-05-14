@@ -4,6 +4,28 @@ AWS CLI
 * AWS provides a CLI within its console interface called CloudShell
 * In addtion the AWS CLI can be installed on diverse devices by following the instructions found here: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ------------------------------------------------------------------------
+Usage of the AWS CLI on your own device (Attack Box):
+
+user@machine$ aws configure
+AWS Access Key ID [None]: <ACCESS_KEY>
+AWS Secret Access Key [None]: <SECRET_ACCESS_KEY>
+Default region name [None]: <e.g.: us-east-1>
+Default output format [None]: <choices are: text, yaml, yaml-stream, table>
+
+NOTE: the above creates the "default" profile on your Attack Box. You can create other profiles (and then switch between them as necessary) as follows:
+
+user@machine$ aws configure --profile <PROFILE_NAME>
+AWS Access Key ID [None]: <ACCESS_KEY>
+AWS Secret Access Key [None]: <SECRET_ACCESS_KEY>
+Default region name [None]: <e.g.: us-east-1>
+Default output format [None]: <choices are: text, yaml, yaml-stream, table>
+
+NOTE: You can also add a session token to your profile after it has been configured, as follows:
+user@machine$ aws configure --profile <PROFILE_NAME> set aws_session_token <SESSION_TOKEN>
+
+from: https://tryhackme.com/room/amazonec2dataexfiltration
+also see: https://medium.com/@prateek.malhotra004/mastering-aws-cli-a-comprehensive-guide-to-command-line-power-ca2260167839
+------------------------------------------------------------------------
 from: https://tryhackme.com/room/iamprincipals ; Task 5 - "Root User & AWS Account"
 * IAM Users cannot see the root email address of the account they are in
 * If the AWS Account is part of a greater AWS Organization the email of the Organization's Master Account can be found from the CLI:
