@@ -154,6 +154,11 @@ In order to see what other domains a particular website reaches out to when it i
 4) you will see a list of domains found in the website's code
 [hat tip: RM]
 ----------------------------------------------------------
+https://securitytrails.com/
+- search for all types of DNS records related to domain, IP, keyword, or hostname
+- search for historical DNS records to see changes
+- search for subdomains
+[recommended by RM]
 
 
 
