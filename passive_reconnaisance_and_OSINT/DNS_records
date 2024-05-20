@@ -40,8 +40,11 @@ it has many useful free online tools to gather info about domains
 [from: CompTIA Pentest+ (Ethical Hacking) Course & Practice Exam - Jason Dion - https://www.udemy.com/course/pentestplus/ - "DNS Information" and "Reconnaissance with CentralOps" (see the videos for a lot more info)]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+https://securitytrails.com/
+- search for all types of DNS records related to domain, IP, keyword, or hostname
+- search for historical DNS records to see changes
+- search for subdomains
+[recommended by RM]
 
 
 
