@@ -11,3 +11,17 @@ AWS Security Maturity Model
 https://maturitymodel.security.aws.dev/en/
 [looks very helpful for understanding AWS Security]
 [hat tip: RM]
+-------------------------------------------------------------------------
+Common security vulnerabilities in Core AWS services: Exploitation and mitigation
+https://labs.detectify.com/ethical-hacking/common-security-vulnerabilities-in-core-aws-services-exploitation-and-mitigation/
+[hat tip: RM]
+
+The above article recommends:
+https://aws.amazon.com/security/
+https://rhinosecuritylabs.com/blog/
+https://application.security/free/kontra-aws-clould-top-10
+https://github.com/RhinoSecurityLabs/cloudgoat
+https://github.com/OWASP/DVSA
+Payloads_All_Things_AWS - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
+AWS Attacks Mind Map - https://xmind.app/m/nixuCQ/
+
