@@ -55,4 +55,10 @@ $ sudo docker rm <CONTAINER_ID>
 or, to remove all containers on the system:
 $ sudo docker rm $(sudo docker ps -aq)
 
+---------------------------------------------------------
+
+see: https://tryhackme.com/r/room/introtodockerk8pdqk
+
+
+
 
