@@ -59,6 +59,78 @@ $ sudo docker rm $(sudo docker ps -aq)
 
 see: https://tryhackme.com/r/room/introtodockerk8pdqk
 
+$ docker image
+# lists all command options
+
+$ docker image COMMAND --help
+# more info on a particular command
+
+Creating and Removing a Docker Image
+         ----------------
+In order to run a Docker container one first downloads the container's image:
+$ docker pull IMAGE_NAME
+# download a Docker image
+
+Note: Images have tags; tags designate versions of an image. If no tag is given, Docker downloads the latest version of the image
+$ docker pull IMAGE_NAME:TAG
+Example:
+$ docker pull ubuntu:17.05
+
+$ docker image ls
+#  lists all images stored on local system (under column called REPOSITORY) and see info about the images (tag, Image ID, when created, size)
+
+$ docker image rm IMAGE_NAME:TAG
+# remove an image
+
+Running a Docker Container
+    --------------
+The run command creates and starts (runs) a container from an existing image.
+Commands from a Dockerfile and runtime input will be run within the container.
+Syntax:
+$ docker run [OPTIONS] IMAGE_NAME [COMMAND] [ARGUMENTS...]
+# bracketed items are not required
+Example:
+$ docker run -it ubuntu /bin/bash
+# -it = run the container in an interactive mode that allows you to directly interact with it (i is interactive; t is with a shell)
+# /bin/bash = launch a bash shell within the container upon running it; the launching of the shell will cause the prompt to change to the container's hostname (which is the container's ID which can also be found using   # the following command:
+# $ docker ps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
