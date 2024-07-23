@@ -95,9 +95,10 @@ $ docker run [OPTIONS] IMAGE_NAME [COMMAND] [ARGUMENTS...]
 Example:
 $ docker run -it ubuntu /bin/bash
 # -it = run the container in an interactive mode that allows you to directly interact with it (i is interactive; t is with a shell)
-# /bin/bash = launch a bash shell within the container upon running it; the launching of the shell will cause the prompt to change to the container's hostname (which is the container's ID which can also be found using   # the following command:
-# $ docker ps
+# /bin/bash = launch a bash shell within the container upon running it; the launching of the shell will cause the prompt to change to the container's hostname (which is the container's ID)
 
+$ docker ps
+# list running containers
 
 
 
