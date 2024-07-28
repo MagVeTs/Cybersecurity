@@ -5,7 +5,7 @@ Docker documentation
 https://docs.docker.com/engine/reference/run/
 
 Docker Compose documentation
-https://docs.docker.com/compose/install/
+https://docs.docker.com/compose/
 ---------------------------------------------------------
 Installing Docker on Linux:
 > sudo apt update
