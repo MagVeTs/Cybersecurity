@@ -1,10 +1,13 @@
 Sandboxes
 ---------
 
-AntiCrypt
+OMAT (Offline Malware Analysis Tool) from AntiCrypt
 https://anticrypt.de/scan/
 
-free, online sandbox
+"OMAT (Offline Malware Analysis Tool) is a browser-based malware analysis tool designed to enhance user privacy and speed by leveraging WebAssembly (WASM) for client-side processing. Unlike traditional online malware analysis tools that rely on server-side processing, OMAT executes all malware analysis tasks within the user's browser, ensuring that sensitive data remains on the client's machine."
+
+
+free, online sandbox (it is called "offline" because it creates the sandbox within the client's browser using WebAssembly as opposed to sending the file to a sandbox in a server somewhere)
 [hat tip: SW]
 ------------------------------------------------------------------------------
 https://browser.lol/
