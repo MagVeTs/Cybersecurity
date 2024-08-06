@@ -8,6 +8,8 @@ https://anticrypt.de/scan/
 
 
 free, online sandbox (it is called "offline" because it creates the sandbox within the client's browser using WebAssembly as opposed to sending the file to a sandbox in a server somewhere)
+
+from ChatGPT: "WebAssembly (WASM) is a binary instruction format for a stack-based virtual machine, designed to be a portable compilation target for programming languages, enabling high-performance execution of code on the web. It allows developers to compile code written in languages like C, C++, Rust, and others into a compact binary format that can be run in modern web browsers at near-native speed."
 [hat tip: SW]
 ------------------------------------------------------------------------------
 https://browser.lol/
