@@ -135,3 +135,9 @@ You need to find out the selector of the domain. If you look at the details of a
 $ dig txt 20161025._domainkey.google.com
 [from: YS]
 ------------------------------------------------------
+Easily check the headers on an email from a user account within your domain to see whether it is passing SPF/DKIM/DMARC and if there is alignment between the FROM vs RETURN PATH and the d= fields:
+
+- https://www.mail-tester.com/
+- https://dkimvalidator.com/
+
+
