@@ -13,7 +13,7 @@ https://github.com/JPMinty/MindMaps/tree/master/MITRE%20ATT%26CK/
 
 Mappings Explorer
 https://center-for-threat-informed-defense.github.io/mappings-explorer/external/
-"The Center for Threat-Informed Defense has created the following mappings of security capabilities to MITRE ATT&CK®, empowering defenders with data. Mappings Explorer provides a central location where all Center mapping resources are provided in a more accessible and connected manner, improving a defender’s ability to make threat-informed decisions based on mapped security capabilities."
+"The Center for Threat-Informed Defense (https://ctid.mitre.org/) has created the following mappings of security capabilities to MITRE ATT&CK®, empowering defenders with data. Mappings Explorer provides a central location where all Center mapping resources are provided in a more accessible and connected manner, improving a defender’s ability to make threat-informed decisions based on mapped security capabilities."
 - currently maps MITRE ATT&CK to: AWS, GCP, Azure cloud infrastuctures; to M365 (SaaS); and to CVE, NIST 800-53, and VERIS
 [hat tip: RM]
 
