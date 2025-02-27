@@ -1,6 +1,10 @@
 AI/ML/LLM
 ---------
 
+Neural Networks by 3Blue1Brown
+https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
+[series explaining how Neural Networks and LLMs work]
+---------------------------------------------------------------------------------
 * helpful AI tool used for Bash and ZSH shells:
 https://butterfi.sh/
 "Butterfish is for people who work from the command line, it adds AI prompting to your shell (bash, zsh) with OpenAI. Think Github Copilot for shell.
@@ -57,5 +61,12 @@ Consider an LLM given an initial input such as "You are a helpful assistant." So
 
 For example, if you prompt OpenAI's LLM to keep a secret confidential, most of the time, it will. But if you instruct it that it's failing to be helpful, it often blabs because it prioritizes being "helpful.""
 ----------------------------------------------------------------------------------
+How to Hack AI Agents and Applications by Joseph Thacker
+https://josephthacker.com/hacking/2025/02/25/how-to-hack-ai-apps.html
+[very well written]
+
+L1B3RT4S
+https://github.com/elder-plinius/L1B3RT4S
+[jailbreak prompts; hat tip: https://josephthacker.com/hacking/2025/02/25/how-to-hack-ai-apps.html]
 
 
