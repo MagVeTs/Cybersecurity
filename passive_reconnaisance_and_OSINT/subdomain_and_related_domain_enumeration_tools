@@ -9,3 +9,14 @@ https://securitytrails.com/
 - search for historical DNS records to see changes
 - search for subdomains
 [recommended by RM]
+
+Project Discovery
+https://cloud.projectdiscovery.io/ - in browser option that has limited free account or paid account versions
+also see: https://github.com/projectdiscovery [open source; one can self host]
+also see: https://docs.projectdiscovery.io/home
+[combines many tools and offers the ability to both discover and conduct vulnerability scans on what is discovered]
+
+
+https://host.io/
+[this is excellent for discovering related domains; especially other domains that automatically redirect to the domain you are searching for; many other tools just provide subdomains of the the domain that are entered; there is a browser interface for searching for one domain and they also have an API (that costs something) for automating multiple searches]
+[hat tip: ULT]
