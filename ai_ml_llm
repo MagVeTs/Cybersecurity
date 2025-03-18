@@ -61,6 +61,10 @@ Consider an LLM given an initial input such as "You are a helpful assistant." So
 
 For example, if you prompt OpenAI's LLM to keep a secret confidential, most of the time, it will. But if you instruct it that it's failing to be helpful, it often blabs because it prioritizes being "helpful.""
 ----------------------------------------------------------------------------------
+AI Crash Course
+https://github.com/henrythe9th/ai-crash-course
+"AI Crash Course to help busy builders catch up to the public frontier of AI research in 2 weeks"
+
 How to Hack AI Agents and Applications by Joseph Thacker
 https://josephthacker.com/hacking/2025/02/25/how-to-hack-ai-apps.html
 [very well written]
