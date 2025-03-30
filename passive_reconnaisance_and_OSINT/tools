@@ -86,3 +86,24 @@ https://github.com/BurtTheCoder/mcp-maigret
 "MCP server for maigret, a powerful OSINT tool that collects user account information from various public sources.
 A Model Context Protocol (MCP) server for maigret, a powerful OSINT tool that collects user account information from various public sources. This server provides tools for searching usernames across social networks and analyzing URLs. It is designed to integrate seamlessly with MCP-compatible applications like Claude Desktop."
 [produces reports using AI; hat tip: RM]
+-------------------------------------------------------------------------
+BishopFox - eyeballer
+https://github.com/BishopFox/eyeballer
+"Convolutional neural network for analyzing pentest screenshots
+Give those screenshots of yours a quick eyeballing.
+
+Eyeballer is meant for large-scope network penetration tests where you need to find "interesting" targets from a huge set of web-based hosts. Go ahead and use your favorite screenshotting tool like normal (EyeWitness or GoWitness) and then run them through Eyeballer to tell you what's likely to contain vulnerabilities, and what isn't.
+Give it a try live at: https://eyeballer.bishopfox.com
+
+What the Labels Mean
+Old-Looking Sites Blocky frames, broken CSS, that certain "je ne sais quoi" of a website that looks like it was designed in the early 2000's. You know it when you see it. Old websites aren't just ugly, they're also typically super vulnerable. When you're looking to hack into something, these websites are a gold mine.
+
+Login Pages Login pages are valuable to pen testing, they indicate that there's additional functionality you don't currently have access to. It also means there's a simple follow-up process of credential enumeration attacks. You might think that you can set a simple heuristic to find login pages, but in practice it's really hard. Modern sites don't just use a simple input tag we can grep for.
+
+Webapp This tells you that there is a larger group of pages and functionality available here that can serve as surface area to attack. This is in contrast to a simple login page, with no other functionality. Or a default IIS landing page which has no other functionality. This label should indicate to you that there is a web application here to attack.
+
+Custom 404 Modern sites love to have cutesy custom 404 pages with pictures of broken robots or sad looking dogs. Unfortunately, they also love to return HTTP 200 response codes while they do it. More often, the "404" page doesn't even contain the text "404" in it. These pages are typically uninteresting, despite having a lot going on visually, and Eyeballer can help you sift them out.
+
+Parked Domains Parked domains are websites that look real, but aren't valid attack surface. They're stand-in pages, usually devoid of any real functionality, consist almost entirely of ads, and are usually not run by our actual target. It's what you get when the domain specified is wrong or lapsed. Finding these pages and removing them from scope is really valuable over time."
+[hat tip: RM]
+-------------------------------------------------------------------------
