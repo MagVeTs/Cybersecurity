@@ -5,10 +5,10 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>i Frame</title>
+<title>Clickjacking Test</title>
 </head>
 <body>
-<h3>This is clickjacking vulnerable</h3>
+<h3>I am vulnerable to clickjacking! Please fix me by adding the needed security headers.</h3>
 <iframe src="TARGET_URL" frameborder="200 px" height="500px" width="1000px"></iframe>
 </body>
 </html>
