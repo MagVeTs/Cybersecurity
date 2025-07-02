@@ -8,7 +8,7 @@
 <title>Clickjacking Test</title>
 </head>
 <body>
-<h3>I am vulnerable to clickjacking! Please fix me by adding the needed security headers.</h3>
+<h3>I am vulnerable to clickjacking! Please fix me by adding the needed security headers: X-Frame-Options: DENY and Content-Security-Policy: frame-ancestors 'none'</h3>
 <iframe src="TARGET_URL" frameborder="200 px" height="500px" width="1000px"></iframe>
 </body>
 </html>
