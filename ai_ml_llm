@@ -76,3 +76,13 @@ https://github.com/elder-plinius/L1B3RT4S
 AI/LLM Pentesting/Redteaming
 https://hacken.io/discover/ai-red-teaming/
 [contains link to download a good guide to doing PTs on LLMs. It also lists a bunch of fuzzing tools that can be used.]
+----------------------------------------------------------------------------------
+OWASP AITG
+"The OWASP AI Testing Guide (AITG) is an open-source project aimed at standardizing testing methodologies, tools, and practices for evaluating the security and robustness of Artificial Intelligence systems. This repository provides practical resources, templates, and documentation to help red teamers, security researchers, and developers test and assess LLMs and AI-powered applications.
+https://github.com/OWASP/www-project-ai-testing-guide/
+payloads: https://github.com/joey-melo/payloads/tree/main/OWASP%20AITG-APP
+----------------------------------------------------------------------------------
+
+
+
+
