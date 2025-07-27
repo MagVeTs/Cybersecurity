@@ -15,7 +15,7 @@ Environment Variable-based DLL Hijacking: By changing a specific environment var
 This project provides an curated list of DLL Hijacking candidates. A mapping between DLLs and vulnerable executables is kept and can be searched via this website. Additionally, further metadata such as resources provide more context."
 
 --------------------------------
-Good explanantion of DLL Highjacking
+Good explanantion of DLL Highjacking/Sideloading
 "are built-in windows programs vulnerable?" - John Hammond (Mar 4, 2025)
 https://www.youtube.com/watch?v=uY8BpZBF2f0&t=865s
 --------------------------------
