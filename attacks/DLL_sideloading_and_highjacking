@@ -1,3 +1,21 @@
 DLL Sideloading and Highjacking
 --------------------------------
+HijackLibs
+https://hijacklibs.net/
+https://github.com/wietze/HijackLibs/wiki
+"DLL Hijacking is, in the broadest sense, tricking a legitimate/trusted application into loading an arbitrary DLL. Defensive measures such as AV and EDR solutions may not pick up on this activity out of the box, and allow-list applications such as AppLocker may not block the execution of the untrusted code. There are numerous examples of threat actors that have been observed to leverage DLL Hijacking to achieve their objectives.
 
+There are various subtypes of DLL Hijacking (T1574.001); this project distinguishes between the following types:
+
+DLL Sideloading: By copying (and optionally renaming) a vulnerable application to a user-writeable folder, alongside a malicious DLL, arbitrary code can be executed through the legitimate application.
+Phantom DLL Hijacking: By copying a malicious DLL to a specific location, vulnerable applications will load and execute the (normally non-existent) DLL upon normal execution.
+DLL Search Order Hijacking: DLLs specified by an application without a path are searched for in fixed locations in a specific order. By putting a malicious DLL in a location that is searched in before the actual DLL, the legitimate application will execute arbitrary code upon normal execution.
+Environment Variable-based DLL Hijacking: By changing a specific environment variable to an attacker-controlled directory, it is possible to trick a vulnerable application into loading a malicious DLL from the attacker-controlled location.
+...
+This project provides an curated list of DLL Hijacking candidates. A mapping between DLLs and vulnerable executables is kept and can be searched via this website. Additionally, further metadata such as resources provide more context."
+
+--------------------------------
+Good explanantion of DLL Highjacking
+"are built-in windows programs vulnerable?" - John Hammond (Mar 4, 2025)
+https://www.youtube.com/watch?v=uY8BpZBF2f0&t=865s
+--------------------------------
