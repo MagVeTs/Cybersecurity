@@ -145,3 +145,4 @@ https://www.learndmarc.com/
 "Welcome to the "Learn and Test DMARC" console! Here, you'll get a visual breakdown of how email servers communicate, giving you a better understanding of SPF, DKIM, and DMARC and how they work together."
 [This tool provides a temporary email address to send test emails to. One can then see the emails headers. It also allows one to test spoofing one's email and it teached about SPF/DKIM/DMARC.]
 [hat tip: "Smashing Security" podcast; Episode 426 - 17 July, 2025]
+------------------------------------------------------
