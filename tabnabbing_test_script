@@ -10,20 +10,23 @@ let issuesFound = false;
   if (missing.length > 0) {
     issuesFound = true;
 
-    // Console warning with clickable link
+    // Correct console warning with styled link for clarity
     console.warn(
-      `⚠️ Tabnabbing risk: Missing ${missing.join(' and ')} in rel attribute`,
-      `%c${link.href}`,
-      'color: blue; text-decoration: underline; cursor: pointer'
+      `⚠️ Tabnabbing risk: Missing ${missing.join(' and ')} in rel attribute. URL: %c${link.href}`,
+      'color: blue; text-decoration: underline;'
     );
 
-    // Visual highlight on the page
+    // Highlight problematic links visually on the page
     link.style.border = '2px solid red';
     link.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
     link.title = `Missing ${missing.join(' and ')}`;
+
+    // Log the actual DOM element for direct inspection
+    console.log('Problematic Element:', link);
   }
 });
 
 if (!issuesFound) {
   console.log('%c✅ No tabnabbing risks found. All links are safe!', 'color: green; font-weight: bold;');
 }
+
