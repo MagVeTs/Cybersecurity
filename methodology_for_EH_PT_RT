@@ -332,3 +332,8 @@ also see: https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report
 
 "003_Reviewing_a_Real_Pentest_Report" - https://academy.tcm-sec.com/courses/1152300/lectures/24793692
 --------------------------
+pwndoc
+https://github.com/pwndoc/pwndoc
+"Pentest Report Generator"
+"PwnDoc is a pentest reporting application making it simple and easy to write your findings and generate a customizable Docx report.
+The main goal is to have more time to Pwn and less time to Doc by mutualizing data like vulnerabilities between users."
