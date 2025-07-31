@@ -1,11 +1,30 @@
-**LOL (Living Off the Land)**
-
+LOL (Living Off the Land)
+--------------------------
 LOL Farm
 https://lolol.farm/
 Living Off the Living Off the Land
 A great collection of resources to thrive off the land
 
-Living Off the Foreign Land (LOFL)
+
+LOLBAS (Living Off The Land Binaries, Scripts and Libraries)
+https://lolbas-project.github.io/
+
+LOLRMM
+https://lolrmm.io/
+"LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors."
+
+Living Off The Land Drivers
+https://www.loldrivers.io/
+"Living Off The Land Drivers is a curated list of Windows drivers used by adversaries to bypass security controls and carry out attacks. The project helps security professionals stay informed and mitigate potential threats."
+
+LOFLCAB (Living Off the Foreign Land Cmdlets and Binaries)
+https://lofl-project.github.io/
 https://blog.bitsadmin.com/living-off-the-foreign-land-windows-as-offensive-platform
 https://blog.bitsadmin.com/living-off-the-foreign-land-windows-as-offensive-platform-part-2
 https://blog.bitsadmin.com/living-off-the-foreign-land-windows-as-offensive-platform-part-3
+
+
+
+
+
+
